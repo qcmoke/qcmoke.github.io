@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    
+    <lastmod>2020-02-26T04:44:18.220Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
     
     <lastmod>2020-02-25T02:27:41.300Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     
     <lastmod>2020-02-22T16:20:01.207Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.143Z</lastmod>
     
   </url>
   
