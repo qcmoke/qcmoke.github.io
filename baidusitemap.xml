@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.qcmoke.site/devops/docker.html</loc>
-    <lastmod>2020-02-27T19:53:23.104Z</lastmod>
-  </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    <lastmod>2020-02-27T17:30:02.515Z</lastmod>
+    <lastmod>2020-02-28T03:33:39.967Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/devops/docker.html</loc>
+    <lastmod>2020-02-28T02:44:26.883Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/win_mysql.html</loc>
     <lastmod>2020-02-26T17:00:31.952Z</lastmod>
