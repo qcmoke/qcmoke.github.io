@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
+    
+    <lastmod>2020-03-02T16:54:59.632Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/ngrok-git.html</loc>
+    
+    <lastmod>2020-03-02T13:45:29.582Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/docker.html</loc>
+    
+    <lastmod>2020-02-28T18:19:16.605Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     
     <lastmod>2020-02-28T13:03:01.101Z</lastmod>
@@ -9,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/docker.html</loc>
-    
-    <lastmod>2020-02-28T10:31:32.580Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/tools/win_mysql.html</loc>
     
     <lastmod>2020-02-26T17:00:31.952Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
-    
-    <lastmod>2020-02-25T02:27:41.300Z</lastmod>
     
   </url>
   
