@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.qcmoke.site/front/vue.html</loc>
+    <loc>https://www.qcmoke.site/about/index.html</loc>
     
-    <lastmod>2020-03-04T00:50:35.097Z</lastmod>
+    <lastmod>2020-03-04T20:21:12.217Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
     
-    <lastmod>2020-03-04T00:41:23.084Z</lastmod>
+    <lastmod>2020-03-04T20:18:03.542Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/front/vue.html</loc>
+    
+    <lastmod>2020-03-04T00:50:35.097Z</lastmod>
     
   </url>
   
@@ -82,13 +89,6 @@
     <loc>https://www.qcmoke.site/categories/index.html</loc>
     
     <lastmod>2020-02-22T16:20:01.823Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/about/index.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.819Z</lastmod>
     
   </url>
   
