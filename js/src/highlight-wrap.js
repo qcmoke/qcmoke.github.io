@@ -1,3 +1,3 @@
-// build time:Wed Mar 04 2020 07:38:26 GMT+0800 (GMT+08:00)
+// build time:Thu Mar 05 2020 15:06:26 GMT+0800 (GMT+08:00)
 function macPanel(a){var t=$(".highlight").not(".gist .highlight");for(var i=0;i<t.length;i++){var e=$(t[i]);var n=e.attr("class");var r=/highlight(\s?)([a-zA-Z]*)/;r.test(n);var o=RegExp.$2||"plain";var c=$("<div>").attr("data-rel",o.toUpperCase()).addClass("highlight-wrap");e.wrap(c);e.before(a)}}function initClipboard(){var a='<button class="copy-btn" data-clipboard-snippet=""><i class="fa fa-clipboard"></i></button>';macPanel(a);var t=new ClipboardJS(".copy-btn",{target:function(a){return a.nextElementSibling}});t.on("success",function(a){var t=a.trigger;var i=t.querySelector("i");i.className="fa fa-check";t.onmouseleave=function(t){a.clearSelection();setTimeout(function(){i.className="fa fa-clipboard"},1e3)}})}$(document).ready(function(){initClipboard()});
 //rebuild by neat 
