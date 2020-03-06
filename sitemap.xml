@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    
+    <lastmod>2020-03-06T21:10:43.702Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
     
     <lastmod>2020-03-06T20:34:04.798Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>https://www.qcmoke.site/devops/ngrok-git.html</loc>
     
     <lastmod>2020-03-02T13:45:29.582Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    
-    <lastmod>2020-02-28T13:03:01.101Z</lastmod>
     
   </url>
   
