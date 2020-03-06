@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
-    <lastmod>2020-03-06T07:03:31.150Z</lastmod>
+    <lastmod>2020-03-06T20:34:04.798Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
-    <lastmod>2020-03-04T22:20:58.438Z</lastmod>
+    <lastmod>2020-03-06T16:33:52.724Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/devops/docker.html</loc>
+    <lastmod>2020-03-06T13:53:58.799Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/front/vue.html</loc>
     <lastmod>2020-03-04T00:50:35.097Z</lastmod>
@@ -18,9 +21,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/ngrok-git.html</loc>
     <lastmod>2020-03-02T13:45:29.582Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/devops/docker.html</loc>
-    <lastmod>2020-02-28T18:19:16.605Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     <lastmod>2020-02-28T13:03:01.101Z</lastmod>
