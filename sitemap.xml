@@ -2,6 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/devops/frp.html</loc>
+    
+    <lastmod>2020-03-07T23:22:16.373Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/mail.html</loc>
+    
+    <lastmod>2020-03-07T23:20:16.445Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/cmder.html</loc>
+    
+    <lastmod>2020-03-07T23:14:31.435Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
+    
+    <lastmod>2020-03-07T23:13:07.091Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
+    
+    <lastmod>2020-03-07T23:07:31.847Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/sublime_use.html</loc>
+    
+    <lastmod>2020-03-07T23:05:20.298Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/rclone.html</loc>
+    
+    <lastmod>2020-03-07T23:01:47.026Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/win_git.html</loc>
+    
+    <lastmod>2020-03-07T23:01:10.400Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/win_mysql.html</loc>
+    
+    <lastmod>2020-03-07T22:58:10.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/ssr.html</loc>
+    
+    <lastmod>2020-03-07T22:55:36.403Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/nvm.html</loc>
+    
+    <lastmod>2020-03-07T22:52:46.606Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/nextcload.html</loc>
+    
+    <lastmod>2020-03-07T22:52:22.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/idea.html</loc>
+    
+    <lastmod>2020-03-07T22:51:59.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    
+    <lastmod>2020-03-07T22:51:32.442Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/cross_compilation.html</loc>
+    
+    <lastmod>2020-03-07T22:40:09.707Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/front/vue.html</loc>
+    
+    <lastmod>2020-03-07T22:39:19.895Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/devops/oracle.html</loc>
     
     <lastmod>2020-03-07T22:33:44.247Z</lastmod>
@@ -9,37 +121,9 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/vue.html</loc>
-    
-    <lastmod>2020-03-07T22:25:59.506Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/devops/redis.html</loc>
     
     <lastmod>2020-03-07T22:22:23.686Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    
-    <lastmod>2020-03-07T22:21:45.879Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/devops/mail.html</loc>
-    
-    <lastmod>2020-03-07T22:12:50.717Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/devops/frp.html</loc>
-    
-    <lastmod>2020-03-07T22:12:37.790Z</lastmod>
     
   </url>
   
@@ -142,20 +226,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
-    
-    <lastmod>2020-03-02T19:57:53.398Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/win_mysql.html</loc>
-    
-    <lastmod>2020-02-26T17:00:31.952Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/links-falls/index.html</loc>
     
     <lastmod>2020-02-22T16:20:02.077Z</lastmod>
@@ -163,72 +233,9 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/tools/win_git.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.763Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/tools/virtual_machines.html</loc>
     
     <lastmod>2020-02-22T16:20:01.744Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.685Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/sublime_use.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.609Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/ssr.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.607Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/rclone.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.580Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/nvm.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.572Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/nextcload.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.545Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/idea.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.379Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/cmder.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.352Z</lastmod>
     
   </url>
   
@@ -271,13 +278,6 @@
     <loc>https://www.qcmoke.site/linux/scp.html</loc>
     
     <lastmod>2020-02-22T16:20:01.138Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/cross_compilation.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.116Z</lastmod>
     
   </url>
   
