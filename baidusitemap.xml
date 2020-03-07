@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/devops/ngrok-git.html</loc>
+    <lastmod>2020-03-07T23:33:57.974Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/devops/frp.html</loc>
     <lastmod>2020-03-07T23:22:16.373Z</lastmod>
   </url>  <url>
@@ -63,9 +66,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/proxy.html</loc>
     <lastmod>2020-03-07T22:11:59.664Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/devops/ngrok-git.html</loc>
-    <lastmod>2020-03-07T22:06:42.834Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/front/eslint.html</loc>
     <lastmod>2020-03-07T22:05:50.922Z</lastmod>
