@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/devops/oracle.html</loc>
+    <lastmod>2020-03-07T22:33:44.247Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/front/vue.html</loc>
     <lastmod>2020-03-07T22:25:59.506Z</lastmod>
   </url>  <url>
@@ -9,9 +12,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     <lastmod>2020-03-07T22:21:45.879Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/devops/oracle.html</loc>
-    <lastmod>2020-03-07T22:15:52.031Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/mail.html</loc>
     <lastmod>2020-03-07T22:12:50.717Z</lastmod>
