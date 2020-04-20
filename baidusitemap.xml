@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/linux/deepin_experience.html</loc>
+    <lastmod>2020-04-20T14:49:01.795Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
+    <lastmod>2020-04-20T13:34:32.230Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/tools/nextcload.html</loc>
     <lastmod>2020-04-20T08:21:39.005Z</lastmod>
   </url>  <url>
@@ -15,9 +21,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
     <lastmod>2020-04-20T07:11:22.281Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/linux/deepin_experience.html</loc>
-    <lastmod>2020-04-16T07:14:08.789Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     <lastmod>2020-03-28T21:47:25.130Z</lastmod>
@@ -84,9 +87,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/frp.html</loc>
     <lastmod>2020-03-10T02:54:59.453Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
-    <lastmod>2020-03-10T02:54:59.392Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/blog/hexo_code.html</loc>
     <lastmod>2020-03-10T02:54:59.389Z</lastmod>
