@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/tools/nextcload.html</loc>
+    
+    <lastmod>2020-04-20T08:21:39.005Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/bypy.html</loc>
+    
+    <lastmod>2020-04-20T08:21:25.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/youtube_dl.html</loc>
+    
+    <lastmod>2020-04-20T08:21:12.828Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/nginx.html</loc>
+    
+    <lastmod>2020-04-20T07:22:11.721Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
+    
+    <lastmod>2020-04-20T07:11:22.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/deepin_experience.html</loc>
+    
+    <lastmod>2020-04-16T07:14:08.789Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     
-    <lastmod>2020-03-25T01:55:21.148Z</lastmod>
+    <lastmod>2020-03-28T21:47:25.130Z</lastmod>
     
   </url>
   
@@ -86,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/tools/nextcload.html</loc>
-    
-    <lastmod>2020-03-10T02:54:59.834Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/tools/idea.html</loc>
     
     <lastmod>2020-03-10T02:54:59.831Z</lastmod>
@@ -163,16 +198,9 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/ngrok-git.html</loc>
+    <loc>https://www.qcmoke.site/devops/ngrok_git.html</loc>
     
     <lastmod>2020-03-10T02:54:59.462Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/devops/nginx.html</loc>
-    
-    <lastmod>2020-03-10T02:54:59.460Z</lastmod>
     
   </url>
   
@@ -205,13 +233,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
-    
-    <lastmod>2020-03-10T02:54:59.387Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/categories/index.html</loc>
     
     <lastmod>2020-03-07T06:13:51.435Z</lastmod>
@@ -229,13 +250,6 @@
     <loc>https://www.qcmoke.site/links-falls/index.html</loc>
     
     <lastmod>2020-02-22T16:20:02.077Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tools/virtual_machines.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.744Z</lastmod>
     
   </url>
   
