@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
-    <lastmod>2020-04-20T18:03:38.559Z</lastmod>
+    <lastmod>2020-04-22T20:47:34.262Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    <lastmod>2020-04-22T19:38:48.634Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/deepin_experience.html</loc>
     <lastmod>2020-04-20T14:49:01.795Z</lastmod>
@@ -54,9 +57,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/cmder.html</loc>
     <lastmod>2020-03-10T02:54:59.828Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    <lastmod>2020-03-10T02:54:59.492Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/cross_compilation.html</loc>
     <lastmod>2020-03-10T02:54:59.485Z</lastmod>
