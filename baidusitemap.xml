@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
+    <lastmod>2020-04-27T10:40:38.610Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
+    <lastmod>2020-04-26T19:31:46.841Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/devops/k8s.html</loc>
+    <lastmod>2020-04-26T19:30:55.902Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/rclone.html</loc>
+    <lastmod>2020-04-26T19:28:04.941Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
     <lastmod>2020-04-22T20:47:34.262Z</lastmod>
   </url>  <url>
@@ -45,9 +57,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/ssr.html</loc>
     <lastmod>2020-03-10T02:54:59.844Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/rclone.html</loc>
-    <lastmod>2020-03-10T02:54:59.842Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/nvm.html</loc>
     <lastmod>2020-03-10T02:54:59.837Z</lastmod>
@@ -103,9 +112,6 @@
     <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     <lastmod>2020-02-22T16:20:01.207Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/linux/shadowsocks-qt5.html</loc>
-    <lastmod>2020-02-22T16:20:01.139Z</lastmod>
-  </url>  <url>
     <loc>https://www.qcmoke.site/linux/scp.html</loc>
     <lastmod>2020-02-22T16:20:01.138Z</lastmod>
   </url>  <url>
@@ -123,9 +129,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/javaee/jenkins.html</loc>
     <lastmod>2020-02-22T16:20:00.832Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
-    <lastmod>2020-02-22T16:20:00.822Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/javaee/dubbo.html</loc>
     <lastmod>2020-02-22T16:20:00.733Z</lastmod>
