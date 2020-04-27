@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
-    <lastmod>2020-04-27T10:40:38.610Z</lastmod>
+    <lastmod>2020-04-27T20:35:48.616Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
+    <lastmod>2020-04-27T18:34:28.101Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
     <lastmod>2020-04-26T19:31:46.841Z</lastmod>
@@ -33,9 +36,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/nginx.html</loc>
     <lastmod>2020-04-20T07:22:11.721Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
-    <lastmod>2020-04-20T07:11:22.281Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     <lastmod>2020-03-28T21:47:25.130Z</lastmod>
