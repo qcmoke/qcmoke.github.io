@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/devops/k8s.html</loc>
+    <lastmod>2020-04-28T22:29:32.478Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
     <lastmod>2020-04-27T20:35:48.616Z</lastmod>
   </url>  <url>
@@ -9,9 +12,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
     <lastmod>2020-04-26T19:31:46.841Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/devops/k8s.html</loc>
-    <lastmod>2020-04-26T19:30:55.902Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/rclone.html</loc>
     <lastmod>2020-04-26T19:28:04.941Z</lastmod>
