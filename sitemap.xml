@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
+    
+    <lastmod>2020-05-04T10:25:56.630Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/devops/k8s.html</loc>
     
-    <lastmod>2020-05-04T00:16:44.821Z</lastmod>
+    <lastmod>2020-05-04T09:10:02.143Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>https://www.qcmoke.site/google4be5cfe3a788cfdf.html</loc>
     
     <lastmod>2020-04-24T10:09:46.499Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
-    
-    <lastmod>2020-04-22T20:47:34.262Z</lastmod>
     
   </url>
   
