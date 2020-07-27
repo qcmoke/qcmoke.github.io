@@ -560,8 +560,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>hexo</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -766,8 +766,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>lamp</tag>
         <tag>typecho</tag>
+        <tag>lamp</tag>
         <tag>blog搬家</tag>
       </tags>
   </entry>
@@ -779,8 +779,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>typecho</tag>
         <tag>管理员密码</tag>
+        <tag>typecho</tag>
         <tag>wordpress</tag>
       </tags>
   </entry>
