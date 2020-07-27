@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
+    <lastmod>2020-07-25T03:52:12.517Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
+    <lastmod>2020-07-22T13:46:24.221Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/front/react.html</loc>
+    <lastmod>2020-07-22T09:26:02.213Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/blog/hexo_next.html</loc>
     <lastmod>2020-07-16T15:10:26.047Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/mobile/react-native.html</loc>
     <lastmod>2020-07-16T00:57:22.941Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/front/react.html</loc>
-    <lastmod>2020-07-12T07:51:38.273Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     <lastmod>2020-05-19T04:44:42.849Z</lastmod>
@@ -21,9 +27,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
     <lastmod>2020-04-27T20:35:48.616Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
-    <lastmod>2020-04-27T18:34:28.101Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
     <lastmod>2020-04-26T19:31:46.841Z</lastmod>
@@ -48,9 +51,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     <lastmod>2020-03-28T21:47:25.130Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
-    <lastmod>2020-03-12T15:02:49.978Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/win_mysql.html</loc>
     <lastmod>2020-03-10T02:54:59.860Z</lastmod>
