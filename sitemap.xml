@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/mobile/wx.html</loc>
+    
+    <lastmod>2020-11-14T00:01:44.210Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     
     <lastmod>2020-11-12T01:30:05.756Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
     
     <lastmod>2020-10-20T23:27:02.057Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/mobile/wx.html</loc>
-    
-    <lastmod>2020-10-15T19:09:10.548Z</lastmod>
     
   </url>
   
