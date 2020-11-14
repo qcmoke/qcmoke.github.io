@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/windows/win.html</loc>
+    
+    <lastmod>2020-11-14T16:08:29.274Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/vm.html</loc>
+    
+    <lastmod>2020-11-14T15:59:41.132Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/mobile/wx.html</loc>
     
     <lastmod>2020-11-14T00:01:44.210Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     
     <lastmod>2020-11-12T01:30:05.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/vm.html</loc>
-    
-    <lastmod>2020-11-10T03:00:30.348Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>https://www.qcmoke.site/blog/hexo_code.html</loc>
     
     <lastmod>2020-09-28T16:57:48.519Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/windows/win_process.html</loc>
-    
-    <lastmod>2020-08-20T04:15:11.787Z</lastmod>
     
   </url>
   
@@ -320,20 +320,6 @@
     <loc>https://www.qcmoke.site/links-falls/index.html</loc>
     
     <lastmod>2020-02-22T16:20:02.077Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tips/keyboardshortcuts.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.341Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/tips/del-win-time-log.html</loc>
-    
-    <lastmod>2020-02-22T16:20:01.339Z</lastmod>
     
   </url>
   
