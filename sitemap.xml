@@ -4,7 +4,35 @@
   <url>
     <loc>https://www.qcmoke.site/windows/win.html</loc>
     
-    <lastmod>2020-11-14T16:08:29.274Z</lastmod>
+    <lastmod>2020-11-28T18:56:08.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/mobile/wx.html</loc>
+    
+    <lastmod>2020-11-28T18:55:43.518Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/nfs.html</loc>
+    
+    <lastmod>2020-11-28T18:53:12.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/javaee/jenkins.html</loc>
+    
+    <lastmod>2020-11-16T00:04:24.420Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/docker.html</loc>
+    
+    <lastmod>2020-11-15T18:12:49.842Z</lastmod>
     
   </url>
   
@@ -12,20 +40,6 @@
     <loc>https://www.qcmoke.site/linux/vm.html</loc>
     
     <lastmod>2020-11-14T15:59:41.132Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/mobile/wx.html</loc>
-    
-    <lastmod>2020-11-14T00:01:44.210Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/devops/docker.html</loc>
-    
-    <lastmod>2020-11-12T01:30:05.756Z</lastmod>
     
   </url>
   
@@ -373,13 +387,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/javaee/jenkins.html</loc>
-    
-    <lastmod>2020-02-22T16:20:00.832Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/javaee/dubbo.html</loc>
     
     <lastmod>2020-02-22T16:20:00.733Z</lastmod>
@@ -467,13 +474,6 @@
     <loc>https://www.qcmoke.site/devops/svn.html</loc>
     
     <lastmod>2020-02-22T16:20:00.453Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/devops/nfs.html</loc>
-    
-    <lastmod>2020-02-22T16:20:00.393Z</lastmod>
     
   </url>
   
