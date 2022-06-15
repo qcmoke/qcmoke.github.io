@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.770Z">
+<meta property="og:updated_time" content="2022-06-15T12:03:01.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux关于ssr客户端的使用">
 <meta name="twitter:description" content="一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-15T20:03:01+08:00">
+                2022-06-15
               </time>
             
           </span>
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.2k
+                  2.3k
                 </span>
               
 
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  10
                 </span>
               
             </div>
@@ -580,7 +580,7 @@
 <p>（3）对于需要代理转发的命令，我们只需要在该命令前加上<code>proxychains4</code>即可，如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> proxychains4 wget https://github.com/seata/seata/releases/download/v1.2.0/seata-server-1.2.0.tar.gz</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> proxychains4 curl www.google.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> proxychains4 curl <span class="string">"http://pv.sohu.com/cityjson?ie=utf-8"</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="三-更多代理操作命令"><a class="header-anchor" href="#三-更多代理操作命令">¶</a>三、更多代理操作命令</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#一、终端请求设置代理</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> http_proxy=<span class="string">"socks5://127.0.0.1:1080"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> https_proxy=<span class="string">"socks5://127.0.0.1:1080"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:1080</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#二、git设置代理</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span> </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">一般来说设置前两个就行了</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global https.proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global https.proxy https://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --get http.proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --get https.proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看全局配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config -l --global</span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --<span class="built_in">unset</span> http.proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --<span class="built_in">unset</span> https.proxy</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#三、npm和yarn设置代理</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置npm代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> proxy=http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">#</span><span class="bash">删除npm代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config delete proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config delete https-proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置yarn代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">#</span><span class="bash">删除yarn代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config delete proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config delete https-proxy</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#一、终端请求设置代理</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> http_proxy=<span class="string">"socks5://127.0.0.1:1080"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> https_proxy=<span class="string">"socks5://127.0.0.1:1080"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> ALL_PROXY=<span class="string">"socks5://127.0.0.1:1080"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> no_proxy=<span class="string">"127.0.0.1,localhost"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">unset</span> http_proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">unset</span> https_proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">unset</span> ALL_PROXY</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">unset</span> no_proxy</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#二、git设置代理</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span> </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">一般来说设置前两个就行了</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global https.proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global https.proxy https://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --get http.proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --get https.proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看全局配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config -l --global</span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --<span class="built_in">unset</span> http.proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global --<span class="built_in">unset</span> https.proxy</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#三、npm和yarn设置代理</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置npm代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> proxy=http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">#</span><span class="bash">删除npm代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config delete proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config delete https-proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置yarn代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span></span><br><span class="line"><span class="meta">#</span><span class="bash">删除yarn代理</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config delete proxy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn config delete https-proxy</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">curl添加代理</span></span><br><span class="line">curl -L https://xxxxxx.png --socks5 127.0.0.1:1080 -O xxxxxx.png</span><br><span class="line"><span class="meta">#</span><span class="bash">wget添加代理</span></span><br><span class="line">wget -e  "https_proxy=http://127.0.0.1:1080" https://xxxxxx.png</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>📚 参考：</p>
 <p><a href="https://huangweitong.com/229.html" target="_blank" rel="noopener">https://huangweitong.com/229.html</a></p>
@@ -808,7 +808,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -830,7 +830,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">99</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -882,6 +882,10 @@
                 
                 
                   <li class="recent_posts_li">
+                    <a href="/tools/pyenv.html" title="python版本管理器pyenv" target="_blank">python版本管理器pyenv</a>
+                  </li>
+                
+                  <li class="recent_posts_li">
                     <a href="/linux/vm.html" title="VirtualBox组建内网服务器集群" target="_blank">VirtualBox组建内网服务器集群</a>
                   </li>
                 
@@ -895,10 +899,6 @@
                 
                   <li class="recent_posts_li">
                     <a href="/devops/oracle_docker.html" title="docker安装oracle" target="_blank">docker安装oracle</a>
-                  </li>
-                
-                  <li class="recent_posts_li">
-                    <a href="/devops/k8s.html" title="k8s学习笔记" target="_blank">k8s学习笔记</a>
                   </li>
                 
               </ul>
