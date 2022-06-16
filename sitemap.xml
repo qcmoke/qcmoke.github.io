@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.qcmoke.site/tools/pyenv.html</loc>
+    <loc>https://www.qcmoke.site/tools/python_versions_manage.html</loc>
     
-    <lastmod>2022-06-15T19:24:35.796Z</lastmod>
+    <lastmod>2022-06-16T13:08:41.487Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/docker.html</loc>
+    
+    <lastmod>2022-06-16T05:44:57.041Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     
     <lastmod>2022-06-15T10:59:16.961Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/devops/docker.html</loc>
-    
-    <lastmod>2022-06-14T20:20:27.911Z</lastmod>
     
   </url>
   
@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/links-falls/index.html</loc>
+    <loc>https://www.qcmoke.site/links/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.163Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/links/index.html</loc>
+    <loc>https://www.qcmoke.site/links-falls/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.163Z</lastmod>
     
@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
+    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
     
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
+    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
     
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
     
@@ -373,14 +373,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
+    <loc>https://www.qcmoke.site/front/box_collapse.html</loc>
     
     <lastmod>2022-05-24T03:50:17.596Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/box_collapse.html</loc>
+    <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
     
     <lastmod>2022-05-24T03:50:17.596Z</lastmod>
     
@@ -401,13 +401,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/proxy.html</loc>
-    
-    <lastmod>2022-05-24T03:50:17.569Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/devops/oracle_docker.html</loc>
     
     <lastmod>2022-05-24T03:50:17.569Z</lastmod>
@@ -416,6 +409,13 @@
   
   <url>
     <loc>https://www.qcmoke.site/devops/redis.html</loc>
+    
+    <lastmod>2022-05-24T03:50:17.569Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/devops/proxy.html</loc>
     
     <lastmod>2022-05-24T03:50:17.569Z</lastmod>
     
@@ -527,6 +527,13 @@
   </url>
   
   <url>
+    <loc>https://www.qcmoke.site/blog/typecho_wordpress_password.html</loc>
+    
+    <lastmod>2022-05-24T03:50:17.509Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/devops/apache_much_ip.html</loc>
     
     <lastmod>2022-05-24T03:50:17.509Z</lastmod>
@@ -535,13 +542,6 @@
   
   <url>
     <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
-    
-    <lastmod>2022-05-24T03:50:17.509Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/blog/typecho_wordpress_password.html</loc>
     
     <lastmod>2022-05-24T03:50:17.509Z</lastmod>
     
