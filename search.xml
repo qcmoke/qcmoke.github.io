@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python版本管理工具]]></title>
     <url>%2Ftools%2Fpython_versions_manage.html</url>
-    <content type="text"><![CDATA[由于在日常办公电脑中或者服务器上都有python多版本同时使用需求，比如python2和python3。使用python版本管理工具pyenv或者anaconda就能够方便随意切换python版本。 一、pyenv ¶1、centos7 ¶1.1安装依赖 各系统需要的依赖可见https://github.com/pyenv/pyenv/wiki#suggested-build-environment 123yum install -y gityum install -y gcc patch gdbm-devel openssl-devel sqlite-devel readline-devel zlib-devel bzip2-develyum install -y make ¶1.2安装pyenv 12git clone https://github.com/pyenv/pyenv.git ~/.pyenv#curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash ¶1.3配置环境变量 123456789101112#添加环境变量。cat后的&gt;&gt;表示追加，&gt;则表示覆盖。&lt;&lt; 后的EOF用引号可以避免$赋值，如果希望赋值则不加引号cat &gt;&gt; ~/.bashrc &lt;&lt; 'EOF'export PYENV_ROOT="$HOME/.pyenv"export PATH="$PYENV_ROOT/bin:$PATH"if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then eval "$(pyenv init -)"fiEOF#使环境变量生效source ~/.bashrc ¶1.4安装python版本 淘宝源：https://npm.taobao.org/mirrors/python/3.6.4/Python-3.6.4.tar.xz 123mkdir ~/.pyenv/cachewget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz -O ~/.pyenv/cache/Python-3.6.4.tar.xzpyenv install 3.6.4 -v ¶1.5全局使用对应python版本 1pyenv global 3.6.4 ¶1.6卸载 1rm -rf ~/.pyenv 然后删除~/.bashrc中的环境变量配置即可 ¶2、windows ¶2.1安装pyenv 1pip install pyenv-win --target E:/Download/pyenv/.pyenv ¶2.2配置环境变量 先加变量PYENV=E:\Download\pyenv\.pyenv\pyenv-win 然后再在Path中加入：%PYENV%\bin和%PYENV%\shims ¶2.3优化下载镜像 在pyenv-win/libexec/libs/pyenv-install-lib.vbs中找到 If mirror = “” Then mirror = &quot;https://www.python.org/ftp/python&quot; 将地址改成https://npm.taobao.org/mirrors/python ¶2.4测试 12345pyenv --version #PowerShell执行pyenv失败可以通过管理员方式PowerShell执行命令解决：Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachinepyenv install 3.7.0pyenv install 2.7.16pyenv global 3.7.0python3 --version #这一步可能会启动Microsoft Store。这是由于环境变量产生了问题。两种方法解决：1、菜单搜索【管理应用执行别名】关闭两个按钮【应用安装程序】；2、可以同时将系统和用户的环境变量中的%USERPROFILE%\AppData\Local\Microsoft\WindowsApps删除掉 💁‍♂环境变量配置好后需要重新打开终端。 ¶2.5常用命令 1234567891011pyenv commands 查看pyenv命令pyenv install --list #查看可安装的python版本pyenv versions #查看已安装版本pyenv version #查看当前使用的python版本pyenv install -v 版本号 #安装pythonpyenv rehash #刷新python已安装列表pyenv uninstall 版本号 #删除pythonpyenv virtualenv 已有版本环境名名 新版本环境名 #按已有版创建新的python环境（调用virtualenv,python3 自带了virtualenv,py2要自行装）pyenv global 版本号 #设置当前全局python版本pyenv local 版本号 #设置当前目录局部python版本，以后进入目录就会自动切换到这个版本pyenv local --unset #取消局部python版本设置,或者删除当前目录下的.python-version文件 ¶6、卸载 删除掉E:/Download/pyenv/.pyenv目录，删除对应环境变量即可。 参考： https://blog.csdn.net/weixin_45027467/article/details/123137457 https://www.bilibili.com/read/cv12982089 二、anaconda ¶1、centos7 ¶1.1安装 1234#下载安装脚本wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh#安装（不断回车或yes即可）sh Anaconda3-2021.11-Linux-x86_64.sh ¶1.2配置 123456789101112131415161718192021222324252627#添加环境变量。cat后的&gt;&gt;表示追加，&gt;则表示覆盖。&lt;&lt; 后的EOF用引号可以避免$赋值，如果希望赋值则不加引号cat &gt;&gt; ~/.bashrc &lt;&lt; 'EOF'# &gt;&gt;&gt; conda initialize &gt;&gt;&gt;# !! Contents within this block are managed by 'conda init' !!__conda_setup="$('/root/anaconda3/bin/conda' 'shell.bash' 'hook' 2&gt; /dev/null)"if [ $? -eq 0 ]; then eval "$__conda_setup"else if [ -f "/root/anaconda3/etc/profile.d/conda.sh" ]; then . "/root/anaconda3/etc/profile.d/conda.sh" else export PATH="/root/anaconda3/bin:$PATH" fifiunset __conda_setup# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;EOF#使环境变量生效source ~/.bashrc#测试安装配置是否成功conda -v#安装好anaconda后，默认系统全局就会自动默认使用anaconda自带的python版本，如果希望保持原来系统版本可如下设置conda config --set auto_activate_base false ¶1.3使用 12345678910#创建一个项目的虚拟环境，并指定虚拟环境名称为py38，使用python3.8版本conda create -n py38 python=3.8#查看当前创建的所有虚拟环境conda env list#激活当前环境为py38，如此在当前登录会话过程全局就会使用用python3.8版本conda activate py38# 退出当前虚拟环境conda deactivate#删除一个项目的虚拟环境conda remove -n py38 *--all* ¶2、windows ¶2.1安装 下载安装包：https://www.anaconda.com/download/#windows 安装过程一直下一步即可。 ¶2.2配置 Path中加入如下环境变量（假设anaconda安装到D:\Development\Anaconda3）： 12345D:\Development\Anaconda3D:\Development\Anaconda3\condabinD:\Development\Anaconda3\ScriptsD:\Development\Anaconda3\Library\binD:\Development\Anaconda3\Library\mingw-w64 💁‍♂官方建议使用Anaconda Prompt 终端执行conda或者python等命令。 ¶2.3使用 安装后会有Anaconda Prompt (Anaconda3)终端，打开执行conda或者python等命令即可。]]></content>
+    <content type="text"><![CDATA[由于在日常办公电脑中或者服务器上都有python多版本同时使用需求，比如python2和python3。使用python版本管理工具pyenv或者anaconda就能够方便随意切换python版本。 一、pyenv ¶1、centos7 ¶1.1安装依赖 各系统需要的依赖可见https://github.com/pyenv/pyenv/wiki#suggested-build-environment 123yum install -y gityum install -y gcc patch gdbm-devel openssl-devel sqlite-devel readline-devel zlib-devel bzip2-devel libffi-develyum install -y make ¶1.2安装pyenv 12git clone https://github.com/pyenv/pyenv.git ~/.pyenv#curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash ¶1.3配置环境变量 123456789101112#添加环境变量。cat后的&gt;&gt;表示追加，&gt;则表示覆盖。&lt;&lt; 后的EOF用引号可以避免$赋值，如果希望赋值则不加引号cat &gt;&gt; ~/.bashrc &lt;&lt; 'EOF'export PYENV_ROOT="$HOME/.pyenv"export PATH="$PYENV_ROOT/bin:$PATH"if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then eval "$(pyenv init -)"fiEOF#使环境变量生效source ~/.bashrc ¶1.4安装python版本 淘宝源：https://npm.taobao.org/mirrors/python/3.6.4/Python-3.6.4.tar.xz 123mkdir ~/.pyenv/cachewget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz -O ~/.pyenv/cache/Python-3.6.4.tar.xzpyenv install 3.6.4 -v ¶1.5全局使用对应python版本 1pyenv global 3.6.4 ¶1.6卸载 1rm -rf ~/.pyenv 然后删除~/.bashrc中的环境变量配置即可 ¶2、windows ¶2.1安装pyenv 1pip install pyenv-win --target E:/Download/pyenv/.pyenv ¶2.2配置环境变量 先加变量PYENV=E:\Download\pyenv\.pyenv\pyenv-win 然后再在Path中加入：%PYENV%\bin和%PYENV%\shims ¶2.3优化下载镜像 在pyenv-win/libexec/libs/pyenv-install-lib.vbs中找到 If mirror = “” Then mirror = &quot;https://www.python.org/ftp/python&quot; 将地址改成https://npm.taobao.org/mirrors/python ¶2.4测试 12345pyenv --version #PowerShell执行pyenv失败可以通过管理员方式PowerShell执行命令解决：Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachinepyenv install 3.7.0pyenv install 2.7.16pyenv global 3.7.0python3 --version #这一步可能会启动Microsoft Store。这是由于环境变量产生了问题。两种方法解决：1、菜单搜索【管理应用执行别名】关闭两个按钮【应用安装程序】；2、可以同时将系统和用户的环境变量中的%USERPROFILE%\AppData\Local\Microsoft\WindowsApps删除掉 💁‍♂环境变量配置好后需要重新打开终端。 ¶2.5常用命令 1234567891011pyenv commands 查看pyenv命令pyenv install --list #查看可安装的python版本pyenv versions #查看已安装版本pyenv version #查看当前使用的python版本pyenv install -v 版本号 #安装pythonpyenv rehash #刷新python已安装列表pyenv uninstall 版本号 #删除pythonpyenv virtualenv 已有版本环境名名 新版本环境名 #按已有版创建新的python环境（调用virtualenv,python3 自带了virtualenv,py2要自行装）pyenv global 版本号 #设置当前全局python版本pyenv local 版本号 #设置当前目录局部python版本，以后进入目录就会自动切换到这个版本pyenv local --unset #取消局部python版本设置,或者删除当前目录下的.python-version文件 ¶6、卸载 删除掉E:/Download/pyenv/.pyenv目录，删除对应环境变量即可。 参考： https://blog.csdn.net/weixin_45027467/article/details/123137457 https://www.bilibili.com/read/cv12982089 https://blog.csdn.net/weixin_43982238/article/details/108289616 二、anaconda ¶1、centos7 ¶1.1安装 1234#下载安装脚本wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh#安装（不断回车或yes即可）sh Anaconda3-2021.11-Linux-x86_64.sh ¶1.2配置 123456789101112131415161718192021222324252627#添加环境变量。cat后的&gt;&gt;表示追加，&gt;则表示覆盖。&lt;&lt; 后的EOF用引号可以避免$赋值，如果希望赋值则不加引号cat &gt;&gt; ~/.bashrc &lt;&lt; 'EOF'# &gt;&gt;&gt; conda initialize &gt;&gt;&gt;# !! Contents within this block are managed by 'conda init' !!__conda_setup="$('/root/anaconda3/bin/conda' 'shell.bash' 'hook' 2&gt; /dev/null)"if [ $? -eq 0 ]; then eval "$__conda_setup"else if [ -f "/root/anaconda3/etc/profile.d/conda.sh" ]; then . "/root/anaconda3/etc/profile.d/conda.sh" else export PATH="/root/anaconda3/bin:$PATH" fifiunset __conda_setup# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;EOF#使环境变量生效source ~/.bashrc#测试安装配置是否成功conda -v#安装好anaconda后，默认系统全局就会自动默认使用anaconda自带的python版本，如果希望保持原来系统版本可如下设置conda config --set auto_activate_base false ¶1.3使用 12345678910#创建一个项目的虚拟环境，并指定虚拟环境名称为py38，使用python3.8版本conda create -n py38 python=3.8#查看当前创建的所有虚拟环境conda env list#激活当前环境为py38，如此在当前登录会话过程全局就会使用用python3.8版本conda activate py38# 退出当前虚拟环境conda deactivate#删除一个项目的虚拟环境conda remove -n py38 *--all* ¶2、windows ¶2.1安装 下载安装包：https://www.anaconda.com/download/#windows 安装过程一直下一步即可。 ¶2.2配置 Path中加入如下环境变量（假设anaconda安装到D:\Development\Anaconda3）： 12345D:\Development\Anaconda3D:\Development\Anaconda3\condabinD:\Development\Anaconda3\ScriptsD:\Development\Anaconda3\Library\binD:\Development\Anaconda3\Library\mingw-w64 💁‍♂官方建议使用Anaconda Prompt 终端执行conda或者python等命令。 ¶2.3使用 安装后会有Anaconda Prompt (Anaconda3)终端，打开执行conda或者python等命令即可。]]></content>
       <categories>
         <category>tools</category>
       </categories>
@@ -114,10 +114,10 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>内网穿透</tag>
         <tag>反向代理</tag>
         <tag>ngrok</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -268,8 +268,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>nginx</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -464,24 +464,12 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>ssl</tag>
-        <tag>http</tag>
-        <tag>https</tag>
         <tag>apache</tag>
         <tag>certbot</tag>
         <tag>Let&#39;s Encrypt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[centos7安装kafka]]></title>
-    <url>%2Fdevops%2Fmq.html</url>
-    <content type="text"><![CDATA[Kafka 是一个分布式的基于发布/订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。 概念： 1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。 2）Producer ：消息生产者，就是向broker发送topic的客户端； 3）Consumer ：消息消费者，向broker的topic中拉取数据的客户端； 4）Consumer Group （CG）：消费者组，由多个 consumer 组成。组内的消费者共同消费某个主题里的所有分区数据（注意是共同消费而非独立消费），组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内的其中一个消费者消费（但该分区可以被其他组的消费者消费）；消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。 5）Topic ：可以理解为一个队列，生产者和消费者面向的都是一个 topic； 6）Partition：为了实现扩展性，一个非常大的 topic 可以分布到多个 broker（即服务器）上，一个 topic 可以分为多个 partition，每个 partition 是一个有序的队列； 7）Replica：副本，为保证集群中的某个节点发生故障时，该节点上的 partition 数据不丢失，且 kafka 仍然能够继续工作，kafka 提供了副本机制，一个 topic 的每个分区都有若干个副本，一个 leader 和若干个 follower。 8）leader：每个分区多个副本的“主”，生产者发送数据的对象，以及消费者消费数据的对象都是 leader。 9）follower：每个分区多个副本中的“从”，实时从 leader 中同步数据，保持和 leader 数据的同步。leader 发生故障时，某个 follower 会成为新的 follower。 ¶一、安装 前提条件：安装kafka之前需要有java环境。 123456su rootwget https://archive.apache.org/dist/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgztar -zxvf kafka_2.11-0.11.0.0.tgz -C /usr/local/mv /usr/local/kafka_2.11-0.11.0.0/ /usr/local/kafkacd /usr/local/kafkamkdir logs ¶二、配置kafka 1vim config/server.properties 1234567891011121314151617181920212223242526272829#broker 的全局唯一整形id，集群下该值注意不能重复broker.id=0#删除 topic 功能使能delete.topic.enable=true# 允许外部端口连接listeners=PLAINTEXT://0.0.0.0:9092# 外部代理地址(服务器物理机对外ip)advertised.listeners=PLAINTEXT://10.223.117.77:9092#处理网络请求的线程数量num.network.threads=3#用来处理磁盘 IO 的现成数量num.io.threads=8#发送套接字的缓冲区大小socket.send.buffer.bytes=102400#接收套接字的缓冲区大小socket.receive.buffer.bytes=102400#请求套接字的缓冲区大小socket.request.max.bytes=104857600#kafka 运行日志存放的路径log.dirs=/usr/local/kafka/logs#topic 在当前 broker 上的分区个数num.partitions=1#用来恢复和清理 data 下数据的线程数量num.recovery.threads.per.data.dir=1#segment 文件保留的最长时间，超时将被删除log.retention.hours=168#配置连接 Zookeeper 集群地址zookeeper.connect=127.0.0.1:2181#zookeeper.connect=192.168.1.10:2181,192.168.1.11:2181,192.168.1.13:2181 ¶三、常用命令 123456789101112131415161718192021222324252627cd /opt/kafka/kafka_2.11-0.11.0.0#以守护进程启动bin/kafka-server-start.sh -daemon config/server.properties#关闭bin/kafka-server-stop.sh config/server.properties# 查看当前服务器中的所有 topicbin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --list# 创建 topic（topic里有分区，有主题）# --topic:主题的名字# --zookeeper: 注册中心的地址# --replication-factor:副本数# --partitions:分区数bin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --create --topic appServerLoginForced --replication-factor 1 --partitions 1#删除topicbin/kafka-topics.sh --delete --zookeeper 127.0.0.1:2181 --topic appServerLoginForced#测试bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic appServerLoginForced --from-beginningbin/kafka-console-producer.sh --broker-list localhost:9092 --topic appServerLoginForced]]></content>
-      <categories>
-        <category>devops</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>kafka</tag>
+        <tag>ssl</tag>
+        <tag>http</tag>
+        <tag>https</tag>
       </tags>
   </entry>
   <entry>
@@ -494,6 +482,18 @@
       <tags>
         <tag>linux</tag>
         <tag>mail</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7安装kafka]]></title>
+    <url>%2Fdevops%2Fmq.html</url>
+    <content type="text"><![CDATA[Kafka 是一个分布式的基于发布/订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。 概念： 1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。 2）Producer ：消息生产者，就是向broker发送topic的客户端； 3）Consumer ：消息消费者，向broker的topic中拉取数据的客户端； 4）Consumer Group （CG）：消费者组，由多个 consumer 组成。组内的消费者共同消费某个主题里的所有分区数据（注意是共同消费而非独立消费），组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内的其中一个消费者消费（但该分区可以被其他组的消费者消费）；消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。 5）Topic ：可以理解为一个队列，生产者和消费者面向的都是一个 topic； 6）Partition：为了实现扩展性，一个非常大的 topic 可以分布到多个 broker（即服务器）上，一个 topic 可以分为多个 partition，每个 partition 是一个有序的队列； 7）Replica：副本，为保证集群中的某个节点发生故障时，该节点上的 partition 数据不丢失，且 kafka 仍然能够继续工作，kafka 提供了副本机制，一个 topic 的每个分区都有若干个副本，一个 leader 和若干个 follower。 8）leader：每个分区多个副本的“主”，生产者发送数据的对象，以及消费者消费数据的对象都是 leader。 9）follower：每个分区多个副本中的“从”，实时从 leader 中同步数据，保持和 leader 数据的同步。leader 发生故障时，某个 follower 会成为新的 follower。 ¶一、安装 前提条件：安装kafka之前需要有java环境。 123456su rootwget https://archive.apache.org/dist/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgztar -zxvf kafka_2.11-0.11.0.0.tgz -C /usr/local/mv /usr/local/kafka_2.11-0.11.0.0/ /usr/local/kafkacd /usr/local/kafkamkdir logs ¶二、配置kafka 1vim config/server.properties 1234567891011121314151617181920212223242526272829#broker 的全局唯一整形id，集群下该值注意不能重复broker.id=0#删除 topic 功能使能delete.topic.enable=true# 允许外部端口连接listeners=PLAINTEXT://0.0.0.0:9092# 外部代理地址(服务器物理机对外ip)advertised.listeners=PLAINTEXT://10.223.117.77:9092#处理网络请求的线程数量num.network.threads=3#用来处理磁盘 IO 的现成数量num.io.threads=8#发送套接字的缓冲区大小socket.send.buffer.bytes=102400#接收套接字的缓冲区大小socket.receive.buffer.bytes=102400#请求套接字的缓冲区大小socket.request.max.bytes=104857600#kafka 运行日志存放的路径log.dirs=/usr/local/kafka/logs#topic 在当前 broker 上的分区个数num.partitions=1#用来恢复和清理 data 下数据的线程数量num.recovery.threads.per.data.dir=1#segment 文件保留的最长时间，超时将被删除log.retention.hours=168#配置连接 Zookeeper 集群地址zookeeper.connect=127.0.0.1:2181#zookeeper.connect=192.168.1.10:2181,192.168.1.11:2181,192.168.1.13:2181 ¶三、常用命令 123456789101112131415161718192021222324252627cd /opt/kafka/kafka_2.11-0.11.0.0#以守护进程启动bin/kafka-server-start.sh -daemon config/server.properties#关闭bin/kafka-server-stop.sh config/server.properties# 查看当前服务器中的所有 topicbin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --list# 创建 topic（topic里有分区，有主题）# --topic:主题的名字# --zookeeper: 注册中心的地址# --replication-factor:副本数# --partitions:分区数bin/kafka-topics.sh --zookeeper 127.0.0.1:2181 --create --topic appServerLoginForced --replication-factor 1 --partitions 1#删除topicbin/kafka-topics.sh --delete --zookeeper 127.0.0.1:2181 --topic appServerLoginForced#测试bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic appServerLoginForced --from-beginningbin/kafka-console-producer.sh --broker-list localhost:9092 --topic appServerLoginForced]]></content>
+      <categories>
+        <category>devops</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>kafka</tag>
       </tags>
   </entry>
   <entry>
@@ -618,8 +618,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>git</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -654,12 +654,12 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>ssl</tag>
-        <tag>http</tag>
-        <tag>https</tag>
         <tag>apache</tag>
         <tag>certbot</tag>
         <tag>Let&#39;s Encrypt</tag>
+        <tag>ssl</tag>
+        <tag>http</tag>
+        <tag>https</tag>
       </tags>
   </entry>
   <entry>
@@ -692,8 +692,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
         <tag>next</tag>
         <tag>coding</tag>
       </tags>
@@ -706,10 +706,10 @@
         <category>blog</category>
       </categories>
       <tags>
+        <tag>apache</tag>
         <tag>ssl</tag>
         <tag>http</tag>
         <tag>https</tag>
-        <tag>apache</tag>
       </tags>
   </entry>
   <entry>
@@ -725,6 +725,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[linux代理客户端]]></title>
+    <url>%2Flinux%2Flinux_proxy.html</url>
+    <content type="text"><![CDATA[一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那就是运维人员也会有使用到的可能性，比如希望快速通过wget下载墙外的文件资源等等。 一、SSR ¶1、gui客户端代理 ¶1.1 shadowsocks-qt5 以pc端的ubuntu18.04操作系统为例： （1）添加ppa源 1$ sudo add-apt-repository ppa:hzwhuang/ss-qt5 （2）修改ppa，改成如下 1http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main （3）更新软件源 1$ sudo apt-get update （4）安装 1$ sudo apt-get install shadowsocks-qt5 （5）其他问题 安装过程遇到 libappindicator1 依赖问题（dependency problems），而 libappindicator1 又遇到 libindicator7依赖的解决办法。一并安装 libappindicator1 libindicator7 依赖，再重新安装 shadowsocks-qt5。 1$ sudo apt-get -f install libappindicator1 libindicator7 完成后就可以打开shadowsocks-qt5啦 ¶2、终端命令代理 以服务器中的centos7操作系统为例。 ¶2.1 安装ssr客户端 客户端可以选择原版的ssr，也可以使用二次开发的开源项目，比如下面这几个不错： shadowsocksr原版备份项目 配置较麻烦，这里不用。 ssr-helper 这个项目使用体验很棒，比如可以使用命令导入ssr链接、ssr订阅等。但我发现在Ubuntu上使用没问题，但在centos7上总是失败，所以目前先不用这个 Linux_ssr_script 这个项目功能少了一点，但是在centos7没有问题，于是就使用它。 123$ git clone http://git.mrwang.pw/Reed/Linux_ssr_script.git$ cd Linux_ssr_script &amp;&amp; chmod +x ./ssr$ ./ssr install ¶2.2 配置节点 1$ ./ssr config 123456789101112131415161718192021222324&#123; "server": "xxxx.xyz", "server_port": 999, "password": "xxxx", "method": "aes-256-ctr", "protocol": "auth_aes128_md5", "protocol_param": "11215:rZg30E", "obfs": "tls1.2_ticket_auth", "obfs_param": "e082711215.microsoft.com", "server_ipv6": "::", "local_address": "127.0.0.1", "local_port": 1080, "speed_limit_per_con": 0, "speed_limit_per_user": 0, "additional_ports" : &#123;&#125;, "additional_ports_only" : false, "timeout": 120, "udp_timeout": 60, "dns_ipv6": false, "connect_verbose_info": 0, "redirect": "", "fast_open": false&#125; 根据情况配置ssr节点 一般情况：server（服务端ip）、server_port（服务端端口）、password（节点密码）、method（加密方法）、protocol（协议）、protocol_param（协议参数）、obfs（混淆）、obfs_param（混淆参数）是都要填的。而其他的参数视节点情况而配置即可。 ¶2.3 启动客户端 1234567$ ./ssr start# 配置代理(指定http和https走socks5代理)export http_proxy="socks5://127.0.0.1:1080"export https_proxy="socks5://127.0.0.1:1080"#或者直接让所有代理都走socks5export ALL_PROXY=socks5://127.0.0.1:1080 ¶2.4 测试 然后通过访问cip.cc查询ip信息来查看是否成功。 123456789101112131415161718192021[root@iz2ze4uom6jrktiqj54y48z ~]# curl cip.ccIP : 39.106.195.202地址 : 中国 北京运营商 : 阿里云/电信/联通/移动/铁通/教育网数据二 : 北京市 | 阿里云数据三 : 中国北京北京 | 阿里云URL : http://www.cip.cc/39.106.195.202[root@iz2ze4uom6jrktiqj54y48z ~]# export http_proxy="socks5://127.0.0.1:1080"[root@iz2ze4uom6jrktiqj54y48z ~]# export https_proxy="socks5://127.0.0.1:1080"[root@iz2ze4uom6jrktiqj54y48z ~]# curl cip.ccIP : 47.241.70.253地址 : 中国 香港 阿里云数据二 : 美国 | 阿里云数据三 : 美国加利福尼亚圣克拉拉 | 阿里巴巴URL : http://www.cip.cc/47.241.70.253 ¶2.5 关闭客户端 1234ssr stopunset http_proxyunset https_proxyunset ALL_PROXY ¶2.6. 代理转发 Shadowsocks属于socks5协议，默认不对http协议的请求进行代理比如在以上配置完成后执行如下命令是访问不了Google的。 1$ curl www.google.com 如果需要让一些http相关的命令成功走代理，那么可以借助privoxy把HTTP协议转成socks5协议即可。 ¶2.6.1 privoxy代理转发 ¶2.6.1.1 安装配置privoxy （1）安装配置 12$ sudo yum install privoxy -y$ sudo vi /etc/privoxy/config 12345#(1)找到listen-address确保有这行代码 listen-address 127.0.0.1:8118#(2)找到forward-socks5确保有下面这行代码并且打开注释(没有自己加),其中/代表匹配全部 URL，即全局代理forward-socks5 / 127.0.0.1:1080 . 12#如果需要自动代理，可以把/改为如下类似的匹配规则即可#forward-socks5 .google.com 127.0.0.1:1080 . （2）启动并查看privoxy运行状态 123456#启动$ systemctl start privoxy#开机启动$ systemctl enable privoxy#查看状态$ sudo systemctl status privoxy （3）配置环境变量让http、https和ftp协议转发给privoxy处理 12345# 全局环境变量/etc/profile# 用户环境变量~/.bash_profile或者~/.bashrc# ======================# 选择以上一个环境变量配置文件进行编辑（比如选择~/.bashrc）$ vi ~/.bashrc 在末尾处添加以下环境变量 1234proxy="http://127.0.0.1:8118"export https_proxy=$proxyexport http_proxy=$proxyexport ftp_proxy=$proxy 然后加载环境变量 1$ source ~/.bashrc （4）测试访问外网 1234# 访问需要代理才能访问的google$ curl www.google.com# 访问搜狐的这个接口能够返回你的IP地址$ curl "http://pv.sohu.com/cityjson?ie=utf-8" ¶2.6.1.2 privoxy使用pac模式代理 经过以上测试可以发现能够代理成功了。但发现目前在终端任何HTTP连接全都走代理了，这不符合我们的预期，我们希望的让代理走pac模式（即需要的连接才代理，不需要的就不用代理，另外如果代理不可用了也不会影响原来的访问）。要配置Privoxy的pac模式，首先需要一个符合Privoxy的pac规则的文件，可以使用GFWList2Privoxy来生成。 （1）安装 GFWList2Privoxy 1$ pip install --user gfwlist2privoxy （2）获取gfwlist文件，生成actionsfile 1234$ cd /tmp$ wget https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt$ ~/.local/bin/gfwlist2privoxy -i gfwlist.txt -f gfwlist.action -p 127.0.0.1:1080 -t socks5$ sudo cp gfwlist.action /etc/privoxy/ 其中gfwlist.action就是privoxy的pac文件，一般里面包含的所有域名都需要代理才能访问的，如果以后某个pac文件之外的网站也想走代理的话，那么仅需要把域名添加到pac文件里面就可以了，比如添加wp.com到pac里面,那么可执行下面的命令进行添加： echo '.wp.com' &gt;&gt; /etc/privoxy/gfwlist.action （3）配置privoxy 1$ sudo vim /etc/privoxy/config 1234#注释掉这行，防止pac失效，而全部走代理了#forward-socks5 / 127.0.0.1:1080 .#激活pac文件actionsfile gfwlist.action 重启Privoxy 1$ sudo service privoxy restart （4）测试代理是否走了pac模式 1234#访问google发现没问题$ curl www.google.com#访问请求ip信息，返回的是客户端的IP而不是代理服务器的ip，说明成功走了pac模式$ curl "http://pv.sohu.com/cityjson?ie=utf-8" 由于开机自启动privoxy，并且环境变量中指定请求转发给privoxy以pac模式处理，所以后续只需要维护ssr客户端即可。需要代理就开启ssr客户端，不需要不开启即可。 ¶2.6.2 proxychains4代理转发 经过上面的实战可以发现privoxy虽然可以实现代理转发的作用，但它侵入性比较大。为了“轻量”，我们可以选择使用ProxyChains来完成代理转发的目的，它可以让用户决定命令是否走代理，比如需要走代理，那么就在命令的最前面加上proxychains4，如果不需要不加就行，如此它的侵入性就降到了很低的level了。 ➡️ 在使用前先确保开启ssr客户端。 （1）安装 proxychains-ng 12345$ git clone https://github.com/rofl0r/proxychains-ng.git$ cd proxychains-ng/$ ./configure --prefix=/usr --sysconfdir=/etc$ make &amp;&amp; make install$ make install-config (2) 编辑proxychains 配置文件 1$ vim /etc/proxychains.conf 12345678[ProxyList]# add proxy here ...# meanwile# defaults set to "tor"#注释掉默认的这个配置#socks4 127.0.0.1 9050#添加下面这个配置socks5 127.0.0.1 1080 （3）对于需要代理转发的命令，我们只需要在该命令前加上proxychains4即可，如下： 12345$ proxychains4 wget https://github.com/seata/seata/releases/download/v1.2.0/seata-server-1.2.0.tar.gz$ proxychains4 curl www.google.com$ proxychains4 curl "http://pv.sohu.com/cityjson?ie=utf-8" 📚 参考： https://huangweitong.com/229.html https://juejin.im/post/5c91ff5ee51d4534446edb9a 二、V2ray 123456789101112131415161718192021#下载wget https://github.com/v2ray/v2ray-core/releases/download/v4.28.2/v2ray-linux-64.zip#解压安装unzip v2ray-linux-64.zip -d v2raycd v2ray#备份默认配置，然后可以从windows的v2rayN中导出客户端配置并命名为config.json，上传覆盖这里的config.json文件即可cp config.json config-back.json#测试配置是否正确./v2ray -test -config config.json#后台运行nohup ./v2ray -config config.json &gt; /dev/null 2&gt;&amp;1 &amp;#非后台启动#./v2ray -config config.json#测试curl -L https://www.google.com --socks5 127.0.0.1:10808#关闭后台运行的v2rayps aux|grep v2ray|grep -v grep | awk '&#123;print $2&#125;'|xargs kill -9 三、Clash ¶1、安装配置 1234git clone https://github.com/wanhebin/clash-for-linux.gitcd clash-for-linux#修改变量URL的值（clash订阅地址）vim start.sh ¶2、启动 1234./start.shexport http_proxy=http://127.0.0.1:7890export https_proxy=http://127.0.0.1:7890export no_proxy=127.0.0.1,localhost Clash Web管理页面：http://IP:9090/ui ¶3、关闭 1234./shutdown.shunset http_proxyunset https_proxyunset no_proxy 四、相关代理操作命令 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849##一、终端请求设置代理$ export http_proxy="socks5://127.0.0.1:1080"$ export https_proxy="socks5://127.0.0.1:1080"$ export ALL_PROXY="socks5://127.0.0.1:1080"$ export no_proxy="127.0.0.1,localhost"#取消$ unset http_proxy$ unset https_proxy$ unset ALL_PROXY$ unset no_proxy##二、git设置代理#设置代理$ git config --global http.proxy 'socks5://127.0.0.1:1080' $ git config --global https.proxy 'socks5://127.0.0.1:1080'#一般来说设置前两个就行了$ git config --global https.proxy http://127.0.0.1:1080$ git config --global https.proxy https://127.0.0.1:1080#查看代理$ git config --global --get http.proxy$ git config --global --get https.proxy#查看全局配置$ git config -l --global#取消$ git config --global --unset http.proxy$ git config --global --unset https.proxy##三、npm和yarn设置代理#设置npm代理$ npm config set proxy=http://127.0.0.1:1080$ npm config set https-proxy http://127.0.0.1:1080#删除npm代理$ npm config delete proxy$ npm config delete https-proxy#设置yarn代理$ yarn config set proxy http://127.0.0.1:1080$ yarn config set https-proxy http://127.0.0.1:1080#删除yarn代理$ yarn config delete proxy$ yarn config delete https-proxy#curl添加代理curl -L https://xxxxxx.png --socks5 127.0.0.1:1080 -O xxxxxx.png#wget添加代理wget -e "https_proxy=http://127.0.0.1:1080" https://xxxxxx.png]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu卸载libreoffice套件，安装wps]]></title>
     <url>%2Flinux%2Fubuntu_wps.html</url>
     <content type="text"><![CDATA[¶0. 卸载libreoffice套件 123# sudo apt-get purge libreoffice* # 卸载并且删除相关配置# sudo apt-get clean # 删除安装了的软件包的安装包（如果你确定这些安装包不会再用）。 删除包缓存中的所有包。# sudo apt-get autoremove # 删除为了满足其他软件包的依赖而安装的，系统会自动卸载这些不再需要的软件包 ¶1.下载wps 1wget http://kdl.cc.ksosoft.com/wps-community/download/6634/wps-office_10.1.0.6634_amd64.deb ¶2.安装wps 1sudo dpkg -i wps-office_10.1.0.6634_amd64.deb ¶3.其他问题 启动WPS for Linux后，可能会出现提示&quot;系统缺失字体&quot; 。 出现提示的原因是因为WPS for Linux没有自带windows的字体，只要在Linux系统中加载字体即可。 具体操作步骤如下： ¶（1）下载缺失的字体文件 复制字体文件到Linux系统中的/usr/share/fonts文件夹中。 国外下载地址：https://www.dropbox.com/s/lfy4hvq95ilwyw5/wps_symbol_fonts.zip 国内下载地址：https://pan.baidu.com/s/1eS6xIzo （上述数据来源网络，侵删） 下载完成后，解压并进入目录中，继续执行： 1# sudo cp ./* /usr/share/fonts ¶（2）执行以下命令,生成字体的索引信息 12# sudo mkfontscale# sudo mkfontdir ¶（3）运行fc-cache命令更新字体缓存 1# sudo fc-cache ¶（4）重启wps即可，字体缺失的提示不再出现。]]></content>
@@ -735,18 +746,6 @@
         <tag>ubuntu</tag>
         <tag>wps</tag>
         <tag>libreoffice</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[linux关于ssr客户端的使用]]></title>
-    <url>%2Flinux%2Flinux_proxy.html</url>
-    <content type="text"><![CDATA[一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那就是运维人员也会有使用到的可能性，比如希望快速通过wget下载墙外的文件资源等等。 ¶一、gui客户端代理 ¶1. shadowsocks-qt5 以pc端的ubuntu18.04操作系统为例： （1）添加ppa源 1$ sudo add-apt-repository ppa:hzwhuang/ss-qt5 （2）修改ppa，改成如下 1http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main （3）更新软件源 1$ sudo apt-get update （4）安装 1$ sudo apt-get install shadowsocks-qt5 （5）其他问题 安装过程遇到 libappindicator1 依赖问题（dependency problems），而 libappindicator1 又遇到 libindicator7依赖的解决办法。一并安装 libappindicator1 libindicator7 依赖，再重新安装 shadowsocks-qt5。 1$ sudo apt-get -f install libappindicator1 libindicator7 完成后就可以打开shadowsocks-qt5啦 ¶二、终端命令代理 以服务器中的centos7操作系统为例。 ¶1. 安装ssr客户端 客户端可以选择原版的ssr，也可以使用二次开发的开源项目，比如下面这几个不错： shadowsocksr原版备份项目 配置较麻烦，这里不用。 ssr-helper 这个项目使用体验很棒，比如可以使用命令导入ssr链接、ssr订阅等。但我发现在Ubuntu上使用没问题，但在centos7上总是失败，所以目前先不用这个 Linux_ssr_script 这个项目功能少了一点，但是在centos7没有问题，于是就使用它。 123$ git clone http://git.mrwang.pw/Reed/Linux_ssr_script.git$ cd Linux_ssr_script &amp;&amp; chmod +x ./ssr$ ./ssr install ¶2. 配置节点 1$ ./ssr config 12345678910111213141516171819202122232425&#123; "server": "xxxx.xyz", "server_ipv6": "::", "server_port": 999, "local_address": "127.0.0.1", "local_port": 1080, "password": "xxxx", "method": "aes-256-ctr", "protocol": "auth_aes128_md5", "protocol_param": "11215:rZg30E", "obfs": "tls1.2_ticket_auth", "obfs_param": "e082711215.microsoft.com", "speed_limit_per_con": 0, "speed_limit_per_user": 0, "additional_ports" : &#123;&#125;, // only works under multi-user mode "additional_ports_only" : false, // only works under multi-user mode "timeout": 120, "udp_timeout": 60, "dns_ipv6": false, "connect_verbose_info": 0, "redirect": "", "fast_open": false&#125; 根据情况配置ssr节点 一般情况：server（服务端ip）、server_port（服务端端口）、password（节点密码）、method、obfs是都要填的。而其他的参数视节点情况而配置即可。 ¶3. 启动客户端 1$ ./ssr start ¶4. 配置请求走代理 指定http和https走socks5代理 12$ export http_proxy="socks5://127.0.0.1:1080"$ export https_proxy="socks5://127.0.0.1:1080" 或者直接让所有代理都走socks5 1$ export ALL_PROXY=socks5://127.0.0.1:1080 ¶5. 测试配置情况 然后通过访问cip.cc查询ip信息来查看是否成功。 123456789101112131415161718192021[root@iz2ze4uom6jrktiqj54y48z ~]# curl cip.ccIP : 39.106.195.202地址 : 中国 北京运营商 : 阿里云/电信/联通/移动/铁通/教育网数据二 : 北京市 | 阿里云数据三 : 中国北京北京 | 阿里云URL : http://www.cip.cc/39.106.195.202[root@iz2ze4uom6jrktiqj54y48z ~]# export http_proxy="socks5://127.0.0.1:1080"[root@iz2ze4uom6jrktiqj54y48z ~]# export https_proxy="socks5://127.0.0.1:1080"[root@iz2ze4uom6jrktiqj54y48z ~]# curl cip.ccIP : 47.241.70.253地址 : 中国 香港 阿里云数据二 : 美国 | 阿里云数据三 : 美国加利福尼亚圣克拉拉 | 阿里巴巴URL : http://www.cip.cc/47.241.70.253 ¶6. 代理转发 Shadowsocks属于socks5协议，默认不对http协议的请求进行代理比如在以上配置完成后执行如下命令是访问不了Google的。 1$ curl www.google.com 如果需要让一些http相关的命令成功走代理，那么可以借助privoxy把socks5转为HTTP协议即可。 （1）配置环境变量让http、https和ftp协议转发给privoxy处理 12345# 全局环境变量/etc/profile# 用户环境变量~/.bash_profile或者~/.bashrc# ======================# 选择以上一个环境变量配置文件进行编辑（比如选择~/.bashrc）$ vi ~/.bashrc 在末尾处添加以下环境变量 1234proxy="http://127.0.0.1:8118"export https_proxy=$proxyexport http_proxy=$proxyexport ftp_proxy=$proxy 然后加载环境变量 1$ source ~/.bashrc （2）安装并配置privoxy 12$ sudo yum install privoxy -y$ sudo vi /etc/privoxy/config 12345#(1)找到listen-address确保有这行代码 listen-address 127.0.0.1:8118#(2)找到forward-socks5确保有下面这行代码并且打开注释(没有自己加),其中/代表匹配全部 URL，即全局代理forward-socks5 / 127.0.0.1:1080 . 12#如果需要自动代理，可以把/改为如下类似的匹配规则即可#forward-socks5 .google.com 127.0.0.1:1080 . （3）启动并查看privoxy运行状态 123456#启动$ systemctl start privoxy#开机启动$ systemctl enable privoxy#查看状态$ sudo systemctl status privoxy （4）测试访问外网 1234# 访问需要代理才能访问的google$ curl www.google.com# 访问搜狐的这个接口能够返回你的IP地址$ curl "http://pv.sohu.com/cityjson?ie=utf-8" ¶7. pac模式代理 经过以上测试可以发现能够代理成功了。但发现目前在终端任何HTTP连接全都走代理了，这不符合我们的预期，我们希望的让代理走pac模式（即需要的连接才代理，不需要的就不用代理，另外如果代理不可用了也不会影响原来的访问）。要配置Privoxy的pac模式，首先需要一个符合Privoxy的pac规则的文件，可以使用GFWList2Privoxy来生成。 （1）安装 GFWList2Privoxy 1$ pip install --user gfwlist2privoxy （2）获取gfwlist文件，生成actionsfile 1234$ cd /tmp$ wget https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt$ ~/.local/bin/gfwlist2privoxy -i gfwlist.txt -f gfwlist.action -p 127.0.0.1:1080 -t socks5$ sudo cp gfwlist.action /etc/privoxy/ 其中gfwlist.action就是privoxy的pac文件，一般里面包含的所有域名都需要代理才能访问的，如果以后某个pac文件之外的网站也想走代理的话，那么仅需要把域名添加到pac文件里面就可以了，比如添加wp.com到pac里面,那么可执行下面的命令进行添加： echo '.wp.com' &gt;&gt; /etc/privoxy/gfwlist.action （3）配置privoxy 1$ sudo vim /etc/privoxy/config 1234#注释掉这行，防止pac失效，而全部走代理了#forward-socks5 / 127.0.0.1:1080 .#激活pac文件actionsfile gfwlist.action 重启Privoxy 1$ sudo service privoxy restart （4）测试代理是否走了pac模式 1234#访问google发现没问题$ curl www.google.com#访问请求ip信息，返回的是客户端的IP而不是代理服务器的ip，说明成功走了pac模式$ curl "http://pv.sohu.com/cityjson?ie=utf-8" 由于开机自启动privoxy，并且环境变量中指定请求转发给privoxy以pac模式处理，所以后续只需要维护ssr客户端即可。需要代理就开启ssr客户端，不需要不开启即可。 ¶8. 轻量级代理转发 经过上面的实战可以发现privoxy虽然可以实现代理转发的作用，但它侵入性比较大。为了“轻量”，我们可以选择使用ProxyChains来完成代理转发的目的，它可以让用户决定命令是否走代理，比如需要走代理，那么就在命令的最前面加上proxychains4，如果不需要不加就行，如此它的侵入性就降到了很低的level了。 ➡️ 在使用前先确保开启ssr客户端。 （1）安装 proxychains-ng 12345$ git clone https://github.com/rofl0r/proxychains-ng.git$ cd proxychains-ng/$ ./configure --prefix=/usr --sysconfdir=/etc$ make &amp;&amp; make install$ make install-config (2) 编辑proxychains 配置文件 1$ vim /etc/proxychains.conf 12345678[ProxyList]# add proxy here ...# meanwile# defaults set to "tor"#注释掉默认的这个配置#socks4 127.0.0.1 9050#添加下面这个配置socks5 127.0.0.1 1080 （3）对于需要代理转发的命令，我们只需要在该命令前加上proxychains4即可，如下： 12345$ proxychains4 wget https://github.com/seata/seata/releases/download/v1.2.0/seata-server-1.2.0.tar.gz$ proxychains4 curl www.google.com$ proxychains4 curl "http://pv.sohu.com/cityjson?ie=utf-8" ¶三、更多代理操作命令 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849##一、终端请求设置代理$ export http_proxy="socks5://127.0.0.1:1080"$ export https_proxy="socks5://127.0.0.1:1080"$ export ALL_PROXY="socks5://127.0.0.1:1080"$ export no_proxy="127.0.0.1,localhost"#取消$ unset http_proxy$ unset https_proxy$ unset ALL_PROXY$ unset no_proxy##二、git设置代理#设置代理$ git config --global http.proxy 'socks5://127.0.0.1:1080' $ git config --global https.proxy 'socks5://127.0.0.1:1080'#一般来说设置前两个就行了$ git config --global https.proxy http://127.0.0.1:1080$ git config --global https.proxy https://127.0.0.1:1080#查看代理$ git config --global --get http.proxy$ git config --global --get https.proxy#查看全局配置$ git config -l --global#取消$ git config --global --unset http.proxy$ git config --global --unset https.proxy##三、npm和yarn设置代理#设置npm代理$ npm config set proxy=http://127.0.0.1:1080$ npm config set https-proxy http://127.0.0.1:1080#删除npm代理$ npm config delete proxy$ npm config delete https-proxy#设置yarn代理$ yarn config set proxy http://127.0.0.1:1080$ yarn config set https-proxy http://127.0.0.1:1080#删除yarn代理$ yarn config delete proxy$ yarn config delete https-proxy#curl添加代理curl -L https://xxxxxx.png --socks5 127.0.0.1:1080 -O xxxxxx.png#wget添加代理wget -e "https_proxy=http://127.0.0.1:1080" https://xxxxxx.png 📚 参考： https://huangweitong.com/229.html https://juejin.im/post/5c91ff5ee51d4534446edb9a]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>ssr</tag>
       </tags>
   </entry>
   <entry>
@@ -825,8 +824,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>typecho</tag>
         <tag>管理员密码</tag>
+        <tag>typecho</tag>
         <tag>wordpress</tag>
       </tags>
   </entry>
@@ -934,8 +933,8 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>lamp</tag>
         <tag>centos</tag>
+        <tag>lamp</tag>
       </tags>
   </entry>
   <entry>
@@ -946,8 +945,8 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>lamp</tag>
         <tag>centos</tag>
+        <tag>lamp</tag>
       </tags>
   </entry>
   <entry>
@@ -958,8 +957,8 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>apache</tag>
         <tag>单ip多域名</tag>
+        <tag>apache</tag>
         <tag>cento</tag>
       </tags>
   </entry>
