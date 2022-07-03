@@ -143,18 +143,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[node版本管理器nvm]]></title>
-    <url>%2Ftools%2Fnvm.html</url>
-    <content type="text"><![CDATA[¶1. 背景 可能由于多个开发项目需要的nodejs版本不一样，以至于需要频繁的切换版本，为了方便快捷的切换版本，使用nvm进行版本管理尤为重要。下面就来介绍Windows10安装和配置nvm的全过程。 ¶2. 下载 官方下载地址：nvm download nvm-noinstall.zip： 绿色免安装版本，但是使用之前需要配置 nvm-setup.zip：安装包，下载之后点击安装，无需配置就可以使用，方便。 Source code(zip)：zip压缩的源码 Sourc code(tar.gz)：tar.gz的源码，一般用于*nix系统 我在这里下载的版本是1.1.7，安装包格式是nvm-noinstall.zip ¶3. 安装 （1）安装前把原有node卸载干净。 （2）还要删除掉默认的依赖包目录和缓存目录。 C:\Users\用户名\AppData\Roaming\npm C:\Users\用户名\AppData\Roaming\npm-cache （3）此外原来的node环境变量也要删除掉。 解压zip包到D:\Development\node\nvm-noinstall目录里。见到如图提示输入压缩包解压的绝对路径。注意路径不支持空格，不能设为类似C:\Program Files这种，否则node可能无法使用。 在D:\Development\node\nvm-noinstall目录里创建文件settings.txt。其内容为如下： 123456root: D:\Development\node\nvm-noinstallpath: D:\Development\node\nodejsarch: 64proxy: nonenode_mirror: http://npm.taobao.org/mirrors/node/npm_mirror: https://npm.taobao.org/mirrors/npm/ root：表示安装node是存储的路径。默认就是nvm的安装路径。 path：表示当前使用的node版本目录，会根据nvm版本选择的变化，path的内容也会变化。事实path就是一个快捷链接，指向了root目录中的指定版本。 arch：系统架构版本设置为64位。 proxy：不使用代理。 node_mirror和npm_mirror所有版本都使用淘宝镜像。 ¶4. 配置环境变量 配置一下环境变量到系统中。 NVM_HOME：D:\Development\node\nvm-noinstall NVM_SYMLINK：D:\Development\node\nodejs PATH：%NVM_HOME% 和 %NVM_SYMLINK% (在PATH的最后添加) ¶5. 使用 12nvm install 12.14.1nvm use 12.14.1 #这一步一定要管理员身份执行，要不然报错：exit status 1: “乱码” ¶6. npm全局依赖目录配置 123#配置用npm下载全局包时全局依赖包安装和缓存的路径npm config set prefix "D:\Development\node\node_global"npm config set cache "D:\Development\node\node_cache" 添加D:\Development\node\node_global到PATH系统环境变量中。如此设置后所有版本的nodejs就都共用相同的全局依赖包安装和缓存的路径了。 12#查看是否修改完成npm config get ¶7. nvm常用命令 123456789101112131415161718192021222324252627282930#显示可下载版本的部分列表nvm list available#列出所有安装的版本nvm ls#安装指定版本nvm install &lt;version&gt;#安装最新版本nvm install latest#卸载删除已安装的指定版本，语法与install类似nvm uninstall &lt;version&gt;#切换使用指定的版本nodenvm use &lt;version&gt;#切换制定的node版本和位数nvm use [version] [arch]#显示当前nvm的版本nvm version#给不同的版本号添加别名nvm alias &lt;name&gt; &lt;version&gt;#删除已定义的别名nvm unalias &lt;name&gt;#在当前版本node环境下，重新全局安装指定版本号的npm包nvm reinstall-packages &lt;version&gt;#显示node是运行在32位还是64位模式。指定32或64来覆盖默认体系结构nvm arch [32|64]#启用node.js版本管理。nvm on#禁用node.js版本管理(不卸载任何东西)nvm off#设置和查看root路径nvm root [path]]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>nvm</tag>
-        <tag>nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[一个python编写的百度网盘命令行客户端]]></title>
     <url>%2Ftools%2Fbypy.html</url>
     <content type="text"><![CDATA[该命令主要是在Linux下使用，这样很大的一个好处是可以利用到百度云盘的大容量存储空间；你可以在任何服务器上，利用自动化脚本实现一些数据文件、日志文件等等备份操作，同时也提供丰富的文件列表、上传、下载、对比、同步以及批量操作等。 ¶1. 安装 1sudo pip install bypy ¶2. 百度授权 首次安装之后，需要进行授权，只需要运行任何一个命令都可以，例如bypy info，然后根据提示打开网页登录你的百度网盘账号并取得授权码。 12345678910111213141516qcmoke@DESKTOP-LUQTQE6:~$ bypy infoPlease visit:#打开这个如下的网址https://openapi.baidu.com/oauth/2.0/authorize?scope=basic+netdisk&amp;redirect_uri=oob&amp;response_type=code&amp;client_id=q8WE4Ep*******NBnAnd authorize this appPaste the Authorization Code here within 10 minutes.Press [Enter] when you are done#输入如下授权码并回车87559e********8d6ed22Authorizing, please be patient, it may take upto 300 seconds...Authorizing/refreshing with the OpenShift server ...OpenShift server failed, authorizing/refreshing with the Heroku server ...Heroku server failed, authorizing/refreshing with the Heroku1 server ...Successfully authorizedQuota: 2.020TBUsed: 1.124TB 💁‍♂如果需要注销授权，可以删除掉目录~/ .bypy/即可。 ¶3. 基本使用 12345678910111213141516171819[root@izwz93gbbvcxl07uju1onwz ~]# mkdir baiduyun[root@izwz93gbbvcxl07uju1onwz ~]# cd baiduyun/[root@izwz93gbbvcxl07uju1onwz baiduyun]# touch hello.txt#上传当前目录的hello.txt到百度网盘里"我的应用数据(apps)/bypy/file/"下[root@izwz93gbbvcxl07uju1onwz baiduyun]# bypy upload ./hello.txt /file/#查看百度网盘里"我的应用数据(apps)/bypy/"下的文件或者目录root@DESKTOP-LUQTQE6:~/baiduPan# bypy ls/apps/bypy ($t $f $s $m $d):D file 0 2020-04-20, 16:10:53#查看百度网盘里"我的应用数据(apps)/bypy/file/"下的文件或者目录root@DESKTOP-LUQTQE6:~/baiduPan# bypy ls /file/apps/bypy/file ($t $f $s $m $d):F hello.txt 0 2020-04-20, 16:10:53 8e23f7635tb64136eddb0719602bc477#将百度网盘里"我的应用数据(apps)/bypy/file/hello.txt"下载到用户主目录里root@DESKTOP-LUQTQE6:~/baiduPan# bypy download /file/hello.txt ~[====================] 100% (0.0B/0.0B) root@DESKTOP-LUQTQE6:~/baiduPan#root@DESKTOP-LUQTQE6:~/baiduPan# ls ~baiduPan hello.txt 💁‍♂ 提示：在云盘里面出现一个我的应用数据这里面有一个bypy的文件夹.这个就是你的工具的根目录,你要上传下载的文件都在这里面而不是其他的地方。 📑 其他命令： 更详细的了解某一个命令：bypy help 显示在云盘（程序的）根目录下文件列表：bypy list 把当前目录同步到云盘：bypy syncup 或者bypy upload 把云盘内容同步到本地来：bypy syncdown --downloader aria2或者bypy downdir / --downloader aria2这个命令不好用,要在后面加 –downloader aria2,要不没有速度 比较本地当前目录和云盘（程序的）根目录（个人认为非常有用）：bypy compare 下载文件 bypy downfile 下载文件名 上传文件 bypy upload 文件名 在远端创建文件夹tmp bypy mkdir tmp/bypy 运行时添加\ -v\ 参数，会显示进度详情。 运行时添加\ -d\ ，会显示一些调试信息。 运行时添加\ -ddd\ ，还会会显示HTTP通讯信息（\ 警告：非常多\ ） bypy upload localfile cloudfile bypy upload ./123.txt /cloud.将本地123.txt文件上传到云盘我的应用程序(apps) /bypy/cloud 文件夹内.也可上传整个文件夹，命令示例如下：bypy upload /123 /cloud.将本地123文件夹内所有文件上传到云盘 apps/bypy/cloud 文件夹内. ¶4. 常见问题 123456789101112[root@izwz93gbbvcxl07uju1onwz ~]# bypy info/usr/lib/python2.7/site-packages/requests/__init__.py:91: RequestsDependencyWarning: urllib3 (1.25.9) or chardet (2.2.1) doesn't match a supported version! RequestsDependencyWarning)Quota: 2.020TBUsed: 1.117TB#解决方案，制裁urllib3 和chardetsudo pip uninstall urllib3sudo pip uninstall chardet#然后，再卸载从新安装requestssudo pip uninstall requestssudo pip install requests]]></content>
@@ -164,6 +152,18 @@
       <tags>
         <tag>bypy</tag>
         <tag>cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[node版本管理器nvm]]></title>
+    <url>%2Ftools%2Fnvm.html</url>
+    <content type="text"><![CDATA[¶1. 背景 可能由于多个开发项目需要的nodejs版本不一样，以至于需要频繁的切换版本，为了方便快捷的切换版本，使用nvm进行版本管理尤为重要。下面就来介绍Windows10安装和配置nvm的全过程。 ¶2. 下载 官方下载地址：nvm download nvm-noinstall.zip： 绿色免安装版本，但是使用之前需要配置 nvm-setup.zip：安装包，下载之后点击安装，无需配置就可以使用，方便。 Source code(zip)：zip压缩的源码 Sourc code(tar.gz)：tar.gz的源码，一般用于*nix系统 我在这里下载的版本是1.1.7，安装包格式是nvm-noinstall.zip ¶3. 安装 （1）安装前把原有node卸载干净。 （2）还要删除掉默认的依赖包目录和缓存目录。 C:\Users\用户名\AppData\Roaming\npm C:\Users\用户名\AppData\Roaming\npm-cache （3）此外原来的node环境变量也要删除掉。 解压zip包到D:\Development\node\nvm-noinstall目录里。见到如图提示输入压缩包解压的绝对路径。注意路径不支持空格，不能设为类似C:\Program Files这种，否则node可能无法使用。 在D:\Development\node\nvm-noinstall目录里创建文件settings.txt。其内容为如下： 123456root: D:\Development\node\nvm-noinstallpath: D:\Development\node\nodejsarch: 64proxy: nonenode_mirror: http://npm.taobao.org/mirrors/node/npm_mirror: https://npm.taobao.org/mirrors/npm/ root：表示安装node是存储的路径。默认就是nvm的安装路径。 path：表示当前使用的node版本目录，会根据nvm版本选择的变化，path的内容也会变化。事实path就是一个快捷链接，指向了root目录中的指定版本。 arch：系统架构版本设置为64位。 proxy：不使用代理。 node_mirror和npm_mirror所有版本都使用淘宝镜像。 ¶4. 配置环境变量 配置一下环境变量到系统中。 NVM_HOME：D:\Development\node\nvm-noinstall NVM_SYMLINK：D:\Development\node\nodejs PATH：%NVM_HOME% 和 %NVM_SYMLINK% (在PATH的最后添加) ¶5. 使用 12nvm install 12.14.1nvm use 12.14.1 #这一步一定要管理员身份执行，要不然报错：exit status 1: “乱码” ¶6. npm全局依赖目录配置 123#配置用npm下载全局包时全局依赖包安装和缓存的路径npm config set prefix "D:\Development\node\node_global"npm config set cache "D:\Development\node\node_cache" 添加D:\Development\node\node_global到PATH系统环境变量中。如此设置后所有版本的nodejs就都共用相同的全局依赖包安装和缓存的路径了。 12#查看是否修改完成npm config get ¶7. nvm常用命令 123456789101112131415161718192021222324252627282930#显示可下载版本的部分列表nvm list available#列出所有安装的版本nvm ls#安装指定版本nvm install &lt;version&gt;#安装最新版本nvm install latest#卸载删除已安装的指定版本，语法与install类似nvm uninstall &lt;version&gt;#切换使用指定的版本nodenvm use &lt;version&gt;#切换制定的node版本和位数nvm use [version] [arch]#显示当前nvm的版本nvm version#给不同的版本号添加别名nvm alias &lt;name&gt; &lt;version&gt;#删除已定义的别名nvm unalias &lt;name&gt;#在当前版本node环境下，重新全局安装指定版本号的npm包nvm reinstall-packages &lt;version&gt;#显示node是运行在32位还是64位模式。指定32或64来覆盖默认体系结构nvm arch [32|64]#启用node.js版本管理。nvm on#禁用node.js版本管理(不卸载任何东西)nvm off#设置和查看root路径nvm root [path]]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>nvm</tag>
+        <tag>nodejs</tag>
       </tags>
   </entry>
   <entry>
@@ -629,8 +629,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>hexo</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>

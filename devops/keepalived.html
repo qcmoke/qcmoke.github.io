@@ -95,7 +95,7 @@
 <meta property="og:description" content="Keepalived是一个开源（遵循 GPLv2 协议）的、基于 VRRP 协议的轻量级服务高可用和负载均衡方案，提供避免服务器单点故障和请求分流的能力。它为 Nginx 扩展了高可用能力，共同组成完整的 Web 服务集群模式（高可用+负载均衡）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-07-03T19:23:42.391Z">
+<meta property="og:updated_time" content="2022-07-03T23:46:16.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="keepalived学习笔记">
 <meta name="twitter:description" content="Keepalived是一个开源（遵循 GPLv2 协议）的、基于 VRRP 协议的轻量级服务高可用和负载均衡方案，提供避免服务器单点故障和请求分流的能力。它为 Nginx 扩展了高可用能力，共同组成完整的 Web 服务集群模式（高可用+负载均衡）">
@@ -373,7 +373,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-07-04T03:23:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-07-04T07:46:16+08:00">
                 2022-07-04
               </time>
             
@@ -486,7 +486,7 @@
         <p><strong>Keepalived</strong>是一个开源（遵循 GPLv2 协议）的、基于 VRRP 协议的轻量级服务高可用和负载均衡方案，提供避免服务器单点故障和请求分流的能力。它为 Nginx 扩展了高可用能力，共同组成完整的 Web 服务集群模式（高可用+负载均衡）</p>
 <a id="more"></a>
 <p>VRRP（Virtual Route Redundancy Protocol）协议，翻译过来为虚拟路由冗余协议。VRRP协议将两台或多台路由器设备虚拟成一个设备，对外提供虚拟路由器IP,而在路由器组内部，如果实际拥有这个对外IP的路由器如果工作正常的话就是MASTER，MASTER实现针对虚拟路由器IP的各种网络功能。其他设备不拥有该虚拟IP，状态为BACKUP，除了接收MASTER的VRRP状态通告信息以外，不执行对外的网络功能。当主机失效时，BACKUP将接管原先MASTER的网络功能。Master路由和Backup路由之间会有一个心跳检测，Master会定时告知Backup自己的状态，如果在指定的时间内，Backup没有接收到这个通知内容，Backup就会替代Master成为新的Master（如果有多个BACKUP，那么会选举其中一个优先级高的作为MASTER）。Master路由有一个特权就是虚拟路由和后端服务器都是通过Master进行数据传递交互的，而备份节点则会直接丢弃这些请求和数据，不做处理，只是去监听Master的状态。</p>
-<p><img src="/devops/../images/loading-post.gif" data-original="keepalived/image-20220704010556316.png" alt="image-20220704010556316"></p>
+<p><img src="/devops/../images/loading-post.gif" data-original="keepalived/image-20220704074545925.png" alt="image-20220704074545925"></p>
 <p>如上图Keepalived实现Nginx负载均衡的原理就是在两个Nginx节点中引入虚拟IP的概念（每台Nginx都安装Keepalived并都配置同一个虚拟IP），其中一台Nginx宕机，那么虚拟Ip将会飘移到另一台Nginx上去，而客户端就是通过这个虚拟IP来访问Nginx的。</p>
 <h2 id="一-安装"><a class="header-anchor" href="#一-安装">¶</a>一、安装</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装编译依赖</span></span><br><span class="line">yum -y install gcc curl openssl-devel libnl3-devel net-snmp-devel</span><br><span class="line"><span class="meta">#</span><span class="bash">下载keepalived源码包</span></span><br><span class="line">wget https://keepalived.org/software/keepalived-2.0.20.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash">解压到指定目录</span></span><br><span class="line">mkdir /opt/keepalived</span><br><span class="line">tar -zxvf keepalived-2.0.20.tar.gz -C /opt/keepalived/</span><br><span class="line"><span class="meta">#</span><span class="bash">对keepalived进行配置，编译和安装</span></span><br><span class="line">cd /opt/keepalived/keepalived-2.0.20</span><br><span class="line">./configure --sysconf=/etc --prefix=/usr/local</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
@@ -1743,5 +1743,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
