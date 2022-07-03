@@ -95,7 +95,7 @@
 <meta property="og:description" content="Keepalived是一个开源（遵循 GPLv2 协议）的、基于 VRRP 协议的轻量级服务高可用和负载均衡方案，提供避免服务器单点故障和请求分流的能力。它为 Nginx 扩展了高可用能力，共同组成完整的 Web 服务集群模式（高可用+负载均衡）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-07-03T18:04:03.136Z">
+<meta property="og:updated_time" content="2022-07-03T19:23:42.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="keepalived学习笔记">
 <meta name="twitter:description" content="Keepalived是一个开源（遵循 GPLv2 协议）的、基于 VRRP 协议的轻量级服务高可用和负载均衡方案，提供避免服务器单点故障和请求分流的能力。它为 Nginx 扩展了高可用能力，共同组成完整的 Web 服务集群模式（高可用+负载均衡）">
@@ -357,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-04T20:19:37+08:00">
-                2020-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-04T20:19:37+08:00">
+                2022-07-04
               </time>
             
 
@@ -373,7 +373,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-07-04T02:04:03+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-07-04T03:23:42+08:00">
                 2022-07-04
               </time>
             
@@ -499,6 +499,8 @@
 </blockquote>
 <p>服务器2配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">! Configuration File for keepalived</span><br><span class="line"></span><br><span class="line">global_defs &#123;</span><br><span class="line">   notification_email &#123;</span><br><span class="line">     acassen@firewall.loc</span><br><span class="line">     failover@firewall.loc</span><br><span class="line">     sysadmin@firewall.loc</span><br><span class="line">   &#125;</span><br><span class="line">   notification_email_from Alexandre.Cassen@firewall.loc</span><br><span class="line">   smtp_server 192.168.200.1</span><br><span class="line">   smtp_connect_timeout 30</span><br><span class="line">   router_id keepalived2</span><br><span class="line">   vrrp_skip_check_adv_addr</span><br><span class="line">   #vrrp_strict</span><br><span class="line">   vrrp_garp_interval 0</span><br><span class="line">   vrrp_gna_interval 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vrrp_instance VI_1 &#123;</span><br><span class="line">    state BACKUP</span><br><span class="line">    interface ens33</span><br><span class="line">    virtual_router_id 51</span><br><span class="line">    #BACKUP节点设置比MASTER的小</span><br><span class="line">    priority 90</span><br><span class="line">    advert_int 1</span><br><span class="line">    authentication &#123;</span><br><span class="line">        auth_type PASS</span><br><span class="line">        auth_pass 1111</span><br><span class="line">    &#125;</span><br><span class="line">    virtual_ipaddress &#123;</span><br><span class="line">        192.168.60.222</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>防火墙配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-protocol=vrrp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <h2 id="三-使用"><a class="header-anchor" href="#三-使用">¶</a>三、使用</h2>
 <h3 id="1-启动"><a class="header-anchor" href="#1-启动">¶</a>1. 启动</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/sbin/keepalived</span><br></pre></td></tr></table></figure>
@@ -612,18 +614,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mobile/react-native.html" rel="prev" title="react native学习笔记">
-                <i class="fa fa-chevron-left"></i> react native学习笔记
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/front/react.html" rel="next" title="react学习笔记">
-                react学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/tools/python_versions_manage.html" rel="next" title="python版本管理工具">
+                python版本管理工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -817,6 +815,10 @@
                 
                 
                   <li class="recent_posts_li">
+                    <a href="/devops/keepalived.html" title="keepalived学习笔记" target="_blank">keepalived学习笔记</a>
+                  </li>
+                
+                  <li class="recent_posts_li">
                     <a href="/tools/python_versions_manage.html" title="python版本管理工具" target="_blank">python版本管理工具</a>
                   </li>
                 
@@ -826,10 +828,6 @@
                 
                   <li class="recent_posts_li">
                     <a href="/mobile/react-native.html" title="react native学习笔记" target="_blank">react native学习笔记</a>
-                  </li>
-                
-                  <li class="recent_posts_li">
-                    <a href="/devops/keepalived.html" title="keepalived学习笔记" target="_blank">keepalived学习笔记</a>
                   </li>
                 
                   <li class="recent_posts_li">
