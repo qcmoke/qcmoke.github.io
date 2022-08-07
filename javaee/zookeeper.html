@@ -86,21 +86,20 @@
 
 
 
-<meta name="description" content="¶一、简介 zooKeeper是一个经典的分布式数据一致性解决方案，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。 zookeeper官网：https://zookeeper.apache.org/ ¶二">
+<meta name="description" content="¶一、简介 zooKeeper是一个经典的分布式数据一致性解决方案服务，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。 zookeeper官网：https://zookeeper.apache.org/">
 <meta name="keywords" content="javaee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZooKeeper 学习笔记">
 <meta property="og:url" content="https://www.qcmoke.site/javaee/zookeeper.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="¶一、简介 zooKeeper是一个经典的分布式数据一致性解决方案，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。 zookeeper官网：https://zookeeper.apache.org/ ¶二">
+<meta property="og:description" content="¶一、简介 zooKeeper是一个经典的分布式数据一致性解决方案服务，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。 zookeeper官网：https://zookeeper.apache.org/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.760Z">
+<meta property="og:updated_time" content="2022-08-07T10:09:54.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZooKeeper 学习笔记">
-<meta name="twitter:description" content="¶一、简介 zooKeeper是一个经典的分布式数据一致性解决方案，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。 zookeeper官网：https://zookeeper.apache.org/ ¶二">
+<meta name="twitter:description" content="¶一、简介 zooKeeper是一个经典的分布式数据一致性解决方案服务，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。 zookeeper官网：https://zookeeper.apache.org/">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
@@ -375,8 +374,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2022-08-07T18:09:54+08:00">
+                2022-08-07
               </time>
             
           </span>
@@ -448,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  3.1k
                 </span>
               
 
@@ -464,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  12
                 </span>
               
             </div>
@@ -487,48 +486,14 @@
       
         <a id="more"></a>
 <h2 id="一-简介"><a class="header-anchor" href="#一-简介">¶</a>一、简介</h2>
-<p>zooKeeper是一个经典的分布式数据一致性解决方案，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。</p>
+<p>zooKeeper是一个经典的分布式数据一致性解决方案服务，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调存储服务。zooKeeper由雅虎研究院开发，是Google Chubby的开源实现，后来托管到Apache，于2010年11月正式成为Apache的顶级项目。</p>
 <p>zookeeper官网：<a href="https://zookeeper.apache.org/" target="_blank" rel="noopener">https://zookeeper.apache.org/</a></p>
 <h2 id="二-应用场景"><a class="header-anchor" href="#二-应用场景">¶</a>二、应用场景</h2>
 <p>（1）维护配置信息<br>
 （2）分布式锁服务<br>
 （3）集群管理<br>
 （4）生成分布式唯一ID</p>
-<h2 id="三-zk架构"><a class="header-anchor" href="#三-zk架构">¶</a>三、ZK架构</h2>
-<p>看看下面的图表。它描述了ZooKeeper的“客户端-服务器架构”。</p>
-<p><img src="/javaee/../images/loading-post.gif" data-original="zookeeper/201612291344222238.jpg" alt="ZooKeeper的架构"></p>
-<p>ZooKeeper架构的一部分的每个组件在下表中进行了说明。</p>
-<table>
-<thead>
-<tr>
-<th>部分</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Client（客户端）</td>
-<td>客户端，我们的分布式应用集群中的一个节点，从服务器访问信息。对于特定的时间间隔，每个客户端向服务器发送消息以使服务器知道客户端是活跃的。类似地，当客户端连接时，服务器发送确认码。如果连接的服务器没有响应，客户端会自动将消息重定向到另一个服务器。</td>
-</tr>
-<tr>
-<td>Server（服务器）</td>
-<td>服务器，我们的ZooKeeper总体中的一个节点，为客户端提供所有的服务。向客户端发送确认码以告知服务器是活跃的。</td>
-</tr>
-<tr>
-<td>Ensemble</td>
-<td>ZooKeeper服务器组。形成ensemble所需的最小节点数为3。</td>
-</tr>
-<tr>
-<td>Leader</td>
-<td>服务器节点，如果任何连接的节点失败，则执行自动恢复。Leader在服务启动时被选举。</td>
-</tr>
-<tr>
-<td>Follower</td>
-<td>跟随leader指令的服务器节点。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="四-数据模型和层次命名空间"><a class="header-anchor" href="#四-数据模型和层次命名空间">¶</a>四、数据模型和层次命名空间</h2>
+<h2 id="三-数据模型"><a class="header-anchor" href="#三-数据模型">¶</a>三、数据模型</h2>
 <p>zookeeper的数据节点可以视为树状结构（或者文件系统），树中的各节点被称为znode（即zookeeper node），一个znode可以有多个子节点。zookeeper节点在结构上表现为树状；使用路径path来定位某个znode。znode兼具文件和目录（文件路径而非文件夹）两种特点，既像文件一样维护着数据、元信息、ACL、时间戳等数据结构，又像目录一样可以作为路径标识的一部分。</p>
 <p><img src="/javaee/../images/loading-post.gif" data-original="zookeeper/image-20210110205356642.png" alt="image-20210110205356642"></p>
 <p>一个znode大体上分为3各部分：</p>
@@ -537,7 +502,7 @@
 <p>data：与该Znode关联的数据，即znode data(节点path, 节点data)的关系就像是java map中(key,value)的关系</p>
 </li>
 <li>
-<p>childre：该Znode下的子节点</p>
+<p>children：该Znode下的子节点</p>
 </li>
 <li>
 <p>stat：该Znode节点的状态信息，用来描述当前节点的创建、修改记录、版本、权限等、包括cZxid、ctime等</p>
@@ -549,7 +514,7 @@ mtime 数据节点最后一次更新时的时间<br>
 pZxid 数据节点的子节点最后一次被修改时的事务 ID<br>
 cversion 子节点的更改次数<br>
 dataVersion 节点数据的更改次数<br>
-aclVersion 节点的 ACL 的更改次数<br>
+aclVersion 结点的ACL更改次数——类似<code>linux</code>的权限列表，维护的是当前结点的权限列表被修改的次数<br>
 ephemeralOwner 如果节点是临时节点，则表示创建该节点的会话的SessionID；如果节点是持久节点，则该属性值为 0<br>
 dataLength 数据内容的长度<br>
 numChildren 数据节点当前的子节点个数</p>
@@ -560,58 +525,136 @@ numChildren 数据节点当前的子节点个数</p>
 <p>Znode被分为持久（persistent）节点，顺序（sequential）节点和临时（ephemeral）节点。</p>
 <ul>
 <li>
-<p><strong>持久节点</strong> - 即使在创建该特定znode的客户端断开连接后，持久节点仍然存在。默认情况下，除非另有说明，否则所有znode都是持久的。</p>
+<p><strong>持久节点</strong> - 该结点的生命周期不依赖于会话，并且只有在客户端显示执行删除操作的时候，它们才能被删除</p>
 </li>
 <li>
-<p><strong>临时节点</strong> - 客户端活跃时，临时节点就是有效的。当客户端与ZooKeeper集合断开连接时，临时节点会自动删除。因此，只有临时节点不允许有子节点。如果临时节点被删除，则下一个合适的节点将填充其位置。临时节点在leader选举中起着重要作用。</p>
+<p><strong>临时节点</strong> - 该节点的生命周期依赖于创建它们的会话。一旦会话( <code>Session</code>）结束，临时节点将被自动删除，当然可以也可以手动删除。虽然每个临时的 <code>Znode</code>都会绑定到一个客户端会话，但他们对所有的客户端还是可见的。另外，<code>Zookeeper</code>的临时节点不允许拥有子节点</p>
 </li>
 <li>
-<p><strong>顺序节点</strong> - 顺序节点可以是持久的或临时的。当一个新的znode被创建为一个顺序节点时，ZooKeeper通过将10位的序列号附加到原始名称来设置znode的路径。例如，如果将具有路径 <strong>/myapp</strong> 的znode创建为顺序节点，则ZooKeeper会将路径更改为 <strong>/myapp0000000001</strong> ，并将下一个序列号设置为0000000002。如果两个顺序节点是同时创建的，那么ZooKeeper不会对每个znode使用相同的数字。顺序节点在锁定和同步中起重要作用。</p>
+<p><strong>顺序节点</strong> - 顺序节点可以是持久的或临时的。当一个新的znode被创建为一个顺序节点时，ZooKeeper通过将10位的序列号附加到原始名称来设置znode的路径。例如，如果将具有路径 <strong>/myapp</strong> 的znode创建为顺序节点，则ZooKeeper会将路径更改为 <strong>/myapp0000000001</strong> ，而下一个序列号将递增为0000000002。顺序节点在锁定和同步中起重要作用。</p>
 </li>
 </ul>
-<h2 id="五-zk工作流"><a class="header-anchor" href="#五-zk工作流">¶</a>五、ZK工作流</h2>
-<p>一旦ZooKeeper集合启动，它将等待客户端连接。客户端将连接到ZooKeeper集合中的一个节点。它可以是领导或跟随者节点。一旦客户端被连接，节点将向特定客户端分配会话ID并向该客户端发送确认。如果客户端没有收到确认，它将尝试连接ZooKeeper集合中的另一个节点。 一旦连接到节点，客户端将以有规律的间隔向节点发送心跳，以确保连接不会丢失。</p>
-<p><img src="/javaee/../images/loading-post.gif" data-original="zookeeper/1482990578752713.png" alt="Zookeeper - 工作流"></p>
+<h2 id="四-安装部署"><a class="header-anchor" href="#四-安装部署">¶</a>四、安装部署</h2>
+<h3 id="1-单机版"><a class="header-anchor" href="#1-单机版">¶</a>1. 单机版</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir /opt/zookeeper</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /opt/zookeeper</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> wget http://archive.apache.org/dist/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf zookeeper-3.4.14.tar.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir /opt/zookeeper/zookeeper-3.4.14/data</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> zookeeper-3.4.14/conf</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cp zoo_sample.cfg zoo.cfg</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim zoo.cfg</span></span><br><span class="line"><span class="meta">#</span><span class="bash">此路径用于存储zookeeper中数据的内存快照、及事务日志文件，虽然zookeeper是使用内存的，但是需要持久化一些数据来保证数据的安全</span></span><br><span class="line">dataDir=/opt/zookeeper/zookeeper-3.4.14/data</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /opt/zookeeper/zookeeper-3.4.14/bin/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">启动zookeeper</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh start</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh start</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh restart</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 停止</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh stop</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看状态</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh status</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> zookeeper客户端命令工具连接到zookeeper服务</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkCli.sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-docker版"><a class="header-anchor" href="#2-docker版">¶</a>2. docker版</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run --name myZookeeper --restart always -e JVMFLAGS=<span class="string">"-Xmx1024m"</span> -p 2181:2181 zookeeper</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it myZookeeper /bin/bash</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> /apache-zookeeper-3.6.2-bin/bin/zkCli.sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-集群"><a class="header-anchor" href="#3-集群">¶</a>3. 集群</h3>
+<h4 id="3-1-架构"><a class="header-anchor" href="#3-1-架构">¶</a>3.1 架构</h4>
+<p>看看下面的图表。它描述了ZooKeeper的“客户端-服务器架构”。</p>
+<p><img src="/javaee/../images/loading-post.gif" data-original="zookeeper/image-20220807152858402.png" alt="image-20220807152858402"></p>
+<p>图中部分组件在下表中进行了说明。</p>
 <table>
 <thead>
 <tr>
-<th>组件</th>
+<th>部分</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>写入（write）</td>
-<td>写入过程由leader节点处理。leader将写入请求转发到所有znode，并等待znode的回复。如果一半的znode回复，则写入过程完成。</td>
+<td>Client</td>
+<td>客户端，我们的分布式应用集群中的一个节点，从服务器访问信息。对于特定的时间间隔，每个客户端向服务器发送消息以使服务器知道客户端是活跃的。类似地，当客户端连接时，服务器发送确认码。如果连接的服务器没有响应，客户端会自动将消息重定向到另一个服务器。</td>
 </tr>
 <tr>
-<td>读取（read）</td>
-<td>客户端向具有znode路径的节点发送读取请求，并且节点通过从其自己的数据库获取来返回所请求的znode。读取由特定连接的znode在内部执行，因此不需要与集群进行交互。</td>
+<td>Server</td>
+<td>服务器，我们的ZooKeeper总体中的一个节点，为客户端提供所有的服务。向客户端发送确认码以告知服务器是活跃的。</td>
 </tr>
 <tr>
-<td>复制数据库（replicated database）</td>
-<td>它用于在zookeeper中存储数据。每个znode都有自己的数据库，每个znode在一致性的帮助下每次都有相同的数据。</td>
+<td>Leader</td>
+<td>服务领导者。1、处理事务请求和非事务请求（如增删改查）；2、调度集群内部的各个服务</td>
 </tr>
 <tr>
-<td>领导者（Leader）</td>
-<td>Leader是负责处理写入请求的Znode。</td>
+<td>Follower</td>
+<td>服务跟随者。1、处理非事务请求（如查，如果接收到事务请求的话则转发给Leader）；2、参与Leader选举投票</td>
 </tr>
 <tr>
-<td>跟随者（Follower）</td>
-<td>follower从客户端接收写入请求，并将它们转发到leader znode。</td>
-</tr>
-<tr>
-<td>请求处理器（request processor）</td>
-<td>只存在于leader节点。它管理来自follower节点的写入请求。</td>
-</tr>
-<tr>
-<td>原子广播（atomic broadcasts）</td>
-<td>负责广播从leader节点到follower节点的变化。</td>
+<td>Observer</td>
+<td>服务观察者。1、处理非事务请求（如查，如果接收到事务请求的话则转发给Leader）。（不参与Leader选举投票）</td>
 </tr>
 </tbody>
 </table>
-<h2 id="安装"><a class="header-anchor" href="#安装">¶</a>安装</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run --name myZookeeper --restart always -e JVMFLAGS=<span class="string">"-Xmx1024m"</span> -p 2181:2181 zookeeper</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it myZookeeper /bin/bash</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> /apache-zookeeper-3.6.2-bin/bin/zkCli.sh</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2-部署"><a class="header-anchor" href="#3-2-部署">¶</a>3.2 部署</h4>
+<p>准备三台服务器（多台同理，需要基数倍，集群中从3台变成2台仍可用，而变成1台时将不不可用）</p>
+<blockquote>
+<p>172.16.10.111<br>
+172.16.10.112<br>
+172.16.10.113</p>
+</blockquote>
+<p>分别在三台zk服务器中执行如下操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir -p /home/zookeeper/conf</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir -p /home/zookeeper/data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim /home/zookeeper/conf/zoo.cfg</span></span><br><span class="line">clientPort=2181 </span><br><span class="line">dataDir=/data </span><br><span class="line">dataLogDir=/data/log</span><br><span class="line">tickTime=2000 </span><br><span class="line">initLimit=5 </span><br><span class="line">syncLimit=2 </span><br><span class="line">autopurge.snapRetainCount=3 </span><br><span class="line">autopurge.purgeInterval=0 </span><br><span class="line">maxClientCnxns=60</span><br><span class="line">server.111=172.16.10.111:2888:3888 </span><br><span class="line">server.112=172.16.10.112:2888:3888 </span><br><span class="line">server.113=172.16.10.113:2888:3888</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">想让服务节点为observer观察者，需要如下两行配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash">peerType=observer</span></span><br><span class="line"><span class="meta">#</span><span class="bash">server.113=172.16.10.113:2888:3888:observer</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>server.服务id=服务器ip:服务器之间通信端口:服务之间投票选举端口<br>
+服务id编号越大，在Leader选举中权重越大，选举票数超过半数则为Leader。</p>
+</blockquote>
+<p>分别在三台zk服务器中的<code>/home/zookeeper/data</code>目录下创建<strong>myid</strong>，并配置id，里面的<strong>id一定要和上面配置的server.id一致</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">zk1</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> 111 &gt; /home/zookeeper/data/myid</span></span><br><span class="line"><span class="meta">#</span><span class="bash">zk2</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> 112 &gt; /home/zookeeper/data/myid</span></span><br><span class="line"><span class="meta">#</span><span class="bash">zk3</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> 113 &gt; /home/zookeeper/data/myid</span></span><br></pre></td></tr></table></figure>
+<p>分别运行zk docker镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">获取zk docker镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker pull zookeeper:3.4.13</span></span><br><span class="line"><span class="meta">#</span><span class="bash">运行镜像生产docker容器</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker run  --network host -v /home/zookeeper/data:/data -v /home/zookeeper/conf:/conf --name zookeeper-2181 -d zookeeper:3.4.13</span></span><br><span class="line"><span class="meta">#</span><span class="bash">或者以下（目前发现以下命令不可用）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 --restart=always -v /home/zookeeper/data:/data -v /home/zookeeper/conf:/conf --name=zookeeper-2181 zookeeper:3.4.13</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">进入容器中查看leader选举情况</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it  zookeeper-2181 /bin/sh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh status</span></span><br></pre></td></tr></table></figure>
+<p>每台主机的2181/2888/3888端口都会开放出来</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> service firewalld start</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --permanent --add-port=2181/tcp</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --permanent --add-port=2888/tcp</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --permanent --add-port=3888/tcp</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --reload</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --list-all</span></span><br></pre></td></tr></table></figure>
+<h2 id="五-常用命令"><a class="header-anchor" href="#五-常用命令">¶</a>五、常用命令</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#1、查看目录列表（子节点列表）</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看某个路径下目录列表</span></span><br><span class="line"><span class="meta">#</span><span class="bash">path：指定要创建节点的路径，比如 /<span class="built_in">test</span>。</span></span><br><span class="line">ls path</span><br><span class="line"><span class="meta">#</span><span class="bash">查看某个路径下目录列表，它比 ls 命令列出更多的详细信息</span></span><br><span class="line">ls -s path</span><br><span class="line">ls2 path	#旧版</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#2、获取节点数据和状态信息</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">（1）获取节点数据和状态信息，[watch]：对节点进行事件监听。</span></span><br><span class="line">get path [watch]</span><br><span class="line"><span class="meta">#</span><span class="bash">例：</span></span><br><span class="line">get /test watch	#终端1查询并监听节点</span><br><span class="line">set /test 1	#终端2对节点进行修改</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">（2）查看节点状态信息</span></span><br><span class="line">stat path [watch]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#3、创建节点并赋值</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">[-s] [-e]：-s 和 -e 都是可选的，-s 代表顺序节点(递增)， -e 代表临时节点（不加表示持久节点），注意其中 -s 和 -e 可以同时使用的，并且临时节点不能再创建子节点。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">path：指定要创建节点的路径，比如 /<span class="built_in">test</span>。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">data：要在此节点存储的数据。不设置则为null</span></span><br><span class="line"><span class="meta">#</span><span class="bash">acl：访问权限相关，默认是 world，相当于全世界都能访问。</span></span><br><span class="line">create [-s] [-e] path [data] [acl]</span><br><span class="line"><span class="meta">#</span><span class="bash">例：添加临时顺序节点并赋值</span></span><br><span class="line">create -s -e /test "hello"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#4、修改节点存储的数据</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">[version]：可选项，版本号(可用作乐观锁)。即状态信息中的dataVersion</span></span><br><span class="line">set path data [version]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#5、删除节点</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">[version]：可选项，版本号（同 <span class="built_in">set</span> 命令）。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">delete 命令只能一层一层删除。新版本可以通过 deleteall 命令递归删除</span></span><br><span class="line">delete path [version]</span><br></pre></td></tr></table></figure>
+<h2 id="六-权限控制"><a class="header-anchor" href="#六-权限控制">¶</a>六 、权限控制</h2>
+<p>zookeeper 的 ACL（Access Control List，访问控制表）权限可以针对节点设置相关读写等权限，保障数据安全性。</p>
+<p>zookeeper 的 acl 通过 <code>[scheme:id:permissions]</code> 来构成权限列表。</p>
+<ul>
+<li>
+<p>（1）<strong>scheme</strong>：代表采用的某种权限机制（权限模式），包括 world、auth、digest、ip、super 几种。</p>
+<p>world：只有一个用户：<code>anyone</code>，代表登录<code>zookeeper</code>所有人(默认)</p>
+<p>auth：使用已添加认证的用户认证</p>
+<p>digest：使用&quot;用户名：密码&quot;方式认证</p>
+<p>ip：限制ip进行访问</p>
+</li>
+</ul>
+<ul>
+<li>（2）<strong>id</strong>：代表允许访问的用户。</li>
+</ul>
+<ul>
+<li>
+<p>（3）<strong>permissions</strong>：权限组合字符串，由 cdrwa 组成，其中每个字母代表支持不同权限，</p>
+<p>create©：创建子节点权限</p>
+<p>delete(d)：删除子节点的权限</p>
+<p>read®：获取当前节点/子节点的权限</p>
+<p>write(w)：设置节点数据的权限</p>
+<p>admin(a)：设置节点权限的权限。</p>
+</li>
+</ul>
+<h3 id="1-world模式"><a class="header-anchor" href="#1-world模式">¶</a>1. world模式</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> create /<span class="built_in">test</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> create /<span class="built_in">test</span>/child</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> getAcl /<span class="built_in">test</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">更新节点 permissions 权限部分为 crwa</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> setAcl /<span class="built_in">test</span> world:anyone:crwa</span></span><br><span class="line"><span class="meta">#</span><span class="bash">结果删除子节点失败</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> delete /<span class="built_in">test</span>/child</span></span><br><span class="line"><span class="meta">#</span><span class="bash">更新节点 permissions 权限部分为 cdrwa</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> setAcl /<span class="built_in">test</span> world:anyone:cdrwa</span></span><br><span class="line"><span class="meta">#</span><span class="bash">结果删除子节点成功</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> delete /<span class="built_in">test</span>/child</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-auth模式"><a class="header-anchor" href="#2-auth模式">¶</a>2. auth模式</h3>
+<p>auth 用于授予权限（以用户名和明文密码的形式授权）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> create /<span class="built_in">test</span>/child demo</span></span><br><span class="line"><span class="meta">#</span><span class="bash">给当前会话创建用户名为user1密码为123456的用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> addauth digest user1:123456</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> setAcl /<span class="built_in">test</span>/child auth:user1:123456:cdrwa</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> getAcl /<span class="built_in">test</span>/child</span></span><br><span class="line">'digest,'user1:HYGa7IZRm2PUBFiFFu8xY2pPP/s=</span><br><span class="line">: cdrwa</span><br></pre></td></tr></table></figure>
+<p>另外起一个终端测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> get /<span class="built_in">test</span>/child</span></span><br><span class="line"><span class="meta">#</span><span class="bash">提示如下无权限操作</span></span><br><span class="line">org.apache.zookeeper.KeeperException$NoAuthException: KeeperErrorCode = NoAuth for /test/child</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">给当前会话创建该节点需要的用户后就可以操作节点了</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> addauth digest user1:123456</span></span><br><span class="line"><span class="meta">#</span><span class="bash">在=再次操作即可成功</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> get /<span class="built_in">test</span>/child</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-digest模式"><a class="header-anchor" href="#3-digest模式">¶</a>3. digest模式</h3>
+<p>digest同样用于授予权限（以用户名和密文密码的形式授权，密文可在创建时的会话中通过getAcl查看）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 计算密码</span></span><br><span class="line">echo -n user1:123456 | openssl dgst -binary -sha1 | openssl base64</span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取密码，设置权限列表</span></span><br><span class="line">setAcl /test2 digest:user1:HYGa7IZRm2PUBFiFFu8xY2pPP/s=:cdrwa</span><br><span class="line"><span class="meta">#</span><span class="bash"> 现在想要get /hadoop 需要登录了</span></span><br><span class="line">addauth digest user1:123456</span><br><span class="line">get /test2</span><br></pre></td></tr></table></figure>
+<h3 id="4-ip模式"><a class="header-anchor" href="#4-ip模式">¶</a>4. ip模式</h3>
+<p>限制 IP 地址的访问权限，把权限设置给 IP 地址为 192.168.3.7 后，IP 为 192.168.3.38 已经没有访问权限。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> create /<span class="built_in">test</span>/ip 0</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> getAcl /<span class="built_in">test</span>/ip</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> setAcl /<span class="built_in">test</span>/ip ip:192.168.3.7:cdrwa</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> get /<span class="built_in">test</span>/ip</span></span><br><span class="line"><span class="meta">#</span><span class="bash">假设当前所在终端并非192.168.3.7，则提示无权限操作</span></span><br><span class="line">Authentication is not valid : /test/ip</span><br></pre></td></tr></table></figure>
+<h3 id="5-组合模式"><a class="header-anchor" href="#5-组合模式">¶</a>5. 组合模式</h3>
+<p>仅需逗号隔开</p>
+<ul>
+<li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setAcl /test ip:192.168.3.7:cdrwa,auth:user1:cdrwa,digest:user1:HYGa7IZRm2PUBFiFFu8xY2pPP/s=:cdrwa</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-超级管理员"><a class="header-anchor" href="#6-超级管理员">¶</a>6. 超级管理员</h3>
+<p><code>zookeeper</code>的权限管理模式有一种叫做<code>super</code>，该模式提供一个超管，可以方便的访问任何权限的节点。</p>
+<p>默认是没有配置super的，需要到<code>zookeeper</code>目录下<code>/bin/zkServer.sh</code>文件中加相关配置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/nohup # 快速查找，可以看到如下</span><br><span class="line">nohup "$JAVA" "-Dzookeeper.log.dir=$&#123;ZOO_LOG_DIR&#125;" "-Dzookeeper.root.logger=$&#123;ZOO_LOG4J_PROP&#125;" \</span><br></pre></td></tr></table></figure>
+<p>加入运行参数<code>-Dzookeeper.DigestAuthenticationProvider.superDigest</code>。如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup "$JAVA" "-Dzookeeper.log.dir=$&#123;ZOO_LOG_DIR&#125;" "-Dzookeeper.root.logger=$&#123;ZOO_LOG4J_PROP&#125;" "-Dzookeeper.DigestAuthenticationProvider.superDigest=super:xQJmxLMiHGwaqBvst5y6rkB6HQs=" \</span><br></pre></td></tr></table></figure>
+<p>注意：<code>-Dzookeeper.DigestAuthenticationProvider.superDigest</code>参数的值为<code>super:密码摘要</code>。假设密码为admin，可通过如下获得密码摘要。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -n super:admin | openssl dgst -binary -sha1 | openssl base64</span><br></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 登录超管</span></span><br><span class="line">addauth digest super:admin</span><br><span class="line"><span class="meta">#</span><span class="bash"> 强行操作节点(设/<span class="built_in">test</span>/ip节点在登录前无权操作)</span></span><br><span class="line">get /test/ip</span><br></pre></td></tr></table></figure>
+<h2 id="七-图形化客户端"><a class="header-anchor" href="#七-图形化客户端">¶</a>七、图形化客户端</h2>
+<p>ZooInspector下载地址：<a href="https://issues.apache.org/jira/secure/attachment/12436620/ZooInspector.zip" target="_blank" rel="noopener">https://issues.apache.org/jira/secure/attachment/12436620/ZooInspector.zip</a></p>
+<ul>
+<li>解压后进入目录<code>ZooInspector\build</code>，运行<code>java -jar zookeeper-dev-ZooInspector.jar</code></li>
+</ul>
 
       
     </div>
@@ -943,7 +986,7 @@ numChildren 数据节点当前的子节点个数</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-简介"><span class="nav-text">¶一、简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-应用场景"><span class="nav-text">¶二、应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-zk架构"><span class="nav-text">¶三、ZK架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-数据模型和层次命名空间"><span class="nav-text">¶四、数据模型和层次命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-zk工作流"><span class="nav-text">¶五、ZK工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">¶安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-简介"><span class="nav-text">¶一、简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-应用场景"><span class="nav-text">¶二、应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-数据模型"><span class="nav-text">¶三、数据模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-安装部署"><span class="nav-text">¶四、安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-单机版"><span class="nav-text">¶1. 单机版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-docker版"><span class="nav-text">¶2. docker版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-集群"><span class="nav-text">¶3. 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-架构"><span class="nav-text">¶3.1 架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-部署"><span class="nav-text">¶3.2 部署</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-常用命令"><span class="nav-text">¶五、常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-权限控制"><span class="nav-text">¶六 、权限控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-world模式"><span class="nav-text">¶1. world模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-auth模式"><span class="nav-text">¶2. auth模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-digest模式"><span class="nav-text">¶3. digest模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ip模式"><span class="nav-text">¶4. ip模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-组合模式"><span class="nav-text">¶5. 组合模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-超级管理员"><span class="nav-text">¶6. 超级管理员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-图形化客户端"><span class="nav-text">¶七、图形化客户端</span></a></li></ol></div>
             
 
           </div>
@@ -1834,5 +1877,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
