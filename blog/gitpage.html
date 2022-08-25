@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="Git Pages是结合git服务操作的web网页托管平台。通过git提交再结合git hook脚本就能很好的将提交的文件上传到web服务虚拟目录里。但是Github、Netlify、Coding等已经提供了免费git pages服务，为什么还要自己在vps上折腾搭建git pages呢？因为这些服务商提供的git pages是有限制的，比如空间容量相对较小、对动态网页支持不完善或者没有、访问速">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-08-25T17:05:42.772Z">
+<meta property="og:updated_time" content="2022-08-25T19:07:12.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7搭建个人的git pages">
 <meta name="twitter:description" content="Git Pages是结合git服务操作的web网页托管平台。通过git提交再结合git hook脚本就能很好的将提交的文件上传到web服务虚拟目录里。但是Github、Netlify、Coding等已经提供了免费git pages服务，为什么还要自己在vps上折腾搭建git pages呢？因为这些服务商提供的git pages是有限制的，比如空间容量相对较小、对动态网页支持不完善或者没有、访问速">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-08-26T01:05:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-08-26T03:07:12+08:00">
                 2022-08-26
               </time>
             
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k
+                  2.5k
                 </span>
               
 
@@ -490,13 +490,13 @@
 <h3 id="2-创建ssh证书登录"><a class="header-anchor" href="#2-创建ssh证书登录">¶</a>2、创建ssh证书登录</h3>
 <p>收集所有需要登录的用户的公钥，公钥位于<code>id_rsa.pub</code>文件中，把我们的公钥导入到<code>/home/git/.ssh/authorized_keys</code>文件里，一行一个。</p>
 <p>如果没有该文件创建它：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir -p  /home/git/.ssh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 755  /home/git/.ssh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch /home/git/.ssh/authorized_keys</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 644  /home/git/.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p  /home/git/.ssh</span><br><span class="line">chmod 755  /home/git/.ssh</span><br><span class="line">touch /home/git/.ssh/authorized_keys</span><br><span class="line">chmod 644  /home/git/.ssh/authorized_keys</span><br><span class="line">chown -R git:git /home/git</span><br></pre></td></tr></table></figure>
 <p>客户机</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">copy客户端的秘钥到vps的/home/git/.ssh/authorized_keys</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.ssh/id_rsa.pub</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">copy客户端的秘钥到vps的/home/git/.ssh/authorized_keys</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="meta">#</span><span class="bash">查看ssh秘钥是否配置成功</span></span><br><span class="line">ssh -T git@服务器ip</span><br></pre></td></tr></table></figure>
 <h3 id="3-搭建git仓库"><a class="header-anchor" href="#3-搭建git仓库">¶</a>3、搭建git仓库</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/blog/git</span><br><span class="line">chown git:git /opt/blog/git</span><br><span class="line">chgrp -R 755 /opt/blog/git</span><br><span class="line">cd /opt/blog/git</span><br><span class="line">git init --bare blog.git</span><br><span class="line">chown -R git:git blog.git</span><br><span class="line">vim /opt/blog/git/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/blog/git</span><br><span class="line">git init --bare /opt/blog/git/blog.git</span><br><span class="line">vim /opt/blog/git/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/opt/blog/web --git-dir=/opt/blog/git/blog.git checkout -f</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chmod +x /opt/blog/git/blog.git/hooks/post-receive</span></span><br><span class="line"></span><br><span class="line">mkdir -p /opt/blog/web</span><br><span class="line">chmod -R 777 /opt/blog/web</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git /opt/blog/git &amp;&amp; chgrp -R git /opt/blog/git &amp;&amp; chmod -R 755 /opt/blog/git</span><br><span class="line">chmod +x /opt/blog/git/blog.git/hooks/post-receive</span><br><span class="line"></span><br><span class="line">mkdir -p /opt/blog/web</span><br><span class="line">chmod -R 777 /opt/blog/web</span><br></pre></td></tr></table></figure>
 <h3 id="4-搭建web服务"><a class="header-anchor" href="#4-搭建web服务">¶</a>4、搭建web服务</h3>
 <p>需要安装好nginx，可以参考我的另一篇文章<a href="https://www.qcmoke.site/devops/nginx.html">《nginx学习笔记》</a>。</p>
 <p>这里已经提前通过编译安装的方式把nginx安装到了/opt/nginx目录，然后只需配置nginx即可。</p>
@@ -1776,5 +1776,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
