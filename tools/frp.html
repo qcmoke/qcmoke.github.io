@@ -90,12 +90,12 @@
 <meta name="keywords" content="http,https,frp,内网穿透,反向代理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="frp实现内网穿透">
-<meta property="og:url" content="https://www.qcmoke.site/devops/frp.html">
+<meta property="og:url" content="https://www.qcmoke.site/tools/frp.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶一、frp的作用 frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文《关于代理技术的理解》。   利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。说罢，也就是给外网提供内网主机的http 或 https 服务。   此外，还能利用处于内网或防火墙后的机器，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.540Z">
+<meta property="og:updated_time" content="2022-09-02T01:35:32.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="frp实现内网穿透">
 <meta name="twitter:description" content="¶一、frp的作用 frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文《关于代理技术的理解》。   利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。说罢，也就是给外网提供内网主机的http 或 https 服务。   此外，还能利用处于内网或防火墙后的机器，">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://www.qcmoke.site/devops/frp.html"/>
+  <link rel="canonical" href="https://www.qcmoke.site/tools/frp.html"/>
 
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qcmoke.site/devops/frp.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qcmoke.site/tools/frp.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qcmoke">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-02T09:35:32+08:00">
+                2022-09-02
               </time>
             
           </span>
@@ -392,8 +392,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/devops/" itemprop="url" rel="index">
-                    <span itemprop="name">devops</span>
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
                   </a>
                 </span>
 
@@ -410,8 +410,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/devops/frp.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/devops/frp.html" itemprop="commentCount"></span>
+                <a href="/tools/frp.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/tools/frp.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +419,7 @@
 
           
           
-             <span id="/devops/frp.html" class="leancloud_visitors" data-flag-title="frp实现内网穿透">
+             <span id="/tools/frp.html" class="leancloud_visitors" data-flag-title="frp实现内网穿透">
               <span class="post-meta-divider">|</span>
               <span class="lv-inline-block" style="display: inline-block;">
                 <span class="post-meta-item-icon">
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  2.7k
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  10
                 </span>
               
             </div>
@@ -485,7 +485,7 @@
       
         <a id="more"></a>
 <h2 id="一-frp的作用"><a class="header-anchor" href="#一-frp的作用">¶</a>一、frp的作用</h2>
-<p>frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文<a href="https://www.qcmoke.site/devops/proxy.html">《关于代理技术的理解》</a>。</p>
+<p>frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文<a href="https://www.qcmoke.site/tools/proxy.html">《关于代理技术的理解》</a>。</p>
 <ol>
 <li>
 <p>利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。说罢，也就是给外网提供内网主机的http 或 https 服务。</p>
@@ -499,12 +499,12 @@
 <li>外网访问内网http 或 https 服务</li>
 <li>外网访问内网ssh服务</li>
 </ol>
-<h2 id="二-配置说明"><a class="header-anchor" href="#二-配置说明">¶</a>二、配置说明</h2>
-<h3 id="1-实现功能"><a class="header-anchor" href="#1-实现功能">¶</a>1、实现功能</h3>
+<h2 id="二-准备说明"><a class="header-anchor" href="#二-准备说明">¶</a>二、准备说明</h2>
+<h3 id="实现功能"><a class="header-anchor" href="#实现功能">¶</a>实现功能</h3>
 <blockquote>
 <p>（1）自定义绑定域名访问内网web服务</p>
 </blockquote>
-<h3 id="2-配置前准备"><a class="header-anchor" href="#2-配置前准备">¶</a>2、配置前准备</h3>
+<h3 id="配置前准备"><a class="header-anchor" href="#配置前准备">¶</a>配置前准备</h3>
 <blockquote>
 <p>（1）公网服务器1台<br>
 （2）内网服务器1台<br>
@@ -512,44 +512,37 @@
 （4）内网服务器部署一个web服务<br>
 （5）内网服务器部署安装了ssh服务(如只做web服务，可以省略此步)</p>
 </blockquote>
-<h2 id="三-安装frp"><a class="header-anchor" href="#三-安装frp">¶</a>三、安装frp</h2>
-<h3 id="1-通过以下命令下载frp"><a class="header-anchor" href="#1-通过以下命令下载frp">¶</a>1.通过以下命令下载frp</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> wget https://github.com/fatedier/frp/releases/download/v0.16.1/frp_0.16.1_linux_amd64.tar.gz</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-解压文件"><a class="header-anchor" href="#2-解压文件">¶</a>2.解压文件</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf frp_0.16.1_linux_amd64.tar.gz</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-进入解压目录"><a class="header-anchor" href="#3-进入解压目录">¶</a>3.进入解压目录</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> frp_0.16.1_linux_amd64</span></span><br></pre></td></tr></table></figure>
+<h2 id="三-服务端"><a class="header-anchor" href="#三-服务端">¶</a>三、服务端</h2>
+<h3 id="安装配置"><a class="header-anchor" href="#安装配置">¶</a>安装配置</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">下载frp</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.44.0/frp_0.44.0_linux_amd64.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash">解压文件</span></span><br><span class="line">tar -zxvf frp_0.44.0_linux_amd64.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash">进入解压目录</span></span><br><span class="line">cd frp_0.44.0_linux_amd64</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p><code>frps</code>、<code>frps.ini</code>这个两个是服务端文件，<code>frpc</code>、<code>frpc.ini</code>这两个是客户端文件</p>
-<h3 id="4-配置服务端"><a class="header-anchor" href="#4-配置服务端">¶</a>4.配置服务端</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vi ./frps.ini</span></span><br><span class="line">[common]</span><br><span class="line"><span class="meta">#</span><span class="bash">与客户端绑定的进行通信的端口</span></span><br><span class="line">bind_port = 7000</span><br><span class="line"><span class="meta">#</span><span class="bash">访问客户端web服务http协议自定义的端口号，如果公网服务器已经搭建占用8080端口的web服务，请自行修改</span></span><br><span class="line">vhost_http_port = 8080</span><br><span class="line"><span class="meta">#</span><span class="bash">访问客户端web服务https协议自定义的端口号，如果公网服务器已经搭建占用443端口的web服务，请自行修改</span></span><br><span class="line">vhost_https_port = 443</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>配置服务端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">vi ./frps.ini</span><br><span class="line">[common]</span><br><span class="line"><span class="meta">#</span><span class="bash">与客户端绑定的进行通信的端口（必选）</span></span><br><span class="line">bind_port = 7000</span><br><span class="line"><span class="meta">#</span><span class="bash">访问客户端web服务http协议自定义的端口号，如果公网服务器已经搭建占用8080端口的web服务，请自行修改（可选）</span></span><br><span class="line">vhost_http_port = 8080</span><br><span class="line"><span class="meta">#</span><span class="bash">访问客户端web服务https协议自定义的端口号，如果公网服务器已经搭建占用443端口的web服务，请自行修改（可选）</span></span><br><span class="line">vhost_https_port = 443</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#frp服务端控制台（可选，主要用于监控当前连接端口，访问地址：http://服务端ip:17500）</span></span></span><br><span class="line">dashboard_port = 17500</span><br><span class="line">dashboard_user = admin</span><br><span class="line">dashboard_pwd = admin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#认证配置（可选，客户端和服务端配置需要一致）</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">认证方式, token</span></span><br><span class="line">authentication_method = token</span><br><span class="line"><span class="meta">#</span><span class="bash">认证方式, 开启连接时校验</span></span><br><span class="line">authenticate_new_work_conns = true</span><br><span class="line"><span class="meta">#</span><span class="bash">token,可自定义</span></span><br><span class="line">token = test12345678</span><br></pre></td></tr></table></figure>
 <p>按”i”键进行编辑，按<code>esc</code>退出编辑状态，输入<code>:wq</code>退出</p>
-<h2 id="四-公网服务器开启端口"><a class="header-anchor" href="#四-公网服务器开启端口">¶</a>四、公网服务器开启端口</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --state <span class="comment">#查看当前firewall防火墙服务是否开启</span></span></span><br></pre></td></tr></table></figure>
-<p><em>如果防护墙处于关闭状态的话无需进行以下端口号的开放步骤，否则继续。</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --list-all  <span class="comment">#查看当前firewall服务所有端口开放情况</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="防火墙配置"><a class="header-anchor" href="#防火墙配置">¶</a>防火墙配置</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash">查看当前firewall防火墙服务是否开启</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="meta">#</span><span class="bash">查看当前firewall服务所有端口开放情况</span></span><br><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+<p>如果防护墙处于关闭状态的话无需进行以下端口号的开放步骤，否则继续。</p>
 <p><em>如果7000端口和8080端口已经开放并且没有进程占用端口的话，则无需进行以下端口号的开放步骤，否则继续。</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --permanent --add-port=7000/tcp  <span class="comment">#开启与客户端绑定的进行通信的端口</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --permanent --add-port=8080/tcp <span class="comment">#开启访问客户端web服务自定义的端口号</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --reload   <span class="comment">#重启防火墙(修改配置后要重启防火墙)</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="五-启动服务端"><a class="header-anchor" href="#五-启动服务端">¶</a>五、启动服务端</h2>
-<p>临时启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./frps -c ./frps.ini</span></span><br></pre></td></tr></table></figure>
-<p>后台保持启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nohup ./frps -c ./frps.ini &amp;</span></span><br></pre></td></tr></table></figure>
-<h2 id="六-配置客户端"><a class="header-anchor" href="#六-配置客户端">¶</a>六、配置客户端</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=7000/tcp  #开启与客户端绑定的进行通信的端口</span><br><span class="line">firewall-cmd --permanent --add-port=8080/tcp #开启访问客户端web服务自定义的端口号</span><br><span class="line">firewall-cmd --reload   #重启防火墙(修改配置后要重启防火墙)</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务端"><a class="header-anchor" href="#启动服务端">¶</a>启动服务端</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">临时启动</span></span><br><span class="line">./frps -c ./frps.ini</span><br><span class="line"><span class="meta">#</span><span class="bash">后台保持启动</span></span><br><span class="line">nohup ./frps -c ./frps.ini &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="四-客户端"><a class="header-anchor" href="#四-客户端">¶</a>四、客户端</h2>
+<h3 id="安装配置-v2"><a class="header-anchor" href="#安装配置-v2">¶</a>安装配置</h3>
 <p>根据客户端操作系统的情况<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">下载frp客户端</a></p>
-<p><em>需要注意的是:客户端和服务端的版本号要一致</em></p>
-<p>不同操作系统操作大同小异。以<code>linux</code>为例：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vi ./frpc.ini <span class="comment">#编辑frpc.ini配置文件</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="meta">#</span><span class="bash">公网服务器ip</span></span><br><span class="line">server_addr = 144.34.145.10</span><br><span class="line"><span class="meta">#</span><span class="bash">与服务端bind_port一致</span></span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line"><span class="meta">#</span><span class="bash">访问协议</span></span><br><span class="line">type = http</span><br><span class="line"><span class="meta">#</span><span class="bash">内网服务器ip,同一内网下的任何主机都可以            </span></span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line"><span class="meta">#</span><span class="bash">内网web服务的端口号</span></span><br><span class="line">local_port = 80</span><br><span class="line"><span class="meta">#</span><span class="bash">访问公网服务器域名,需要解析qcmoke.top域名到144.34.145.10</span></span><br><span class="line">custom_domains = qcmoke.top</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">公网通过ssh访问内网主机（可选,如果不需要可以通过井号注释掉）</span></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line"><span class="meta">#</span><span class="bash">内网服务器ip,同一内网下的任何主机都可以</span></span><br><span class="line"><span class="meta">#</span><span class="bash">local_ip = 127.0.0.1</span></span><br><span class="line">local_ip = 192.168.222.131</span><br><span class="line"><span class="meta">#</span><span class="bash">内网ssh端口</span></span><br><span class="line">local_port = 22</span><br><span class="line"><span class="meta">#</span><span class="bash">公网服务器开放的处理ssh转发的端口，要确保服务器开放</span></span><br><span class="line">remote_port = 7001</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是：客户端和服务端的版本号要一致。</p>
+<p>frp服务端和客户端都是在一个包里，如果都是linux则下载相同版本的<code>frp_版本号_linux_amd64.tar.gz</code>即可，如果客户端是windows，那么下载<code>frp_版本号_windows_amd64.zip</code></p>
+</blockquote>
+<p>不同操作系统操作大同小异。下面以<code>linux</code>为例，假设已经下载并解析好。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ./frpc.ini #编辑frpc.ini配置文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="meta">#</span><span class="bash">公网服务器ip（必选）</span></span><br><span class="line">server_addr = 144.34.145.10</span><br><span class="line"><span class="meta">#</span><span class="bash">与服务端bind_port一致（必选）</span></span><br><span class="line">server_port = 7000</span><br><span class="line"><span class="meta">#</span><span class="bash">启用TLS加密传输功能（可选，从v0.25.0版本开始frpc和frps之间支持通过TLS协议加密传输）</span></span><br><span class="line">tls_enable = true</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#认证配置（可选，客户端和服务端配置需要一致，客户端请求到服务端时需要认证通过才能连接）</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">认证方式, token</span></span><br><span class="line">authentication_method = token</span><br><span class="line"><span class="meta">#</span><span class="bash">认证方式, 开启连接时校验</span></span><br><span class="line">authenticate_new_work_conns = true</span><br><span class="line"><span class="meta">#</span><span class="bash">token,可自定义</span></span><br><span class="line">token = test12345678</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#frp客户端端控制台（可选，可用于动态修改客户端配置，访问地址：http://127.0.0.1:7400）</span></span></span><br><span class="line">admin_addr = 127.0.0.1</span><br><span class="line">admin_port = 7400</span><br><span class="line">admin_user = admin</span><br><span class="line">admin_pwd = admin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#自定义端口映射（可选）</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">服务名称（[ ]里的名称可自定义），公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line"><span class="meta">#</span><span class="bash">访问协议</span></span><br><span class="line">type = http</span><br><span class="line"><span class="meta">#</span><span class="bash">内网服务器ip,同一内网下的任何主机都可以            </span></span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line"><span class="meta">#</span><span class="bash">内网web服务的端口号</span></span><br><span class="line">local_port = 80</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">type</span>为http时可自定义域名（访问公网服务器域名,需要解析域名到server_addr）</span></span><br><span class="line">custom_domains = qcmoke.top</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">公网通过ssh访问内网主机</span></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line"><span class="meta">#</span><span class="bash">内网服务器ip（同一内网下的任何主机都可以）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">local_ip = 127.0.0.1</span></span><br><span class="line">local_ip = 192.168.222.131</span><br><span class="line"><span class="meta">#</span><span class="bash">内网端口</span></span><br><span class="line">local_port = 22</span><br><span class="line"><span class="meta">#</span><span class="bash">外网端口（公网服务器开放的处理ssh转发的端口，要确保服务器防火墙对应端口开放）</span></span><br><span class="line">remote_port = 7001</span><br></pre></td></tr></table></figure>
 <p>通过以下命令给服务器开放7001端口</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> firewall-cmd --permanent --add-port=7001/tcp</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> firewall-cmd --reload</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=7001/tcp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <p>所绑定的公网服务器域名，一级、二级域名都可以，绑定多个域名时用英文“,”分开</p>
-<h2 id="六-启动客户端-内网端"><a class="header-anchor" href="#六-启动客户端-内网端">¶</a>六、启动客户端（内网端）</h2>
-<p>临时启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./frpc -c ./frpc.ini</span></span><br></pre></td></tr></table></figure>
-<p>后台保持启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nohup ./frpc -c ./frpc.ini &amp;</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动客户端"><a class="header-anchor" href="#启动客户端">¶</a>启动客户端</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">临时启动</span></span><br><span class="line">./frpc -c ./frpc.ini</span><br><span class="line"><span class="meta">#</span><span class="bash">后台保持启动</span></span><br><span class="line">nohup ./frpc -c ./frpc.ini &amp;</span><br></pre></td></tr></table></figure>
 <p><em>Windows操作系统完成以上类似配置后直接双击运行frpc.exe即可。</em></p>
 <p>如果需要通过ssh访问内网端，则内网端主机还要安装ssh服务，这里的ssh以ubuntu为例：</p>
 <ul>
@@ -562,7 +555,7 @@
 <p>(5)执行<code>/etc/init.d/ssh restart</code>重启ssh服务以生效</p>
 </li>
 </ul>
-<h2 id="七-测试http和ssh"><a class="header-anchor" href="#七-测试http和ssh">¶</a>七、测试http和ssh</h2>
+<h2 id="五-测试http和ssh"><a class="header-anchor" href="#五-测试http和ssh">¶</a>五、测试http和ssh</h2>
 <ul>
 <li>
 <p>http:</p>
@@ -570,10 +563,17 @@
 </li>
 <li>
 <p>ssh:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  ssh [-p port] user@remote   #ssh远程连接服务器</span><br><span class="line">  如：</span><br><span class="line"><span class="meta">  $</span><span class="bash"> ssh -p 7001 root@144.34.145.10</span></span><br><span class="line">  或者</span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh -p 7001 root@qcmoke.top</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote   #ssh远程连接服务器</span><br><span class="line"><span class="meta">#</span><span class="bash">如：</span></span><br><span class="line">ssh -p 7001 root@144.34.145.10</span><br><span class="line"><span class="meta">#</span><span class="bash">或者</span></span><br><span class="line">ssh -p 7001 root@qcmoke.top</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="/devops/../images/loading-post.gif" data-original="frp/1546544526817.png" alt="1546544526817"></p>
+<p><img src="/tools/../images/loading-post.gif" data-original="frp/1546544526817.png" alt="1546544526817"></p>
+<h2 id="六-配置详解"><a class="header-anchor" href="#六-配置详解">¶</a>六、配置详解</h2>
+<h3 id="服务端"><a class="header-anchor" href="#服务端">¶</a>服务端</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">[common]                        # 通用配置段</span><br><span class="line">bind_addr = 0.0.0.0             # 绑定的IP地址，支持IPv6，不指定默认0.0.0.0；</span><br><span class="line">bind_port = 7000                # 服务端口；</span><br><span class="line">bind_udp_port = 7001            # 是否使用udp端口，不使用删除或注释本行；</span><br><span class="line">kcp_bind_port = 7000            # 是否使用kcp协议，不使用删除或注释本行；</span><br><span class="line"># proxy_bind_addr = 127.0.0.1   # 代理监听地址，默认和bind_addr相同；</span><br><span class="line"> </span><br><span class="line"># 虚拟主机</span><br><span class="line">vhost_http_port = 80            # 是否启用虚拟主机，端口可以和bind_port相同；</span><br><span class="line">vhost_https_port = 443</span><br><span class="line">vhost_http_timeout = 60         # 后端虚拟主机响应超时时间，默认为60s；</span><br><span class="line"> </span><br><span class="line"># 开启frps仪表盘可以检查frp的状态和代理的统计信息。</span><br><span class="line">dashboard_addr = 0.0.0.0        # frps仪表盘绑定的地址；</span><br><span class="line">dashboard_port = 7500           # frps仪表盘绑定的端口；</span><br><span class="line">dashboard_user = admin          # 访问frps仪表盘的用户；     </span><br><span class="line">dashboard_pwd = admin           # 密码；</span><br><span class="line">assets_dir = ./static           # 仪表盘页面文件目录，只适用于调试；</span><br><span class="line"> </span><br><span class="line"># 日志配置文件</span><br><span class="line">log_file = ./frps.log           # 日志文件,不指定日志信息默认输出到控制台；</span><br><span class="line">log_level = info                # 日志等级，可用等级“trace, debug, info, warn, error”；</span><br><span class="line">log_max_days = 3                # 日志保存最大保存时间；</span><br><span class="line"> </span><br><span class="line">token = 12345678                # 客户端与服务端通信的身份验证令牌</span><br><span class="line"> </span><br><span class="line">heartbeat_timeout = 90          # 心跳检测超时时间，不建议修改默认配置，默认值为90；？</span><br><span class="line"> </span><br><span class="line"># 指定允许客户端使用的端口范围，未指定则没有限制；</span><br><span class="line">allow_ports = 2000-3000,3001,3003,4000-50000</span><br><span class="line"> </span><br><span class="line">max_pool_count = 5              # 每个客户端连接服务端的最大连接数；</span><br><span class="line">max_ports_per_client = 0        # 每个客户端最大可以使用的端口，0表示无限制</span><br><span class="line"> </span><br><span class="line">authentication_timeout = 900    # 客户端连接超时时间（秒），默认为900s；</span><br><span class="line"> </span><br><span class="line">subdomain_host = frps.com       # 自定义子域名，需要在dns中将域名解析为泛域名；</span><br><span class="line"> </span><br><span class="line">tcp_mux = true                  # 是否使用tcp复用，默认为true；</span><br><span class="line">                                # frp只对同意客户端的连接进行复用；</span><br></pre></td></tr></table></figure>
+<h3 id="客户端"><a class="header-anchor" href="#客户端">¶</a>客户端</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">[common]                        # 通用配置段</span><br><span class="line"> </span><br><span class="line">server_addr = 0.0.0.0           # server的IP地址；支持IPv6</span><br><span class="line">server_port = 7000              # server的端口；</span><br><span class="line"> </span><br><span class="line"># 如果要通过http或socks5代理连接frps，可以在此处或在全局环境变量中设置代理，只支持tcp协议；</span><br><span class="line"># http_proxy = http://user:passwd@192.168.1.128:8080</span><br><span class="line"># http_proxy = socks5://user:passwd@192.168.1.128:1080</span><br><span class="line"> </span><br><span class="line"># 客户端日志</span><br><span class="line">log_file = ./frpc.log       # 指定日志文件；</span><br><span class="line">log_level = info            # 指定日志等级；</span><br><span class="line">log_max_days = 3</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">token = 12345678            # 客户端与服务端通信的身份验证令牌</span><br><span class="line">tls_enable = true                       #从v0.25.0版本开始frpc和frps之间支持通过TLS协议加密传输。通过在frpc.ini的common中配置tls_ enable = true来启用此功能，安全性更高。</span><br><span class="line">                                        #为了端口复用，frp建立TLS连接的第一个字节为0x17。</span><br><span class="line">                                        #注意:启用此功能后除xtcp外，不需要再设置use. encryption。</span><br><span class="line"># 设置管理地址，用于通过http api控制frpc的动作，如重新加载；</span><br><span class="line">admin_addr = 127.0.0.1</span><br><span class="line">admin_port = 7400</span><br><span class="line">admin_user = admin</span><br><span class="line">admin_passwd = admin</span><br><span class="line"> </span><br><span class="line">pool_count = 5              # 初始连接池的数量，默认为0；</span><br><span class="line"> </span><br><span class="line">tcp_mux = true              # 是否启用tcp复用，默认为true；</span><br><span class="line"> </span><br><span class="line">user = your_name            # frpc的用户名，用于区别不用frpc的代理；</span><br><span class="line"> </span><br><span class="line">login_fail_exit = true      # 首次登录失败时退出程序，否则连续重新登录到frps；</span><br><span class="line"> </span><br><span class="line">protocol = tcp              # 用于连接服务器的协议，支持tcp、kcp、websocket;</span><br><span class="line"> </span><br><span class="line">dns_server = 8.8.8.8        # 为frp 客户端指定一个单独的DNS服务器；</span><br><span class="line"> </span><br><span class="line"># start = ssh,dns           # 要启用的代理的名字，默认为空表示所有代理；</span><br><span class="line"> </span><br><span class="line"># 心跳检查</span><br><span class="line"># heartbeat_interval = 30   # 失败重试次数</span><br><span class="line"># heartbeat_timeout = 90    # 超时时间</span><br><span class="line"> </span><br><span class="line"># 配置示例</span><br><span class="line">[ssh]                       # 代理配置段名称，如果配置user=your_name,则显示为your_name.ssh；</span><br><span class="line">type = tcp                  # 协议默认tcp,可选tcp,udp,http,https,stcp,xtcp;</span><br><span class="line">local_ip = 127.0.0.1        # 本地地址</span><br><span class="line">local_port = 22             # 本地端口</span><br><span class="line">use_encryption = false      # 是否加密服务端和客户端的通信信息，默认为不加密；</span><br><span class="line">use_compression = false     # 是否开启压缩，默认不开启；</span><br><span class="line">remote_port = 6001          # 在服务器端开启的远程端口；</span><br><span class="line"># 负载均衡配置</span><br><span class="line">group = test_group          # 负载均衡组名，会将同一组内的客户端进行负载；</span><br><span class="line">group_key = 123456          # 负载均衡组密钥； </span><br><span class="line"># web示例</span><br><span class="line">[web01]</span><br><span class="line">type = http                 # 使用http</span><br><span class="line">local_ip = 127.0.0.1        </span><br><span class="line">local_port = 80</span><br><span class="line">use_encryption = false</span><br><span class="line">use_compression = true</span><br><span class="line">http_user = admin           # 访问web01页面启用认证，用户名admin</span><br><span class="line">http_pwd = admin            # 密码</span><br><span class="line">subdomain = web01           # 子域名，需要服务端配置了subdomain_host参数；</span><br><span class="line">custom_domains = web02.example.com # web01的域名，和subdomain二选一</span><br><span class="line">locations = /,/pic          # 指定用于路由的URL前缀；</span><br><span class="line">host_header_rewrite = example.com   # 配置http包头域名重写;</span><br><span class="line">header_X-From-Where = frp           # 添加包头信息X-From-Where: frp；</span><br></pre></td></tr></table></figure>
+<h2 id="七-参考"><a class="header-anchor" href="#七-参考">¶</a>七、参考</h2>
+<p><a href="http://www.yangjinxiang.com/article/119.html" target="_blank" rel="noopener">http://www.yangjinxiang.com/article/119.html</a></p>
 
       
     </div>
@@ -913,7 +913,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-frp的作用"><span class="nav-text">¶一、frp的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-配置说明"><span class="nav-text">¶二、配置说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-实现功能"><span class="nav-text">¶1、实现功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置前准备"><span class="nav-text">¶2、配置前准备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-安装frp"><span class="nav-text">¶三、安装frp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通过以下命令下载frp"><span class="nav-text">¶1.通过以下命令下载frp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-解压文件"><span class="nav-text">¶2.解压文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-进入解压目录"><span class="nav-text">¶3.进入解压目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-配置服务端"><span class="nav-text">¶4.配置服务端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-公网服务器开启端口"><span class="nav-text">¶四、公网服务器开启端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-启动服务端"><span class="nav-text">¶五、启动服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-配置客户端"><span class="nav-text">¶六、配置客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-启动客户端-内网端"><span class="nav-text">¶六、启动客户端（内网端）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-测试http和ssh"><span class="nav-text">¶七、测试http和ssh</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-frp的作用"><span class="nav-text">¶一、frp的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-准备说明"><span class="nav-text">¶二、准备说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现功能"><span class="nav-text">¶实现功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置前准备"><span class="nav-text">¶配置前准备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-服务端"><span class="nav-text">¶三、服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置"><span class="nav-text">¶安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙配置"><span class="nav-text">¶防火墙配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务端"><span class="nav-text">¶启动服务端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-客户端"><span class="nav-text">¶四、客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置-v2"><span class="nav-text">¶安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动客户端"><span class="nav-text">¶启动客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-测试http和ssh"><span class="nav-text">¶五、测试http和ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-配置详解"><span class="nav-text">¶六、配置详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端"><span class="nav-text">¶服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端"><span class="nav-text">¶客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-参考"><span class="nav-text">¶七、参考</span></a></li></ol></div>
             
 
           </div>
