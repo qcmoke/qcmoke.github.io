@@ -131,7 +131,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-07-08T11:17:24.892Z">
+<meta property="og:updated_time" content="2022-09-03T02:26:01.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux学习笔记">
 <meta name="twitter:description" content="这个笔记比较全面的记录了本人学习Linux的过程，内容还是比较系统、全面的。学习参考的文档以及教程来源繁多，但都吸取了其中比较好的精华，并在此基础上有所拓展深入。本次笔记更多还是在于Linux命令使用上的总结，对于日后的运维学习必定有所帮助…">
@@ -409,8 +409,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-07-08T19:17:24+08:00">
-                2022-07-08
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-03T10:26:01+08:00">
+                2022-09-03
               </time>
             
           </span>
@@ -482,7 +482,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  21.5k
+                  21.7k
                 </span>
               
 
@@ -1592,6 +1592,7 @@ gpgkey  数字证书的公钥文件保存位置。不用修改</p>
 -y 自动回答yes</p>
 </blockquote>
 <p>不带包名的update，即<code>yum -y update</code>会默认升级所有系统软件，包括系统内核，慎重使用不带包名的update。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">升级所有包，会保留旧版本的 package，更新系统内核根据/etc/yum.conf的obsoletes配置而定</span></span><br><span class="line">yum update</span><br><span class="line"><span class="meta">#</span><span class="bash">升级所有包，会删除旧版本的 package，更新系统内核</span></span><br><span class="line">yum upgrade</span><br></pre></td></tr></table></figure>
 <h5 id="5-卸载-v2"><a class="header-anchor" href="#5-卸载-v2">¶</a>（5） 卸载</h5>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum  -y  remove  包名</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -2038,8 +2039,10 @@ Restarting network (via systemctl):  Job for network.service failed because the 
 </tbody>
 </table>
 <h4 id="2-1-ssh服务端安装"><a class="header-anchor" href="#2-1-ssh服务端安装">¶</a>2.1 ssh服务端安装</h4>
-<p>以ubuntu操作系统作为服务端为例：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭防火墙或者放行ssh默认的22端口（关闭防火墙不同linux发行版可能不同）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo ufw <span class="built_in">disable</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">安装openssh-server</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install openssh-server</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑sshd_config配置文件,找到PermitRootLogin并将其值修改为yes，表示允许root管理员登录系统。将PasswordAuthentication的值改为yes表示使用帐号密码方式登录系统。</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo vim /etc/ssh/sshd_config</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重启ssh服务以生效</span></span><br><span class="line"><span class="meta">$</span><span class="bash">/etc/init.d/ssh restart</span></span><br></pre></td></tr></table></figure>
+<p><strong>ubuntu</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭防火墙或者放行ssh默认的22端口（关闭防火墙不同linux发行版可能不同）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo ufw <span class="built_in">disable</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">安装openssh-server</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install openssh-server</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑sshd_config配置文件,找到PermitRootLogin并将其值修改为yes，表示允许root管理员登录系统。将PasswordAuthentication的值改为yes表示使用帐号密码方式登录系统。</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo vim /etc/ssh/sshd_config</span></span><br><span class="line"><span class="meta">#</span><span class="bash">重启ssh服务以生效</span></span><br><span class="line"><span class="meta">$</span><span class="bash">/etc/init.d/ssh restart</span></span><br></pre></td></tr></table></figure>
+<p><strong>centos</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装openssh</span></span><br><span class="line">yum install openssh openssh-clients openssh-server -y</span><br><span class="line"><span class="meta">#</span><span class="bash">编辑sshd_config配置文件,找到PermitRootLogin并将其值修改为yes，表示允许root管理员登录系统。将PasswordAuthentication的值改为yes表示使用帐号密码方式登录系统。</span></span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"><span class="meta">#</span><span class="bash">给容器的root用户设置密码</span></span><br><span class="line">passwd root</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">启动sshd</span></span><br><span class="line">systemctl start sshd</span><br><span class="line"><span class="meta">#</span><span class="bash">其他sshd命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash">systemctl restart|stop|start|status sshd</span></span><br><span class="line"><span class="meta">#</span><span class="bash">开机启动</span></span><br><span class="line">systemctl enable sshd.service</span><br></pre></td></tr></table></figure>
 <h4 id="2-2-ssh客户端使用"><a class="header-anchor" href="#2-2-ssh客户端使用">¶</a>2.2 ssh客户端使用</h4>
 <p>SSH 客户端是一种使用SSH协议连接到远程计算机的软件程序，通过SSH 客户端我们可以连接到运行了 SSH 服务器的远程机器上。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">默认系统已经安装，如果没有可通过命令来安装</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install openssh-client</span></span><br></pre></td></tr></table></figure>
@@ -2502,8 +2505,8 @@ x&lt;=10 小于等于<br>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tools/nextcload.html" rel="prev" title="centos7搭建nextcloud私有云盘">
-                <i class="fa fa-chevron-left"></i> centos7搭建nextcloud私有云盘
+              <a href="/tools/rclone.html" rel="prev" title="通过Rclone挂载Google Drive到VPS">
+                <i class="fa fa-chevron-left"></i> 通过Rclone挂载Google Drive到VPS
               </a>
             
           </div>

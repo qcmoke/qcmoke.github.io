@@ -1979,7 +1979,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d6c1e5;
+  background: #ffe5bf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3012,6 +3012,9 @@ embed {
   background-color: #fff;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 }
+.main-inner .post .code {
+  width: 100%;
+}
 @media (max-width: 767px) {
   .main-inner .post {
     padding: 45px 12px 36px;
@@ -3059,8 +3062,7 @@ embed {
   padding-top: 0;
 }
 .main-inner .post-footer .post-widgets #needsharebutton-postbottom {
-  bottom: 25px;
-  margin: auto 50%;
+  bottom: -10px;
 }
 .main-inner .post-footer .post-widgets .wp_rating {
   position: relative;
