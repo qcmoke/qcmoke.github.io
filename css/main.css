@@ -1979,7 +1979,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b1940d;
+  background: #0006df;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3201,6 +3201,9 @@ embed {
 }
 .main-inner .comments .currentTabcontent {
   background-color: #222;
+}
+.main-inner .comments #tabs-valine {
+  margin: 25px;
 }
 .main-inner .comments .valine .vwrap .textarea-wrapper .comment_trigger {
   background-color: #f6f6f6;

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="http,https,内网穿透,反向代理,frp," />
+  <meta name="keywords" content="http,https,frp,内网穿透,反向代理," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="¶一、frp的作用 frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文《关于代理技术的理解》。   利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。说罢，也就是给外网提供内网主机的http 或 https 服务。   此外，还能利用处于内网或防火墙后的机器，">
-<meta name="keywords" content="http,https,内网穿透,反向代理,frp">
+<meta name="keywords" content="http,https,frp,内网穿透,反向代理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="frp实现内网穿透">
 <meta property="og:url" content="https://www.qcmoke.site/tools/frp.html">
@@ -636,11 +636,11 @@
           
             <a href="/tags/https/" rel="tag"><i class="fa fa-tag"></i> https</a>
           
+            <a href="/tags/frp/" rel="tag"><i class="fa fa-tag"></i> frp</a>
+          
             <a href="/tags/内网穿透/" rel="tag"><i class="fa fa-tag"></i> 内网穿透</a>
           
             <a href="/tags/反向代理/" rel="tag"><i class="fa fa-tag"></i> 反向代理</a>
-          
-            <a href="/tags/frp/" rel="tag"><i class="fa fa-tag"></i> frp</a>
           
         </div>
       
@@ -1169,7 +1169,7 @@ darkmode.click(function () {
     <!--Leancloud 操作库-->
     <script src="/js/src/av-min.js"></script>
     <!--Valine 的核心代码库-->
-    <script src="/js/src/Valine.min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     
     <script type="text/javascript">
       var emoticonList=[]
@@ -1182,10 +1182,6 @@ darkmode.click(function () {
           el: '#comments-valine' ,
           appId: '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
           appKey: 'd2FLy9fmXOTiM8TrokuIuDWx',
-          //表情图片目录地址
-          emoticon_url: 'https://cdn.jsdelivr.net/gh/Sanarous/files/emojis/aru',
-          //表情图片目录的图片名称列表
-          emoticon_list: emoticonList,
           placeholder: '留下你的小爪印吧~',
           serverURLs: 'https://leancloud.qcmoke.site',
     });
@@ -1807,5 +1803,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
