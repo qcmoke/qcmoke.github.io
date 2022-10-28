@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="http,https,frp,内网穿透,反向代理," />
+  <meta name="keywords" content="http,https,内网穿透,反向代理,frp," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="¶一、frp的作用 frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文《关于代理技术的理解》。   利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。说罢，也就是给外网提供内网主机的http 或 https 服务。   此外，还能利用处于内网或防火墙后的机器，">
-<meta name="keywords" content="http,https,frp,内网穿透,反向代理">
+<meta name="keywords" content="http,https,内网穿透,反向代理,frp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="frp实现内网穿透">
 <meta property="og:url" content="https://www.qcmoke.site/tools/frp.html">
@@ -636,11 +636,11 @@
           
             <a href="/tags/https/" rel="tag"><i class="fa fa-tag"></i> https</a>
           
-            <a href="/tags/frp/" rel="tag"><i class="fa fa-tag"></i> frp</a>
-          
             <a href="/tags/内网穿透/" rel="tag"><i class="fa fa-tag"></i> 内网穿透</a>
           
             <a href="/tags/反向代理/" rel="tag"><i class="fa fa-tag"></i> 反向代理</a>
+          
+            <a href="/tags/frp/" rel="tag"><i class="fa fa-tag"></i> frp</a>
           
         </div>
       
@@ -1602,7 +1602,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',

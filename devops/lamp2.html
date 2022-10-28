@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="centos,lamp," />
+  <meta name="keywords" content="lamp,centos," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="¶安装的顺序： 1Apache --&amp;gt; Mysql（MariaDB） --&amp;gt; PHP ¶1.配置SELinux，防火墙 12345678910禁用SELinux，否则可能造成编译失败或者出现其他意料不到的问题# vim /etc/selinux/config    SELINUX=disabled# setenforce 0配置防火墙放行http和https# firewall-cm">
-<meta name="keywords" content="centos,lamp">
+<meta name="keywords" content="lamp,centos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7环境下使用yum搭建lamp环境（编译安装版）">
 <meta property="og:url" content="https://www.qcmoke.site/devops/lamp2.html">
@@ -708,9 +708,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/centos/" rel="tag"><i class="fa fa-tag"></i> centos</a>
-          
             <a href="/tags/lamp/" rel="tag"><i class="fa fa-tag"></i> lamp</a>
+          
+            <a href="/tags/centos/" rel="tag"><i class="fa fa-tag"></i> centos</a>
           
         </div>
       
@@ -1672,7 +1672,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',

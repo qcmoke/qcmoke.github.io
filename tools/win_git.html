@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="github,git," />
+  <meta name="keywords" content="git,github," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="本文目的就是在本地客户端使用git工具连接github远程仓库，将代码托管到github中。并拓展性的学习一些基本的git命令。">
-<meta name="keywords" content="github,git">
+<meta name="keywords" content="git,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows10安装git并连接github">
 <meta property="og:url" content="https://www.qcmoke.site/tools/win_git.html">
@@ -660,9 +660,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
-          
             <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
           
         </div>
       
@@ -1624,7 +1624,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',
