@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="hexo,github,next,coding," />
+  <meta name="keywords" content="github,hexo,next,coding," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="这是一个关于搭建个人博客网站的折腾过程，自己的体会是：痛并快乐着！">
-<meta name="keywords" content="hexo,github,next,coding">
+<meta name="keywords" content="github,hexo,next,coding">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+next打造精美的个人博客网站">
 <meta property="og:url" content="https://www.qcmoke.site/blog/hexo_next.html">
@@ -148,7 +148,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-10-28T05:52:46.799Z">
+<meta property="og:updated_time" content="2022-10-28T06:12:01.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+next打造精美的个人博客网站">
 <meta name="twitter:description" content="这是一个关于搭建个人博客网站的折腾过程，自己的体会是：痛并快乐着！">
@@ -426,7 +426,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-10-28T13:52:46+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-10-28T14:12:01+08:00">
                 2022-10-28
               </time>
             
@@ -934,7 +934,11 @@
 <p>avatar 是设置默认头像，可以去https://valine.js.org/avatar 选择默认头像</p>
 <p>更多详细内容请查阅valine的官方文档：<a href="https://valine.js.org" target="_blank" rel="noopener">https://valine.js.org</a></p>
 </blockquote>
-<p>下载av-min.js：<a href="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js" target="_blank" rel="noopener">https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js</a> 放到 <code>themes/next/source/js/src</code>下。</p>
+<p>下载av-min.js和av-min.js.map放到themes/next/source/js/src`下：</p>
+<blockquote>
+<p><a href="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js" target="_blank" rel="noopener">https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js</a></p>
+<p><a href="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js.map" target="_blank" rel="noopener">https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js.map</a></p>
+</blockquote>
 <p>（2）然后修改 <code>themes/next/layout/_third-party/comments/valine.swig</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.valine.enable %&#125;</span><br><span class="line">  &#123;% if page.comments %&#125;</span><br><span class="line">    <span class="comment">&lt;!--Leancloud 操作库--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/src/av-min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--Valine 的核心代码库--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'//unpkg.com/valine/dist/Valine.min.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> emoticonList=[]</span></span><br><span class="line"><span class="javascript">      <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">164</span>; i++)&#123;</span></span><br><span class="line"><span class="javascript">        emoticonList.push(<span class="string">"aru ("</span>+i+<span class="string">").png"</span>)</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">new</span> Valine(&#123;</span></span><br><span class="line"><span class="javascript">          lang: <span class="string">'zh-cn'</span>,</span></span><br><span class="line"><span class="javascript">          admin_email: <span class="string">'qcmoke@gmail.com'</span>,</span></span><br><span class="line"><span class="javascript">          el: <span class="string">'#comments-valine'</span> ,</span></span><br><span class="line"><span class="javascript">          appId: <span class="string">'&#123;&#123; theme.valine.appid &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">          appKey: <span class="string">'&#123;&#123; theme.valine.appkey &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">          placeholder: <span class="string">'&#123;&#123; theme.valine.placeholder &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">          serverURLs: <span class="string">'&#123;&#123; theme.valine.server_api &#125;&#125;'</span>,</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="comment">//点击邮件中的链接跳转至相应评论</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span>(<span class="built_in">window</span>.location.hash)&#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> checkExist = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> ($(<span class="built_in">window</span>.location.hash).length) &#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">'html, body'</span>).animate(&#123;<span class="attr">scrollTop</span>: $(<span class="built_in">window</span>.location.hash).offset().top<span class="number">-90</span>&#125;, <span class="number">1000</span>);</span></span><br><span class="line"><span class="undefined">                clearInterval(checkExist);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">          &#125;, 100);</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>（1）关于自定义环境变量</p>
@@ -1471,9 +1475,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-          
             <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+          
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
             <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
           
@@ -2640,5 +2644,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>
