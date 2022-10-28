@@ -95,7 +95,7 @@
 <meta property="og:description" content="¶一、环境规划     主机名 IP地址 备注     服务器A hosta 192.168.60.101 keepalive主节点、Mysql主节点1   服务器B hostb 192.168.60.102 keepalive备节点、Mysql主节点2     192.168.60.222 keepalive虚拟IP，会在keepalive启动后分配到上面2台机器的主节点上     ¶二、Mys">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-07-23T19:33:34.565Z">
+<meta property="og:updated_time" content="2022-10-08T21:35:43.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keepalived+MySQL实现高可用">
 <meta name="twitter:description" content="¶一、环境规划     主机名 IP地址 备注     服务器A hosta 192.168.60.101 keepalive主节点、Mysql主节点1   服务器B hostb 192.168.60.102 keepalive备节点、Mysql主节点2     192.168.60.222 keepalive虚拟IP，会在keepalive启动后分配到上面2台机器的主节点上     ¶二、Mys">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-07-24T03:33:34+08:00">
-                2022-07-24
+              <time title="更新于" itemprop="dateModified" datetime="2022-10-09T05:35:43+08:00">
+                2022-10-09
               </time>
             
           </span>
@@ -546,6 +546,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在服务器A上关闭mysql</span></span><br><span class="line">docker stop mysql</span><br></pre></td></tr></table></figure>
 <p>参考：</p>
 <p><a href="https://www.cnblogs.com/lijiaman/p/13430668.html" target="_blank" rel="noopener">https://www.cnblogs.com/lijiaman/p/13430668.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/70820683" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/70820683</a></p>
+<p><a href="http://t.zoukankan.com/twodog-p-12139262.html" target="_blank" rel="noopener">http://t.zoukankan.com/twodog-p-12139262.html</a></p>
 
       
     </div>
@@ -1148,6 +1150,7 @@ darkmode.click(function () {
           //表情图片目录的图片名称列表
           emoticon_list: emoticonList,
           placeholder: '留下你的小爪印吧~',
+          serverURLs: 'https://leancloud.qcmoke.site',
     });
     </script>
 
@@ -1561,7 +1564,8 @@ darkmode.click(function () {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
-              url: 'https://' + api_server + '/1.1' + url,
+              //url: 'https://' + api_server + '/1.1' + url,
+              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',

@@ -1184,7 +1184,8 @@ darkmode.click(function () {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
-              url: 'https://' + api_server + '/1.1' + url,
+              //url: 'https://' + api_server + '/1.1' + url,
+              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',

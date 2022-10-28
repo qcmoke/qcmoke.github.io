@@ -1067,6 +1067,7 @@ darkmode.click(function () {
           //表情图片目录的图片名称列表
           emoticon_list: emoticonList,
           placeholder: '留下你的小爪印吧~',
+          serverURLs: 'https://leancloud.qcmoke.site',
     });
     </script>
 
@@ -1480,7 +1481,8 @@ darkmode.click(function () {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
-              url: 'https://' + api_server + '/1.1' + url,
+              //url: 'https://' + api_server + '/1.1' + url,
+              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',

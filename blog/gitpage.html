@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="git,nginx," />
+  <meta name="keywords" content="nginx,git," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="Git Pages是结合git服务操作的web网页托管平台。通过git提交再结合git hook脚本就能很好的将提交的文件上传到web服务虚拟目录里。但是Github、Netlify、Coding等已经提供了免费git pages服务，为什么还要自己在vps上折腾搭建git pages呢？因为这些服务商提供的git pages是有限制的，比如空间容量相对较小、对动态网页支持不完善或者没有、访问速">
-<meta name="keywords" content="git,nginx">
+<meta name="keywords" content="nginx,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7搭建个人的git pages">
 <meta property="og:url" content="https://www.qcmoke.site/blog/gitpage.html">
@@ -609,9 +609,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
-          
             <a href="/tags/nginx/" rel="tag"><i class="fa fa-tag"></i> nginx</a>
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
           
         </div>
       
@@ -1158,6 +1158,7 @@ darkmode.click(function () {
           //表情图片目录的图片名称列表
           emoticon_list: emoticonList,
           placeholder: '留下你的小爪印吧~',
+          serverURLs: 'https://leancloud.qcmoke.site',
     });
     </script>
 
@@ -1571,7 +1572,8 @@ darkmode.click(function () {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
-              url: 'https://' + api_server + '/1.1' + url,
+              //url: 'https://' + api_server + '/1.1' + url,
+              url: 'https://leancloud.qcmoke.site' || api_server + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',
