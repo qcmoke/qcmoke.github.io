@@ -138,9 +138,9 @@
       </categories>
       <tags>
         <tag>git</tag>
-        <tag>ngrok</tag>
         <tag>内网穿透</tag>
         <tag>反向代理</tag>
+        <tag>ngrok</tag>
       </tags>
   </entry>
   <entry>
@@ -278,9 +278,9 @@
         <category>tools</category>
       </categories>
       <tags>
-        <tag>ngrok</tag>
         <tag>内网穿透</tag>
         <tag>反向代理</tag>
+        <tag>ngrok</tag>
       </tags>
   </entry>
   <entry>
@@ -581,9 +581,9 @@
       <tags>
         <tag>http</tag>
         <tag>https</tag>
+        <tag>frp</tag>
         <tag>内网穿透</tag>
         <tag>反向代理</tag>
-        <tag>frp</tag>
       </tags>
   </entry>
   <entry>
@@ -834,8 +834,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>typecho</tag>
         <tag>lamp</tag>
+        <tag>typecho</tag>
         <tag>blog搬家</tag>
       </tags>
   </entry>
@@ -847,8 +847,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>管理员密码</tag>
         <tag>typecho</tag>
+        <tag>管理员密码</tag>
         <tag>wordpress</tag>
       </tags>
   </entry>

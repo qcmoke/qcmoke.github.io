@@ -482,7 +482,7 @@
 <h2 id="4-修改文章链接组成形式"><a class="header-anchor" href="#4-修改文章链接组成形式">¶</a>4.修改文章链接组成形式</h2>
 <p>Hexo默认的文章链接形式是一个四级url——<code>https://domain/year/month/day/demo.html</code>，可能造成url过长，对搜索引擎是十分不友好。我们可以改成<code>https://domain/demo.html</code>的形式，编辑全局配置文件<code>myblog/_config.yml</code>，修改permalink字段改为<code>permalink: :title.html</code>即可。</p>
 <p>执行以下命令重新部署即可：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span></span><br></pre></td></tr></table></figure>
 <p>但是为了更好管理文章，我更愿意用<code>https://domain/分类/demo.html</code>的形式来定义文章的url。比如我本地<code>myblog/source/_posts</code>目录下管理的文章（markdown文件）非常多，会很不容易查找到。那我可以根据<code>_posts</code>目录下markdown文件的类别进行分类，并在<code>_posts</code>目录下建立与文章相关的文件夹，将这些文章分类好后放入到这些分类文件夹里存放。比如我有一篇文件名为hexo_next.md的文章。文章的标题叫《hexo next主题设置与完善》，那么我根据自己的喜好建立一个名为<code>blog</code>的文件夹，并将hexo_next.md放到这个文件夹里。以工作区根目录为起始点的大概的结构如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">|         ├── blog  <span class="comment">#本例分类文件夹</span></span><br><span class="line">|         |    ├── hexo_next.md    <span class="comment">#本例文章（markdown文件）</span></span><br><span class="line">|         |    ├── hexo_next       <span class="comment">#本地存放hexo_next.md里所需图片的文件夹</span></span><br><span class="line">		  |    ├── typecho_move.md <span class="comment">#其他同类别的文章 </span></span><br><span class="line">|         |    └── typecho_move       </span><br><span class="line">|		  ├── devops  <span class="comment">#其他分类文件夹</span></span><br><span class="line">|		  ├── linux</span><br><span class="line">|		  ├── sql</span><br><span class="line">|         └── tools</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 <p>经过静态化处理后，那么我的url形式就变成了<code>https://domain/blog/hexo_next.html</code>。这样处理的好处就是既能很好的管理文章，又能对seo起到很好的优化作用，那何乐而不为呢？</p>
@@ -814,9 +814,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 
