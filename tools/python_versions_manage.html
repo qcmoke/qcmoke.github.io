@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="由于在日常办公电脑中或者服务器上都有python多版本同时使用需求，比如python2和python3。使用python版本管理工具pyenv或者anaconda就能够方便随意切换python版本。 一、pyenv ¶1、centos7 ¶1.1安装依赖 各系统需要的依赖可见https://github.com/pyenv/pyenv/wiki#suggested-build-environmen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-11-28T05:52:04.351Z">
+<meta property="og:updated_time" content="2022-11-28T06:50:56.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python版本管理工具">
 <meta name="twitter:description" content="由于在日常办公电脑中或者服务器上都有python多版本同时使用需求，比如python2和python3。使用python版本管理工具pyenv或者anaconda就能够方便随意切换python版本。 一、pyenv ¶1、centos7 ¶1.1安装依赖 各系统需要的依赖可见https://github.com/pyenv/pyenv/wiki#suggested-build-environmen">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-11-28T13:52:04+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-11-28T14:50:56+08:00">
                 2022-11-28
               </time>
             
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  1.5k
                 </span>
               
 
@@ -515,7 +515,7 @@ If mirror = “” Then mirror = &quot;<a href="https://www.python.org/ftp/pytho
 <p>💁‍♂环境变量配置好后需要重新打开终端。</p>
 </blockquote>
 <h3 id="2-5常用命令"><a class="header-anchor" href="#2-5常用命令">¶</a>2.5常用命令</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pyenv commands  查看pyenv命令</span><br><span class="line">pyenv install --list    #查看可安装的python版本</span><br><span class="line">pyenv versions          #查看已安装版本</span><br><span class="line">pyenv version           #查看当前使用的python版本</span><br><span class="line">pyenv install -v 版本号  #安装python</span><br><span class="line">pyenv rehash            #刷新python已安装列表</span><br><span class="line">pyenv uninstall 版本号   #删除python</span><br><span class="line">pyenv virtualenv 已有版本环境名名 新版本环境名  #按已有版创建新的python环境（调用virtualenv,python3 自带了virtualenv,py2要自行装）</span><br><span class="line">pyenv global 版本号     #设置当前全局python版本</span><br><span class="line">pyenv local  版本号     #设置当前目录局部python版本，以后进入目录就会自动切换到这个版本</span><br><span class="line">pyenv local --unset     #取消局部python版本设置,或者删除当前目录下的.python-version文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">pyenv commands  查看pyenv命令</span><br><span class="line">pyenv install --list    #查看可安装的python版本</span><br><span class="line">pyenv versions          #查看已安装版本</span><br><span class="line">pyenv version           #查看当前使用的python版本</span><br><span class="line">pyenv update		   #更新本地python版本缓存（更新.versions_cache.xml文件，该文件记录版本和其对应下载地址）</span><br><span class="line">pyenv install -v 版本号  #安装python</span><br><span class="line">pyenv rehash            #刷新python已安装列表</span><br><span class="line">pyenv uninstall 版本号   #删除python</span><br><span class="line">pyenv virtualenv 已有版本环境名名 新版本环境名  #按已有版创建新的python环境（调用virtualenv,python3 自带了virtualenv,py2要自行装）</span><br><span class="line">pyenv global 版本号     #设置当前全局python版本</span><br><span class="line">pyenv local  版本号     #设置当前目录局部python版本，以后进入目录就会自动切换到这个版本</span><br><span class="line">pyenv local --unset     #取消局部python版本设置,或者删除当前目录下的.python-version文件</span><br></pre></td></tr></table></figure>
 <h3 id="2-6安装vitualenv"><a class="header-anchor" href="#2-6安装vitualenv">¶</a>2.6安装vitualenv</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">python -m pip install --user virtualenv</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在powershell中，这样安装虚拟环境会出错</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> virtualenv venv</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 正确的安装虚拟环境方式</span></span><br><span class="line">python -m virtualenv venv</span><br><span class="line"><span class="meta">#</span><span class="bash">或者执行 pyenv <span class="built_in">exec</span> virtualenv venv <span class="comment">#这种需要全局安装的方式python -m pip install virtualenv</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 激活虚拟环境</span></span><br><span class="line">.\venv\Scripts\activate</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前虚拟环境已安装的package</span></span><br><span class="line">pip list</span><br><span class="line"><span class="meta">#</span><span class="bash"> 退出虚拟环境</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
 <h3 id="2-7卸载"><a class="header-anchor" href="#2-7卸载">¶</a>2.7卸载</h3>
