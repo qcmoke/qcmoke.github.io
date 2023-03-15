@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    
+    <lastmod>2023-03-15T20:18:33.532Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/tools/python_versions_manage.html</loc>
     
     <lastmod>2022-11-28T06:50:56.318Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
     
     <lastmod>2022-11-24T05:15:28.644Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    
-    <lastmod>2022-11-24T04:32:05.954Z</lastmod>
     
   </url>
   
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/vm.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
     
     <lastmod>2022-05-24T03:50:17.971Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
+    <loc>https://www.qcmoke.site/linux/vm.html</loc>
     
     <lastmod>2022-05-24T03:50:17.971Z</lastmod>
     
@@ -303,14 +303,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/cross_compilation.html</loc>
+    <loc>https://www.qcmoke.site/linux/cloudmusic.html</loc>
     
     <lastmod>2022-05-24T03:50:17.762Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/cloudmusic.html</loc>
+    <loc>https://www.qcmoke.site/linux/cross_compilation.html</loc>
     
     <lastmod>2022-05-24T03:50:17.762Z</lastmod>
     
@@ -401,14 +401,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/eslint.html</loc>
+    <loc>https://www.qcmoke.site/front/highly_adaptive.html</loc>
     
     <lastmod>2022-05-24T03:50:17.605Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/highly_adaptive.html</loc>
+    <loc>https://www.qcmoke.site/front/eslint.html</loc>
     
     <lastmod>2022-05-24T03:50:17.605Z</lastmod>
     
@@ -436,14 +436,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
+    <loc>https://www.qcmoke.site/front/box_collapse.html</loc>
     
     <lastmod>2022-05-24T03:50:17.596Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/box_collapse.html</loc>
+    <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
     
     <lastmod>2022-05-24T03:50:17.596Z</lastmod>
     
@@ -555,14 +555,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/blog/typecho_wordpress_password.html</loc>
+    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
     
     <lastmod>2022-05-24T03:50:17.509Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
+    <loc>https://www.qcmoke.site/blog/typecho_wordpress_password.html</loc>
     
     <lastmod>2022-05-24T03:50:17.509Z</lastmod>
     

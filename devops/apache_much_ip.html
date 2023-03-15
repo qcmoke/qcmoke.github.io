@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="apache,单ip多域名,cento," />
+  <meta name="keywords" content="单ip多域名,apache,cento," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="说明：在配置前保证已经搭建好LAMP环境。搭建详情请看《centos7环境下使用yum搭建lamp环境》 。并在/var/www/html/目录下含有两个站点目录。如本人搭建了两个博客网站，分别是typecho和wordpress。 ¶一、创建vhost.conf配置文件 第一步：首先在/etc/httpd/conf.d/目录下创建vhost.conf配置文件 123# cd /etc/http">
-<meta name="keywords" content="apache,单ip多域名,cento">
+<meta name="keywords" content="单ip多域名,apache,cento">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7 apache2.4.6配置单ip多域名">
 <meta property="og:url" content="https://www.qcmoke.site/devops/apache_much_ip.html">
@@ -485,17 +485,17 @@
 <p>说明：在配置前保证已经搭建好LAMP环境。搭建详情请看<a href="https://www.qcmoke.site/devops/lamp.html">《centos7环境下使用yum搭建lamp环境》</a> 。并在<code>/var/www/html/</code>目录下含有两个站点目录。如本人搭建了两个博客网站，分别是typecho和wordpress。</p>
 <h2 id="一-创建vhost-conf配置文件"><a class="header-anchor" href="#一-创建vhost-conf配置文件">¶</a>一、创建vhost.conf配置文件</h2>
 <p>第一步：首先在<code>/etc/httpd/conf.d/</code>目录下创建<code>vhost.conf</code>配置文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> /etc/httpd/conf.d/</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> touch vhost.conf</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vim vhost.conf</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cd /etc/httpd/conf.d/</span><br><span class="line"><span class="meta">#</span> touch vhost.conf</span><br><span class="line"><span class="meta">#</span> vim vhost.conf</span><br></pre></td></tr></table></figure>
 <h2 id="二-配置vhost-conf"><a class="header-anchor" href="#二-配置vhost-conf">¶</a>二、配置vhost.conf</h2>
 <p>第二步：按<code>i</code>进入编辑模式，复制以下配置内容粘贴到<code>vhost.conf</code>中（以下域名和目录请根据自己的实际情况来修改，其中<code>DocumentRoot</code>和<code>Directory</code>更换自己的项目绝对路径，<code>ServerName</code>为主域名，<code>ServerAlias</code>为辅助域名）。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">    DocumentRoot "/var/www/html/typecho"</span><br><span class="line">    ServerName luoyui.top</span><br><span class="line">    ServerAlias blog.luoyui.top</span><br><span class="line">    <span class="tag">&lt;<span class="name">Directory</span> "/<span class="attr">var</span>/<span class="attr">www</span>/<span class="attr">html</span>/<span class="attr">typecho</span>"&gt;</span></span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">    DocumentRoot "/var/www/html/wordpress"</span><br><span class="line">    ServerName luoyui.top</span><br><span class="line">    ServerAlias wordpress.luoyui.top</span><br><span class="line">    <span class="tag">&lt;<span class="name">Directory</span> "/<span class="attr">var</span>/<span class="attr">www</span>/<span class="attr">html</span>/<span class="attr">wordpress</span>"&gt;</span></span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>粘贴好后按<code>:wq</code>退出</p>
 <h2 id="三-检测apache配置"><a class="header-anchor" href="#三-检测apache配置">¶</a>三、检测apache配置</h2>
 <p>第三步：确认apache配置是否正确</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> httpd -t</span></span><br><span class="line">    AH00558: httpd: Could not reliably determine the server's fully qualified </span><br><span class="line">    domain name, using localhost.localdomain. Set the 'ServerName' directive </span><br><span class="line">    globally to suppress this message</span><br><span class="line">    Syntax OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> httpd -t</span><br><span class="line">    AH00558: httpd: Could not reliably determine the server's fully qualified </span><br><span class="line">    domain name, using localhost.localdomain. Set the 'ServerName' directive </span><br><span class="line">    globally to suppress this message</span><br><span class="line">    Syntax OK</span><br></pre></td></tr></table></figure>
 <h2 id="四-重启apache"><a class="header-anchor" href="#四-重启apache">¶</a>四、重启apache</h2>
 <p>第四步：重启apache服务</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> service httpd restart</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> service httpd restart</span><br></pre></td></tr></table></figure>
 <h2 id="五-访问域名地址"><a class="header-anchor" href="#五-访问域名地址">¶</a>五、访问域名地址</h2>
 <p>第五步：浏览器分别访问<code>blog.luoyui.top</code>和<code>wordpress.luoyui.top</code></p>
 <p>备注：如果用户访问的是<code>luoyui.top</code>, 那么会优先寻找第一个虚拟主机。此处为<code>/var/www/html/typecho</code></p>
@@ -556,9 +556,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
-          
             <a href="/tags/单ip多域名/" rel="tag"><i class="fa fa-tag"></i> 单ip多域名</a>
+          
+            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
           
             <a href="/tags/cento/" rel="tag"><i class="fa fa-tag"></i> cento</a>
           
@@ -850,7 +850,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1719,5 +1719,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>
