@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:18.106Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows那些操作玩意">
 <meta name="twitter:description" content="¶一、进程处理 1234567891011121314#查看所有端口：netstat -ano#只查看8080 端口：netstat -aon|findstr &quot;8080&quot;#杀死进程，假如对应的PID是“11388”taskkill /F /PID 11388#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称tasklist|findstr &quot;174">
@@ -376,8 +376,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:18+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -488,7 +488,7 @@
       
         <a id="more"></a>
 <h2 id="一-进程处理"><a class="header-anchor" href="#一-进程处理">¶</a>一、进程处理</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看所有端口：</span></span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">只查看8080 端口：</span></span><br><span class="line">netstat -aon|findstr "8080"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">杀死进程，假如对应的PID是“11388”</span></span><br><span class="line">taskkill /F /PID 11388</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称</span></span><br><span class="line">tasklist|findstr "17484"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">可以通过进程名称关键字查看进程号</span></span><br><span class="line">tasklist|findstr "QQPY"</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看所有端口：</span></span><br><span class="line">netstat -ano</span><br><span class="line"></span><br><span class="line"><span class="comment">#只查看8080 端口：</span></span><br><span class="line">netstat -aon|findstr <span class="string">"8080"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#杀死进程，假如对应的PID是“11388”</span></span><br><span class="line">taskkill /F /PID 11388</span><br><span class="line"></span><br><span class="line"><span class="comment">#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称</span></span><br><span class="line">tasklist|findstr <span class="string">"17484"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#可以通过进程名称关键字查看进程号</span></span><br><span class="line">tasklist|findstr <span class="string">"QQPY"</span></span><br></pre></td></tr></table></figure>
 <h2 id="二-那些不为人知却能提高工作效率的神秘快捷键"><a class="header-anchor" href="#二-那些不为人知却能提高工作效率的神秘快捷键">¶</a>二、那些不为人知却能提高工作效率的神秘快捷键</h2>
 <h3 id="1-批量多选"><a class="header-anchor" href="#1-批量多选">¶</a>1. 批量多选</h3>
 <p>长按<code>Ctrl</code>后按鼠标左键以选择或反选</p>
@@ -1731,5 +1731,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

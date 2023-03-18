@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.929Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu必备优化">
 <meta name="twitter:description" content="优化内容：添加root密码+修改软件源+安装deepin-wine+安装搜狗拼音+gnome桌面主题美化">
@@ -405,8 +405,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -521,39 +521,39 @@
       
         <a id="more"></a>
 <h2 id="1-开放root用户登录-添加root密码"><a class="header-anchor" href="#1-开放root用户登录-添加root密码">¶</a>1、开放root用户登录，添加root密码</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo passwd</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo passwd</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/3056923084.png" alt="3056923084.png"></p>
 <h2 id="2-修改软件源"><a class="header-anchor" href="#2-修改软件源">¶</a>2、修改软件源</h2>
 <h3 id="1-复制原文件备份"><a class="header-anchor" href="#1-复制原文件备份">¶</a>（1） 复制原文件备份</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo sudo cp /etc/apt/sources.list  /etc/apt/sources.list.bak</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo sudo cp /etc/apt/sources.list  /etc/apt/sources.list.bak</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-添加源地址"><a class="header-anchor" href="#2-添加源地址">¶</a>（2） 添加源地址</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vim /etc/apt/sources.list</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/apt/sources.list</span></span><br></pre></td></tr></table></figure>
 <p>将原来的列表全部删除,添加如下内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
 <h3 id="3-修改完成后-保存文件-更新一下"><a class="header-anchor" href="#3-修改完成后-保存文件-更新一下">¶</a>（3） 修改完成后，保存文件，更新一下</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get upgrade</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo apt-get update </span></span><br><span class="line"><span class="comment"># sudo apt-get upgrade</span></span><br></pre></td></tr></table></figure>
 <h3 id="none"><a class="header-anchor" href="#none">¶</a></h3>
 <h2 id="3-安装deepin-wine"><a class="header-anchor" href="#3-安装deepin-wine">¶</a>3、安装deepin-wine</h2>
 <h3 id="1-克隆deepin-wine"><a class="header-anchor" href="#1-克隆deepin-wine">¶</a>（1） 克隆deepin-wine</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">  git <span class="built_in">clone</span> https://github.com/wszqkzqk/deepin-wine-ubuntu.git</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  git clone https://github.com/wszqkzqk/deepin-wine-ubuntu.git</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/605656398.png" alt="605656398.png"></p>
 <p>下载完后进入包目录里，在终端中运行（授予可执行权限后）：</p>
 <p>（2） 安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> deepin-wine-ubuntu/</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ./install.sh</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd deepin-wine-ubuntu/</span></span><br><span class="line"><span class="comment"># ./install.sh</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/511098409.png" alt="511098409.png"></p>
 <p>如果在<code>/opt</code>目录下有<code>deepinwine</code>说明安装完毕<br>
 <img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/150288248.png" alt="150288248.png"></p>
 <h3 id="3-使用说明"><a class="header-anchor" href="#3-使用说明">¶</a>（3） 使用说明</h3>
 <p>使用<code>wget</code>下载并安装所需要的<code>deepin-wine</code>容器_（建议在终端下使用<code>dpkg -i</code>安装容器，否则容易误报依赖错误）_推荐使用特别兼容支持包：<br>
 QQ</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/deepin.com.qq.im_8.9.19983deepin23_i386.deb</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/deepin.com.qq.im_8.9.19983deepin23_i386.deb</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/408308503.png" alt="408308503.png"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo dpkg -i deepin.com.qq.im_8.9.19983deepin23_i386.deb</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo dpkg -i deepin.com.qq.im_8.9.19983deepin23_i386.deb</span></span><br></pre></td></tr></table></figure>
 <p>出现以下安装图标即为安装成功<br>
 <img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1524458861.png" alt="1524458861.png"></p>
 <p>以下的安装和以上QQ的安装类似</p>
 <p>微信</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.2.31deepin0_i386.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.2.31deepin0_i386.deb</span><br></pre></td></tr></table></figure>
 <p>百度网盘</p>
 <pre><code>http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.baidu.pan/deepin.com.baidu.pan_5.5.4deepin8_i386.deb
 </code></pre>
@@ -563,15 +563,15 @@ QQ</p>
 <h2 id="4-安装搜狗拼音"><a class="header-anchor" href="#4-安装搜狗拼音">¶</a>4、安装搜狗拼音</h2>
 <h3 id="1-检测是否安装fcitx"><a class="header-anchor" href="#1-检测是否安装fcitx">¶</a>（1）检测是否安装fcitx</h3>
 <p>首先检测是否有<code>fcitx</code>，因为搜狗拼音依赖<code>fcitx</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> fcitx</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># fcitx</span></span><br></pre></td></tr></table></figure>
 <p>如下表示未有安装，否则跳过安装步骤</p>
 <p>安装fcitx-bin和fcitx-table</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install fcitx-bin</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install fcitx-table</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo apt install fcitx-bin</span></span><br><span class="line"><span class="comment"># sudo apt-get install fcitx-table</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1889762904.png" alt="1889762904.png"></p>
 <h3 id="2-下载搜狗输入法"><a class="header-anchor" href="#2-下载搜狗输入法">¶</a>（2）下载搜狗输入法</h3>
 <p>下载地址：<a href="https://pinyin.sogou.com/linux/" target="_blank" rel="noopener">https://pinyin.sogou.com/linux/</a></p>
 <h3 id="3-安装搜狗输入法"><a class="header-anchor" href="#3-安装搜狗输入法">¶</a>（3）安装搜狗输入法</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb   <span class="comment">#安装sogoupinyin</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt --fix-broken install    <span class="comment">#修复依赖                </span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb   <span class="comment">#再次安装sogoupinyin</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb   #安装sogoupinyin</span></span><br><span class="line"><span class="comment"># sudo apt --fix-broken install    #修复依赖                </span></span><br><span class="line"><span class="comment"># sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb   #再次安装sogoupinyin</span></span><br></pre></td></tr></table></figure>
 <p>重启系统后设置搜狗输入法到最前面，按<code>Ctrl+空格键</code>切换输入法即可正常使用搜狗输入法</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1657885174.png" alt="1657885174.png"></p>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/619427351.png" alt="619427351.png"></p>
@@ -581,10 +581,10 @@ QQ</p>
 <h3 id="1-安装gnome-shell"><a class="header-anchor" href="#1-安装gnome-shell">¶</a>（1）安装gnome-shell</h3>
 <p>Ubuntu16.04需要安装gnome桌面系统，安装好后还需要退出当前账户，选择GNOME桌面系统。（Ubuntu18.04默认桌面即为Gnome，可跳过此命令和步骤）</p>
 <p>Ubuntu16.04安装<code>gnome-shell</code>命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install gnome-shell</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo apt-get install gnome-shell</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/225083685.png" alt="225083685.png"></p>
 <h3 id="2-安装美化管理器-优化"><a class="header-anchor" href="#2-安装美化管理器-优化">¶</a>（2）安装美化管理器(优化)</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install gnome-tweak-tool</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo apt install gnome-tweak-tool</span></span><br></pre></td></tr></table></figure>
 <p>如下图即为安装成功<br>
 <img src="/linux/../images/loading-post.gif" data-original="117/1601272589.png" alt="1601272589.png"></p>
 <h3 id="3-浏览器安装gnome-shell-extensions插件"><a class="header-anchor" href="#3-浏览器安装gnome-shell-extensions插件">¶</a>（3）浏览器安装Gnome-shell extensions插件</h3>
@@ -593,7 +593,7 @@ QQ</p>
 <p>点击右上角的小图标，你可能会还会收到如下图的警告：<br>
 <img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/64467183.png" alt="64467183.png"></p>
 <p>链接中的<code>documentation</code>是告诉你要为系统安装<code>chrome-gnome-shell</code> (虽然有chrome，但与chrome没有关系)，对于Ubuntu16.04安装<code>gnome-shell</code>时已经安装了<code>chrome-gnome-shell</code>，可跳过，如果是Ubuntu18.04请执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install chrome-gnome-shell</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install chrome-gnome-shell</span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/2293110984.png" alt="2293110984.png"></p>
 <h3 id="4-安装gnome扩展"><a class="header-anchor" href="#4-安装gnome扩展">¶</a>（4）安装gnome扩展</h3>
 <p>安装好之后刷新浏览器就不会有警告了，然后你就可以根据需要找到相应的Gnome扩展，如下图所示，只需要点击类似开关的按钮即可自动安装。</p>
@@ -609,26 +609,26 @@ QQ</p>
 <h3 id="5-下载安装应用主题-shell主题-图标主题"><a class="header-anchor" href="#5-下载安装应用主题-shell主题-图标主题">¶</a>（5）下载安装应用主题、shell主题、图标主题</h3>
 <p>对于Gnome桌面，你最需要连接的就是这个网站<a href="https://www.gnome-look.org/" target="_blank" rel="noopener">https://www.gnome-look.org/</a>，它提供了包括主题、图标、字体等在内的很多包。</p>
 <p>因为在上述中安装了User Themes 扩展，所以我们可以把下载好的主题放置在自己的家目录下，为此，在<code>/home/用户名/.local/share/</code>中新建<code>themes</code>、<code>fonts</code>、<code>icons</code> 三个文件夹，分别存放主题、字体和图标 。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mkdir themes fonts icons</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkdir themes fonts icons</span></span><br></pre></td></tr></table></figure>
 <p>①应用主题：</p>
 <p>我们通过<a href="https://www.gnome-look.org/" target="_blank" rel="noopener">gnome-look官网</a>下载一个心仪的主题。这里我们选择<code>X-Arc-Collection</code>。</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/2391123375.png" alt="2391123375.png"><br>
 <img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1879449046.png" alt="1879449046.png"></p>
 <p>复制以下4个目录（或者选一个，为了和我的教程一致，那就全都复制）到<code>.local/share/themes</code>中。</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/3152784345.png" alt="3152784345.png"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo cp -r X-Arc-Collection-v1.4.9/* /home/wen/.<span class="built_in">local</span>/share/themes/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo cp -r X-Arc-Collection-v1.4.9/* /home/wen/.local/share/themes/</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1862226973.png" alt="117/1862226973.png"></p>
 <p>②shell主题：<br>
 下载如下图所示的shell主题，下载后，将<code>Human-NEXT</code>文件复制到<code>.local/share/themes</code> 中。</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/2344486251.png" alt="2344486251.png"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo cp -r Human-NEXT  /home/wen/.<span class="built_in">local</span>/share/themes/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo cp -r Human-NEXT  /home/wen/.local/share/themes/</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1778078088.png" alt="1778078088.png"></p>
 <p>③图标主题：</p>
 <p>可以在<a href="https://www.gnome-look.org/%E5%AE%98%E7%BD%91%E4%BE%A7%E6%A0%8FIcon" target="_blank" rel="noopener">https://www.gnome-look.org/官网侧栏Icon</a> Themes （如下图）找到需要的图标，然后下载，同样可以通过添加源，下载安装别人开发好的主题样式，放置在<code>.local/share/icons</code> 中。</p>
 <p>通过<code>gnome-look</code>官网下载安装（这里我没使用该方式）</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/2614994600.png" alt="2614994600.png"></p>
 <p>通过添加源，下载安装(这里我使用的是该方式)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository ppa:snwh/pulp</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update  </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install paper-icon-theme</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo add-apt-repository ppa:snwh/pulp</span></span><br><span class="line"><span class="comment"># sudo apt-get update  </span></span><br><span class="line"><span class="comment"># sudo apt-get install paper-icon-theme</span></span><br></pre></td></tr></table></figure>
 <h3 id="6-通过gnome-tweak-tool统一对以上安装好的各种主题进行设置"><a class="header-anchor" href="#6-通过gnome-tweak-tool统一对以上安装好的各种主题进行设置">¶</a>（6）通过Gnome-tweak-tool统一对以上安装好的各种主题进行设置。</h3>
 <p><img src="/linux/../images/loading-post.gif" data-original="ubuntu_advantage/1484459109.png" alt="1484459109.png"></p>
 <p>①优化shell</p>
@@ -1875,5 +1875,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

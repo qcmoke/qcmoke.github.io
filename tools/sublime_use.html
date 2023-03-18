@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:18.053Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sublime text3使用指南">
 <meta name="twitter:description" content="sublime text3是很优秀的文本编辑器，高速的文件读取速度，美观的用户界面，丰富的扩展插件，让其受到很多开发者的青睐，这里就只介绍一些常用插件的安装和使用教程。">
@@ -395,8 +395,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:18+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -509,9 +509,9 @@
 <a id="more"></a>
 <h2 id="一-安装package-control插件管理控制台"><a class="header-anchor" href="#一-安装package-control插件管理控制台">¶</a>一、安装Package Control插件管理控制台</h2>
 <p>首先要安装Package Control,有了这个插件管理控制台才能安装第三方插件。安装这个插件可以通过按以下命令来打开控制台。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl+ `</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl+ `</span><br></pre></td></tr></table></figure>
 <p>出现控制台后输入以下命令并按<code>Enter</code>键即可安装Package Control。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).<span class="built_in">read</span>(); dh = hashlib.sha256(by).hexdigest(); <span class="built_in">print</span>(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
 <h2 id="二-安装插件"><a class="header-anchor" href="#二-安装插件">¶</a>二、安装插件</h2>
 <p>安装好Package Control后就可以安装第三方插件了，首先先按<code>ctrl+shift+p</code>打开控制台，然后通过输入<code>Package Control: Install package</code>并按<code>Enter</code>键即可输入第三方插件安装。接下来将 介绍我正在使用的几个第三方插件。这些插件几乎都可以在<a href="https://packagecontrol.io" target="_blank" rel="noopener">sublime插件官网</a>找到。</p>
 <h3 id="1-a-file-icon"><a class="header-anchor" href="#1-a-file-icon">¶</a>1.A File Icon</h3>
@@ -638,7 +638,7 @@
 <p>(3)类似地，按<code>ctrl+shift+p</code>打开控制台，然后通过输入<code>Package Control: Install Package</code>，选中<code>Package Control: Install Package</code>选项，并按<code>Enter</code>键。<br>
 (2) 输入<code>Markdown Preview</code>并按<code>Enter</code>键，等待一会儿左下角的小等号来回走动结束就表示安装成功。</p>
 <p>自定义快捷键，点击 Preferences --&gt; 选择 Key Bindings User，输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; "keys": ["alt+m"], "command": "markdown_preview", "args":&#123;"target": "browser", "parser":"markdown"&#125; &#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"keys"</span>: [<span class="string">"alt+m"</span>], <span class="string">"command"</span>: <span class="string">"markdown_preview"</span>, <span class="string">"args"</span>:&#123;<span class="string">"target"</span>: <span class="string">"browser"</span>, <span class="string">"parser"</span>:<span class="string">"markdown"</span>&#125; &#125;,</span><br></pre></td></tr></table></figure>
 <h3 id="13-filediffs"><a class="header-anchor" href="#13-filediffs">¶</a>13.FileDiffs</h3>
 <p><a href="https://packagecontrol.io/packages/FileDiffs" target="_blank" rel="noopener">FileDiffs</a>能显示不同文件的不同处内容。方便排查错误。</p>
 <p>(1) 先按<code>ctrl+shift+p</code>打开控制台，然后通过输入<code>Package Control: Install Package</code>，选中<code>Package Control: Install Package</code>选项，并按<code>Enter</code>键。<br>
@@ -2056,5 +2056,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

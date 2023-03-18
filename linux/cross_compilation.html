@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.762Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个简单的hello world交叉编译实验">
 <meta name="twitter:description" content="交叉编译，简单地说，就是在一个平台上生成另一个平台上的可执行代码。下面就做一个简单的hello world实验来完成这一过程。">
@@ -381,8 +381,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -507,36 +507,36 @@
 <p>（4）修改虚拟机的ip地址和子网掩码</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554715616309.png" alt="1554715616309"></p>
 <p>（5）重启虚拟机，以使网络配置可以</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> reboot</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
 <p>重启完成后执行以下命令查看是否配置成功</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ifconfig</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ifconfig</span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554715834461.png" alt="1554715834461"></p>
 <p>配置完成后虚拟机和开发板互ping，都ping通。</p>
 <h2 id="1-搭建交叉编译环境"><a class="header-anchor" href="#1-搭建交叉编译环境">¶</a>1. 搭建交叉编译环境</h2>
 <p>解压交叉编译gcc工具并放到共享目录里</p>
 <p>下载<a href="https://dev.tencent.com/u/qcmoke/p/source/git/raw/master/tools/linux/arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz" target="_blank" rel="noopener">arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">复制gcc到共享目录里</span></span><br><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs/Linux$ cp arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz /home/qcmoke/nfs/</span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs$ tar zxvf arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#复制gcc到共享目录里</span></span><br><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs/Linux$ cp arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz /home/qcmoke/nfs/</span><br><span class="line"><span class="comment">#解压</span></span><br><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs$ tar zxvf arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz</span><br></pre></td></tr></table></figure>
 <h2 id="2-编写hello-c测试文件"><a class="header-anchor" href="#2-编写hello-c测试文件">¶</a>2. 编写hello.c测试文件</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs$ vim hello.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs$ vim hello.c</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554713663226.png" alt="1554713663226"></p>
 <h2 id="3-编译hello-c"><a class="header-anchor" href="#3-编译hello-c">¶</a>3. 编译hello.c</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs$ ./opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-gcc hello.c -o hello</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~/nfs$ ./opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-gcc hello.c -o hello</span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554713781948.png" alt="1554713781948"></p>
 <h2 id="4-登录arm主机"><a class="header-anchor" href="#4-登录arm主机">¶</a>4. 登录arm主机</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~$ telnet 192.168.1.230</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~$ telnet 192.168.1.230</span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554713890561.png" alt="1554713890561"></p>
 <h2 id="5-挂载共享目录"><a class="header-anchor" href="#5-挂载共享目录">¶</a>5. 挂载共享目录</h2>
 <p>需要在A主机搭建nfs服务器，以便快速共享编译好的可执行文件。具体搭建教程请参考<a href="https://www.qcmoke.site/devops/nfs.html">ubuntu 16.04 nfs服务的搭建</a>。在本次实验中搭建的nfs共享目录是A主机的<code>/home/qcmoke/nfs/</code>目录，而挂载点是B主机的<code>/mnt/nfs/</code>目录。</p>
 <p>通过在编译环境的主机执行以下命令查看共享目录地址</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~$ showmount -e localhost</span><br><span class="line">Export list for localhost:</span><br><span class="line">/home/qcmoke/nfs *</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">qcmoke@qcmoke-virtual-machine:~$ showmount -e localhost</span><br><span class="line">Export list <span class="keyword">for</span> localhost:</span><br><span class="line">/home/qcmoke/nfs *</span><br></pre></td></tr></table></figure>
 <p>根据查询结果挂载到arm主机某个目录,如<code>/mnt/nfs</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建挂载点</span></span><br><span class="line">[root@FriendlyARM /]# mkdir /mnt/nfs</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">挂载</span></span><br><span class="line">[root@FriendlyARM /]# mount -o rw 192.168.1.232:/home/qcmoke/nfs/ /mnt/nfs/ -o nolock</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建挂载点</span></span><br><span class="line">[root@FriendlyARM /]<span class="comment"># mkdir /mnt/nfs</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#挂载</span></span><br><span class="line">[root@FriendlyARM /]<span class="comment"># mount -o rw 192.168.1.232:/home/qcmoke/nfs/ /mnt/nfs/ -o nolock</span></span><br></pre></td></tr></table></figure>
 <p>通过以下命令查看是否挂载成功</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@FriendlyARM /]# df</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@FriendlyARM /]<span class="comment"># df</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554714493056.png" alt="1554714493056"></p>
 <h2 id="6-在arm主机上运行hello可执行文件"><a class="header-anchor" href="#6-在arm主机上运行hello可执行文件">¶</a>6. 在arm主机上运行hello可执行文件</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@FriendlyARM /]# /mnt/nfs/hello</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@FriendlyARM /]<span class="comment"># /mnt/nfs/hello</span></span><br></pre></td></tr></table></figure>
 <p><img src="/linux/../images/loading-post.gif" data-original="cross_compilation/1554714619763.png" alt="1554714619763"></p>
 <p>运行成功，交叉编译完成！😄</p>
 
@@ -1761,5 +1761,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

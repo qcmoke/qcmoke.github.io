@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="​	由于最近做完了毕业设计，准备考虑进入云服务部署的阶段，但毕设作为微服务项目非常吃服务器的性能，我自己的两台阿里云和腾讯云学生机已经完全不够用了，但又没money再买服务器，而自己又有一台华为matebook E笔记本在吃灰，所以打算让其安装一个UI做的比较美观的deepin linux系统来分担一下云服务器的压力。于是开始了这条不归路…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.770Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次deepin使用体验">
 <meta name="twitter:description" content="​	由于最近做完了毕业设计，准备考虑进入云服务部署的阶段，但毕设作为微服务项目非常吃服务器的性能，我自己的两台阿里云和腾讯云学生机已经完全不够用了，但又没money再买服务器，而自己又有一台华为matebook E笔记本在吃灰，所以打算让其安装一个UI做的比较美观的deepin linux系统来分担一下云服务器的压力。于是开始了这条不归路…">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -498,12 +498,12 @@
 </blockquote>
 <p><em>经过实测发现上面的方案对于matebook安装Ubuntu时如果出现同样的问题一样适用。</em></p>
 <p>（2）通过vim进入文件编辑界面时，没法使用鼠标复制粘贴内容，于是网上找了一波才找到如下解决方案：</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim ~/.vimrc</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.vimrc</span><br></pre></td></tr></table></figure>
 <p>然后加入如下内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syntax on</span><br><span class="line">set mouse-=a</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syntax on</span><br><span class="line"><span class="built_in">set</span> mouse-=a</span><br></pre></td></tr></table></figure>
 <p>（3）root用户ls等操作无法高亮显示</p>
 <p>进入系统默认的普通用户主目录(比如是<code>/home/qcmoke/</code>)，然后复制该目录下的<code>.bashrc</code>文件到<code>/root/</code>目录即可。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> su</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cp /home/qcmoke/.bashrc /root/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> /root/.bashrc</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ su</span><br><span class="line">$ cp /home/qcmoke/.bashrc /root/</span><br><span class="line">$ <span class="built_in">source</span> /root/.bashrc</span><br></pre></td></tr></table></figure>
       
     </div>
     <div>
@@ -1700,5 +1700,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

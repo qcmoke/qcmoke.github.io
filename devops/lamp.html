@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶1、搭建 MySQL 数据库 ¶1.1 安装 MariaDB： 1# yum install mariadb-server -y ¶1.2 启动 MySQL 服务： 1234567# systemctl start mariadb   # 启动服务# systemctl enable mariadb  # 设置开机启动设置 MySQL 账户 root 密码：mysqladmin -u root">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.551Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7环境下使用yum搭建lamp环境">
 <meta name="twitter:description" content="¶1、搭建 MySQL 数据库 ¶1.1 安装 MariaDB： 1# yum install mariadb-server -y ¶1.2 启动 MySQL 服务： 1234567# systemctl start mariadb   # 启动服务# systemctl enable mariadb  # 设置开机启动设置 MySQL 账户 root 密码：mysqladmin -u root">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -484,45 +484,45 @@
         <a id="more"></a>
 <h2 id="1-搭建-mysql-数据库"><a class="header-anchor" href="#1-搭建-mysql-数据库">¶</a>1、搭建 MySQL 数据库</h2>
 <h3 id="1-1-安装-mariadb："><a class="header-anchor" href="#1-1-安装-mariadb：">¶</a>1.1 安装 MariaDB：</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum install mariadb-server -y</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install mariadb-server -y</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-2-启动-mysql-服务："><a class="header-anchor" href="#1-2-启动-mysql-服务：">¶</a>1.2 启动 MySQL 服务：</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> systemctl start mariadb   <span class="comment"># 启动服务</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl <span class="built_in">enable</span> mariadb  <span class="comment"># 设置开机启动</span></span></span><br><span class="line"></span><br><span class="line">设置 MySQL 账户 root 密码：</span><br><span class="line">mysqladmin -u root password '******'</span><br><span class="line"><span class="meta">#</span><span class="bash">如</span></span><br><span class="line">mysqladmin -u root password '123456'</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl start mariadb   # 启动服务</span></span><br><span class="line"><span class="comment"># systemctl enable mariadb  # 设置开机启动</span></span><br><span class="line"></span><br><span class="line">设置 MySQL 账户 root 密码：</span><br><span class="line">mysqladmin -u root password <span class="string">'******'</span></span><br><span class="line"><span class="comment">#如</span></span><br><span class="line">mysqladmin -u root password <span class="string">'123456'</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-3-远程连接mysql"><a class="header-anchor" href="#1-3-远程连接mysql">¶</a>1.3 远程连接mysql</h3>
 <p>(1)连接到<code>mysql</code>，输入下边命令，然后输入<code>mysql</code>密码进入<code>mysql</code>命令行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
 <p>(2)输入下边的命令授权远程连接</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY '123456' WITH GRANT OPTION; #123456是远程访问的密码，修改成你需要密码</span><br><span class="line">MariaDB [(none)]&gt; flush privileges; #刷新一下</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'root'</span>@<span class="string">'%'</span>IDENTIFIED BY <span class="string">'123456'</span> WITH GRANT OPTION; <span class="comment">#123456是远程访问的密码，修改成你需要密码</span></span><br><span class="line">MariaDB [(none)]&gt; flush privileges; <span class="comment">#刷新一下</span></span><br></pre></td></tr></table></figure>
 <p>(3)如果服务器的防火墙有开启，那么需要放行<code>mysql</code>端口或者关闭防火墙，退出<code>mysql</code>命令行后执行下边命令</p>
 <p>放行<code>mysql</code>端口：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --permanent --add-port=3306/tcp</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd --reload</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ firewall-cmd --permanent --add-port=3306/tcp</span><br><span class="line">$ firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <p>或者关闭防火墙：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> service firewalld stop <span class="comment"># 关闭</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service firewalld stop <span class="comment"># 关闭</span></span><br></pre></td></tr></table></figure>
 <p>(4)远程终端连接<code>mysql</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mysql -h ip -u root -p123456  <span class="comment">#这里的ip是服务器的ip地址</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -h ip -u root -p123456  <span class="comment">#这里的ip是服务器的ip地址</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-4-其他操作"><a class="header-anchor" href="#1-4-其他操作">¶</a>1.4 其他操作</h3>
 <p>创建mysql新用户并给该用户指定的数据库权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建用户名为qcmoke且登录密码为123456的新用户</span></span><br><span class="line">MariaDB [(none)]&gt; CREATE USER 'qcmoke'@'%' IDENTIFIED BY '123456';</span><br><span class="line"><span class="meta">#</span><span class="bash">赋予qcmoke用户对名称为xdclass的数据库所有权限</span></span><br><span class="line">MariaDB [(none)]&gt; GRANT ALL ON xdclass.* TO 'qcmoke'@'%';</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建用户名为qcmoke且登录密码为123456的新用户</span></span><br><span class="line">MariaDB [(none)]&gt; CREATE USER <span class="string">'qcmoke'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'123456'</span>;</span><br><span class="line"><span class="comment">#赋予qcmoke用户对名称为xdclass的数据库所有权限</span></span><br><span class="line">MariaDB [(none)]&gt; GRANT ALL ON xdclass.* TO <span class="string">'qcmoke'</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="2-安装-apache-服务"><a class="header-anchor" href="#2-安装-apache-服务">¶</a>2、安装 Apache 服务</h2>
 <ul>
 <li>安装 Apache</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum install httpd -y</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install httpd -y</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>启动 Apache 服务：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> systemctl start httpd   <span class="comment"># 启动服务</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl <span class="built_in">enable</span> httpd  <span class="comment"># 设置开机启动</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl start httpd   # 启动服务</span></span><br><span class="line"><span class="comment"># systemctl enable httpd  # 设置开机启动</span></span><br></pre></td></tr></table></figure>
 <h2 id="3-安装-php"><a class="header-anchor" href="#3-安装-php">¶</a>3、安装 PHP</h2>
 <ul>
 <li>安装 PHP 和 PHP-MYSQL 支持工具</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum install php php-mysql -y</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install php php-mysql -y</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>检验 PHP 是否安装成功<br>
 我们在<code>/var/www/html</code>目录下创建一个<code>info.php</code>文件来检查php是否安装成功，示例代码参考如下</li>
 </ul>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="4-重启-apache-服务"><a class="header-anchor" href="#4-重启-apache-服务">¶</a>4、重启 Apache 服务</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> systemctl restart httpd</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl restart httpd</span></span><br></pre></td></tr></table></figure>
 <p>此时，访问  <code>http://localhost/info.php</code> 可浏览到我们刚刚创建的 <code>info.php</code> 页面说明搭建成功。</p>
 
       
@@ -1746,5 +1746,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

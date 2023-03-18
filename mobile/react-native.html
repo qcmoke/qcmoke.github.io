@@ -97,7 +97,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2022-05-24T03:50:17.977Z">
+<meta property="og:updated_time" content="2023-03-18T21:15:01.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react native学习笔记">
 <meta name="twitter:description" content="¶一、环境搭建 注意 Node 的版本应大于等于 12，Python 的版本必须为 2.x（不支持 3.x），而 JDK 的版本必须是 1.8（目前不支持 1.9 及更高版本，注意 1.8 版本官方也直接称 8 版本）。安装完 Node 后建议设置 npm 镜像（淘宝源）以加速后面的过程（或使用科学上网工具）。 ¶1.下载JDK 选择适应自己的机型；官网地址：http://www.oracle.">
@@ -375,8 +375,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
+                2023-03-19
               </time>
             
           </span>
@@ -513,7 +513,7 @@
 <p>ANDROID_HOME：<code>F:\Android\Sdk</code></p>
 </blockquote>
 <p>Path的环境变量追加如下内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash">ANDROID_HOME%\platform-tools</span></span><br><span class="line"><span class="meta">%</span><span class="bash">ANDROID_HOME%\emulator</span></span><br><span class="line"><span class="meta">%</span><span class="bash">ANDROID_HOME%\tools</span></span><br><span class="line"><span class="meta">%</span><span class="bash">ANDROID_HOME%\tools\bin</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%ANDROID_HOME%\platform-tools</span><br><span class="line">%ANDROID_HOME%\emulator</span><br><span class="line">%ANDROID_HOME%\tools</span><br><span class="line">%ANDROID_HOME%\tools\bin</span><br></pre></td></tr></table></figure>
 <p>以上完成后，还要准备安卓真机或者安卓模拟器。</p>
 <blockquote>
 <p>参考：<a href="https://www.jianshu.com/p/be001734b7fd" target="_blank" rel="noopener">https://www.jianshu.com/p/be001734b7fd</a></p>
@@ -521,10 +521,10 @@
 <h3 id="4-安装node"><a class="header-anchor" href="#4-安装node">¶</a>4.安装node</h3>
 <p>建议通过nvm node版本管理工具来安装node，方便切换node版本，参考教程：<a href="https://www.qcmoke.site/tools/nvm.html">https://www.qcmoke.site/tools/nvm.html</a></p>
 <h3 id="5-安装react-native脚手架"><a class="header-anchor" href="#5-安装react-native脚手架">¶</a>5.安装react-native脚手架</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g react-native-cli</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g react-native-cli</span><br></pre></td></tr></table></figure>
 <h3 id="6-安装安卓模拟器"><a class="header-anchor" href="#6-安装安卓模拟器">¶</a>6.安装安卓模拟器</h3>
 <p>可自行选择可用的安卓模拟器安装。运行安卓模拟器后执行如下命令，如果能识别出&quot;device&quot;设备即可。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> adb devices</span></span><br><span class="line">List of devices attached</span><br><span class="line">192.168.108.101:5555    device</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb devices</span><br><span class="line">List of devices attached</span><br><span class="line">192.168.108.101:5555    device</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>本人这里安卓的是genymotion模拟器，运行端口是55555。不同的模拟器可能运行端口不一样。</p>
 <p>以下是不同模拟器对应的运行端口：</p>
@@ -546,7 +546,7 @@
 <p>GRADLE_HOME：<code>D:\Development\Gradle\gradle-6.2</code></p>
 </blockquote>
 <h2 id="二-创建新项目"><a class="header-anchor" href="#二-创建新项目">¶</a>二、创建新项目</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npx react-native init AwesomeProject</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> AwesomeProject</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> react-native run-android </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> npx react-native run-android</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npx react-native init AwesomeProject</span><br><span class="line">$ <span class="built_in">cd</span> AwesomeProject</span><br><span class="line">$ react-native run-android </span><br><span class="line"><span class="comment"># npx react-native run-android</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1769,5 +1769,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
