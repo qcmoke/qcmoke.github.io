@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-18T21:15:01.385Z">
+<meta property="og:updated_time" content="2023-03-30T15:46:59.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode使用技巧安利">
 <meta name="twitter:description" content="未完工，希望后续能补上~">
@@ -378,8 +378,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T05:15:01+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-30T23:46:59+08:00">
+                2023-03-30
               </time>
             
           </span>
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  2.5k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  10
                 </span>
               
             </div>
@@ -494,55 +494,7 @@
       
         <p>vscode是很优秀的文本编辑器，甚至可以说是强大的ide开发工具，由于其良好的用户体验，丰富的扩展插件，让其受到很多开发者的青睐，这里就只介绍一些常用插件的安装和使用教程。</p>
 <a id="more"></a>
-<h2 id="1-project-manager插件"><a class="header-anchor" href="#1-project-manager插件">¶</a>1. Project Manager插件</h2>
-<ol>
-<li>保存项目</li>
-</ol>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739081536.png" alt="1537739081536"></p>
-<p>选save project，将会看到已经保存的各种项目。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739280372.png" alt="1537739280372"></p>
-<p>2.切换项目</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537878360081.png" alt="1537878360081"></p>
-<p>或者点击左下角即可在上方列出保存的项目，点击要切换的项目即可进入该项目里工作。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739128756.png" alt="1537739128756"></p>
-<h2 id="2-修改默认终端"><a class="header-anchor" href="#2-修改默认终端">¶</a>2. 修改默认终端</h2>
-<p>如果要改为git bash,那么在<code>settings.json</code>中添加如下代码</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"terminal.integrated.shell.windows"</span>: <span class="string">"D:\\DevelopmentTools\\Git\\bin\\bash.exe"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上设置存在一个问题，那就是设置第三方的终端后并不方便切换多个终端，这个时候你可以安装<strong>Terminal Manager</strong> 来方便切换不同的终端。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1559763601959.png" alt="1559763601959"></p>
-<h2 id="4-java插件"><a class="header-anchor" href="#4-java插件">¶</a>4. java插件</h2>
-<p>安装Language Support for Java™ by Red Hat和Code Runner插件，该插件现在需要java11，所以要在本地安装好jdk11，然后在<code>settings.json</code>中添加如下代码</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"java.home": "D:\\Development\\Java\\jdk-11",</span><br><span class="line">"code-runner.runInTerminal": true,</span><br><span class="line">"code-runner.executorMap": &#123;</span><br><span class="line">    "java": "cd $dir &amp;&amp; javac -encoding utf-8 $fileName &amp;&amp; java $fileNameWithoutExt",</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="5-修改code-runner输出的字符编码"><a class="header-anchor" href="#5-修改code-runner输出的字符编码">¶</a>5. 修改Code Runner输出的字符编码</h2>
-<p>安装Code Runner插件。如果要改为utf-8,那么在<code>settings.json</code>中添加如下代码</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"code-runner.runInTerminal": true</span><br></pre></td></tr></table></figure>
-<h2 id="6-安装go插件"><a class="header-anchor" href="#6-安装go插件">¶</a>6. 安装go插件</h2>
-<p>Visual Studio Code 安装以下go插件失败解决方案</p>
-<blockquote>
-<p>gocode<br>
-gopkgs<br>
-go-outline<br>
-go-symbols<br>
-dlv<br>
-godef<br>
-goreturns<br>
-golint</p>
-</blockquote>
-<p>确保配置了<code>GOROOT</code>、<code>GOPATH</code>和<code>Path</code>环境变量。其中<code>GOPATH</code>一定要指向你的go项目里。配置如下:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GOROOT:  D:\DevelopmentTools\Golang\go1.<span class="number">9.2</span>.windows-amd64\go</span><br><span class="line">Path: %GOROOT%\bin</span><br><span class="line">GOPATH: F:\myproject\goproject</span><br></pre></td></tr></table></figure>
-<p>在GOPATH里创建<code>vscode_go_plugin_install.sh</code>脚本文件，内容如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src</span><br><span class="line">mkdir github.com</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com</span><br><span class="line">mkdir acroca cweill derekparker go-delve josharian karrick mdempsky pkg ramya-rao<span class="_">-a</span> rogpeppe sqs uudashr</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/acroca</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/acroca/go-symbols.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/cweill</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/cweill/gotests.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/derekparker</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/derekparker/delve.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/go-delve</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/go-delve/delve.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/josharian</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/josharian/impl.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/karrick</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/karrick/godirwalk.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/mdempsky</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/mdempsky/gocode.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/pkg</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/pkg/errors.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/ramya-rao<span class="_">-a</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ramya-rao<span class="_">-a</span>/go-outline.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/rogpeppe</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/rogpeppe/godef.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/sqs</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/sqs/goreturns.git</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/uudashr</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/uudashr/gopkgs.git</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src</span><br><span class="line">mkdir -p golang.org/x</span><br><span class="line"><span class="built_in">cd</span> golang.org/x</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/golang/tools.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/golang/lint.git</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src</span><br><span class="line">go install github.com/mdempsky/gocode</span><br><span class="line">go install github.com/uudashr/gopkgs/cmd/gopkgs</span><br><span class="line">go install github.com/ramya-rao<span class="_">-a</span>/go-outline</span><br><span class="line">go install github.com/acroca/go-symbols</span><br><span class="line">go install github.com/rogpeppe/godef</span><br><span class="line">go install github.com/sqs/goreturns</span><br><span class="line">go install github.com/derekparker/delve/cmd/dlv</span><br><span class="line">go install github.com/cweill/gotests</span><br><span class="line">go install github.com/josharian/impl</span><br><span class="line">go install golang.org/x/tools/cmd/guru</span><br><span class="line">go install golang.org/x/tools/cmd/gorename</span><br><span class="line">go install golang.org/x/lint/golint</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
-<p>清空<code>GOPATH</code>目录里及其子目录里的所有通过vscode在线安装插件时生成的所有文件和目录。</p>
-<p>运行以下命令完成安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash <span class="variable">$GOPATH</span>/vscode_go_plugin_install.sh</span><br></pre></td></tr></table></figure>
-<h2 id="7-转到定义文件在新标签页打开"><a class="header-anchor" href="#7-转到定义文件在新标签页打开">¶</a>7. 转到定义文件在新标签页打开</h2>
-<p>vscode转到定义默认是直接在当前标签页直接打开并覆盖的（预览模式打开），这样的或就不好在多个文件间快速进行切换了，那么怎么解决这个问题呢？其实vscode自身就有这方面需求的解决方案。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/vc.gif" alt="vc"></p>
-<blockquote>
-<p>注意观察标签页上文字是否是斜体。可通过双击对应文件或者标签页进行预览模式和固定模式切换。</p>
-<p>（1）如果是斜体说明是预览模式打开文件。默认打开其他文件时此标签页上的文件会被其他文件覆盖</p>
-<p>（2）如果不是斜体说明是固定模式打开文件，即固定该文件在此标签页上不被其他文件覆盖。</p>
-</blockquote>
+<h2 id="常用插件一览"><a class="header-anchor" href="#常用插件一览">¶</a>常用插件一览</h2>
 <table>
 <thead>
 <tr>
@@ -773,6 +725,97 @@ golint</p>
 </tr>
 </tbody>
 </table>
+<h2 id="project-manager"><a class="header-anchor" href="#project-manager">¶</a>Project Manager</h2>
+<ol>
+<li>保存项目</li>
+</ol>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739081536.png" alt="1537739081536"></p>
+<p>选save project，将会看到已经保存的各种项目。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739280372.png" alt="1537739280372"></p>
+<p>2.切换项目</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537878360081.png" alt="1537878360081"></p>
+<p>或者点击左下角即可在上方列出保存的项目，点击要切换的项目即可进入该项目里工作。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739128756.png" alt="1537739128756"></p>
+<h2 id="code-runner"><a class="header-anchor" href="#code-runner">¶</a>Code Runner</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 在vscode的终端中运行（默认在控制台输出）</span><br><span class="line">"code-runner.runInTerminal": true,</span><br><span class="line">"code-runner.executorMap": &#123;</span><br><span class="line">    //修改java类型文件编译运行命令（编译使用utf8编码）</span><br><span class="line">    "java": "javac -encoding utf8 $fileName &amp;&amp; java -Dfile.encoding=UTF-8 $fileNameWithoutExt",</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>以上设置存在一个问题，那就是设置第三方的终端后并不方便切换多个终端，这个时候你可以安装<strong>Terminal Manager</strong> 来方便切换不同的终端。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1559763601959.png" alt="1559763601959"></p>
+<h2 id="终端配置"><a class="header-anchor" href="#终端配置">¶</a>终端配置</h2>
+<p>如果要改为git bash,那么在<code>settings.json</code>中添加如下代码</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"terminal.integrated.shell.windows"</span>: <span class="string">"D:\\DevelopmentTools\\Git\\bin\\bash.exe"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置java环境"><a class="header-anchor" href="#配置java环境">¶</a>配置java环境</h2>
+<p>依赖插件：</p>
+<blockquote>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack" target="_blank" rel="noopener">Extension Pack for Java</a>	- JAVA插件扩展包，其含了以下多个插件。只需安装这一个下面的插件也就都跟着自动安装了。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven" target="_blank" rel="noopener">Maven for Java</a>	- 该插件提供了Maven项目的构建和依赖管理功能。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug" target="_blank" rel="noopener">Debugger for Java</a>  - 该插件提供了对Java应用程序的调试支持</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency" target="_blank" rel="noopener">Project Manager for Java</a>	- 提供了方便的Java项目管理方式。该插件可以创建项目 、打开项目、切换项目等。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test" target="_blank" rel="noopener">Test Runner for Java</a>	- 该插件提供了JUnit测试运行器，用于在VS Code中运行和调试Java单元测试</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=redhat.java" target="_blank" rel="noopener">Language Support for Java™ by Red Hat</a>	- 该插件提供了语法高亮、代码补全和错误提示等功能。</p>
+</blockquote>
+<p>如果提示插件需要java11，则在本地安装好jdk11，然后在<code>settings.json</code>中添加如下代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"java.home": "D:\\Development\\Java\\jdk-11",</span><br></pre></td></tr></table></figure>
+<h2 id="配置go环境"><a class="header-anchor" href="#配置go环境">¶</a>配置go环境</h2>
+<p>依赖插件：</p>
+<blockquote>
+<p>1、<a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="noopener">Code Runner</a></p>
+<p>2、<a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank" rel="noopener">Go</a></p>
+</blockquote>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank" rel="noopener">Go</a> 插件安装好后，只要打开一个.go文件，vscode就会提示下载go相关调试和开发的exe工具，国内因为墙的原因，经常失败。此时需要设置go 的代理，剩下重新打开vscode根据Go插件提示点击下载go依赖工具即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
+<p>这些依赖工具会自动安装到<code>%GOPATH%/bin</code>目录下。</p>
+<h2 id="vscode常用技巧"><a class="header-anchor" href="#vscode常用技巧">¶</a>vscode常用技巧</h2>
+<h3 id="转到定义文件在新标签页打开"><a class="header-anchor" href="#转到定义文件在新标签页打开">¶</a>转到定义文件在新标签页打开</h3>
+<p>vscode转到定义默认是直接在当前标签页直接打开并覆盖的（预览模式打开），这样的或就不好在多个文件间快速进行切换了，那么怎么解决这个问题呢？其实vscode自身就有这方面需求的解决方案。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/vc.gif" alt="vc"></p>
+<blockquote>
+<p>注意观察标签页上文字是否是斜体。可通过双击对应文件或者标签页进行预览模式和固定模式切换。</p>
+<p>（1）如果是斜体说明是预览模式打开文件。默认打开其他文件时此标签页上的文件会被其他文件覆盖</p>
+<p>（2）如果不是斜体说明是固定模式打开文件，即固定该文件在此标签页上不被其他文件覆盖。</p>
+</blockquote>
+<h2 id="vscode-c盘占用问题解决"><a class="header-anchor" href="#vscode-c盘占用问题解决">¶</a>vscode C盘占用问题解决</h2>
+<p>随着使用的时间的增加和功能插件安装的增加，vscode在C盘上的缓存和插件等文件占用会越来越大。vscode在C盘上有如下几个重要的目录：</p>
+<ol>
+<li>
+<p>插件扩展目录： <code>%USERPROFILE%\.vscode</code></p>
+<blockquote>
+<p>其中<code>%USERPROFILE%</code>为：C:\Users\用户名。</p>
+<p>包含了所有用户相关的配置、插件和扩展等信息。例如，安装的插件、代码片段、键绑定等都保存在这个目录下。</p>
+</blockquote>
+</li>
+<li>
+<p>应用程序数据目录： <code>%USERPROFILE%\AppData\Roaming\Code</code></p>
+<blockquote>
+<p>包含了与应用程序本身相关的配置和数据。例如，最近打开的文件列表、自定义主题等都保存在这个目录下。</p>
+</blockquote>
+</li>
+<li>
+<p>缓存目录：<code>%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code</code></p>
+<blockquote>
+<p>包含了应用程序使用的缓存文件。例如，语言服务器的缓存文件、扩展依赖项等都保存在这个目录下。</p>
+</blockquote>
+</li>
+</ol>
+<p>针对以上问题下面将提供两种解决方案。</p>
+<h3 id="定期清理方案"><a class="header-anchor" href="#定期清理方案">¶</a>定期清理方案</h3>
+<p>以上目录有些文件中“缓存目录”可以完全删除，而“应用程序数据目录”只能部分删除，为了方便，这里提供个清理脚本：</p>
+<p>vscode缓存清理.bat</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM example:</span></span><br><span class="line"><span class="comment">@REM del "%userprofile%/AppData/Local/Microsoft/vscode-cpptools/ipch/" /s /q /f</span></span><br><span class="line"><span class="comment">@REM rd "%userprofile%/AppData/Local/Microsoft/vscode-cpptools/ipch/" /s /q</span></span><br><span class="line"><span class="comment">@REM md "%userprofile%/AppData/Local/Microsoft/vscode-cpptools/ipch/"</span></span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="function">call:<span class="title">EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Local</span>\<span class="title">Microsoft</span>\<span class="title">vscode</span>-<span class="title">cpptools</span>\<span class="title">ipch</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">CachedExtensionVSIXs</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">Cache</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">CachedData</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">CachedExtensions</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">CachedExtensionVSIXs</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">Code</span> <span class="title">Cache</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">Crashpad</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">logs</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">Service</span> <span class="title">Worker</span>\<span class="title">CacheStorage</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">Service</span> <span class="title">Worker</span>\<span class="title">ScriptCache</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">User</span>\<span class="title">workspaceStorage</span>"</span></span><br><span class="line"><span class="function"><span class="title">call:EmptyOneDir</span> "%<span class="title">userprofile</span>%\<span class="title">AppData</span>\<span class="title">Roaming</span>\<span class="title">Code</span>\<span class="title">User</span>\<span class="title">History</span>"</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">goto</span> <span class="title">end</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">:<span class="title">EmptyOneDir</span>  <span class="title">rem</span> <span class="title">same</span> <span class="title">as</span> <span class="title">Let</span> <span class="title">empty</span> [<span class="title">path</span>] /<span class="title">q</span></span></span><br><span class="line"><span class="function">    <span class="title">echo</span> <span class="title">empty</span> %1</span></span><br><span class="line"><span class="function">    <span class="title">echo</span> <span class="title">del</span> %1 /<span class="title">s</span> /<span class="title">q</span> /<span class="title">f</span></span></span><br><span class="line"><span class="function">    <span class="title">del</span> %1 /<span class="title">s</span> /<span class="title">q</span> /<span class="title">f</span></span></span><br><span class="line"><span class="function">    <span class="title">echo</span> <span class="title">rd</span> %1 /<span class="title">s</span> /<span class="title">q</span></span></span><br><span class="line"><span class="function">    <span class="title">rd</span> %1 /<span class="title">s</span> /<span class="title">q</span></span></span><br><span class="line"><span class="function">    <span class="title">echo</span> <span class="title">md</span> %1</span></span><br><span class="line"><span class="function">    <span class="title">md</span> %1</span></span><br><span class="line"><span class="function">:<span class="title">end</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>定期双击运行一次，就能释放vscode占用的大部分空间</p>
+</blockquote>
+<h3 id="改存储目录方案"><a class="header-anchor" href="#改存储目录方案">¶</a>改存储目录方案</h3>
+<p>实现原理：先将vscode原本在C盘的三大目录移动（剪切）到其他盘的新目录上，并通过在C盘原位置上创建指向新的存储目录的软连接即可（软连接类似快捷键，但不是）。这样以后vscode即使要存储数据到C盘上，但是C盘上相关存储目录只是软连接，实际存储是在其他盘的目录上。</p>
+<p><strong>以管理员身份运行 CMD</strong> ，然后依次输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#临时设置环境变量，用来表示需要迁移的新目录</span></span><br><span class="line"><span class="built_in">set</span> new_vscode_dir=E:\Cache\vscode</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新目录</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动原目录到新目录，由于Windows11上move命令无法跨盘符移动，故改用xcopy+del实现</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\.vscode"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建软连接</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>快捷方式和软链接的区别：</p>
+<p>快捷方式(shortcut)：实际上是一个后缀.link的文件，删除快捷方式文件不影响原始文件，删除原始文件则快捷方式文件将变成无效文件。这个文件只有在windows图形界面下点击才能到达目标文件路径，在命令行下仅是一个文件，程序不会将其当作链接。</p>
+<p>软链接(symbolic link)：也称符号链接，本质是一个指向文件或目录的指针文件，删除软链接文件不影响原始文件，删除原始文件则软链接文件将变成无效文件。这个文件在图形界面与快捷方式无异，但在命令行下程序会把它当做一个链接。</p>
+</blockquote>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/xbs150/article/details/126425882" target="_blank" rel="noopener">https://blog.csdn.net/xbs150/article/details/126425882</a></p>
+<p><a href="https://blog.csdn.net/Tisfy/article/details/126082324" target="_blank" rel="noopener">https://blog.csdn.net/Tisfy/article/details/126082324</a></p>
 
       
     </div>
@@ -1104,7 +1147,7 @@ golint</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-project-manager插件"><span class="nav-text">¶1. Project Manager插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改默认终端"><span class="nav-text">¶2. 修改默认终端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-java插件"><span class="nav-text">¶4. java插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改code-runner输出的字符编码"><span class="nav-text">¶5. 修改Code Runner输出的字符编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-安装go插件"><span class="nav-text">¶6. 安装go插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-转到定义文件在新标签页打开"><span class="nav-text">¶7. 转到定义文件在新标签页打开</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用插件一览"><span class="nav-text">¶常用插件一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#project-manager"><span class="nav-text">¶Project Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code-runner"><span class="nav-text">¶Code Runner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终端配置"><span class="nav-text">¶终端配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置java环境"><span class="nav-text">¶配置java环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置go环境"><span class="nav-text">¶配置go环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode常用技巧"><span class="nav-text">¶vscode常用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转到定义文件在新标签页打开"><span class="nav-text">¶转到定义文件在新标签页打开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-c盘占用问题解决"><span class="nav-text">¶vscode C盘占用问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定期清理方案"><span class="nav-text">¶定期清理方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改存储目录方案"><span class="nav-text">¶改存储目录方案</span></a></li></ol></li></ol></div>
             
 
           </div>
