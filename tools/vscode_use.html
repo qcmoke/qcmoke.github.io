@@ -89,7 +89,7 @@
 <meta name="description" content="未完工，希望后续能补上~">
 <meta name="keywords" content="vscode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode使用技巧安利">
+<meta property="og:title" content="vscode教程">
 <meta property="og:url" content="https://www.qcmoke.site/tools/vscode_use.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="未完工，希望后续能补上~">
@@ -100,9 +100,13 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-31T20:10:17.195Z">
+<meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
+<meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
+<meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
+<meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
+<meta property="og:updated_time" content="2023-04-01T21:45:19.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode使用技巧安利">
+<meta name="twitter:title" content="vscode教程">
 <meta name="twitter:description" content="未完工，希望后续能补上~">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
@@ -142,7 +146,7 @@
 
 
 
-  <title>vscode使用技巧安利 | Qcmoke's Blog</title>
+  <title>vscode教程 | Qcmoke's Blog</title>
   
 
 
@@ -350,7 +354,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">vscode使用技巧安利</h2>
+          <h2 class="post-title" itemprop="name headline">vscode教程</h2>
         
 
         <div class="post-meta">
@@ -378,8 +382,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-04-01T04:10:17+08:00">
-                2023-04-01
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-02T05:45:19+08:00">
+                2023-04-02
               </time>
             
           </span>
@@ -424,7 +428,7 @@
 
           
           
-             <span id="/tools/vscode_use.html" class="leancloud_visitors" data-flag-title="vscode使用技巧安利">
+             <span id="/tools/vscode_use.html" class="leancloud_visitors" data-flag-title="vscode教程">
               <span class="post-meta-divider">|</span>
               <span class="lv-inline-block" style="display: inline-block;">
                 <span class="post-meta-item-icon">
@@ -451,7 +455,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  3.6k
                 </span>
               
 
@@ -467,7 +471,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  14
                 </span>
               
             </div>
@@ -494,6 +498,170 @@
       
         <p>vscode是很优秀的文本编辑器，甚至可以说是强大的ide开发工具，由于其良好的用户体验，丰富的扩展插件，让其受到很多开发者的青睐，这里就只介绍一些常用插件的安装和使用教程。</p>
 <a id="more"></a>
+<h2 id="通用设置推荐"><a class="header-anchor" href="#通用设置推荐">¶</a>通用设置推荐</h2>
+<p><code>settings.json</code> 推荐通用设置配置如下（不包括插件配置）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  //修改vscode的默认终端（PowerShell、Git Bash、Command Prompt）</span><br><span class="line">  "terminal.integrated.defaultProfile.windows": "Git Bash",</span><br><span class="line">  //编辑自动保存</span><br><span class="line">  "files.autoSave": "afterDelay",</span><br><span class="line">  //根据文件编码格式自动选择合适的编码方式打开文件</span><br><span class="line">  "files.autoGuessEncoding": true,</span><br><span class="line">  //在括号匹配时高亮显示相应的括号</span><br><span class="line">  "editor.guides.bracketPairs": true,</span><br><span class="line">  //保存自动格式化</span><br><span class="line">  "editor.formatOnSave": true,</span><br><span class="line">  //复制粘贴时自动格式化复制内容</span><br><span class="line">  "editor.formatOnPaste": true,</span><br><span class="line">  //自动换行显示</span><br><span class="line">  "editor.wordWrap": "on",</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="主题插件"><a class="header-anchor" href="#主题插件">¶</a>主题插件</h2>
+<p>推荐的三款主题插件：</p>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark" target="_blank" rel="noopener">Atom One Dark Theme</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme" target="_blank" rel="noopener">One Dark Pro</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme" target="_blank" rel="noopener">GitHub Theme</a></p>
+</li>
+</ul>
+<h2 id="图标插件"><a class="header-anchor" href="#图标插件">¶</a>图标插件</h2>
+<p>推荐的两款图标插件：</p>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" target="_blank" rel="noopener">Material Icon Theme</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons" target="_blank" rel="noopener">vscode-icons</a></p>
+</li>
+</ul>
+<h2 id="通用功能插件"><a class="header-anchor" href="#通用功能插件">¶</a>通用功能插件</h2>
+<h3 id="code-runner"><a class="header-anchor" href="#code-runner">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="noopener">Code Runner</a></h3>
+<p>【代码运行】允许在编辑器中直接运行代码片段或整个文件，并且支持多种编程语言。</p>
+<p>安装完成插件可以做如下优化配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 在vscode的终端中运行和输出（默认在控制台输出）</span><br><span class="line">"code-runner.runInTerminal": true,</span><br><span class="line">"code-runner.executorMap": &#123;</span><br><span class="line">    //修改java类型文件编译运行命令（编译使用utf8编码）</span><br><span class="line">    "java": "javac -encoding utf8 $fileName &amp;&amp; java -Dfile.encoding=UTF-8 $fileNameWithoutExt",</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="chinese-simplified-简体中文"><a class="header-anchor" href="#chinese-simplified-简体中文">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans" target="_blank" rel="noopener">Chinese (Simplified) (简体中文)</a></h3>
+<p>【中文语言包】这应该不用多介绍，是vscode的官方中文语言包</p>
+<h3 id="prettier-code-formatter"><a class="header-anchor" href="#prettier-code-formatter">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener">Prettier - Code formatter</a></h3>
+<p>【代码格式化工具】支持超多语言，一键格式化，美化代码格式</p>
+<h3 id="error-lens"><a class="header-anchor" href="#error-lens">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens" target="_blank" rel="noopener">Error Lens</a></h3>
+<p>【错误提示】可以将原先显示的问题显示在对应行右侧并高亮。效果如下：</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/demo.png" alt="Demo image"></p>
+<h3 id="live-server"><a class="header-anchor" href="#live-server">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" rel="noopener">Live Server</a></h3>
+<p>【本地Web服务器】提供实时 Web 服务器和自动刷新功能，适用于简单网页本地快速部署和运行调试等。</p>
+<h3 id="path-intellisense"><a class="header-anchor" href="#path-intellisense">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="noopener">Path Intellisense</a></h3>
+<p>【路径补全】在输入路径时，有智能提示补全。效果如下：</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/iaHeUiDeTUZuo.gif" alt="IDE"></p>
+<h3 id="intellij-idea-keybindings"><a class="header-anchor" href="#intellij-idea-keybindings">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings" target="_blank" rel="noopener">IntelliJ IDEA Keybindings</a></h3>
+<p>【IDEA快捷键】这是一个针对 VS Code 的 IntelliJ IDEA 快捷键移植。可以向使用IDEA快捷键一样使用vscode。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff" target="_blank" rel="noopener">Partial Diff</a></p>
+<p>【文件差异比对】比较两个文本文件之间的差异。</p>
+<h3 id="image-preview"><a class="header-anchor" href="#image-preview">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview" target="_blank" rel="noopener">Image preview</a></h3>
+<p>【图像预览】可以预览引入的图像。效果如下：</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/sample.png" alt="Demonstrating svg image preview in a css file"></p>
+<h3 id="gbk-to-utf8-for-vscode"><a class="header-anchor" href="#gbk-to-utf8-for-vscode">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=buuug7.GBK2UTF8" target="_blank" rel="noopener">GBK to UTF8 for vscode</a></h3>
+<p>【文件编码转化】可以将文件在GBK与UTF8编码之间无瑕转换</p>
+<h3 id="doxygen-documentation-generator"><a class="header-anchor" href="#doxygen-documentation-generator">¶</a><a href="https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen" target="_blank" rel="noopener">Doxygen Documentation Generator</a></h3>
+<p>【文档生成器】写注释和文档时非常好用。效果如下：</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/file.gif" alt="file description"></p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/alignment.gif" alt="Alignment"></p>
+<h2 id="git管理插件"><a class="header-anchor" href="#git管理插件">¶</a>Git管理插件</h2>
+<p>可选插件：</p>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank" rel="noopener">GitLens</a>：该插件提供了强大的 Git 工具集，可以方便地查看 Git 历史记录、比较修改并执行其他 Git 操作。</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory" target="_blank" rel="noopener">Git History</a>：该插件提供了一个交互式的 Git 历史记录视图，可以方便地查看和比较不同版本之间的代码差异。</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph" target="_blank" rel="noopener">Git Graph</a>：该插件提供了一个可视化的 Git 分支图形界面，可以方便地查看和管理 Git 分支及其历史记录。</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame" target="_blank" rel="noopener">Git Blame</a>：该插件在编辑器中显示每行代码最近的修改者和修改时间，方便用户快速定位到相关版本。</p>
+</li>
+</ul>
+<h2 id="java插件"><a class="header-anchor" href="#java插件">¶</a>Java插件</h2>
+<p>依赖插件：</p>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack" target="_blank" rel="noopener">Extension Pack for Java</a>	JAVA插件扩展包，其含了以下多个插件。只需安装这一个下面的插件也就都跟着自动安装了。</p>
+<blockquote>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven" target="_blank" rel="noopener">Maven for Java</a>	该插件提供了Maven项目的构建和依赖管理功能。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug" target="_blank" rel="noopener">Debugger for Java</a>  该插件提供了对Java应用程序的调试支持</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency" target="_blank" rel="noopener">Project Manager for Java</a>	提供了方便的Java项目管理方式。该插件可以创建项目 、打开项目、切换项目等。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test" target="_blank" rel="noopener">Test Runner for Java</a>	该插件提供了JUnit测试运行器，用于在VS Code中运行和调试Java单元测试</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=redhat.java" target="_blank" rel="noopener">Language Support for Java™ by Red Hat</a>	该插件提供了语法高亮、代码补全和错误提示等功能。</p>
+</blockquote>
+</li>
+</ul>
+<p><em>如果提示插件需要java11，则在本地安装好jdk11，然后在<code>settings.json</code>中添加如下代码</em></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"java.home": "D:\\Development\\Java\\jdk-11",</span><br></pre></td></tr></table></figure>
+<h2 id="golang插件"><a class="header-anchor" href="#golang插件">¶</a>Golang插件</h2>
+<p>依赖插件：</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank" rel="noopener">Go</a>	提供了智能感知、代码补全、调试器、测试框架支持、代码格式化、重构工具等功能</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="noopener">Code Runner</a> （可选）</li>
+</ul>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank" rel="noopener">Go</a> 插件安装好后，只要打开一个.go文件，vscode就会提示下载go相关调试和开发的exe工具，国内因为墙的原因，经常失败。此时需要设置go 的代理，剩下重新打开vscode根据Go插件提示点击下载go依赖工具即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
+<p>这些依赖工具会自动安装到<code>%GOPATH%/bin</code>目录下。</p>
+<h2 id="c-c-插件"><a class="header-anchor" href="#c-c-插件">¶</a>C/C++插件</h2>
+<p>依赖插件：</p>
+<ul>
+<li>
+<p>[C/C++ Extension Pack](C/C++ Extension Pack)	C/C++插件扩展包，其含了以下多个插件。只需安装这一个下面的插件也就都跟着自动安装了。</p>
+<blockquote>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools" target="_blank" rel="noopener">C/C++</a>	提供了 C/C++ 语言开发所需的 IntelliSense、调试、代码导航等功能。<em>（如果仅仅是单文件开发，这一个插件就够了）</em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes" target="_blank" rel="noopener">C/C++ Themes</a>	提供了多种主题，包括暗色和亮色主题等</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake" target="_blank" rel="noopener">CMake</a>	提供了 CMake 项目支持，包括代码补全、语法高亮和自动完成等功能。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools" target="_blank" rel="noopener">CMake Tools</a>	插件是针对 CMake 项目的工具集合，提供了自动完成、代码补全、语法高亮等常见功能，并且还支持调试、运行测试等高级功能，可以让用户更方便地创建、编译和调试 CMake 项目，提高开发效率和代码质量。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="python插件"><a class="header-anchor" href="#python插件">¶</a>Python插件</h2>
+<p>依赖插件：</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank" rel="noopener">Python</a> 提供了代码编辑、语法高亮、自动完成等功能，支持多种 Python 版本。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance" target="_blank" rel="noopener">Pylance</a> 提供了更好的 Python 代码智能感知和类型检查功能。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="noopener">Code Runner</a> （可选）</li>
+</ul>
+<p>安装好插件后默认自动加入如下配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"[python]"</span>: &#123;</span><br><span class="line">        // 编辑的对应行自动格式化</span><br><span class="line">        "editor.formatOnType": true</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="vue插件"><a class="header-anchor" href="#vue插件">¶</a>Vue插件</h2>
+<p>依赖插件：</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Vue.volar" target="_blank" rel="noopener">Vue Language Features (Volar)</a> 提供了语法高亮、代码片段、自动完成、代码检查、调试和定义跳转等功能。Volar可取代以前的Vetur。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dariofuzinato.vue-peek" target="_blank" rel="noopener">Vue Peek</a> （可选）提供模板跳转组件，查看定义等功能。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=shenjiaolong.vue-helper" target="_blank" rel="noopener">vue-helper</a>（可选）专为vue适配 Element-UI、VUX 和 IVIEW 提供更好的扩展（如提示补齐、模板跳转组件等）</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek" target="_blank" rel="noopener">CSS Peek</a>（可选）跳转到样式的外部定义（定位外部CSS）</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" target="_blank" rel="noopener">Auto Close Tag</a>（可选）自动闭合HTML/XML标签</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag" target="_blank" rel="noopener">Auto Rename Tag</a>（可选）自动完成标签的同步修改</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="noopener">EsLint</a>（可选）编码规范以及代码检查</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=sburg.vscode-javascript-booster" target="_blank" rel="noopener">JavaScript Booster</a>（可选）js写法优化提示（写的不够好，或有其它写法，有灯泡提示）</li>
+</ul>
+<h2 id="远程开发插件"><a class="header-anchor" href="#远程开发插件">¶</a>远程开发插件</h2>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh" target="_blank" rel="noopener">Remote - SSH</a>：该插件提供了通过 SSH 连接远程机器的功能，使用户可以在本地的 VSCode 编辑器中对远程机器上的文件进行编辑、调试和测试等操作。其含了以下多个插件。</p>
+<blockquote>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit" target="_blank" rel="noopener">Remote - SSH: Editing Configuration Files</a>：该插件为远程机器上的配置文件提供了语言支持和 IntelliSense 功能，包括常见的配置文件格式，如 JSON、YAML、XML 等。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer" target="_blank" rel="noopener">Remote - SSH: Explorer</a>：该插件提供了一个在本地浏览远程机器文件系统的资源管理器，使用户可以方便地查看和操作远程机器上的文件和目录。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="项目管理插件"><a class="header-anchor" href="#项目管理插件">¶</a>项目管理插件</h2>
+<ul>
+<li>Project Manager</li>
+</ul>
+<ol>
+<li>保存项目</li>
+</ol>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739081536.png" alt="1537739081536"></p>
+<p>选save project，将会看到已经保存的各种项目。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739280372.png" alt="1537739280372"></p>
+<p>2.切换项目</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537878360081.png" alt="1537878360081"></p>
+<p>或者点击左下角即可在上方列出保存的项目，点击要切换的项目即可进入该项目里工作。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739128756.png" alt="1537739128756"></p>
+<h2 id="vscode常用技巧"><a class="header-anchor" href="#vscode常用技巧">¶</a>vscode常用技巧</h2>
+<h3 id="转到定义文件在新标签页打开"><a class="header-anchor" href="#转到定义文件在新标签页打开">¶</a>转到定义文件在新标签页打开</h3>
+<p>vscode转到定义默认是直接在当前标签页直接打开并覆盖的（预览模式打开），这样的或就不好在多个文件间快速进行切换了，那么怎么解决这个问题呢？其实vscode自身就有这方面需求的解决方案。</p>
+<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/vc.gif" alt="vc"></p>
+<blockquote>
+<p>注意观察标签页上文字是否是斜体。可通过双击对应文件或者标签页进行预览模式和固定模式切换。</p>
+<p>（1）如果是斜体说明是预览模式打开文件。默认打开其他文件时此标签页上的文件会被其他文件覆盖</p>
+<p>（2）如果不是斜体说明是固定模式打开文件，即固定该文件在此标签页上不被其他文件覆盖。</p>
+</blockquote>
 <h2 id="常用插件一览"><a class="header-anchor" href="#常用插件一览">¶</a>常用插件一览</h2>
 <table>
 <thead>
@@ -725,54 +893,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="project-manager"><a class="header-anchor" href="#project-manager">¶</a>Project Manager</h2>
-<ol>
-<li>保存项目</li>
-</ol>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739081536.png" alt="1537739081536"></p>
-<p>选save project，将会看到已经保存的各种项目。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739280372.png" alt="1537739280372"></p>
-<p>2.切换项目</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537878360081.png" alt="1537878360081"></p>
-<p>或者点击左下角即可在上方列出保存的项目，点击要切换的项目即可进入该项目里工作。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1537739128756.png" alt="1537739128756"></p>
-<h2 id="code-runner"><a class="header-anchor" href="#code-runner">¶</a>Code Runner</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 在vscode的终端中运行（默认在控制台输出）</span><br><span class="line">"code-runner.runInTerminal": true,</span><br><span class="line">"code-runner.executorMap": &#123;</span><br><span class="line">    //修改java类型文件编译运行命令（编译使用utf8编码）</span><br><span class="line">    "java": "javac -encoding utf8 $fileName &amp;&amp; java -Dfile.encoding=UTF-8 $fileNameWithoutExt",</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>以上设置存在一个问题，那就是设置第三方的终端后并不方便切换多个终端，这个时候你可以安装<strong>Terminal Manager</strong> 来方便切换不同的终端。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/1559763601959.png" alt="1559763601959"></p>
-<h2 id="终端配置"><a class="header-anchor" href="#终端配置">¶</a>终端配置</h2>
-<p>如果要改为git bash,那么在<code>settings.json</code>中添加如下代码</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"terminal.integrated.shell.windows"</span>: <span class="string">"D:\\DevelopmentTools\\Git\\bin\\bash.exe"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置java环境"><a class="header-anchor" href="#配置java环境">¶</a>配置java环境</h2>
-<p>依赖插件：</p>
-<blockquote>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack" target="_blank" rel="noopener">Extension Pack for Java</a>	- JAVA插件扩展包，其含了以下多个插件。只需安装这一个下面的插件也就都跟着自动安装了。</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven" target="_blank" rel="noopener">Maven for Java</a>	- 该插件提供了Maven项目的构建和依赖管理功能。</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug" target="_blank" rel="noopener">Debugger for Java</a>  - 该插件提供了对Java应用程序的调试支持</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency" target="_blank" rel="noopener">Project Manager for Java</a>	- 提供了方便的Java项目管理方式。该插件可以创建项目 、打开项目、切换项目等。</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test" target="_blank" rel="noopener">Test Runner for Java</a>	- 该插件提供了JUnit测试运行器，用于在VS Code中运行和调试Java单元测试</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=redhat.java" target="_blank" rel="noopener">Language Support for Java™ by Red Hat</a>	- 该插件提供了语法高亮、代码补全和错误提示等功能。</p>
-</blockquote>
-<p>如果提示插件需要java11，则在本地安装好jdk11，然后在<code>settings.json</code>中添加如下代码</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"java.home": "D:\\Development\\Java\\jdk-11",</span><br></pre></td></tr></table></figure>
-<h2 id="配置go环境"><a class="header-anchor" href="#配置go环境">¶</a>配置go环境</h2>
-<p>依赖插件：</p>
-<blockquote>
-<p>1、<a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="noopener">Code Runner</a></p>
-<p>2、<a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank" rel="noopener">Go</a></p>
-</blockquote>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank" rel="noopener">Go</a> 插件安装好后，只要打开一个.go文件，vscode就会提示下载go相关调试和开发的exe工具，国内因为墙的原因，经常失败。此时需要设置go 的代理，剩下重新打开vscode根据Go插件提示点击下载go依赖工具即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
-<p>这些依赖工具会自动安装到<code>%GOPATH%/bin</code>目录下。</p>
-<h2 id="vscode常用技巧"><a class="header-anchor" href="#vscode常用技巧">¶</a>vscode常用技巧</h2>
-<h3 id="转到定义文件在新标签页打开"><a class="header-anchor" href="#转到定义文件在新标签页打开">¶</a>转到定义文件在新标签页打开</h3>
-<p>vscode转到定义默认是直接在当前标签页直接打开并覆盖的（预览模式打开），这样的或就不好在多个文件间快速进行切换了，那么怎么解决这个问题呢？其实vscode自身就有这方面需求的解决方案。</p>
-<p><img src="/tools/../images/loading-post.gif" data-original="vscode_use/vc.gif" alt="vc"></p>
-<blockquote>
-<p>注意观察标签页上文字是否是斜体。可通过双击对应文件或者标签页进行预览模式和固定模式切换。</p>
-<p>（1）如果是斜体说明是预览模式打开文件。默认打开其他文件时此标签页上的文件会被其他文件覆盖</p>
-<p>（2）如果不是斜体说明是固定模式打开文件，即固定该文件在此标签页上不被其他文件覆盖。</p>
-</blockquote>
 <h2 id="vscode-c盘占用问题解决"><a class="header-anchor" href="#vscode-c盘占用问题解决">¶</a>vscode C盘占用问题解决</h2>
 <p>随着使用的时间的增加和功能插件安装的增加，vscode在C盘上的缓存和插件等文件占用会越来越大。vscode在C盘上有如下几个重要的目录：</p>
 <ol>
@@ -807,12 +927,7 @@
 <h3 id="改存储目录方案"><a class="header-anchor" href="#改存储目录方案">¶</a>改存储目录方案</h3>
 <p>实现原理：先将vscode原本在C盘的三大目录移动（剪切）到其他盘的新目录上，并通过在C盘原位置上创建指向新的存储目录的软连接即可（软连接类似快捷键，但不是）。这样以后vscode即使要存储数据到C盘上，但是C盘上相关存储目录只是软连接，实际存储是在其他盘的目录上。</p>
 <p><strong>以管理员身份运行 CMD</strong> ，然后依次输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#临时设置环境变量，用来表示需要迁移的新目录</span></span><br><span class="line"><span class="built_in">set</span> new_vscode_dir=E:\Cache</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新目录</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动原目录到新目录，由于Windows11上move命令无法跨盘符移动，故改用xcopy+del实现</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\.vscode"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建软连接</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>快捷方式和软链接的区别：</p>
-<p>快捷方式(shortcut)：实际上是一个后缀.link的文件，删除快捷方式文件不影响原始文件，删除原始文件则快捷方式文件将变成无效文件。这个文件只有在windows图形界面下点击才能到达目标文件路径，在命令行下仅是一个文件，程序不会将其当作链接。</p>
-<p>软链接(symbolic link)：也称符号链接，本质是一个指向文件或目录的指针文件，删除软链接文件不影响原始文件，删除原始文件则软链接文件将变成无效文件。这个文件在图形界面与快捷方式无异，但在命令行下程序会把它当做一个链接。</p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#临时设置环境变量，用来表示需要迁移的新目录</span></span><br><span class="line"><span class="built_in">set</span> new_vscode_dir=E:\Cache</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新目录</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Local\Microsoft\vscode-cpptools"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动原目录到新目录，由于Windows11上move命令无法跨盘符移动，故改用xcopy+del实现</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\.vscode"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Local\Microsoft\vscode-cpptools"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Microsoft\vscode-cpptools"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Local\Microsoft\vscode-cpptools"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建软连接</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Local\Microsoft\vscode-cpptools"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Microsoft\vscode-cpptools"</span></span><br></pre></td></tr></table></figure>
 <p>参考：</p>
 <p><a href="https://blog.csdn.net/xbs150/article/details/126425882" target="_blank" rel="noopener">https://blog.csdn.net/xbs150/article/details/126425882</a></p>
 <p><a href="https://blog.csdn.net/Tisfy/article/details/126082324" target="_blank" rel="noopener">https://blog.csdn.net/Tisfy/article/details/126082324</a></p>
@@ -1147,7 +1262,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用插件一览"><span class="nav-text">¶常用插件一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#project-manager"><span class="nav-text">¶Project Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code-runner"><span class="nav-text">¶Code Runner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终端配置"><span class="nav-text">¶终端配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置java环境"><span class="nav-text">¶配置java环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置go环境"><span class="nav-text">¶配置go环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode常用技巧"><span class="nav-text">¶vscode常用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转到定义文件在新标签页打开"><span class="nav-text">¶转到定义文件在新标签页打开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-c盘占用问题解决"><span class="nav-text">¶vscode C盘占用问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定期清理方案"><span class="nav-text">¶定期清理方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改存储目录方案"><span class="nav-text">¶改存储目录方案</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用设置推荐"><span class="nav-text">¶通用设置推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题插件"><span class="nav-text">¶主题插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图标插件"><span class="nav-text">¶图标插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用功能插件"><span class="nav-text">¶通用功能插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#code-runner"><span class="nav-text">¶Code Runner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chinese-simplified-简体中文"><span class="nav-text">¶Chinese (Simplified) (简体中文)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prettier-code-formatter"><span class="nav-text">¶Prettier - Code formatter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error-lens"><span class="nav-text">¶Error Lens</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#live-server"><span class="nav-text">¶Live Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path-intellisense"><span class="nav-text">¶Path Intellisense</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#intellij-idea-keybindings"><span class="nav-text">¶IntelliJ IDEA Keybindings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-preview"><span class="nav-text">¶Image preview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gbk-to-utf8-for-vscode"><span class="nav-text">¶GBK to UTF8 for vscode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#doxygen-documentation-generator"><span class="nav-text">¶Doxygen Documentation Generator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git管理插件"><span class="nav-text">¶Git管理插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java插件"><span class="nav-text">¶Java插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang插件"><span class="nav-text">¶Golang插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-c-插件"><span class="nav-text">¶C/C++插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python插件"><span class="nav-text">¶Python插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue插件"><span class="nav-text">¶Vue插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程开发插件"><span class="nav-text">¶远程开发插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目管理插件"><span class="nav-text">¶项目管理插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode常用技巧"><span class="nav-text">¶vscode常用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转到定义文件在新标签页打开"><span class="nav-text">¶转到定义文件在新标签页打开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用插件一览"><span class="nav-text">¶常用插件一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-c盘占用问题解决"><span class="nav-text">¶vscode C盘占用问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定期清理方案"><span class="nav-text">¶定期清理方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改存储目录方案"><span class="nav-text">¶改存储目录方案</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -2036,5 +2151,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
