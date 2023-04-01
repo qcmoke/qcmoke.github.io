@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-30T15:46:59.357Z">
+<meta property="og:updated_time" content="2023-03-31T20:10:17.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode使用技巧安利">
 <meta name="twitter:description" content="未完工，希望后续能补上~">
@@ -378,8 +378,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-30T23:46:59+08:00">
-                2023-03-30
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-01T04:10:17+08:00">
+                2023-04-01
               </time>
             
           </span>
@@ -807,7 +807,7 @@
 <h3 id="改存储目录方案"><a class="header-anchor" href="#改存储目录方案">¶</a>改存储目录方案</h3>
 <p>实现原理：先将vscode原本在C盘的三大目录移动（剪切）到其他盘的新目录上，并通过在C盘原位置上创建指向新的存储目录的软连接即可（软连接类似快捷键，但不是）。这样以后vscode即使要存储数据到C盘上，但是C盘上相关存储目录只是软连接，实际存储是在其他盘的目录上。</p>
 <p><strong>以管理员身份运行 CMD</strong> ，然后依次输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#临时设置环境变量，用来表示需要迁移的新目录</span></span><br><span class="line"><span class="built_in">set</span> new_vscode_dir=E:\Cache\vscode</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新目录</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动原目录到新目录，由于Windows11上move命令无法跨盘符移动，故改用xcopy+del实现</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\.vscode"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建软连接</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#临时设置环境变量，用来表示需要迁移的新目录</span></span><br><span class="line"><span class="built_in">set</span> new_vscode_dir=E:\Cache</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新目录</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mkdir <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动原目录到新目录，由于Windows11上move命令无法跨盘符移动，故改用xcopy+del实现</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\.vscode"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span></span><br><span class="line">xcopy /s /e /h /y <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line">rd /s /q <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建软连接</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\.vscode"</span> <span class="string">"%new_vscode_dir%\.vscode"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Roaming\Code"</span> <span class="string">"%new_vscode_dir%\AppData\Roaming\Code"</span></span><br><span class="line">mklink /D <span class="string">"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code"</span> <span class="string">"%new_vscode_dir%\AppData\Local\Programs\Microsoft VS Code"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>快捷方式和软链接的区别：</p>
 <p>快捷方式(shortcut)：实际上是一个后缀.link的文件，删除快捷方式文件不影响原始文件，删除原始文件则快捷方式文件将变成无效文件。这个文件只有在windows图形界面下点击才能到达目标文件路径，在命令行下仅是一个文件，程序不会将其当作链接。</p>
@@ -1036,7 +1036,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">81</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1110,6 +1110,10 @@
                 
                 
                   <li class="recent_posts_li">
+                    <a href="/windows/clean_c_drive.html" title="Windows系统C盘清理" target="_blank">Windows系统C盘清理</a>
+                  </li>
+                
+                  <li class="recent_posts_li">
                     <a href="/devops/mysql_ha.html" title="Keepalived+MySQL实现高可用" target="_blank">Keepalived+MySQL实现高可用</a>
                   </li>
                 
@@ -1123,10 +1127,6 @@
                 
                   <li class="recent_posts_li">
                     <a href="/linux/vm.html" title="VirtualBox组建内网服务器集群" target="_blank">VirtualBox组建内网服务器集群</a>
-                  </li>
-                
-                  <li class="recent_posts_li">
-                    <a href="/mobile/react-native.html" title="react native学习笔记" target="_blank">react native学习笔记</a>
                   </li>
                 
               </ul>
