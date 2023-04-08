@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/windows/winget.html</loc>
+    
+    <lastmod>2023-04-08T00:34:14.383Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/windows/scoop.html</loc>
+    
+    <lastmod>2023-04-08T00:33:12.029Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/windows/clean_c_drive.html</loc>
+    
+    <lastmod>2023-04-08T00:32:54.056Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/tools/proxy.html</loc>
+    
+    <lastmod>2023-04-08T00:30:34.458Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    
+    <lastmod>2023-04-06T11:22:27.237Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
+    
+    <lastmod>2023-04-06T10:54:26.785Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
     
-    <lastmod>2023-04-01T21:45:19.576Z</lastmod>
+    <lastmod>2023-04-02T17:53:25.458Z</lastmod>
     
   </url>
   
@@ -16,23 +58,9 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/windows/clean_c_drive.html</loc>
-    
-    <lastmod>2023-04-01T17:44:58.663Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     
     <lastmod>2023-04-01T04:42:36.454Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    
-    <lastmod>2023-03-25T21:42:16.043Z</lastmod>
     
   </url>
   
@@ -156,13 +184,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
-    
-    <lastmod>2023-03-18T22:50:36.428Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
     
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
@@ -170,9 +191,9 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     
-    <lastmod>2023-03-18T22:50:36.424Z</lastmod>
+    <lastmod>2023-03-18T22:50:36.428Z</lastmod>
     
   </url>
   
@@ -443,7 +464,7 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/tools/proxy.html</loc>
+    <loc>https://www.qcmoke.site/tools/proxy_study.html</loc>
     
     <lastmod>2022-09-02T00:38:06.760Z</lastmod>
     
@@ -457,14 +478,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/top/index.html</loc>
+    <loc>https://www.qcmoke.site/tags/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.211Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/tags/index.html</loc>
+    <loc>https://www.qcmoke.site/top/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.211Z</lastmod>
     
@@ -583,14 +604,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/clear_float.html</loc>
+    <loc>https://www.qcmoke.site/front/box_nest_center.html</loc>
     
     <lastmod>2022-05-24T03:50:17.600Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/box_nest_center.html</loc>
+    <loc>https://www.qcmoke.site/front/clear_float.html</loc>
     
     <lastmod>2022-05-24T03:50:17.600Z</lastmod>
     

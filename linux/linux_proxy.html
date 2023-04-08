@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.424Z">
+<meta property="og:updated_time" content="2023-04-06T10:54:26.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux代理客户端">
 <meta name="twitter:description" content="一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T06:50:36+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-06T18:54:26+08:00">
+                2023-04-06
               </time>
             
           </span>
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.6k
+                  2.3k
                 </span>
               
 
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  9
                 </span>
               
             </div>
@@ -594,8 +594,6 @@
 <p>Clash Web管理页面：<a href="http://IP:9090/ui" target="_blank" rel="noopener">http://IP:9090/ui</a></p>
 <h2 id="3-关闭"><a class="header-anchor" href="#3-关闭">¶</a>3、关闭</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./shutdown.sh</span><br><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br><span class="line"><span class="built_in">unset</span> no_proxy</span><br></pre></td></tr></table></figure>
-<h1>四、相关代理操作命令</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##一、终端请求设置代理</span></span><br><span class="line">$ <span class="built_in">export</span> http_proxy=<span class="string">"socks5://127.0.0.1:1080"</span></span><br><span class="line">$ <span class="built_in">export</span> https_proxy=<span class="string">"socks5://127.0.0.1:1080"</span></span><br><span class="line">$ <span class="built_in">export</span> ALL_PROXY=<span class="string">"socks5://127.0.0.1:1080"</span></span><br><span class="line">$ <span class="built_in">export</span> no_proxy=<span class="string">"127.0.0.1,localhost"</span></span><br><span class="line"><span class="comment">#取消</span></span><br><span class="line">$ <span class="built_in">unset</span> http_proxy</span><br><span class="line">$ <span class="built_in">unset</span> https_proxy</span><br><span class="line">$ <span class="built_in">unset</span> ALL_PROXY</span><br><span class="line">$ <span class="built_in">unset</span> no_proxy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##二、git设置代理</span></span><br><span class="line"><span class="comment">#设置代理</span></span><br><span class="line">$ git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span> </span><br><span class="line">$ git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line"><span class="comment">#一般来说设置前两个就行了</span></span><br><span class="line">$ git config --global https.proxy http://127.0.0.1:1080</span><br><span class="line">$ git config --global https.proxy https://127.0.0.1:1080</span><br><span class="line"><span class="comment">#查看代理</span></span><br><span class="line">$ git config --global --get http.proxy</span><br><span class="line">$ git config --global --get https.proxy</span><br><span class="line"><span class="comment">#查看全局配置</span></span><br><span class="line">$ git config -l --global</span><br><span class="line"><span class="comment">#取消</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">$ git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##三、npm和yarn设置代理</span></span><br><span class="line"><span class="comment">#设置npm代理</span></span><br><span class="line">$ npm config <span class="built_in">set</span> proxy=http://127.0.0.1:1080</span><br><span class="line">$ npm config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span><br><span class="line"><span class="comment">#删除npm代理</span></span><br><span class="line">$ npm config delete proxy</span><br><span class="line">$ npm config delete https-proxy</span><br><span class="line"><span class="comment">#设置yarn代理</span></span><br><span class="line">$ yarn config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span><br><span class="line">$ yarn config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span><br><span class="line"><span class="comment">#删除yarn代理</span></span><br><span class="line">$ yarn config delete proxy</span><br><span class="line">$ yarn config delete https-proxy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#curl添加代理</span></span><br><span class="line">curl -L https://xxxxxx.png --socks5 127.0.0.1:1080 -O xxxxxx.png</span><br><span class="line"><span class="comment">#wget添加代理</span></span><br><span class="line">wget -e  <span class="string">"https_proxy=http://127.0.0.1:1080"</span> https://xxxxxx.png</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -685,8 +683,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/linux/cloudmusic.html" rel="prev" title="ubuntu安装网易云音乐">
-                <i class="fa fa-chevron-left"></i> ubuntu安装网易云音乐
+              <a href="/blog/typecho_http_https.html" rel="prev" title="typecho从http转https">
+                <i class="fa fa-chevron-left"></i> typecho从http转https
               </a>
             
           </div>
@@ -695,8 +693,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linux/ubuntu_wps.html" rel="next" title="ubuntu卸载libreoffice套件，安装wps">
-                ubuntu卸载libreoffice套件，安装wps <i class="fa fa-chevron-right"></i>
+              <a href="/linux/cloudmusic.html" rel="next" title="ubuntu安装网易云音乐">
+                ubuntu安装网易云音乐 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -816,7 +814,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -838,7 +836,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -906,7 +904,7 @@
                   </li>
                 
                   <li class="recent_posts_li">
-                    <a href="/linux/vm.html" title="VirtualBox组建内网服务器集群" target="_blank">VirtualBox组建内网服务器集群</a>
+                    <a href="/windows/winget.html" title="Windows包管理工具winget" target="_blank">Windows包管理工具winget</a>
                   </li>
                 
               </ul>
@@ -927,7 +925,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">一、SSR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-gui客户端代理"><span class="nav-text">¶1、gui客户端代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-shadowsocks-qt5"><span class="nav-text">¶1.1 shadowsocks-qt5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-终端命令代理"><span class="nav-text">¶2、终端命令代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装ssr客户端"><span class="nav-text">¶2.1 安装ssr客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-配置节点"><span class="nav-text">¶2.2 配置节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-启动客户端"><span class="nav-text">¶2.3 启动客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-测试"><span class="nav-text">¶2.4 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-关闭客户端"><span class="nav-text">¶2.5 关闭客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-代理转发"><span class="nav-text">¶2.6. 代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-1-privoxy代理转发"><span class="nav-text">¶2.6.1 privoxy代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-1-安装配置privoxy"><span class="nav-text">¶2.6.1.1 安装配置privoxy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-2-privoxy使用pac模式代理"><span class="nav-text">¶2.6.1.2 privoxy使用pac模式代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-2-proxychains4代理转发"><span class="nav-text">¶2.6.2 proxychains4代理转发</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">二、V2ray</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">三、Clash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装配置"><span class="nav-text">¶1、安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动"><span class="nav-text">¶2、启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭"><span class="nav-text">¶3、关闭</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">四、相关代理操作命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">一、SSR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-gui客户端代理"><span class="nav-text">¶1、gui客户端代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-shadowsocks-qt5"><span class="nav-text">¶1.1 shadowsocks-qt5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-终端命令代理"><span class="nav-text">¶2、终端命令代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装ssr客户端"><span class="nav-text">¶2.1 安装ssr客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-配置节点"><span class="nav-text">¶2.2 配置节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-启动客户端"><span class="nav-text">¶2.3 启动客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-测试"><span class="nav-text">¶2.4 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-关闭客户端"><span class="nav-text">¶2.5 关闭客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-代理转发"><span class="nav-text">¶2.6. 代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-1-privoxy代理转发"><span class="nav-text">¶2.6.1 privoxy代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-1-安装配置privoxy"><span class="nav-text">¶2.6.1.1 安装配置privoxy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-2-privoxy使用pac模式代理"><span class="nav-text">¶2.6.1.2 privoxy使用pac模式代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-2-proxychains4代理转发"><span class="nav-text">¶2.6.2 proxychains4代理转发</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">二、V2ray</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">三、Clash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装配置"><span class="nav-text">¶1、安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动"><span class="nav-text">¶2、启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭"><span class="nav-text">¶3、关闭</span></a></li></ol></li></ol></div>
             
 
           </div>
