@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
+    <lastmod>2023-04-10T18:34:29.408Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/tools/nvm.html</loc>
     <lastmod>2023-04-10T16:04:15.263Z</lastmod>
   </url>  <url>
@@ -42,9 +45,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/win_git.html</loc>
     <lastmod>2023-03-18T22:50:36.450Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
-    <lastmod>2023-03-18T22:50:36.442Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/sublime_use.html</loc>
     <lastmod>2023-03-18T22:50:36.441Z</lastmod>
