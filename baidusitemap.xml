@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/tools/nvm.html</loc>
+    <lastmod>2023-04-10T16:04:15.263Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/proxy.html</loc>
+    <lastmod>2023-04-10T15:47:42.722Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
+    <lastmod>2023-04-09T10:28:36.303Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/windows/clean_c_drive.html</loc>
+    <lastmod>2023-04-08T22:18:25.075Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/pyenv.html</loc>
+    <lastmod>2023-04-08T20:42:17.888Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/windows/winget.html</loc>
     <lastmod>2023-04-08T00:34:14.383Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/windows/scoop.html</loc>
     <lastmod>2023-04-08T00:33:12.029Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/windows/clean_c_drive.html</loc>
-    <lastmod>2023-04-08T00:32:54.056Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/proxy.html</loc>
-    <lastmod>2023-04-08T00:30:34.458Z</lastmod>
-  </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     <lastmod>2023-04-06T11:22:27.237Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
     <lastmod>2023-04-06T10:54:26.785Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
-    <lastmod>2023-04-02T17:53:25.458Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/front/vue.html</loc>
     <lastmod>2023-04-01T18:34:35.035Z</lastmod>
@@ -48,12 +54,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/rclone.html</loc>
     <lastmod>2023-03-18T22:50:36.439Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/python_versions_manage.html</loc>
-    <lastmod>2023-03-18T22:50:36.438Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/nvm.html</loc>
-    <lastmod>2023-03-18T22:50:36.437Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/ngrok_git.html</loc>
     <lastmod>2023-03-18T22:50:36.436Z</lastmod>
@@ -139,10 +139,10 @@
     <loc>https://www.qcmoke.site/devops/nginx.html</loc>
     <lastmod>2023-03-18T22:50:36.402Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/devops/mysql_ha.html</loc>
+    <loc>https://www.qcmoke.site/devops/nfs.html</loc>
     <lastmod>2023-03-18T22:50:36.400Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/devops/nfs.html</loc>
+    <loc>https://www.qcmoke.site/devops/mysql_ha.html</loc>
     <lastmod>2023-03-18T22:50:36.400Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/mq.html</loc>
@@ -169,10 +169,10 @@
     <loc>https://www.qcmoke.site/devops/fastdfs.html</loc>
     <lastmod>2023-03-18T22:50:36.391Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
+    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
+    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/apache_much_ip.html</loc>
