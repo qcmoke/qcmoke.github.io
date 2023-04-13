@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qcmoke.site/devops/nginx.html</loc>
+    
+    <lastmod>2023-04-13T21:44:09.843Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
     
     <lastmod>2023-04-10T18:34:29.408Z</lastmod>
@@ -184,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
     
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
     
@@ -317,13 +324,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/nginx.html</loc>
-    
-    <lastmod>2023-03-18T22:50:36.402Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/devops/mysql_ha.html</loc>
     
     <lastmod>2023-03-18T22:50:36.400Z</lastmod>
@@ -394,14 +394,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
+    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
     
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
+    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
     
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
     
@@ -478,14 +478,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/tags/index.html</loc>
+    <loc>https://www.qcmoke.site/top/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.211Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/top/index.html</loc>
+    <loc>https://www.qcmoke.site/tags/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.211Z</lastmod>
     

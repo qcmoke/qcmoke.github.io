@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="¶一、简介 Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。 在高连接并发的情况下，Nginx是Apache服务器不错的替代品。 ¶二、编译安装 官方下载地址：http://nginx.org/en/download.html 版本号是双数的是稳定版，而单数则是开发版">
+<meta name="description" content="¶一、简介 Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。 在高连接并发的情况下，Nginx是Apache服务器不错的替代品。 ¶二、yum安装 ¶1. 安装yum源 1sudo yum install yum-utils 设置官方yum源以能够使用最新版本 1vi">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx学习笔记">
 <meta property="og:url" content="https://www.qcmoke.site/devops/nginx.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="¶一、简介 Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。 在高连接并发的情况下，Nginx是Apache服务器不错的替代品。 ¶二、编译安装 官方下载地址：http://nginx.org/en/download.html 版本号是双数的是稳定版，而单数则是开发版">
+<meta property="og:description" content="¶一、简介 Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。 在高连接并发的情况下，Nginx是Apache服务器不错的替代品。 ¶二、yum安装 ¶1. 安装yum源 1sudo yum install yum-utils 设置官方yum源以能够使用最新版本 1vi">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.402Z">
+<meta property="og:updated_time" content="2023-04-13T21:44:09.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx学习笔记">
-<meta name="twitter:description" content="¶一、简介 Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。 在高连接并发的情况下，Nginx是Apache服务器不错的替代品。 ¶二、编译安装 官方下载地址：http://nginx.org/en/download.html 版本号是双数的是稳定版，而单数则是开发版">
+<meta name="twitter:description" content="¶一、简介 Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。 在高连接并发的情况下，Nginx是Apache服务器不错的替代品。 ¶二、yum安装 ¶1. 安装yum源 1sudo yum install yum-utils 设置官方yum源以能够使用最新版本 1vi">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T06:50:36+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-14T05:44:09+08:00">
+                2023-04-14
               </time>
             
           </span>
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.4k
+                  5.3k
                 </span>
               
 
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  20
+                  24
                 </span>
               
             </div>
@@ -487,43 +487,7 @@
         <h2 id="一-简介"><a class="header-anchor" href="#一-简介">¶</a>一、简介</h2>
 <p><a href="http://nginx.org/" target="_blank" rel="noopener">Nginx</a>(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。</p>
 <p>在高连接并发的情况下，Nginx是Apache服务器不错的替代品。</p>
-<h2 id="二-编译安装"><a class="header-anchor" href="#二-编译安装">¶</a>二、编译安装</h2>
-<p>官方下载地址：<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a></p>
-<p>版本号是双数的是稳定版，而单数则是开发版。</p>
-<p>以下以编译安装来讲述。为什么选择编译安装而不选择yum或者apt包管理器安装呢？因为yum或者apt安装的是已经编译好的二进制文件，而已经编译好就说明扩展模块已经固定，很难去添加或者修改自定义的扩展模块，这里选择编译安装就是为了解决这个问题。</p>
-<h3 id="1-准备活动"><a class="header-anchor" href="#1-准备活动">¶</a>1.准备活动</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##下载</span></span><br><span class="line">wget http://nginx.org/download/nginx-1.14.0.tar.gz</span><br><span class="line"><span class="comment">##解压</span></span><br><span class="line">tar zxvf nginx-1.14.0.tar.gz</span><br><span class="line"><span class="comment">##设置vim编辑nginx配置文件语法高亮（可选，如果不想用了直接删除~/.vim/目录即可）</span></span><br><span class="line">mkdir ~/.vim &amp;&amp; cp -r  nginx-1.14.0/contrib/vim/* ~/.vim/</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装编译工具及依赖库文件"><a class="header-anchor" href="#2-安装编译工具及依赖库文件">¶</a>2. 安装编译工具及依赖库文件</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel pcre pcre-devel</span><br></pre></td></tr></table></figure>
-<h3 id="3-编译并安装"><a class="header-anchor" href="#3-编译并安装">¶</a>3.编译并安装</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入解压好的源码目录</span></span><br><span class="line"><span class="built_in">cd</span> nginx-1.14.0</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成MakeFile</span></span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/nginx \</span><br><span class="line">--with-http_stub_status_module \</span><br><span class="line">--with-http_ssl_module \</span><br><span class="line">--with-http_sub_module \</span><br><span class="line">--with-http_gzip_static_module</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据MakeFile编译</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>安装目录结构如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx</span><br><span class="line">├── conf   <span class="comment">#存放配置文件</span></span><br><span class="line">│   ├── fastcgi.conf</span><br><span class="line">│   ├── fastcgi.conf.default</span><br><span class="line">│   ├── fastcgi_params</span><br><span class="line">│   ├── fastcgi_params.default</span><br><span class="line">│   ├── koi-utf</span><br><span class="line">│   ├── koi-win</span><br><span class="line">│   ├── mime.types</span><br><span class="line">│   ├── mime.types.default</span><br><span class="line">│   ├── nginx.conf</span><br><span class="line">│   ├── nginx.conf.default</span><br><span class="line">│   ├── scgi_params</span><br><span class="line">│   ├── scgi_params.default</span><br><span class="line">│   ├── uwsgi_params</span><br><span class="line">│   ├── uwsgi_params.default</span><br><span class="line">│   └── win-utf</span><br><span class="line">├── html    <span class="comment">#web基础根目录</span></span><br><span class="line">│   ├── 50xhtml</span><br><span class="line">│   └── index.html</span><br><span class="line">├── logs    <span class="comment">#日志文件目录</span></span><br><span class="line">└── sbin    <span class="comment">#执行脚本目录</span></span><br><span class="line">    └── nginx</span><br></pre></td></tr></table></figure>
-<h2 id="三-常用命令"><a class="header-anchor" href="#三-常用命令">¶</a>三、常用命令</h2>
-<h3 id="1-启动"><a class="header-anchor" href="#1-启动">¶</a>1. 启动</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
-<p>查看是否启动命令： <code>ps aux | grep nginx</code></p>
-<h3 id="2-停止"><a class="header-anchor" href="#2-停止">¶</a>2. 停止</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s stop</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s quit</span><br></pre></td></tr></table></figure>
-<h3 id="3-重启"><a class="header-anchor" href="#3-重启">¶</a>3. 重启</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/<span class="built_in">local</span>/nginx/sbin/nginx -s reopen</span><br></pre></td></tr></table></figure>
-<h3 id="4-动态加载"><a class="header-anchor" href="#4-动态加载">¶</a>4. 动态加载</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>区别：</p>
-<blockquote>
-<p>nginx -s quit:此方式停止步骤是待nginx进程处理任务完毕进行停止。</p>
-<p>nginx -s stop:此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。</p>
-<p>nginx -s reload:动态加载，当配置文件nginx.conf有变化时执行该命令动态加载。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="5-检测配置文件正确性"><a class="header-anchor" href="#5-检测配置文件正确性">¶</a>5. 检测配置文件正确性</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx  -t</span><br></pre></td></tr></table></figure>
-<h3 id="6-其他常用命令"><a class="header-anchor" href="#6-其他常用命令">¶</a>6. 其他常用命令</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看编译加载的模块</span></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V</span><br></pre></td></tr></table></figure>
-<h2 id="四-yum安装"><a class="header-anchor" href="#四-yum安装">¶</a>四、yum安装</h2>
+<h2 id="二-yum安装"><a class="header-anchor" href="#二-yum安装">¶</a>二、yum安装</h2>
 <h3 id="1-安装yum源"><a class="header-anchor" href="#1-安装yum源">¶</a>1. 安装yum源</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install yum-utils</span><br></pre></td></tr></table></figure>
 <p>设置官方yum源以能够使用最新版本</p>
@@ -531,176 +495,42 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[nginx-stable]</span><br><span class="line">name=nginx stable repo</span><br><span class="line">baseurl=http://nginx.org/packages/centos/<span class="variable">$releasever</span>/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</span><br><span class="line"></span><br><span class="line">[nginx-mainline]</span><br><span class="line">name=nginx mainline repo</span><br><span class="line">baseurl=http://nginx.org/packages/mainline/centos/<span class="variable">$releasever</span>/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</span><br></pre></td></tr></table></figure>
 <h3 id="2-安装nginx"><a class="header-anchor" href="#2-安装nginx">¶</a>2. 安装nginx</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
-<p>安装好后可以查看一些详细信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##查寻nginx</span></span><br><span class="line">[root@IllinformedMaroon-VM ~]<span class="comment"># rpm -q nginx</span></span><br><span class="line">nginx-1.16.0-1.el7.ngx.x86_64</span><br><span class="line">[root@IllinformedMaroon-VM ~]<span class="comment"># nginx -v</span></span><br><span class="line">nginx version: nginx/1.16.0</span><br></pre></td></tr></table></figure>
-<p>Nginx安装⽬目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##查看安装目录</span></span><br><span class="line">rpm -ql nginx</span><br></pre></td></tr></table></figure>
-<p><strong>如下表格对 Nginx 安装⽬目录做详细概述</strong></p>
-<table>
-<thead>
-<tr>
-<th>路路径</th>
-<th>类型</th>
-<th>作⽤</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/etc/nginx                         <br>/etc/nginx/nginx.conf     <br>/etc/nginx/conf.d            <br>/etc/nginx/conf.d/default.conf</td>
-<td>配置文件</td>
-<td>Nginx主配置文件</td>
-</tr>
-<tr>
-<td>/etc/nginx/fastcgi_params  <br>/etc/nginx/scgi_params      <br>/etc/nginx/uwsgi_params</td>
-<td>配置文件</td>
-<td>Cgi、Fastcgi、Uwcgi配置文件</td>
-</tr>
-<tr>
-<td>/etc/nginx/win-utf<br>/etc/nginx/koi-utf<br>/etc/nginx/koi-win</td>
-<td>配置⽂文件</td>
-<td>Nginx编码转换映射文件</td>
-</tr>
-<tr>
-<td>/etc/nginx/mime.types</td>
-<td>配置⽂文件</td>
-<td>http协议的Content-Type与扩展名</td>
-</tr>
-<tr>
-<td>/usr/lib/systemd/system/nginx.service</td>
-<td>配置⽂件</td>
-<td>配置系统守护进程管理器</td>
-</tr>
-<tr>
-<td>/etc/logrotate.d/nginx</td>
-<td>配置⽂件</td>
-<td>Nginx⽇志轮询,⽇志切割</td>
-</tr>
-<tr>
-<td>/usr/sbin/nginx<br>/usr/sbin/nginx-debug</td>
-<td>命令</td>
-<td>Nginx终端管理命令</td>
-</tr>
-<tr>
-<td>/etc/nginx/modules<br>/usr/lib64/nginx<br>/usr/lib64/nginx/modules</td>
-<td>⽬录</td>
-<td>Nginx模块⽬录</td>
-</tr>
-<tr>
-<td>/usr/share/nginx<br>/usr/share/nginx/html<br>/usr/share/nginx/html/50x.html<br>/usr/share/nginx/html/index.html</td>
-<td>⽬录</td>
-<td>Nginx默认站点⽬录</td>
-</tr>
-<tr>
-<td>/usr/share/doc/nginx-1.12.2<br>/usr/share/man/man8/nginx.8.gz</td>
-<td>⽬录</td>
-<td>Nginx的缓存⽬录</td>
-</tr>
-<tr>
-<td>/var/log/nginx</td>
-<td>⽬录</td>
-<td>Nginx的⽇志⽬录</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Nginx编译参数</strong></p>
-<p>查看Nginx编译参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx	-V</span><br></pre></td></tr></table></figure>
-<p>下表展示了Nginx编译参数选项以及作⽤</p>
-<table>
-<thead>
-<tr>
-<th>编译选项</th>
-<th>作⽤</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>–prefix=/etc/nginx<br>–sbin-path=/usr/sbin/nginx<br>–modules-path=/usr/lib64/nginx/modules<br>–conf-path=/etc/nginx/nginx.conf<br>–error-log-path=/var/log/nginx/error.log<br>–http-log-path=/var/log/nginx/access.log<br>–pid-path=/var/run/nginx.pid<br>–lock-path=/var/run/nginx.lock</td>
-<td>程序安装⽬录和路径</td>
-</tr>
-<tr>
-<td>–http-client-body-temp-path=/var/cache/nginx/clie<br>nt_tem<br>–http-proxy-temp-path=/var/cache/nginx/proxy_te<br>mp<br>–http-fastcgi-temp-path=/var/cache/nginx/fastcgi_<br>temp<br>–http-uwsgi-temp-path=/var/cache/nginx/uwsgi_te<br>mp<br>–http-scgi-temp-path=/var/cache/nginx/scgi_temp</td>
-<td>临时缓存⽂件</td>
-</tr>
-<tr>
-<td>–user=nginx<br>–group=nginx</td>
-<td>设定Nginx进程启动⽤户和组(安全)</td>
-</tr>
-<tr>
-<td>–with-cc-opt</td>
-<td>设置额外的参数将被添加到CFLAGS变量</td>
-</tr>
-<tr>
-<td>–with-ld-opt</td>
-<td>设置附加的参数, 链接系统库</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="五-常-模块"><a class="header-anchor" href="#五-常-模块">¶</a>五、常⽤模块</h2>
-<p>Nginx模块分为 Nginx官⽅模块以及Nginx第三⽅模块</p>
-<table>
-<thead>
-<tr>
-<th>Nginx编译选项</th>
-<th>模块作⽤</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ngx_http_core_module</td>
-<td>包含⼀些核⼼的http参数配置，对应Nginx的配置区块部分</td>
-</tr>
-<tr>
-<td>ngx_http_access_module</td>
-<td>访问控制模块，⽤来控制⽹站⽤户对Nginx的访问</td>
-</tr>
-<tr>
-<td>ngx_http_gzip_module</td>
-<td>压缩模块，对Nginx返回的数据压缩，属于性能优化模块</td>
-</tr>
-<tr>
-<td>ngx_http_fastcgi_module</td>
-<td>fastci模块，和动态应⽤相关的模块，例如PHP</td>
-</tr>
-<tr>
-<td>ngx_http_proxy_module</td>
-<td>proxy代理模块</td>
-</tr>
-<tr>
-<td>ngx_http_upstream_modul</td>
-<td>负载均衡模块，可以实现⽹站的负载均衡功能及节点的健康检查。</td>
-</tr>
-<tr>
-<td>ngx_http_rewrite_module</td>
-<td>URL地址重写模块</td>
-</tr>
-<tr>
-<td>ngx_http_limit_conn_modu</td>
-<td>限制⽤户并发连接数及请求数模块</td>
-</tr>
-<tr>
-<td>ngx_http_limit_req_module</td>
-<td>限制Nginx request processing rate根据定义的key</td>
-</tr>
-<tr>
-<td>ngx_http_log_module</td>
-<td>访问⽇志模块，以指定的格式记录Nginx客户访问⽇志等信息</td>
-</tr>
-<tr>
-<td>ngx_http_auth_basic_mod</td>
-<td>Web认证模块，设置Web⽤户通过账号密码访问Nginx</td>
-</tr>
-<tr>
-<td>nginx_http_ssl_module</td>
-<td>ssl模块，⽤于加密的http连接，如https</td>
-</tr>
-</tbody>
-</table>
-<h2 id="六-内置变量"><a class="header-anchor" href="#六-内置变量">¶</a>六、内置变量</h2>
+<h3 id="3-查看nginx安装信息"><a class="header-anchor" href="#3-查看nginx安装信息">¶</a>3. 查看nginx安装信息</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看已经安装nginx包（如：nginx-1.16.0-1.el7.ngx.x86_64）</span></span><br><span class="line">rpm -q nginx</span><br><span class="line"><span class="comment">#查看nginx版本（如：nginx version: nginx/1.16.0）</span></span><br><span class="line">nginx -v</span><br><span class="line"><span class="comment">#查看yum安装nginx的目录</span></span><br><span class="line">rpm -ql nginx</span><br><span class="line"><span class="comment">#查看Nginx的显式编译参数</span></span><br><span class="line">nginx -V</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>yum安装nginx的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&gt;Nginx主配置文件</span><br><span class="line">&gt;    /etc/nginx                         </span><br><span class="line">&gt;    /etc/nginx/nginx.conf</span><br><span class="line">&gt;    /etc/nginx/conf.d </span><br><span class="line">&gt;    /etc/nginx/conf.d/default.conf</span><br><span class="line">&gt;    </span><br><span class="line">&gt;Cgi、Fastcgi、Uwcgi配置文件</span><br><span class="line">&gt;    /etc/nginx/fastcgi_params</span><br><span class="line">&gt;    /etc/nginx/scgi_params</span><br><span class="line">&gt;    /etc/nginx/uwsgi_params</span><br><span class="line">&gt;    </span><br><span class="line">&gt;Nginx编码转换映射配置文件</span><br><span class="line">&gt;    /etc/nginx/win-utf</span><br><span class="line">&gt;    /etc/nginx/koi-utf</span><br><span class="line">&gt;    /etc/nginx/koi-win</span><br><span class="line">&gt;    </span><br><span class="line">&gt;http协议的Content-Type与扩展名配置文件</span><br><span class="line">&gt;/etc/nginx/mime.types</span><br><span class="line">&gt;	</span><br><span class="line">&gt;系统守护进程管理器配置文件</span><br><span class="line">&gt;/usr/lib/systemd/system/nginx.service</span><br><span class="line">&gt;	</span><br><span class="line">&gt;Nginx⽇志轮询,⽇志切割配置文件</span><br><span class="line">&gt;/etc/logrotate.d/nginx</span><br><span class="line">&gt;	</span><br><span class="line">&gt;Nginx终端管理命令</span><br><span class="line">&gt;    /usr/sbin/nginx</span><br><span class="line">&gt;    /usr/sbin/nginx-debug</span><br><span class="line">&gt;    </span><br><span class="line">&gt;Nginx模块⽬录</span><br><span class="line">&gt;    /etc/nginx/modules</span><br><span class="line">&gt;    /usr/lib64/nginx</span><br><span class="line">&gt;    /usr/lib64/nginx/modules</span><br><span class="line">&gt;    </span><br><span class="line">&gt;Nginx默认站点⽬录</span><br><span class="line">&gt;/usr/share/nginx/html</span><br><span class="line">&gt;	</span><br><span class="line">&gt;Nginx的缓存⽬录</span><br><span class="line">&gt;/usr/share/doc/nginx-1.12.2</span><br><span class="line">&gt;/usr/share/man/man8/nginx.8.gz</span><br><span class="line">&gt;	</span><br><span class="line">&gt;Nginx的⽇志⽬录</span><br><span class="line">&gt;/var/log/nginx</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>yum安装nginx的编译参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt;程序安装⽬录和路径</span><br><span class="line">&gt;    --prefix=/etc/nginx</span><br><span class="line">&gt;    --sbin-path=/usr/sbin/nginx</span><br><span class="line">&gt;    --modules-path=/usr/lib64/nginx/modules</span><br><span class="line">&gt;    --conf-path=/etc/nginx/nginx.conf</span><br><span class="line">&gt;    --error-log-path=/var/log/nginx/error.log</span><br><span class="line">&gt;    --http-log-path=/var/log/nginx/access.log</span><br><span class="line">&gt;    --pid-path=/var/run/nginx.pid</span><br><span class="line">&gt;    --lock-path=/var/run/nginx.lock</span><br><span class="line">&gt;    </span><br><span class="line">&gt;临时缓存⽂件</span><br><span class="line">&gt;    --http-client-body-temp-path=/var/cache/nginx/client_temp</span><br><span class="line">&gt;    --http-proxy-temp-path=/var/cache/nginx/proxy_temp</span><br><span class="line">&gt;    --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp</span><br><span class="line">&gt;    --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp</span><br><span class="line">&gt;    --http-scgi-temp-path=/var/cache/nginx/scgi_temp</span><br><span class="line">&gt;</span><br><span class="line">&gt;设定Nginx进程启动⽤户和组(安全)</span><br><span class="line">&gt;    --user=nginx</span><br><span class="line">&gt;    --group=nginx</span><br><span class="line">&gt;</span><br><span class="line">&gt;设置额外的参数将被添加到CFLAGS变量</span><br><span class="line">&gt;--with-cc-opt</span><br><span class="line">&gt;</span><br><span class="line">&gt;设置附加的参数, 链接系统库</span><br><span class="line">&gt;--with-ld-opt</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="二-编译安装"><a class="header-anchor" href="#二-编译安装">¶</a>二、编译安装</h2>
+<p>官方下载地址：<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a></p>
+<p>版本号是双数的是稳定版，而单数则是开发版。</p>
+<p>以下以编译安装来讲述。为什么选择编译安装而不选择yum或者apt包管理器安装呢？因为yum或者apt安装的是已经编译好的二进制文件，而已经编译好就说明扩展模块已经固定，很难去添加或者修改自定义的扩展模块，这里选择编译安装就是为了解决这个问题。</p>
+<h3 id="1-准备活动"><a class="header-anchor" href="#1-准备活动">¶</a>1. 准备活动</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##下载</span></span><br><span class="line">wget http://nginx.org/download/nginx-1.14.0.tar.gz</span><br><span class="line"><span class="comment">##解压</span></span><br><span class="line">tar zxvf nginx-1.14.0.tar.gz</span><br><span class="line"><span class="comment">##设置vim编辑nginx配置文件语法高亮（可选，如果不想用了直接删除~/.vim/目录即可）</span></span><br><span class="line">mkdir ~/.vim &amp;&amp; cp -r  nginx-1.14.0/contrib/vim/* ~/.vim/</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装编译依赖包"><a class="header-anchor" href="#2-安装编译依赖包">¶</a>2. 安装编译依赖包</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel pcre pcre-devel</span><br></pre></td></tr></table></figure>
+<h3 id="3-简单编译安装"><a class="header-anchor" href="#3-简单编译安装">¶</a>3. 简单编译安装</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入解压好的源码目录</span></span><br><span class="line"><span class="built_in">cd</span> nginx-1.14.0</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成MakeFile</span></span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/nginx \</span><br><span class="line">--with-http_stub_status_module \</span><br><span class="line">--with-http_ssl_module \</span><br><span class="line">--with-http_sub_module \</span><br><span class="line">--with-http_gzip_static_module</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据MakeFile编译</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#卸载</span></span><br><span class="line">make uninstall	<span class="comment">#或者：rm -rf /usr/local/nginx</span></span><br><span class="line"><span class="comment">#清除编译生成文件（包括生成的MakeFile、二进制文件等）</span></span><br><span class="line">make clean</span><br><span class="line"><span class="comment">#删除解压目录和安装包</span></span><br><span class="line"><span class="built_in">cd</span> .. &amp;&amp; rm -rf nginx-1.14.0 &amp;&amp; rm -f nginx-1.14.0.tar.gz</span><br></pre></td></tr></table></figure>
+<p>安装目录结构如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx</span><br><span class="line">├── conf   <span class="comment">#存放配置文件</span></span><br><span class="line">│   ├── fastcgi.conf</span><br><span class="line">│   ├── fastcgi.conf.default</span><br><span class="line">│   ├── fastcgi_params</span><br><span class="line">│   ├── fastcgi_params.default</span><br><span class="line">│   ├── koi-utf</span><br><span class="line">│   ├── koi-win</span><br><span class="line">│   ├── mime.types</span><br><span class="line">│   ├── mime.types.default</span><br><span class="line">│   ├── nginx.conf</span><br><span class="line">│   ├── nginx.conf.default</span><br><span class="line">│   ├── scgi_params</span><br><span class="line">│   ├── scgi_params.default</span><br><span class="line">│   ├── uwsgi_params</span><br><span class="line">│   ├── uwsgi_params.default</span><br><span class="line">│   └── win-utf</span><br><span class="line">├── html    <span class="comment">#web基础根目录</span></span><br><span class="line">│   ├── 50xhtml</span><br><span class="line">│   └── index.html</span><br><span class="line">├── logs    <span class="comment">#日志文件目录</span></span><br><span class="line">└── sbin    <span class="comment">#执行脚本目录</span></span><br><span class="line">    └── nginx</span><br></pre></td></tr></table></figure>
+<h3 id="4-常用编译参数说明"><a class="header-anchor" href="#4-常用编译参数说明">¶</a>4. 常用编译参数说明</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">--prefix=绝对路径	<span class="comment">#定义nginx安装目录。默认为usr/local/nginx目录。注意：这个目标的设置会影响其他参数中的相对路径目录。（例如：--sbin-path==sbin/nginx,那么实际上可执行文件nginx的安装存放路径为/usr/local/nginx/sbin/nginx。）</span></span><br><span class="line">--sbin-path=path	<span class="comment">#设置nginx可执行文件的安装存放路径。默认为&lt;prefix&gt;/sbin/nginx。</span></span><br><span class="line">--conf-path=path	<span class="comment">#设置nginx.conf配置文件的安装存放路径。默认为&lt;prefix&gt;/conf目录。</span></span><br><span class="line">--pid-path=path 	<span class="comment">#设置将存储主进程的进程ID的nginx.pid文件的路径。默认&lt;prefix&gt;/logs/nginx.pid</span></span><br><span class="line">--error-log-path=path	<span class="comment">#设置error警告和诊断日志路径。默认&lt;prefix&gt;/logs/error.log</span></span><br><span class="line">--http-log-path=path	<span class="comment">#设置每个HTTP请求完成的记录日志路径。默认&lt;prefix&gt;/logs/access.log</span></span><br><span class="line">--user=用户名 	<span class="comment">#指定Nginx worker进程运行时所属的用户。默认为：nobody。</span></span><br><span class="line">--group=用户组 <span class="comment">#指定Nginx worker进程运行时所属的用户组。默认为：nobody。</span></span><br><span class="line">--with-pcre	<span class="comment">#允许用户使用正则表达式进行模式匹配和文本处理。（默认启用）</span></span><br><span class="line">--with-select_module	<span class="comment">#启用select多路复用器模块。（默认启用）</span></span><br><span class="line">--with-poll_module <span class="comment">#启用poll多路复用器模块，用于处理网络事件的多路复用。（默认启用，如果不显式指定这--with-select_module或--with-poll_module中的任何一个，Nginx 默认会使用 --with-poll_module）</span></span><br><span class="line">--with-threads	<span class="comment">#启用 Nginx 的线程池功能。（默认未启用）</span></span><br><span class="line">--with-file-aio <span class="comment">#启用文件异步io支持。（默认未启用）</span></span><br><span class="line">--with-ipv6	<span class="comment">#启用对IPv6的支持。（默认未启用）</span></span><br><span class="line">--with-http_ssl_module	<span class="comment">#启用构建将HTTPS协议支持添加到HTTP服务器的模块的功能。需要OpenSSL库来构建和运行此模块。（默认未启用）</span></span><br><span class="line">--with-http_gzip_static_module <span class="comment">#用于预压缩静态文件，从而提高网站的性能。（默认启用）</span></span><br><span class="line">--with-http_gunzip_module <span class="comment">#用于在 Nginx 中解压缩经过压缩的 HTTP 响应，以便客户端可以正常接收响应。（默认启用）</span></span><br><span class="line">--with-http_sub_module <span class="comment">#字符替换模块，允许在响应内容中进行字符串替换，从而实现动态修改内容的功能。（默认启用）</span></span><br><span class="line">--with-http_realip_module <span class="comment">#提取客户端真实IP 。（默认未启用）</span></span><br><span class="line">--with-http_image_filter_module <span class="comment">#提供了在 HTTP 请求中处理图像的功能，例如缩放、裁剪、旋转、反转等功能。（默认未启用）</span></span><br><span class="line">--with-http_mp4_module <span class="comment">#提供了处理 MP4 文件的功能，包括切割、拼接、编码等。（默认未启用）</span></span><br><span class="line">--with-mail	<span class="comment">#安装邮件服务器反向代理模块，使nginx可以反向代理IMAP、POP3、SMTP等协议。（默认未启用）</span></span><br><span class="line">--with-mail_ssl_module	<span class="comment">#使IMAP、POP3、SMTP等协议支持SSL/TLS协议加密传输支持。（默认未启用）</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想强制禁用某个模块，只需要将<code>--with</code>改成<code>--without</code>。比如禁用select多路复用器模块，则参数为：<code>--without-select_module</code></p>
+</blockquote>
+<h3 id="5-常规编译安装"><a class="header-anchor" href="#5-常规编译安装">¶</a>5. 常规编译安装</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##下载</span></span><br><span class="line">wget http://nginx.org/download/nginx-1.14.0.tar.gz</span><br><span class="line"><span class="comment">##解压</span></span><br><span class="line">tar zxvf nginx-1.14.0.tar.gz</span><br><span class="line"><span class="comment">##设置vim编辑nginx配置文件语法高亮（可选，如果不想用了直接删除~/.vim/目录即可）</span></span><br><span class="line">mkdir ~/.vim &amp;&amp; cp -r  nginx-1.14.0/contrib/vim/* ~/.vim/</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装依赖</span></span><br><span class="line">yum install -y gcc gcc-c++ zlib  gd-devel zlib-devel openssl   openssl-devel pcre-devel make </span><br><span class="line"></span><br><span class="line"><span class="comment">#进入解压好的源码目录</span></span><br><span class="line"><span class="built_in">cd</span> nginx-1.14.0</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成MakeFile</span></span><br><span class="line">./configure  \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/nginx  \</span><br><span class="line">--conf-path=/usr/<span class="built_in">local</span>/nginx/conf/nginx.conf \</span><br><span class="line">--error-log-path=/usr/<span class="built_in">local</span>/nginx/<span class="built_in">log</span>/error.log \</span><br><span class="line">--http-log-path=/usr/<span class="built_in">local</span>/nginx/<span class="built_in">log</span>/access.log \</span><br><span class="line">--with-http_stub_status_module \</span><br><span class="line">--with-http_ssl_module \</span><br><span class="line">--with-http_gzip_static_module  \</span><br><span class="line">--with-http_gunzip_module \</span><br><span class="line">--with-poll_module \</span><br><span class="line">--with-pcre \</span><br><span class="line">--with-file-aio \</span><br><span class="line">--with-http_realip_module \</span><br><span class="line">--with-http_image_filter_module \</span><br><span class="line">--with-http_sub_module \</span><br><span class="line">--with-http_mp4_module</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据MakeFile编译</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#卸载</span></span><br><span class="line">make uninstall	<span class="comment">#或者：rm -rf /usr/local/nginx</span></span><br><span class="line"><span class="comment">#清除编译生成文件（包括生成的MakeFile、二进制文件等）</span></span><br><span class="line">make clean</span><br><span class="line"><span class="comment">#删除解压目录和安装包</span></span><br><span class="line"><span class="built_in">cd</span> .. &amp;&amp; rm -rf nginx-1.14.0 &amp;&amp; rm -f nginx-1.14.0.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="三-常用命令"><a class="header-anchor" href="#三-常用命令">¶</a>三、常用命令</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入nginx命令所在的安装目录（如果是编译安装）</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/sbin</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">./nginx</span><br><span class="line"></span><br><span class="line"><span class="comment">#停止</span></span><br><span class="line">./nginx -s stop <span class="comment">#立即停止服务（查出nginx进程id后直接强制kill杀掉进程）</span></span><br><span class="line">./nginx -s quit <span class="comment">#安全地停止服务（等待所有请求处理完成再停止服务）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#重新加载配置（重新加载配置而无需停止或重启服务）</span></span><br><span class="line">./nginx -s reload</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#检测配置文件正确性</span></span><br><span class="line">./nginx  -t</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看nginx的【显式】编译参数</span></span><br><span class="line">./nginx -V</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看nginx是否在运行</span></span><br><span class="line">ps aux | grep nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>关于<code>nginx -V</code>查看编译参数的说明：</p>
+<p>注意执行<code>nginx -V</code>只是列出在编译时执行<code>./configure</code>的显式设置参数，而不代表真实编译进nginx的配置，比如有很多的编译参数是默认启用的，编译时也被编译进nginx了，但是通过<code>nginx -V</code>命令却不能看到对应的参数。如在执行<code>./configure</code>时即使没有显式地设置<code>--with-pcre</code>这个编译参数，但是编译好的nginx还是能够使用正则匹配功能。</p>
+</blockquote>
+<h2 id="五-内置变量"><a class="header-anchor" href="#五-内置变量">¶</a>五、内置变量</h2>
 <p>http核⼼模块的内置变量</p>
 <blockquote>
 <p>http请求变量<br>
@@ -766,7 +596,7 @@ Nginx内置变量<br>
 <h3 id="4-访问测试"><a class="header-anchor" href="#4-访问测试">¶</a>4. 访问测试</h3>
 <p><strong>在代理主机B主机上编写动静分离的页面做测试</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/share/nginx/html/dynamic_static.html</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>测试nginx动静分离<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/2.1.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">         $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="string">"GET"</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">"http://198.23.188.200/java_test.jsp"</span>,</span></span><br><span class="line"><span class="javascript">                success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        $(<span class="string">"#get_data"</span>).html(data)</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        alert(<span class="string">"fail!!,请刷新再试!"</span>);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"color: #0688e8;"</span>&gt;</span>测试动静分离<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>静态数据:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://198.23.188.200/logo.jpg"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>动态数据:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"get_data"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>测试nginx动静分离<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/2.1.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(document).ready(function()&#123;</span></span><br><span class="line"><span class="undefined">         $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                type: "GET",</span></span><br><span class="line"><span class="undefined">                url: "http://198.23.188.200/java_test.jsp",</span></span><br><span class="line"><span class="undefined">                success: function(data) &#123;</span></span><br><span class="line"><span class="undefined">                        $("#get_data").html(data)</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                error: function() &#123;</span></span><br><span class="line"><span class="undefined">                        alert("fail!!,请刷新再试!");</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"color: #0688e8;"</span>&gt;</span>测试动静分离<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>静态数据:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://198.23.188.200/logo.jpg"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>动态数据:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"get_data"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>访问代理主机B主机的测试页面</strong></p>
 <p>到这里nginx配置动静分类的应用服务就完成了。</p>
 <p><img src="/devops/../images/loading-post.gif" data-original="nginx/1562580072428.png" alt="1562580072428"></p>
@@ -1136,7 +966,7 @@ Nginx内置变量<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-简介"><span class="nav-text">¶一、简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-编译安装"><span class="nav-text">¶二、编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-准备活动"><span class="nav-text">¶1.准备活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装编译工具及依赖库文件"><span class="nav-text">¶2. 安装编译工具及依赖库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-编译并安装"><span class="nav-text">¶3.编译并安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-常用命令"><span class="nav-text">¶三、常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-启动"><span class="nav-text">¶1. 启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-停止"><span class="nav-text">¶2. 停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-重启"><span class="nav-text">¶3. 重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-动态加载"><span class="nav-text">¶4. 动态加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-检测配置文件正确性"><span class="nav-text">¶5. 检测配置文件正确性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-其他常用命令"><span class="nav-text">¶6. 其他常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-yum安装"><span class="nav-text">¶四、yum安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装yum源"><span class="nav-text">¶1. 安装yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装nginx"><span class="nav-text">¶2. 安装nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-常-模块"><span class="nav-text">¶五、常⽤模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-内置变量"><span class="nav-text">¶六、内置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-配置http服务"><span class="nav-text">¶七、配置http服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前置准备"><span class="nav-text">¶1. 前置准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置http服务"><span class="nav-text">¶2. 配置http服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-负载均衡"><span class="nav-text">¶八、负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前置准备-v2"><span class="nav-text">¶1. 前置准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置nginx"><span class="nav-text">¶2. 配置nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-动静分离"><span class="nav-text">¶九、动静分离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-环境准备-a主机和b主机"><span class="nav-text">¶1. 环境准备(A主机和B主机)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-a主机环境搭建"><span class="nav-text">¶2. A主机环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-动态资源的准备"><span class="nav-text">¶2.1 动态资源的准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-静态资源的准备"><span class="nav-text">¶2.2 静态资源的准备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-b主机环境搭建"><span class="nav-text">¶3. B主机环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-访问测试"><span class="nav-text">¶4. 访问测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十-配置https"><span class="nav-text">¶十、配置https</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-配置一个nginx站点"><span class="nav-text">¶1. 配置一个nginx站点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装certbot工具"><span class="nav-text">¶2. 安装certbot工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-申请证书"><span class="nav-text">¶3. 申请证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-配置nginx使用证书开通https"><span class="nav-text">¶4. 配置nginx使用证书开通https</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-配置pfs秘钥-可选"><span class="nav-text">¶4.1 配置PFS秘钥（可选）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-配置nginx站点"><span class="nav-text">¶4.2 配置nginx站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-修改防火墙配置"><span class="nav-text">¶4.3 修改防火墙配置</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-简介"><span class="nav-text">¶一、简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-yum安装"><span class="nav-text">¶二、yum安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装yum源"><span class="nav-text">¶1. 安装yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装nginx"><span class="nav-text">¶2. 安装nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查看nginx安装信息"><span class="nav-text">¶3. 查看nginx安装信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-编译安装"><span class="nav-text">¶二、编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-准备活动"><span class="nav-text">¶1. 准备活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装编译依赖包"><span class="nav-text">¶2. 安装编译依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-简单编译安装"><span class="nav-text">¶3. 简单编译安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-常用编译参数说明"><span class="nav-text">¶4. 常用编译参数说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-常规编译安装"><span class="nav-text">¶5. 常规编译安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-常用命令"><span class="nav-text">¶三、常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-内置变量"><span class="nav-text">¶五、内置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-配置http服务"><span class="nav-text">¶七、配置http服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前置准备"><span class="nav-text">¶1. 前置准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置http服务"><span class="nav-text">¶2. 配置http服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-负载均衡"><span class="nav-text">¶八、负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前置准备-v2"><span class="nav-text">¶1. 前置准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置nginx"><span class="nav-text">¶2. 配置nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-动静分离"><span class="nav-text">¶九、动静分离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-环境准备-a主机和b主机"><span class="nav-text">¶1. 环境准备(A主机和B主机)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-a主机环境搭建"><span class="nav-text">¶2. A主机环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-动态资源的准备"><span class="nav-text">¶2.1 动态资源的准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-静态资源的准备"><span class="nav-text">¶2.2 静态资源的准备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-b主机环境搭建"><span class="nav-text">¶3. B主机环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-访问测试"><span class="nav-text">¶4. 访问测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十-配置https"><span class="nav-text">¶十、配置https</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-配置一个nginx站点"><span class="nav-text">¶1. 配置一个nginx站点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装certbot工具"><span class="nav-text">¶2. 安装certbot工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-申请证书"><span class="nav-text">¶3. 申请证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-配置nginx使用证书开通https"><span class="nav-text">¶4. 配置nginx使用证书开通https</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-配置pfs秘钥-可选"><span class="nav-text">¶4.1 配置PFS秘钥（可选）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-配置nginx站点"><span class="nav-text">¶4.2 配置nginx站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-修改防火墙配置"><span class="nav-text">¶4.3 修改防火墙配置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
