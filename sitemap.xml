@@ -4,14 +4,28 @@
   <url>
     <loc>https://www.qcmoke.site/windows/clean_c_drive.html</loc>
     
-    <lastmod>2023-04-14T04:21:59.864Z</lastmod>
+    <lastmod>2023-04-16T18:20:58.645Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    
+    <lastmod>2023-04-16T10:19:59.230Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qcmoke.site/windows/win.html</loc>
+    
+    <lastmod>2023-04-16T08:09:23.647Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.qcmoke.site/tools/vscode_use.html</loc>
     
-    <lastmod>2023-04-14T04:08:24.503Z</lastmod>
+    <lastmod>2023-04-14T21:36:02.951Z</lastmod>
     
   </url>
   
@@ -65,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    
-    <lastmod>2023-04-06T11:22:27.237Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.qcmoke.site/linux/linux_proxy.html</loc>
     
     <lastmod>2023-04-06T10:54:26.785Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     
     <lastmod>2023-04-01T04:42:36.454Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.qcmoke.site/windows/win.html</loc>
-    
-    <lastmod>2023-03-18T22:50:36.452Z</lastmod>
     
   </url>
   
@@ -191,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
     
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
     
@@ -324,14 +324,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/mysql_ha.html</loc>
+    <loc>https://www.qcmoke.site/devops/nfs.html</loc>
     
     <lastmod>2023-03-18T22:50:36.400Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/nfs.html</loc>
+    <loc>https://www.qcmoke.site/devops/mysql_ha.html</loc>
     
     <lastmod>2023-03-18T22:50:36.400Z</lastmod>
     
@@ -394,14 +394,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
+    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
     
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
+    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
     
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
     
@@ -562,14 +562,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
+    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
     
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
+    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
     
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
     

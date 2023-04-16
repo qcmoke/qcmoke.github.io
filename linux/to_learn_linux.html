@@ -133,7 +133,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-04-06T11:22:27.237Z">
+<meta property="og:updated_time" content="2023-04-16T10:19:59.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux学习笔记">
 <meta name="twitter:description" content="这个笔记比较全面的记录了本人学习Linux的过程，内容还是比较系统、全面的。学习参考的文档以及教程来源繁多，但都吸取了其中比较好的精华，并在此基础上有所拓展深入。本次笔记更多还是在于Linux命令使用上的总结，对于日后的运维学习必定有所帮助…">
@@ -411,8 +411,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-04-06T19:22:27+08:00">
-                2023-04-06
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-16T18:19:59+08:00">
+                2023-04-16
               </time>
             
           </span>
@@ -1139,7 +1139,7 @@
 </ul>
 <h3 id="9-链接-ln"><a class="header-anchor" href="#9-链接-ln">¶</a>9. 链接(ln)</h3>
 <h4 id="9-1-软链接"><a class="header-anchor" href="#9-1-软链接">¶</a>9.1 软链接</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#建立文件的软链接，用通俗的方式讲类似于Windows下的快捷方式。</span></span><br><span class="line"><span class="comment">#删除软链接不会影响源文件，但源文件被删除了，那么软连接就不可以了</span></span><br><span class="line">$ ln -s 被链接的源文件 链接文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#建立文件的软链接，用通俗的方式讲类似于Windows下的快捷方式。</span></span><br><span class="line"><span class="comment">#删除软链接不会影响源文件，但源文件被删除了，那么软连接就不可用了</span></span><br><span class="line">$ ln -s 被链接的源文件 链接文件</span><br></pre></td></tr></table></figure>
 <p>软链接的特点：</p>
 <blockquote>
 <p>（1）软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式</p>
