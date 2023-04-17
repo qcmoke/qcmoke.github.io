@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="¶一、nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。以上是百度百科的介绍，我们目前只需要知道nginx是一个服务器就行了，类似于t">
-<meta name="keywords" content="nginx,ftp">
+<meta name="description" content="¶一、nginx Nginx是一款轻量级的Web 服务器&#x2F;反向代理服务器及电子邮件（IMAP&#x2F;POP3）代理服务器，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。以上是百度百科的介绍，我们目前只需要知道nginx是一个服务器就行了，类似于t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx+vsftp搭建图片服务器">
 <meta property="og:url" content="https://www.qcmoke.site/devops/ftp_nginx.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="¶一、nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。以上是百度百科的介绍，我们目前只需要知道nginx是一个服务器就行了，类似于t">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="¶一、nginx Nginx是一款轻量级的Web 服务器&#x2F;反向代理服务器及电子邮件（IMAP&#x2F;POP3）代理服务器，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。以上是百度百科的介绍，我们目前只需要知道nginx是一个服务器就行了，类似于t">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.392Z">
+<meta property="article:published_time" content="2019-07-03T23:08:00.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.392Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="ftp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx+vsftp搭建图片服务器">
-<meta name="twitter:description" content="¶一、nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。以上是百度百科的介绍，我们目前只需要知道nginx是一个服务器就行了，类似于t">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
@@ -148,7 +148,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -499,7 +499,7 @@
 <h3 id="3-编译安装"><a class="header-anchor" href="#3-编译安装">¶</a>3.编译安装</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入解压好的源码目录</span></span><br><span class="line"><span class="built_in">cd</span> nginx-1.14.0</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成MakeFile</span></span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/nginx \</span><br><span class="line">--with-http_stub_status_module \</span><br><span class="line">--with-http_ssl_module \</span><br><span class="line">--with-http_sub_module \</span><br><span class="line">--with-http_gzip_static_module</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据MakeFile编译</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 <h3 id="4-启动"><a class="header-anchor" href="#4-启动">¶</a>4.启动</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx</span><br></pre></td></tr></table></figure>
 <p>查看是否启动命令： <code>ps aux | grep nginx</code></p>
 <h3 id="5-停止"><a class="header-anchor" href="#5-停止">¶</a>5.停止</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s stop</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s quit</span><br></pre></td></tr></table></figure>
@@ -902,7 +902,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-nginx"><span class="nav-text">¶一、nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-vsftp"><span class="nav-text">¶二、vsftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-nginx-vsftp"><span class="nav-text">¶三、nginx+vsftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-安装nginx"><span class="nav-text">¶四、安装nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-准备活动"><span class="nav-text">¶1.准备活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装编译工具及依赖库文件"><span class="nav-text">¶2. 安装编译工具及依赖库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-编译安装"><span class="nav-text">¶3.编译安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-启动"><span class="nav-text">¶4.启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-停止"><span class="nav-text">¶5.停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-动态加载"><span class="nav-text">¶6 动态加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-测试配置文件nginx-conf正确性"><span class="nav-text">¶7 测试配置文件nginx.conf正确性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-其他常用命令"><span class="nav-text">¶8.其他常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-安装vsftp"><span class="nav-text">¶五、安装vsftp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装"><span class="nav-text">¶1. 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-关闭selinux"><span class="nav-text">¶2. 关闭SELinux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-防火墙设置"><span class="nav-text">¶3. 防火墙设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置开机启动"><span class="nav-text">¶4. 设置开机启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-配合vsftp"><span class="nav-text">¶5. 配合vsftp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-重启vsftpd"><span class="nav-text">¶6. 重启vsftpd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-添加ftp用户"><span class="nav-text">¶7. 添加ftp用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-给ftp用户添加密码"><span class="nav-text">¶8. 给ftp用户添加密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-设置访问权限"><span class="nav-text">¶9. 设置访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-登录vsftp测试"><span class="nav-text">¶10. 登录vsftp测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-整合nginx和vsftp"><span class="nav-text">¶六、整合nginx和vsftp</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-nginx"><span class="nav-text">一、nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-vsftp"><span class="nav-text">二、vsftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-nginx-vsftp"><span class="nav-text">三、nginx+vsftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-安装nginx"><span class="nav-text">四、安装nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-准备活动"><span class="nav-text">1.准备活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装编译工具及依赖库文件"><span class="nav-text">2. 安装编译工具及依赖库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-编译安装"><span class="nav-text">3.编译安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-启动"><span class="nav-text">4.启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-停止"><span class="nav-text">5.停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-动态加载"><span class="nav-text">6 动态加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-测试配置文件nginx-conf正确性"><span class="nav-text">7 测试配置文件nginx.conf正确性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-其他常用命令"><span class="nav-text">8.其他常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-安装vsftp"><span class="nav-text">五、安装vsftp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装"><span class="nav-text">1. 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-关闭selinux"><span class="nav-text">2. 关闭SELinux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-防火墙设置"><span class="nav-text">3. 防火墙设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置开机启动"><span class="nav-text">4. 设置开机启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-配合vsftp"><span class="nav-text">5. 配合vsftp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-重启vsftpd"><span class="nav-text">6. 重启vsftpd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-添加ftp用户"><span class="nav-text">7. 添加ftp用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-给ftp用户添加密码"><span class="nav-text">8. 给ftp用户添加密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-设置访问权限"><span class="nav-text">9. 设置访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-登录vsftp测试"><span class="nav-text">10. 登录vsftp测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-整合nginx和vsftp"><span class="nav-text">六、整合nginx和vsftp</span></a></li></ol></div>
             
 
           </div>
@@ -934,9 +934,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

@@ -86,23 +86,23 @@
 
 
 
-<meta name="description" content="¶FastDFS介绍 FastDFS开源地址：https://github.com/happyfish100 参考：FastDFS分布式文件系统 ¶1、简介 FastDFS 是一个开源的高性能分布式文件系统（DFS）。 它的主要功能包括：文件存储，文件同步和文件访问，以及高容量和负载平衡。主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &amp;lt; file_size &amp;lt;50">
-<meta name="keywords" content="nginx,fastdfs">
+<meta name="description" content="¶FastDFS介绍 FastDFS开源地址：https:&#x2F;&#x2F;github.com&#x2F;happyfish100 参考：FastDFS分布式文件系统 ¶1、简介 FastDFS 是一个开源的高性能分布式文件系统（DFS）。 它的主要功能包括：文件存储，文件同步和文件访问，以及高容量和负载平衡。主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &lt; file_size &lt;50">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fastdfs结合nginx搭建高性能文件服务器">
 <meta property="og:url" content="https://www.qcmoke.site/devops/fastdfs.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="¶FastDFS介绍 FastDFS开源地址：https://github.com/happyfish100 参考：FastDFS分布式文件系统 ¶1、简介 FastDFS 是一个开源的高性能分布式文件系统（DFS）。 它的主要功能包括：文件存储，文件同步和文件访问，以及高容量和负载平衡。主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &amp;lt; file_size &amp;lt;50">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="¶FastDFS介绍 FastDFS开源地址：https:&#x2F;&#x2F;github.com&#x2F;happyfish100 参考：FastDFS分布式文件系统 ¶1、简介 FastDFS 是一个开源的高性能分布式文件系统（DFS）。 它的主要功能包括：文件存储，文件同步和文件访问，以及高容量和负载平衡。主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &lt; file_size &lt;50">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.391Z">
+<meta property="article:published_time" content="2019-07-24T11:08:00.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.391Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="fastdfs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fastdfs结合nginx搭建高性能文件服务器">
-<meta name="twitter:description" content="¶FastDFS介绍 FastDFS开源地址：https://github.com/happyfish100 参考：FastDFS分布式文件系统 ¶1、简介 FastDFS 是一个开源的高性能分布式文件系统（DFS）。 它的主要功能包括：文件存储，文件同步和文件访问，以及高容量和负载平衡。主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &amp;lt; file_size &amp;lt;50">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
@@ -151,7 +151,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -989,7 +989,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fastdfs介绍"><span class="nav-text">¶FastDFS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介"><span class="nav-text">¶1、简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-fastdfs性能方案"><span class="nav-text">¶2、FastDFS性能方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-fastdfs的存储策略"><span class="nav-text">¶3、FastDFS的存储策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-fastdfs的上传过程"><span class="nav-text">¶4、FastDFS的上传过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-fastdfs的文件同步"><span class="nav-text">¶5、FastDFS的文件同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-fastdfs的文件下载"><span class="nav-text">¶6、FastDFS的文件下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备和安装"><span class="nav-text">¶环境准备和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用的系统软件"><span class="nav-text">¶使用的系统软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译环境"><span class="nav-text">¶编译环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘目录"><span class="nav-text">¶磁盘目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装libfatscommon"><span class="nav-text">¶安装libfatscommon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装fastdfs"><span class="nav-text">¶安装FastDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装fastdfs-nginx-module"><span class="nav-text">¶安装fastdfs-nginx-module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装nginx"><span class="nav-text">¶安装nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单机部署"><span class="nav-text">¶单机部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tracker配置"><span class="nav-text">¶tracker配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storage配置"><span class="nav-text">¶storage配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client测试"><span class="nav-text">¶client测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置nginx访问"><span class="nav-text">¶配置nginx访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式部署"><span class="nav-text">¶分布式部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tracker配置-v2"><span class="nav-text">¶tracker配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storage配置-v2"><span class="nav-text">¶storage配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client测试-v2"><span class="nav-text">¶client测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置nginx访问-v2"><span class="nav-text">¶配置nginx访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令使用"><span class="nav-text">¶命令使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙"><span class="nav-text">¶防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tracker"><span class="nav-text">¶tracker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storage"><span class="nav-text">¶storage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx"><span class="nav-text">¶nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测集群"><span class="nav-text">¶检测集群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-text">¶说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-text">¶配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能遇到的问题"><span class="nav-text">¶可能遇到的问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fastdfs介绍"><span class="nav-text">FastDFS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介"><span class="nav-text">1、简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-fastdfs性能方案"><span class="nav-text">2、FastDFS性能方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-fastdfs的存储策略"><span class="nav-text">3、FastDFS的存储策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-fastdfs的上传过程"><span class="nav-text">4、FastDFS的上传过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-fastdfs的文件同步"><span class="nav-text">5、FastDFS的文件同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-fastdfs的文件下载"><span class="nav-text">6、FastDFS的文件下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备和安装"><span class="nav-text">环境准备和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用的系统软件"><span class="nav-text">使用的系统软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译环境"><span class="nav-text">编译环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘目录"><span class="nav-text">磁盘目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装libfatscommon"><span class="nav-text">安装libfatscommon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装fastdfs"><span class="nav-text">安装FastDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装fastdfs-nginx-module"><span class="nav-text">安装fastdfs-nginx-module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装nginx"><span class="nav-text">安装nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单机部署"><span class="nav-text">单机部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tracker配置"><span class="nav-text">tracker配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storage配置"><span class="nav-text">storage配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client测试"><span class="nav-text">client测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置nginx访问"><span class="nav-text">配置nginx访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式部署"><span class="nav-text">分布式部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tracker配置-v2"><span class="nav-text">tracker配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storage配置-v2"><span class="nav-text">storage配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client测试-v2"><span class="nav-text">client测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置nginx访问-v2"><span class="nav-text">配置nginx访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令使用"><span class="nav-text">命令使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙"><span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tracker"><span class="nav-text">tracker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storage"><span class="nav-text">storage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx"><span class="nav-text">nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测集群"><span class="nav-text">检测集群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-text">说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能遇到的问题"><span class="nav-text">可能遇到的问题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1021,9 +1021,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

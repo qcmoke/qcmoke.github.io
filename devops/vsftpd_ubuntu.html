@@ -87,17 +87,17 @@
 
 
 <meta name="description" content="¶1. 安装并启动 FTP 服务 安装 VSFTPD 对于Debian类系统: 使用apt-get 安装apt-get安装 1sudo apt-get install vsftpd -y 对于Redhat类系统： 1sudo yum install vsftpd -y 启动 VSFTPD 安装完成后，启动 FTP 服务： 1service vsftpd start 启动后，可以看到系统已经： 1">
-<meta name="keywords" content="ftp,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu 安装vsftpd服务器">
 <meta property="og:url" content="https://www.qcmoke.site/devops/vsftpd_ubuntu.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶1. 安装并启动 FTP 服务 安装 VSFTPD 对于Debian类系统: 使用apt-get 安装apt-get安装 1sudo apt-get install vsftpd -y 对于Redhat类系统： 1sudo yum install vsftpd -y 启动 VSFTPD 安装完成后，启动 FTP 服务： 1service vsftpd start 启动后，可以看到系统已经： 1">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.408Z">
+<meta property="article:published_time" content="2019-01-26T18:18:03.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.408Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="ftp">
+<meta property="article:tag" content="ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu 安装vsftpd服务器">
-<meta name="twitter:description" content="¶1. 安装并启动 FTP 服务 安装 VSFTPD 对于Debian类系统: 使用apt-get 安装apt-get安装 1sudo apt-get install vsftpd -y 对于Redhat类系统： 1sudo yum install vsftpd -y 启动 VSFTPD 安装完成后，启动 FTP 服务： 1service vsftpd start 启动后，可以看到系统已经： 1">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  864
+                  895
                 </span>
               
 
@@ -502,30 +502,30 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /home/uftp</span><br></pre></td></tr></table></figure>
 <p>执行完后，在这里 /home/uftp 就能看到新建的文件夹 uftp 了。<br>
 创建登录欢迎文件 ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /home/uftp/welcome.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo touch &#x2F;home&#x2F;uftp&#x2F;welcome.txt</span><br></pre></td></tr></table></figure>
 <p>设置主目录访问权限（只读）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a-w /home/uftp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a-w &#x2F;home&#x2F;uftp</span><br></pre></td></tr></table></figure>
 <p>新建公共目录，并设置权限（读写）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /home/uftp/public &amp;&amp; sudo chmod 777 -R /home/uftp/public</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir &#x2F;home&#x2F;uftp&#x2F;public &amp;&amp; sudo chmod 777 -R &#x2F;home&#x2F;uftp&#x2F;public</span><br></pre></td></tr></table></figure>
 <p><strong>新建用户 uftp 并设置密码</strong></p>
 <p>创建一个用户 uftp :</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd -d /home/uftp -s /bin/bash uftp</span><br></pre></td></tr></table></figure>
 <p>为用户 uftp 设置密码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd uftp</span><br></pre></td></tr></table></figure>
 <p>限制用户 uftp 只能通过 FTP 访问服务器，而不能直接登录服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -s /sbin/nologin uftp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -s &#x2F;sbin&#x2F;nologin uftp</span><br></pre></td></tr></table></figure>
 <h3 id="3-配置vsftpd"><a class="header-anchor" href="#3-配置vsftpd">¶</a>3. 配置vsftpd</h3>
 <p><strong>删除掉 pam.d 中 vsftpd，因为该配置文件会导致使用用户名登录 ftp 失败：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /etc/pam.d/vsftpd</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm &#x2F;etc&#x2F;pam.d&#x2F;vsftpd</span><br></pre></td></tr></table></figure>
 <p><strong>修改 vsftpd 配置</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+w /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+w &#x2F;etc&#x2F;vsftpd.conf</span><br></pre></td></tr></table></figure>
 <p><strong>修改 /etc/vsftpd.conf 文件中的配置</strong></p>
 <p>修改:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 禁用匿名用户</span></span><br><span class="line">anonymous_enable=NO</span><br><span class="line"><span class="comment"># 禁止切换根目录</span></span><br><span class="line">chroot_local_user=YES</span><br></pre></td></tr></table></figure>
 <p>将如下配置添加到配置文件最下方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 限制用户对主目录以外目录访问</span><br><span class="line">chroot_local_user=YES</span><br><span class="line"></span><br><span class="line"># 指定一个 userlist 存放允许访问 ftp 的用户列表</span><br><span class="line">userlist_deny=NO</span><br><span class="line">userlist_enable=YES</span><br><span class="line"></span><br><span class="line"># 记录允许访问 ftp 用户列表</span><br><span class="line">userlist_file=/etc/vsftpd.user_list</span><br><span class="line"></span><br><span class="line"># 不配置可能导致莫名的530问题</span><br><span class="line">seccomp_sandbox=NO</span><br><span class="line"></span><br><span class="line"># 允许文件上传</span><br><span class="line">write_enable=YES</span><br><span class="line"></span><br><span class="line"># 使用utf8编码</span><br><span class="line">utf8_filesystem=YES</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 限制用户对主目录以外目录访问</span><br><span class="line">chroot_local_user&#x3D;YES</span><br><span class="line"></span><br><span class="line"># 指定一个 userlist 存放允许访问 ftp 的用户列表</span><br><span class="line">userlist_deny&#x3D;NO</span><br><span class="line">userlist_enable&#x3D;YES</span><br><span class="line"></span><br><span class="line"># 记录允许访问 ftp 用户列表</span><br><span class="line">userlist_file&#x3D;&#x2F;etc&#x2F;vsftpd.user_list</span><br><span class="line"></span><br><span class="line"># 不配置可能导致莫名的530问题</span><br><span class="line">seccomp_sandbox&#x3D;NO</span><br><span class="line"></span><br><span class="line"># 允许文件上传</span><br><span class="line">write_enable&#x3D;YES</span><br><span class="line"></span><br><span class="line"># 使用utf8编码</span><br><span class="line">utf8_filesystem&#x3D;YES</span><br></pre></td></tr></table></figure>
 <p><strong>新建文件 /etc/vsftpd.user_list，用于存放允许访问 ftp 的用户：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /etc/vsftpd.user_list</span><br><span class="line">sudo chmod a+w /etc/vsftpd.user_list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo touch &#x2F;etc&#x2F;vsftpd.user_list</span><br><span class="line">sudo chmod a+w &#x2F;etc&#x2F;vsftpd.user_list</span><br></pre></td></tr></table></figure>
 <p>修改 /etc/vsftpd.user_list ，加入刚刚创建的用户：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim vsftpd.user_list</span><br><span class="line">uftp</span><br></pre></td></tr></table></figure>
 <p><strong>重启vsftpd 服务：</strong></p>
@@ -890,7 +890,7 @@ Windows 用户可以复制下面的链接到资源管理器的地址栏访问：
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装并启动-ftp-服务"><span class="nav-text">¶1. 安装并启动 FTP 服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置访问目录和新建用户"><span class="nav-text">¶2. 配置访问目录和新建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-配置vsftpd"><span class="nav-text">¶3. 配置vsftpd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-访问-ftp-服务"><span class="nav-text">¶4. 访问 FTP 服务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装并启动-ftp-服务"><span class="nav-text">1. 安装并启动 FTP 服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置访问目录和新建用户"><span class="nav-text">2. 配置访问目录和新建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-配置vsftpd"><span class="nav-text">3. 配置vsftpd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-访问-ftp-服务"><span class="nav-text">4. 访问 FTP 服务</span></a></li></ol></div>
             
 
           </div>
@@ -922,9 +922,9 @@ Windows 用户可以复制下面的链接到资源管理器的地址栏访问：
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

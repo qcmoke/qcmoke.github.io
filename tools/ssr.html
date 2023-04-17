@@ -87,17 +87,17 @@
 
 
 <meta name="description" content="本文记录了如何使用 vps安装ssr+bbr的过程，基本是copy至“逗比根据地”，搭建该服务的目的仅在于学习。">
-<meta name="keywords" content="ssr,vpn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vps安装ssr+bbr">
 <meta property="og:url" content="https://www.qcmoke.site/tools/ssr.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="本文记录了如何使用 vps安装ssr+bbr的过程，基本是copy至“逗比根据地”，搭建该服务的目的仅在于学习。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.440Z">
+<meta property="article:published_time" content="2018-09-29T05:52:47.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.440Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="ssr">
+<meta property="article:tag" content="vpn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vps安装ssr+bbr">
-<meta name="twitter:description" content="本文记录了如何使用 vps安装ssr+bbr的过程，基本是copy至“逗比根据地”，搭建该服务的目的仅在于学习。">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -599,7 +599,7 @@
 <p><strong>CentOS 系统：</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/crond restart</span><br></pre></td></tr></table></figure>
 <p><strong>Debian/Ubuntu 系统：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/cron restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;cron restart</span><br></pre></td></tr></table></figure>
 <h3 id="提示-media-change-please-insert-the-disc-labeled-debian-gnu-linux-7-0-0-wheezy-official-amd64-cd-等信息是-apt源-的问题-更换-apt源"><a class="header-anchor" href="#提示-media-change-please-insert-the-disc-labeled-debian-gnu-linux-7-0-0-wheezy-official-amd64-cd-等信息是-apt源-的问题-更换-apt源">¶</a>提示 Media change: please insert the disc labeled‘Debian GNU/Linux 7.0.0 Wheezy — Official amd64 CD 等信息是 apt源 的问题，更换 apt源</h3>
 <p><a href="https://doubibackup.com/z2a4lk3l-2.html#" target="_blank" rel="noopener">点击展开 查看解决办法</a></p>
 <p>我发现有一些人的VPS的 apt源有问题，导致安装失败，所以我这里写上如何更换 apt源。</p>
@@ -1002,7 +1002,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统要求"><span class="nav-text">¶系统要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本版本"><span class="nav-text">¶脚本版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本特点："><span class="nav-text">¶脚本特点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装步骤"><span class="nav-text">¶安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用说明"><span class="nav-text">¶使用说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件位置"><span class="nav-text">¶文件位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他说明"><span class="nav-text">¶其他说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocksr目前支持的协议和混淆："><span class="nav-text">¶ShadowsocksR目前支持的协议和混淆：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何转移用户数据信息？"><span class="nav-text">¶如何转移用户数据信息？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用阿里云-腾讯云等存着安全组或规则组一类外部防火墙的请注意"><span class="nav-text">¶使用阿里云/腾讯云等存着安全组或规则组一类外部防火墙的请注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocksr-端口限速中-单线程限速-和-端口总限速-的区别"><span class="nav-text">¶ShadowsocksR 端口限速中 单线程限速 和 端口总限速 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决-可使用原版协议-但无法使用shadowsocksr协议-的问题"><span class="nav-text">¶解决 可使用原版协议，但无法使用ShadowsocksR协议 的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-media-change-please-insert-the-disc-labeled-debian-gnu-linux-7-0-0-wheezy-official-amd64-cd-等信息是-apt源-的问题-更换-apt源"><span class="nav-text">¶提示 Media change: please insert the disc labeled‘Debian GNU/Linux 7.0.0 Wheezy — Official amd64 CD 等信息是 apt源 的问题，更换 apt源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手动更换-上面的命令执行完毕就不要重复执行这个了"><span class="nav-text">¶手动更换（上面的命令执行完毕就不要重复执行这个了）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocksr启动失败-日志提示：exception-libsodium-not-found-的错误"><span class="nav-text">¶ShadowsocksR启动失败，日志提示：Exception: libsodium not found 的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示wget-unknown-host-doubiyunbackup-com-之类的错误"><span class="nav-text">¶提示wget: unknown host “doubiyunbackup.com” 之类的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-wget-command-not-found-的错误"><span class="nav-text">¶提示 wget: command not found 的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级脚本"><span class="nav-text">¶升级脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时重启"><span class="nav-text">¶定时重启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bbr一键脚本整理"><span class="nav-text">¶BBR一键脚本整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bbr介绍"><span class="nav-text">¶BBR介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逗比系列脚本"><span class="nav-text">¶逗比系列脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秋水逸冰系列脚本"><span class="nav-text">¶秋水逸冰系列脚本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统要求"><span class="nav-text">系统要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本版本"><span class="nav-text">脚本版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本特点："><span class="nav-text">脚本特点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装步骤"><span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用说明"><span class="nav-text">使用说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件位置"><span class="nav-text">文件位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他说明"><span class="nav-text">其他说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocksr目前支持的协议和混淆："><span class="nav-text">ShadowsocksR目前支持的协议和混淆：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何转移用户数据信息？"><span class="nav-text">如何转移用户数据信息？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用阿里云-腾讯云等存着安全组或规则组一类外部防火墙的请注意"><span class="nav-text">使用阿里云&#x2F;腾讯云等存着安全组或规则组一类外部防火墙的请注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocksr-端口限速中-单线程限速-和-端口总限速-的区别"><span class="nav-text">ShadowsocksR 端口限速中 单线程限速 和 端口总限速 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决-可使用原版协议-但无法使用shadowsocksr协议-的问题"><span class="nav-text">解决 可使用原版协议，但无法使用ShadowsocksR协议 的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-media-change-please-insert-the-disc-labeled-debian-gnu-linux-7-0-0-wheezy-official-amd64-cd-等信息是-apt源-的问题-更换-apt源"><span class="nav-text">提示 Media change: please insert the disc labeled‘Debian GNU&#x2F;Linux 7.0.0 Wheezy — Official amd64 CD 等信息是 apt源 的问题，更换 apt源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手动更换-上面的命令执行完毕就不要重复执行这个了"><span class="nav-text">手动更换（上面的命令执行完毕就不要重复执行这个了）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocksr启动失败-日志提示：exception-libsodium-not-found-的错误"><span class="nav-text">ShadowsocksR启动失败，日志提示：Exception: libsodium not found 的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示wget-unknown-host-doubiyunbackup-com-之类的错误"><span class="nav-text">提示wget: unknown host “doubiyunbackup.com” 之类的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-wget-command-not-found-的错误"><span class="nav-text">提示 wget: command not found 的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级脚本"><span class="nav-text">升级脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时重启"><span class="nav-text">定时重启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bbr一键脚本整理"><span class="nav-text">BBR一键脚本整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bbr介绍"><span class="nav-text">BBR介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逗比系列脚本"><span class="nav-text">逗比系列脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秋水逸冰系列脚本"><span class="nav-text">秋水逸冰系列脚本</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1034,9 +1034,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

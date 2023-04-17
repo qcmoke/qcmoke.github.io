@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="github,git," />
+  <meta name="keywords" content="git,github," />
 
 
 
@@ -87,13 +87,11 @@
 
 
 <meta name="description" content="本文目的就是在本地客户端使用git工具连接github远程仓库，将代码托管到github中。并拓展性的学习一些基本的git命令。">
-<meta name="keywords" content="github,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows10安装git并连接github">
 <meta property="og:url" content="https://www.qcmoke.site/tools/win_git.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="本文目的就是在本地客户端使用git工具连接github远程仓库，将代码托管到github中。并拓展性的学习一些基本的git命令。">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
@@ -110,10 +108,12 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.450Z">
+<meta property="article:published_time" content="2018-08-29T22:38:00.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.450Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows10安装git并连接github">
-<meta name="twitter:description" content="本文目的就是在本地客户端使用git工具连接github远程仓库，将代码托管到github中。并拓展性的学习一些基本的git命令。">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
@@ -162,7 +162,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -660,9 +660,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
-          
             <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
           
         </div>
       
@@ -936,7 +936,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-git安装"><span class="nav-text">¶一、git安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改安装目录"><span class="nav-text">¶1. 修改安装目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-选择安装组件"><span class="nav-text">¶2. 选择安装组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建开始菜单目录"><span class="nav-text">¶3. 创建开始菜单目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-选择编辑器"><span class="nav-text">¶4. 选择编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-调整环境路径"><span class="nav-text">¶5. 调整环境路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-选择安全传输协议"><span class="nav-text">¶6. 选择安全传输协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-配置行结束转换符"><span class="nav-text">¶7. 配置行结束转换符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-设置git-bash终端仿真器的样式"><span class="nav-text">¶8. 设置GIT Bash终端仿真器的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-配置额外的选项"><span class="nav-text">¶9. 配置额外的选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-安装进度"><span class="nav-text">¶10. 安装进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-确认是否安装成功"><span class="nav-text">¶11. 确认是否安装成功</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-连接github"><span class="nav-text">¶二、连接github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-配置ssh-key"><span class="nav-text">¶1. 配置SSH key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-测试配置ssh秘钥是否成功"><span class="nav-text">¶2. 测试配置ssh秘钥是否成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-配置全局用户信息"><span class="nav-text">¶3. 配置全局用户信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设置用户名"><span class="nav-text">¶（1）设置用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-设置全局用户邮箱"><span class="nav-text">¶（2）设置全局用户邮箱</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看配置信息"><span class="nav-text">¶4. 查看配置信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-从本地仓库提交文件到远程仓库github"><span class="nav-text">¶5. 从本地仓库提交文件到远程仓库github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-创建一个文件-待后续上传github"><span class="nav-text">¶6. 创建一个文件，待后续上传github。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-查看当前git状态"><span class="nav-text">¶7. 查看当前git状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-提交文件到git暂存区"><span class="nav-text">¶8. 提交文件到git暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-提交暂存区的所有文件到本地仓库"><span class="nav-text">¶9. 提交暂存区的所有文件到本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-给本地仓库映射远程仓库"><span class="nav-text">¶10. 给本地仓库映射远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-把本地库的所有内容推送到远程库上"><span class="nav-text">¶11. 把本地库的所有内容推送到远程库上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-git常用命令"><span class="nav-text">¶三、git常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-git安装"><span class="nav-text">一、git安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改安装目录"><span class="nav-text">1. 修改安装目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-选择安装组件"><span class="nav-text">2. 选择安装组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建开始菜单目录"><span class="nav-text">3. 创建开始菜单目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-选择编辑器"><span class="nav-text">4. 选择编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-调整环境路径"><span class="nav-text">5. 调整环境路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-选择安全传输协议"><span class="nav-text">6. 选择安全传输协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-配置行结束转换符"><span class="nav-text">7. 配置行结束转换符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-设置git-bash终端仿真器的样式"><span class="nav-text">8. 设置GIT Bash终端仿真器的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-配置额外的选项"><span class="nav-text">9. 配置额外的选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-安装进度"><span class="nav-text">10. 安装进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-确认是否安装成功"><span class="nav-text">11. 确认是否安装成功</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-连接github"><span class="nav-text">二、连接github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-配置ssh-key"><span class="nav-text">1. 配置SSH key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-测试配置ssh秘钥是否成功"><span class="nav-text">2. 测试配置ssh秘钥是否成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-配置全局用户信息"><span class="nav-text">3. 配置全局用户信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设置用户名"><span class="nav-text">（1）设置用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-设置全局用户邮箱"><span class="nav-text">（2）设置全局用户邮箱</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看配置信息"><span class="nav-text">4. 查看配置信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-从本地仓库提交文件到远程仓库github"><span class="nav-text">5. 从本地仓库提交文件到远程仓库github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-创建一个文件-待后续上传github"><span class="nav-text">6. 创建一个文件，待后续上传github。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-查看当前git状态"><span class="nav-text">7. 查看当前git状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-提交文件到git暂存区"><span class="nav-text">8. 提交文件到git暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-提交暂存区的所有文件到本地仓库"><span class="nav-text">9. 提交暂存区的所有文件到本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-给本地仓库映射远程仓库"><span class="nav-text">10. 给本地仓库映射远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-把本地库的所有内容推送到远程库上"><span class="nav-text">11. 把本地库的所有内容推送到远程库上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-git常用命令"><span class="nav-text">三、git常用命令</span></a></li></ol></div>
             
 
           </div>
@@ -968,9 +968,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

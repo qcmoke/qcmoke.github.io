@@ -87,17 +87,17 @@
 
 
 <meta name="description" content="本文记录了windows10安装mysql5.7解压版的实战过程，对于初学者极有帮助。根据本文教程能尽量避免很多不必要的歪路…">
-<meta name="keywords" content="mysql,windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows安装mysql5.7解压版">
 <meta property="og:url" content="https://www.qcmoke.site/devops/win_mysql.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="本文记录了windows10安装mysql5.7解压版的实战过程，对于初学者极有帮助。根据本文教程能尽量避免很多不必要的歪路…">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-07-23T08:42:18.388Z">
+<meta property="article:published_time" content="2018-09-29T05:52:47.000Z">
+<meta property="article:modified_time" content="2022-07-23T08:42:18.388Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows安装mysql5.7解压版">
-<meta name="twitter:description" content="本文记录了windows10安装mysql5.7解压版的实战过程，对于初学者极有帮助。根据本文教程能尽量避免很多不必要的歪路…">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -496,13 +496,13 @@
 <h2 id="一-安装mysql"><a class="header-anchor" href="#一-安装mysql">¶</a>一.安装mysql</h2>
 <p>以下内容以mysql软件包目录在C:\DevelopmentTools\mysql-5.7.23-winx64为例进行安装，同样安装完成的目录也是此目录。<br>
 以管理员身份运行cmd，执行以下命令进入C:\DevelopmentTools\mysql-5.7.23-winx64\bin目录：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\DevelopmentTools\mysql-<span class="number">5.7</span>.<span class="number">23</span>-winx64\bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\DevelopmentTools\mysql<span class="literal">-5</span>.<span class="number">7.23</span><span class="literal">-winx64</span>\bin</span><br></pre></td></tr></table></figure>
 <h3 id="1-安装mysql服务"><a class="header-anchor" href="#1-安装mysql服务">¶</a>1.安装mysql服务</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -install mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld <span class="literal">-install</span> mysql</span><br></pre></td></tr></table></figure>
 <p>注：mysqld -install [服务名],服务名默认为mysql，若无需要，建议不更改。如果提示丢失MSVCR120.dll，需要下载安装VC++2013。<br>
 浏览器打开https://www.microsoft.com/zh-cn/download/confirmation.aspx?id=40784，选择&quot;单击手动下载&quot;，选择合适系统的版本，比如64位系统则选vcredist_x64.exe，而32位系统选vcredist_x86.exe。如果丢失的是其它连接库，同样根据提示到微软官网下载安装即可。</p>
 <h3 id="2-初始化mysql"><a class="header-anchor" href="#2-初始化mysql">¶</a>2.初始化mysql</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize-insecure</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -<span class="literal">-initialize</span><span class="literal">-insecure</span></span><br></pre></td></tr></table></figure>
 <p>注：–initialize有两个-，后边没有空格<br>
 初始化后，<code>C:\DevelopmentTools\mysql-5.7.23-winx64</code>目录下会出现data目录</p>
 <h3 id="3-添加mysql环境变量"><a class="header-anchor" href="#3-添加mysql环境变量">¶</a>3.添加mysql环境变量</h3>
@@ -514,15 +514,15 @@
 <ul>
 <li>方式1：一次回车即可登录</li>
 </ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="literal">-uroot</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>方式2：第一次回车后，不输入密码，再次回车即可登录</li>
 </ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="literal">-uroot</span> <span class="literal">-p</span></span><br></pre></td></tr></table></figure>
 <h3 id="6-修改密码-默认没有密码"><a class="header-anchor" href="#6-修改密码-默认没有密码">¶</a>6.修改密码（默认没有密码 ）</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password=password(<span class="string">'123456'</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="7-用密码登录mysql-输入以下命令回车"><a class="header-anchor" href="#7-用密码登录mysql-输入以下命令回车">¶</a>7.用密码登录mysql，输入以下命令回车</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p123456</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="literal">-uroot</span> <span class="literal">-p123456</span></span><br></pre></td></tr></table></figure>
 <h3 id="8-查看字符集是否符合预期值"><a class="header-anchor" href="#8-查看字符集是否符合预期值">¶</a>8. 查看字符集是否符合预期值</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like 'char%';</span><br><span class="line">+<span class="comment">--------------------------+----------------------------------------------------------+</span></span><br><span class="line">| Variable_name            | Value                      							  |</span><br><span class="line">+<span class="comment">--------------------------+----------------------------------------------------------+</span></span><br><span class="line">| character_set_client     | utf8                       							  |</span><br><span class="line">| character_set_connection | utf8                       							  |</span><br><span class="line">| character_set_database   | utf8                       							  |</span><br><span class="line">| character_set_filesystem | binary                     							  |</span><br><span class="line">| character_set_results    | utf8                       							  |</span><br><span class="line">| character_set_server     | utf8                       							  |</span><br><span class="line">| character_set_system     | utf8                       							  |</span><br><span class="line">| character_sets_dir       | C:\DevelopmentTools\mysql-5.7.23-winx64\share\charsets\  |</span><br><span class="line">+<span class="comment">--------------------------+----------------------------------------------------------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
 <p><em>除了character_set_filesystem都是utf8，符合预期配置值！</em></p>
@@ -530,11 +530,11 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like 'max_connections';</span><br><span class="line">+<span class="comment">-----------------+-------+</span></span><br><span class="line">| Variable_name   | Value |</span><br><span class="line">+<span class="comment">-----------------+-------+</span></span><br><span class="line">| max_connections | 500   |</span><br><span class="line">+<span class="comment">-----------------+-------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
 <h2 id="一-卸载mysql"><a class="header-anchor" href="#一-卸载mysql">¶</a>一.卸载mysql</h2>
 <h3 id="1-以管理员身份运行cmd并进入c-developmenttools-mysql-5-7-23-winx64-bin目录"><a class="header-anchor" href="#1-以管理员身份运行cmd并进入c-developmenttools-mysql-5-7-23-winx64-bin目录">¶</a>1.以管理员身份运行cmd并进入C:\DevelopmentTools\mysql-5.7.23-winx64\bin目录</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\DevelopmentTools\mysql-<span class="number">5.7</span>.<span class="number">23</span>-winx64\bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\DevelopmentTools\mysql<span class="literal">-5</span>.<span class="number">7.23</span><span class="literal">-winx64</span>\bin</span><br></pre></td></tr></table></figure>
 <h3 id="2-关闭mysql服务"><a class="header-anchor" href="#2-关闭mysql服务">¶</a>2.关闭mysql服务</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
 <h3 id="3-卸载mysql-mysqld-remove-服务名-服务名默认为mysql"><a class="header-anchor" href="#3-卸载mysql-mysqld-remove-服务名-服务名默认为mysql">¶</a>3.卸载mysql，mysqld -remove [服务名]，服务名默认为mysql</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -remove mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld <span class="literal">-remove</span> mysql</span><br></pre></td></tr></table></figure>
 <h3 id="4-删除mysql安装目录"><a class="header-anchor" href="#4-删除mysql安装目录">¶</a>4.删除mysql安装目录</h3>
 <h3 id="5-cmd输入以下命令打开注册表："><a class="header-anchor" href="#5-cmd输入以下命令打开注册表：">¶</a>5.cmd输入以下命令打开注册表：</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regedit</span><br></pre></td></tr></table></figure>
@@ -881,7 +881,7 @@ c. HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\eventlog\Application\MyS
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#零-下载mysql"><span class="nav-text">¶零. 下载mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-前置准备"><span class="nav-text">¶一. 前置准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-安装mysql"><span class="nav-text">¶一.安装mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装mysql服务"><span class="nav-text">¶1.安装mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-初始化mysql"><span class="nav-text">¶2.初始化mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-添加mysql环境变量"><span class="nav-text">¶3.添加mysql环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-启动mysql服务"><span class="nav-text">¶4.启动mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-无密码登录mysql"><span class="nav-text">¶5.无密码登录mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-修改密码-默认没有密码"><span class="nav-text">¶6.修改密码（默认没有密码 ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-用密码登录mysql-输入以下命令回车"><span class="nav-text">¶7.用密码登录mysql，输入以下命令回车</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-查看字符集是否符合预期值"><span class="nav-text">¶8. 查看字符集是否符合预期值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-查看最大连接数是否符合预期值"><span class="nav-text">¶9. 查看最大连接数是否符合预期值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-卸载mysql"><span class="nav-text">¶一.卸载mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-以管理员身份运行cmd并进入c-developmenttools-mysql-5-7-23-winx64-bin目录"><span class="nav-text">¶1.以管理员身份运行cmd并进入C:\DevelopmentTools\mysql-5.7.23-winx64\bin目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-关闭mysql服务"><span class="nav-text">¶2.关闭mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-卸载mysql-mysqld-remove-服务名-服务名默认为mysql"><span class="nav-text">¶3.卸载mysql，mysqld -remove [服务名]，服务名默认为mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-删除mysql安装目录"><span class="nav-text">¶4.删除mysql安装目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-cmd输入以下命令打开注册表："><span class="nav-text">¶5.cmd输入以下命令打开注册表：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-更多内容"><span class="nav-text">¶三. 更多内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#零-下载mysql"><span class="nav-text">零. 下载mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-前置准备"><span class="nav-text">一. 前置准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-安装mysql"><span class="nav-text">一.安装mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装mysql服务"><span class="nav-text">1.安装mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-初始化mysql"><span class="nav-text">2.初始化mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-添加mysql环境变量"><span class="nav-text">3.添加mysql环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-启动mysql服务"><span class="nav-text">4.启动mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-无密码登录mysql"><span class="nav-text">5.无密码登录mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-修改密码-默认没有密码"><span class="nav-text">6.修改密码（默认没有密码 ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-用密码登录mysql-输入以下命令回车"><span class="nav-text">7.用密码登录mysql，输入以下命令回车</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-查看字符集是否符合预期值"><span class="nav-text">8. 查看字符集是否符合预期值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-查看最大连接数是否符合预期值"><span class="nav-text">9. 查看最大连接数是否符合预期值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-卸载mysql"><span class="nav-text">一.卸载mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-以管理员身份运行cmd并进入c-developmenttools-mysql-5-7-23-winx64-bin目录"><span class="nav-text">1.以管理员身份运行cmd并进入C:\DevelopmentTools\mysql-5.7.23-winx64\bin目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-关闭mysql服务"><span class="nav-text">2.关闭mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-卸载mysql-mysqld-remove-服务名-服务名默认为mysql"><span class="nav-text">3.卸载mysql，mysqld -remove [服务名]，服务名默认为mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-删除mysql安装目录"><span class="nav-text">4.删除mysql安装目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-cmd输入以下命令打开注册表："><span class="nav-text">5.cmd输入以下命令打开注册表：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-更多内容"><span class="nav-text">三. 更多内容</span></a></li></ol></div>
             
 
           </div>
@@ -913,9 +913,9 @@ c. HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\eventlog\Application\MyS
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

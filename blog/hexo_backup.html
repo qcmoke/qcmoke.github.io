@@ -87,17 +87,17 @@
 
 
 <meta name="description" content="Hexo博客存在一个问题：我们仅仅将博客的静态页面文件部署到了github远程仓库中，而我们的站点源文件仍在本地存储。如果存储站点源文件的电脑系统崩溃了，或者我们换了其他电脑，我们便无法实时更新博客了。 如果选择重新搭建站点，不仅过程繁琐，而且还需要大量时间安装依赖、主题配置、博客优化，极其麻烦。所以我们需要将站点必要文件也部署到远程仓库中。然而github的私有仓库是要收费的，如果用免费仓库，">
-<meta name="keywords" content="git,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过git备份还原hexo源码">
 <meta property="og:url" content="https://www.qcmoke.site/blog/hexo_backup.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="Hexo博客存在一个问题：我们仅仅将博客的静态页面文件部署到了github远程仓库中，而我们的站点源文件仍在本地存储。如果存储站点源文件的电脑系统崩溃了，或者我们换了其他电脑，我们便无法实时更新博客了。 如果选择重新搭建站点，不仅过程繁琐，而且还需要大量时间安装依赖、主题配置、博客优化，极其麻烦。所以我们需要将站点必要文件也部署到远程仓库中。然而github的私有仓库是要收费的，如果用免费仓库，">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.382Z">
+<meta property="article:published_time" content="2018-10-07T16:36:43.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.382Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过git备份还原hexo源码">
-<meta name="twitter:description" content="Hexo博客存在一个问题：我们仅仅将博客的静态页面文件部署到了github远程仓库中，而我们的站点源文件仍在本地存储。如果存储站点源文件的电脑系统崩溃了，或者我们换了其他电脑，我们便无法实时更新博客了。 如果选择重新搭建站点，不仅过程繁琐，而且还需要大量时间安装依赖、主题配置、博客优化，极其麻烦。所以我们需要将站点必要文件也部署到远程仓库中。然而github的私有仓库是要收费的，如果用免费仓库，">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -863,7 +863,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-备份"><span class="nav-text">¶一、备份</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-删除必要文件"><span class="nav-text">¶1.删除必要文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-hexo源码备份"><span class="nav-text">¶2.hexo源码备份</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-还原"><span class="nav-text">¶二、还原</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-还原前提"><span class="nav-text">¶1.还原前提</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-hexo源码还原"><span class="nav-text">¶2.hexo源码还原</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-git配置用户信息-新系统环境下"><span class="nav-text">¶3.Git配置用户信息（新系统环境下）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-配置网络协议"><span class="nav-text">¶4.配置网络协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-新环境下部署hexo博客"><span class="nav-text">¶5.新环境下部署hexo博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-及时更新hexo源码到coding-如果有修改hexo源码"><span class="nav-text">¶6.及时更新hexo源码到coding（如果有修改hexo源码）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-备份"><span class="nav-text">一、备份</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-删除必要文件"><span class="nav-text">1.删除必要文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-hexo源码备份"><span class="nav-text">2.hexo源码备份</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-还原"><span class="nav-text">二、还原</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-还原前提"><span class="nav-text">1.还原前提</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-hexo源码还原"><span class="nav-text">2.hexo源码还原</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-git配置用户信息-新系统环境下"><span class="nav-text">3.Git配置用户信息（新系统环境下）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-配置网络协议"><span class="nav-text">4.配置网络协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-新环境下部署hexo博客"><span class="nav-text">5.新环境下部署hexo博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-及时更新hexo源码到coding-如果有修改hexo源码"><span class="nav-text">6.及时更新hexo源码到coding（如果有修改hexo源码）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -895,9 +895,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

@@ -87,17 +87,17 @@
 
 
 <meta name="description" content="¶1.生成sitemap 针对百度和谷歌，分别有两种hexo插件，hexo-generator-sitemap是传统的sitemap，可供谷歌使用；hexo-generator-baidu-sitemap则是针对百度。 12npm install hexo-generator-sitemap --save-devnpm install hexo-generator-baidu-sitemap -">
-<meta name="keywords" content="sitemap,seo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo seo优化">
 <meta property="og:url" content="https://www.qcmoke.site/blog/hexo_seo.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶1.生成sitemap 针对百度和谷歌，分别有两种hexo插件，hexo-generator-sitemap是传统的sitemap，可供谷歌使用；hexo-generator-baidu-sitemap则是针对百度。 12npm install hexo-generator-sitemap --save-devnpm install hexo-generator-baidu-sitemap -">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-03-18T22:50:36.384Z">
+<meta property="article:published_time" content="2018-10-18T10:27:43.000Z">
+<meta property="article:modified_time" content="2023-03-18T22:50:36.384Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="sitemap">
+<meta property="article:tag" content="seo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo seo优化">
-<meta name="twitter:description" content="¶1.生成sitemap 针对百度和谷歌，分别有两种hexo插件，hexo-generator-sitemap是传统的sitemap，可供谷歌使用；hexo-generator-baidu-sitemap则是针对百度。 12npm install hexo-generator-sitemap --save-devnpm install hexo-generator-baidu-sitemap -">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  688
+                  709
                 </span>
               
 
@@ -476,7 +476,7 @@
 <p>安装完成后，重启hexo，执行<code>hexo g</code>后，在public目录下生成对应的xml文件。本地可以通过<code>http://127.0.0.4000/sitemap.xml</code>和 <code>http://127.0.0.4000/baidusitemap.xml</code>访问到sitemap文件。发布后可以通过https://yourdoname/sitemap.xml和https://yourdoname/baidusitemap.xml访问。</p>
 <h2 id="2-新增蜘蛛协议"><a class="header-anchor" href="#2-新增蜘蛛协议">¶</a>2.新增蜘蛛协议</h2>
 <p>新建robots.txt文件，添加以下文件内容，把robots.txt放在hexo站点的source文件下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># hexo robots.txt</span><br><span class="line">User-agent: * Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://www.qcmoke.site/sitemap.xml</span><br><span class="line">Sitemap: https://www.qcmoke.site/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># hexo robots.txt</span><br><span class="line">User-agent: * Allow: &#x2F;</span><br><span class="line">Allow: &#x2F;archives&#x2F;</span><br><span class="line">Disallow: &#x2F;vendors&#x2F;</span><br><span class="line">Disallow: &#x2F;js&#x2F;</span><br><span class="line">Disallow: &#x2F;css&#x2F;</span><br><span class="line">Disallow: &#x2F;fonts&#x2F;</span><br><span class="line">Disallow: &#x2F;vendors&#x2F;</span><br><span class="line">Disallow: &#x2F;fancybox&#x2F;</span><br><span class="line"></span><br><span class="line">Sitemap: https:&#x2F;&#x2F;www.qcmoke.site&#x2F;sitemap.xml</span><br><span class="line">Sitemap: https:&#x2F;&#x2F;www.qcmoke.site&#x2F;baidusitemap.xml</span><br></pre></td></tr></table></figure>
 <h2 id="3-提交文件"><a class="header-anchor" href="#3-提交文件">¶</a>3.提交文件</h2>
 <p>注册<a href="https://ziyuan.baidu.com/site/index" target="_blank" rel="noopener">百度站长</a>平台和<a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">google网站站长</a>平台后,将https://yourdoname/sitemap.xml提交给google网站站长，将https://yourdoname/baidusitemap.xml提交给百度站长，而https://yourdoname/robots.txt百度站长和Google网站站长都要提交。</p>
 <h2 id="4-修改文章链接组成形式"><a class="header-anchor" href="#4-修改文章链接组成形式">¶</a>4.修改文章链接组成形式</h2>
@@ -782,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-生成sitemap"><span class="nav-text">¶1.生成sitemap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新增蜘蛛协议"><span class="nav-text">¶2.新增蜘蛛协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-提交文件"><span class="nav-text">¶3.提交文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-修改文章链接组成形式"><span class="nav-text">¶4.修改文章链接组成形式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-生成sitemap"><span class="nav-text">1.生成sitemap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新增蜘蛛协议"><span class="nav-text">2.新增蜘蛛协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-提交文件"><span class="nav-text">3.提交文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-修改文章链接组成形式"><span class="nav-text">4.修改文章链接组成形式</span></a></li></ol></div>
             
 
           </div>
@@ -814,9 +814,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 

@@ -86,14 +86,12 @@
 
 
 
-<meta name="description" content="¶一、进程处理 1234567891011121314#查看所有端口：netstat -ano#只查看8080 端口：netstat -aon|findstr &quot;8080&quot;#杀死进程，假如对应的PID是“11388”taskkill /F /PID 11388#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称tasklist|findstr &quot;174">
-<meta name="keywords" content="windows">
+<meta name="description" content="¶一、进程处理 1234567891011121314#查看所有端口：netstat -ano#只查看8080 端口：netstat -aon|findstr &quot;8080&quot;#杀死进程，假如对应的PID是“11388”taskkill &#x2F;F &#x2F;PID 11388#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称tasklist|findstr &quot;174">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows那些操作玩意">
 <meta property="og:url" content="https://www.qcmoke.site/windows/win.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="¶一、进程处理 1234567891011121314#查看所有端口：netstat -ano#只查看8080 端口：netstat -aon|findstr &quot;8080&quot;#杀死进程，假如对应的PID是“11388”taskkill /F /PID 11388#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称tasklist|findstr &quot;174">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="¶一、进程处理 1234567891011121314#查看所有端口：netstat -ano#只查看8080 端口：netstat -aon|findstr &quot;8080&quot;#杀死进程，假如对应的PID是“11388”taskkill &#x2F;F &#x2F;PID 11388#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称tasklist|findstr &quot;174">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
@@ -102,10 +100,11 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="og:updated_time" content="2023-04-16T08:09:23.647Z">
+<meta property="article:published_time" content="2019-02-20T04:19:37.000Z">
+<meta property="article:modified_time" content="2023-04-16T08:09:23.647Z">
+<meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows那些操作玩意">
-<meta name="twitter:description" content="¶一、进程处理 1234567891011121314#查看所有端口：netstat -ano#只查看8080 端口：netstat -aon|findstr &quot;8080&quot;#杀死进程，假如对应的PID是“11388”taskkill /F /PID 11388#当然，如果如果不知道8080 端口是什么的进程,担心误操作，可以先通过以下命令查一下进程的名称tasklist|findstr &quot;174">
 <meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
@@ -154,7 +153,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -892,7 +891,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-进程处理"><span class="nav-text">¶一、进程处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-系统常用快捷键"><span class="nav-text">¶二、系统常用快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-批量多选"><span class="nav-text">¶1. 批量多选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-确定首尾后批量多选"><span class="nav-text">¶2. 确定首尾后批量多选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-撤销或重回撤销前"><span class="nav-text">¶3. 撤销或重回撤销前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-快速定位到行首-尾"><span class="nav-text">¶4. 快速定位到行首（尾）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-快速定位到词首-尾"><span class="nav-text">¶5. 快速定位到词首（尾）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-解决windows10-时间轴灰色的活动历史记录无法删除的问题"><span class="nav-text">¶三、解决windows10 时间轴灰色的活动历史记录无法删除的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-hiberfil-sys-pagefile-sys-swapfile-sys"><span class="nav-text">¶四、hiberfil.sys、pagefile.sys、swapfile.sys</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hiberfil-sys"><span class="nav-text">¶hiberfil.sys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pagefile-sys"><span class="nav-text">¶pagefile.sys</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟内存默认系统配置"><span class="nav-text">¶虚拟内存默认系统配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用虚拟内存"><span class="nav-text">¶禁用虚拟内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改虚拟内存位置"><span class="nav-text">¶修改虚拟内存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义虚拟内存大小"><span class="nav-text">¶自定义虚拟内存大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swapfile-sys"><span class="nav-text">¶swapfile.sys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-text">¶说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-text">¶参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-进程处理"><span class="nav-text">一、进程处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-系统常用快捷键"><span class="nav-text">二、系统常用快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-批量多选"><span class="nav-text">1. 批量多选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-确定首尾后批量多选"><span class="nav-text">2. 确定首尾后批量多选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-撤销或重回撤销前"><span class="nav-text">3. 撤销或重回撤销前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-快速定位到行首-尾"><span class="nav-text">4. 快速定位到行首（尾）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-快速定位到词首-尾"><span class="nav-text">5. 快速定位到词首（尾）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-解决windows10-时间轴灰色的活动历史记录无法删除的问题"><span class="nav-text">三、解决windows10 时间轴灰色的活动历史记录无法删除的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-hiberfil-sys-pagefile-sys-swapfile-sys"><span class="nav-text">四、hiberfil.sys、pagefile.sys、swapfile.sys</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hiberfil-sys"><span class="nav-text">hiberfil.sys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pagefile-sys"><span class="nav-text">pagefile.sys</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟内存默认系统配置"><span class="nav-text">虚拟内存默认系统配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用虚拟内存"><span class="nav-text">禁用虚拟内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改虚拟内存位置"><span class="nav-text">修改虚拟内存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义虚拟内存大小"><span class="nav-text">自定义虚拟内存大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swapfile-sys"><span class="nav-text">swapfile.sys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -924,9 +923,9 @@
 </div>
 
 <!-- Github Pages and coding pages ad -->
-<!-- <span>Hosted by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></span>
+<!-- <span>Hosted by <a href="https://pages.github.com" target="_blank" rel="noopener" style="font-weight: bold">Github Pages</a></span>
 &thinsp; and &thinsp;
-<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span> -->
+<span>Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener" style="font-weight: bold">Coding Pages</a></span> -->
 
 <!--
 
