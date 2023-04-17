@@ -482,7 +482,7 @@
       
         <p>一般情况，在国内，ssr客户端使用比较多的场景是在用户量比较多的windows、mac、ios和android系统上，相应的这些操作系统对应的ssr客户端也都比较容易上手。那么在linux操作系统下是否有其使用场景呢？答案那是肯定的，首先对于开发人员来说，还是有一部分人在使用诸如ubuntu、deepin这样交互性比较好的操作系统的，那么在进行科学上网的时候，势必会用到代理客户端。还有一种场景，那就是运维人员也会有使用到的可能性，比如希望快速通过wget下载墙外的文件资源等等。</p>
 <a id="more"></a>
-<h1>一、SSR</h1>
+<h1 id="一-ssr"><a class="header-anchor" href="#一-ssr">¶</a>一、SSR</h1>
 <h2 id="1-gui客户端代理"><a class="header-anchor" href="#1-gui客户端代理">¶</a>1、gui客户端代理</h2>
 <h3 id="1-1-shadowsocks-qt5"><a class="header-anchor" href="#1-1-shadowsocks-qt5">¶</a>1.1 shadowsocks-qt5</h3>
 <p>以pc端的ubuntu18.04操作系统为例：</p>
@@ -583,9 +583,9 @@
 <p><a href="https://huangweitong.com/229.html" target="_blank" rel="noopener">https://huangweitong.com/229.html</a></p>
 <p><a href="https://juejin.im/post/5c91ff5ee51d4534446edb9a" target="_blank" rel="noopener">https://juejin.im/post/5c91ff5ee51d4534446edb9a</a></p>
 </blockquote>
-<h1>二、V2ray</h1>
+<h1 id="二-v2ray"><a class="header-anchor" href="#二-v2ray">¶</a>二、V2ray</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载</span></span><br><span class="line">wget https://github.com/v2ray/v2ray-core/releases/download/v4.28.2/v2ray-linux-64.zip</span><br><span class="line"><span class="comment">#解压安装</span></span><br><span class="line">unzip v2ray-linux-64.zip -d v2ray</span><br><span class="line"><span class="built_in">cd</span> v2ray</span><br><span class="line"></span><br><span class="line"><span class="comment">#备份默认配置，然后可以从windows的v2rayN中导出客户端配置并命名为config.json，上传覆盖这里的config.json文件即可</span></span><br><span class="line">cp config.json config-back.json</span><br><span class="line"><span class="comment">#测试配置是否正确</span></span><br><span class="line">./v2ray -<span class="built_in">test</span> -config config.json</span><br><span class="line"></span><br><span class="line"><span class="comment">#后台运行</span></span><br><span class="line">nohup ./v2ray -config config.json &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="comment">#非后台启动</span></span><br><span class="line"><span class="comment">#./v2ray -config config.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#测试</span></span><br><span class="line">curl -L https://www.google.com --socks5 127.0.0.1:10808</span><br><span class="line"></span><br><span class="line"><span class="comment">#关闭后台运行的v2ray</span></span><br><span class="line">ps aux|grep v2ray|grep -v grep | awk <span class="string">'&#123;print $2&#125;'</span>|xargs <span class="built_in">kill</span> -9</span><br></pre></td></tr></table></figure>
-<h1>三、Clash</h1>
+<h1 id="三-clash"><a class="header-anchor" href="#三-clash">¶</a>三、Clash</h1>
 <h2 id="1-安装配置"><a class="header-anchor" href="#1-安装配置">¶</a>1、安装配置</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wanhebin/clash-for-linux.git</span><br><span class="line"><span class="built_in">cd</span> clash-for-linux</span><br><span class="line"><span class="comment">#修改变量URL的值（clash订阅地址）</span></span><br><span class="line">vim start.sh</span><br></pre></td></tr></table></figure>
 <h2 id="2-启动"><a class="header-anchor" href="#2-启动">¶</a>2、启动</h2>
@@ -813,7 +813,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -835,7 +835,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">103</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -903,7 +903,7 @@
                   </li>
                 
                   <li class="recent_posts_li">
-                    <a href="/windows/scoop.html" title="Windows包管理工具scoop" target="_blank">Windows包管理工具scoop</a>
+                    <a href="/windows/winget.html" title="Windows包管理工具winget" target="_blank">Windows包管理工具winget</a>
                   </li>
                 
               </ul>
@@ -924,7 +924,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-text">一、SSR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-gui客户端代理"><span class="nav-text">1、gui客户端代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-shadowsocks-qt5"><span class="nav-text">1.1 shadowsocks-qt5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-终端命令代理"><span class="nav-text">2、终端命令代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装ssr客户端"><span class="nav-text">2.1 安装ssr客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-配置节点"><span class="nav-text">2.2 配置节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-启动客户端"><span class="nav-text">2.3 启动客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-测试"><span class="nav-text">2.4 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-关闭客户端"><span class="nav-text">2.5 关闭客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-代理转发"><span class="nav-text">2.6. 代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-1-privoxy代理转发"><span class="nav-text">2.6.1 privoxy代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-1-安装配置privoxy"><span class="nav-text">2.6.1.1 安装配置privoxy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-2-privoxy使用pac模式代理"><span class="nav-text">2.6.1.2 privoxy使用pac模式代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-2-proxychains4代理转发"><span class="nav-text">2.6.2 proxychains4代理转发</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-text">二、V2ray</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-text">三、Clash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装配置"><span class="nav-text">1、安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动"><span class="nav-text">2、启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭"><span class="nav-text">3、关闭</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-ssr"><span class="nav-text">一、SSR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-gui客户端代理"><span class="nav-text">1、gui客户端代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-shadowsocks-qt5"><span class="nav-text">1.1 shadowsocks-qt5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-终端命令代理"><span class="nav-text">2、终端命令代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装ssr客户端"><span class="nav-text">2.1 安装ssr客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-配置节点"><span class="nav-text">2.2 配置节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-启动客户端"><span class="nav-text">2.3 启动客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-测试"><span class="nav-text">2.4 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-关闭客户端"><span class="nav-text">2.5 关闭客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-代理转发"><span class="nav-text">2.6. 代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-1-privoxy代理转发"><span class="nav-text">2.6.1 privoxy代理转发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-1-安装配置privoxy"><span class="nav-text">2.6.1.1 安装配置privoxy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1-2-privoxy使用pac模式代理"><span class="nav-text">2.6.1.2 privoxy使用pac模式代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-2-proxychains4代理转发"><span class="nav-text">2.6.2 proxychains4代理转发</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-v2ray"><span class="nav-text">二、V2ray</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-clash"><span class="nav-text">三、Clash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装配置"><span class="nav-text">1、安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动"><span class="nav-text">2、启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭"><span class="nav-text">3、关闭</span></a></li></ol></li></ol></div>
             
 
           </div>
