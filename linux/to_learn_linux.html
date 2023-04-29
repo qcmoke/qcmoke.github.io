@@ -132,7 +132,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="article:published_time" content="2018-12-03T17:35:00.000Z">
-<meta property="article:modified_time" content="2023-04-28T15:56:43.634Z">
+<meta property="article:modified_time" content="2023-04-29T18:21:53.264Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="ubuntu">
@@ -411,8 +411,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-04-28T23:56:43+08:00">
-                2023-04-28
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-30T02:21:53+08:00">
+                2023-04-30
               </time>
             
           </span>
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  32.2k
+                  32.4k
                 </span>
               
 
@@ -500,7 +500,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  126
+                  127
                 </span>
               
             </div>
@@ -596,9 +596,7 @@
 <h2 id="二-基础命令"><a class="header-anchor" href="#二-基础命令">¶</a>二、基础命令</h2>
 <p>由于Linux命令实在太多，下面先介绍最最常用的通用基本操作命令。后面章节会扩展性地讲述其他命令。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看当前文件夹下的内容,list</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看当前所在文件夹,print wrok directory</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#切换文件夹,change directory</span></span><br><span class="line"><span class="built_in">cd</span> [目录名]</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果文件不存在，新建文件,touch</span></span><br><span class="line">touch [文件名]</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建目录,make directory</span></span><br><span class="line">mkdir [目录名]</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除指定的文件名,remove</span></span><br><span class="line">rm [文件名]</span><br><span class="line"></span><br><span class="line"><span class="comment">#清屏,clear</span></span><br><span class="line">clear</span><br></pre></td></tr></table></figure>
-<h2 id="三-关机和重启"><a class="header-anchor" href="#三-关机和重启">¶</a>三、关机和重启</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shutdown命令可用于关闭或重启系统（-r表示重启，不指定则表示1分钟后自动关闭系统）</span></span><br><span class="line">shutdown [-r] [时间]</span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="comment">#不指定-r则表示1分钟后自动关闭系统</span></span><br><span class="line">shutdown</span><br><span class="line"><span class="comment"># 重新启动操作系统，其中 now 表示现在</span></span><br><span class="line">shutdown -r now</span><br><span class="line"><span class="comment"># 立刻关机，其中 now 表示现在</span></span><br><span class="line">shutdown now</span><br><span class="line"><span class="comment"># 系统在今天的 20:25 会关机</span></span><br><span class="line">shutdown 20:25</span><br><span class="line"><span class="comment"># 系统再过十分钟后自动关机</span></span><br><span class="line">shutdown +10</span><br><span class="line"><span class="comment"># 取消之前指定的关机计划</span></span><br><span class="line">shutdown -c</span><br><span class="line"></span><br><span class="line"><span class="comment"># reboot命令可用于重启系统</span></span><br><span class="line">reboot	<span class="comment">#等效于shutdown -r now</span></span><br></pre></td></tr></table></figure>
-<h2 id="四-命令操作技巧"><a class="header-anchor" href="#四-命令操作技巧">¶</a>四、命令操作技巧</h2>
+<h2 id="三-命令操作技巧"><a class="header-anchor" href="#三-命令操作技巧">¶</a>三、命令操作技巧</h2>
 <p>在使用终端命令的过程中，使用一些操作技巧可以辅助我们更有效率地完成工作。</p>
 <h3 id="1-放大终端窗口的字体显示"><a class="header-anchor" href="#1-放大终端窗口的字体显示">¶</a>1. 放大终端窗口的字体显示</h3>
 <p><code>ctrl + shift + =</code></p>
@@ -610,15 +608,9 @@
 <p>按 <code>上</code>／<code>下</code> 光标键可以在曾经使用过的命令之间来回切换</p>
 <h3 id="5-退出执行中的命令"><a class="header-anchor" href="#5-退出执行中的命令">¶</a>5. 退出执行中的命令</h3>
 <p>如果想要退出选择，并且不想执行当前选中的命令，可以按 <code>ctrl + c</code></p>
-<h2 id="五-文件管理"><a class="header-anchor" href="#五-文件管理">¶</a>五、文件管理</h2>
-<h3 id="1-文件和目录"><a class="header-anchor" href="#1-文件和目录">¶</a>1. 文件和目录</h3>
-<h4 id="1-1-单用户操作系统和多用户操作系统"><a class="header-anchor" href="#1-1-单用户操作系统和多用户操作系统">¶</a>1.1 单用户操作系统和多用户操作系统</h4>
-<ul>
-<li><strong>单用户操作系统</strong>：指一台计算机在<strong>同一时间 只能由一个用户使用</strong>，一个用户独自享用系统的全部硬件和软件资源，Windows XP之前的版本都是单用户操作系统</li>
-<li><strong>多用户操作系统</strong>：指一台计算机在 <strong>同一时间可以由多个用户使用</strong> ，多个用户共同享用系统的全部硬件和软件资源，Unix 和 Linux的设计初衷就是多用户操作系统</li>
-</ul>
-<h3 id="2-windows-和-linux-文件系统区别"><a class="header-anchor" href="#2-windows-和-linux-文件系统区别">¶</a>2 <code>Windows</code> 和 <code>Linux</code> 文件系统区别</h3>
-<h4 id="2-1-windows-下的文件系统"><a class="header-anchor" href="#2-1-windows-下的文件系统">¶</a>2.1  <code>Windows</code> 下的文件系统</h4>
+<h2 id="四-文件管理"><a class="header-anchor" href="#四-文件管理">¶</a>四、文件管理</h2>
+<h3 id="1-文件系统"><a class="header-anchor" href="#1-文件系统">¶</a>1. 文件系统</h3>
+<h4 id="windows-文件系统"><a class="header-anchor" href="#windows-文件系统">¶</a>Windows 文件系统</h4>
 <ul>
 <li>在 <code>Windows</code> 下，打开 “计算机”，我们看到的是一个个的驱动器盘符：</li>
 </ul>
@@ -627,19 +619,17 @@
 <li>每个驱动器都有自己的根目录结构，这样形成了多个树并列的情形，如图所示：</li>
 </ul>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1541824026962.png" alt="001-Windows下多个盘为节点的目录分支"></p>
-<h4 id="2-2-linux-下的文件系统"><a class="header-anchor" href="#2-2-linux-下的文件系统">¶</a>2.2 <code>Linux</code> 下的文件系统</h4>
+<h4 id="linux文件系统"><a class="header-anchor" href="#linux文件系统">¶</a>Linux文件系统</h4>
+<h5 id="linux目录结构"><a class="header-anchor" href="#linux目录结构">¶</a>Linux目录结构</h5>
 <ul>
 <li>在 <code>Linux</code> 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）：</li>
 </ul>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1541824061423.png" alt="002_Ubuntu文件目录"></p>
 <ul>
-<li><code>Ubuntu</code> 没有盘符这个概念，只有一个根目录 <code>/</code>，所有文件都在它下面</li>
+<li><code>Ubuntu</code> 没有盘符这个概念，只有一个根目录 <code>/</code>，所有子目录和文件都在它下面</li>
 </ul>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1541824072966.png" alt="003-Linux的树形示意图"></p>
-<h4 id="2-3-用户目录"><a class="header-anchor" href="#2-3-用户目录">¶</a>2.3 用户目录</h4>
-<p>如用户user，则其用户目录位于 <code>/home/user</code>，称之为用户工作目录或家目录，表示方式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/home/user</span><br><span class="line">~</span><br></pre></td></tr></table></figure>
-<h4 id="2-4-linux-主要目录速查表"><a class="header-anchor" href="#2-4-linux-主要目录速查表">¶</a>2.4 <code>Linux</code> 主要目录速查表</h4>
+<h5 id="linux主要目录介绍"><a class="header-anchor" href="#linux主要目录介绍">¶</a>Linux主要目录介绍</h5>
 <ul>
 <li>
 <p><code>/</code>：根目录，在 linux 下有且只有一个根目录，所有的东西都是从这里开始，当在终端里输入 <code>/home</code>，其实是在告诉电脑，先从 <code>/</code>（根目录）开始，再进入到 <code>home</code> 目录。</p>
@@ -665,10 +655,10 @@
 </blockquote>
 </li>
 <li>
-<p><code>/home</code>：系统默认的用户主目录，新增用户账号时，用户的主目录都存放在此目录下：</p>
+<p><code>/home</code>：存放系统中用户的主目录。</p>
 <blockquote>
-<p><code>~</code> 表示当前用户的家目录</p>
-<p><code>~edu</code> 表示用户 <code>edu</code> 的家目录</p>
+<p>新增用户账号时，用户的主目录默认为<code>/home</code>目录下的一个用户同名的子目录中。如Linux系统存在用户test，则test用户的主目录为： <code>/home/test</code></p>
+<p><code>~</code> 符号表示当前用户的主目录路径。</p>
 </blockquote>
 </li>
 <li>
@@ -725,10 +715,11 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="3-列出目录的内容"><a class="header-anchor" href="#3-列出目录的内容">¶</a>3. 列出目录的内容</h3>
-<h4 id="3-1-ls"><a class="header-anchor" href="#3-1-ls">¶</a>3.1 <code>ls</code></h4>
-<p><code>ls</code> 是英文单词 <strong>list</strong> 的简写，其功能为列出目录的内容，是用户最常用的命令之一，类似于 <strong>DOS</strong>下的 <code>dir</code> 命令</p>
+<h3 id="2-常用命令"><a class="header-anchor" href="#2-常用命令">¶</a>2. 常用命令</h3>
+<h4 id="1-列出目录文件-ls-tree"><a class="header-anchor" href="#1-列出目录文件-ls-tree">¶</a>1）列出目录文件（ls、tree）</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出目录文件</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="comment">#树状形式列出目录文件</span></span><br><span class="line"><span class="comment">#选择-d：只显示目录</span></span><br><span class="line">tree</span><br></pre></td></tr></table></figure>
 <blockquote>
+<p><code>ls</code> 是英文单词 <strong>list</strong> 的简写，其功能为列出目录的内容，是用户最常用的命令之一，类似于 <strong>DOS</strong>下的 <code>dir</code> 命令</p>
 <p>常用选项：</p>
 <ul>
 <li><code>-a</code>：显示指定目录下所有子目录与文件，包括隐藏文件</li>
@@ -750,7 +741,7 @@
 <li><code>..</code> 代表上一级目录</li>
 </ul>
 </blockquote>
-<p><strong>计算机中文件大小的表示方式（科普）</strong></p>
+<p><strong>计算机中文件大小的表示方式</strong></p>
 <table>
 <thead>
 <tr>
@@ -807,70 +798,23 @@
 </tr>
 </tbody>
 </table>
-<h4 id="3-2-tree"><a class="header-anchor" href="#3-2-tree">¶</a>3.2 <code>tree</code></h4>
-<p>可以以树状图列出文件目录结构</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#选择-d：只显示目录</span></span><br><span class="line">tree</span><br></pre></td></tr></table></figure>
-<h3 id="4-切换目录"><a class="header-anchor" href="#4-切换目录">¶</a>4. 切换目录</h3>
-<h4 id="4-1-cd"><a class="header-anchor" href="#4-1-cd">¶</a>4.1 <code>cd</code></h4>
-<ul>
-<li><code>cd</code> 是英文单词 <strong>change directory</strong> 的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</li>
-</ul>
+<h4 id="2-切换目录-cd"><a class="header-anchor" href="#2-切换目录-cd">¶</a>2）切换目录（ cd ）</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到/usr/local/share目录里</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/share</span><br><span class="line"><span class="comment">#切换到当前用户的主目录(/home/用户目录)</span></span><br><span class="line"><span class="built_in">cd</span> ~	<span class="comment">#或：cd</span></span><br><span class="line"><span class="comment">#保持在当前目录不变</span></span><br><span class="line"><span class="built_in">cd</span> .</span><br><span class="line"><span class="comment">#切换到上级目录</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="comment">#在最近两次工作目录之间来回切换</span></span><br><span class="line"><span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意：Linux 所有的 <strong>目录</strong> 和 <strong>文件名</strong> 都是大小写敏感的</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到当前用户的主目录(/home/用户目录)</span></span><br><span class="line"><span class="built_in">cd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到当前用户的主目录(/home/用户目录)</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"></span><br><span class="line"><span class="comment">#保持在当前目录不变</span></span><br><span class="line"><span class="built_in">cd</span> .</span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到上级目录</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以在最近两次工作目录之间来回切换</span></span><br><span class="line"><span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
-<h4 id="4-2-相对路径和绝对路径"><a class="header-anchor" href="#4-2-相对路径和绝对路径">¶</a>4.2 相对路径和绝对路径</h4>
 <ul>
+<li><code>cd</code> 是英文单词 <strong>change directory</strong> 的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一。</li>
+<li>注意：Linux 所有的 <strong>目录</strong> 和 <strong>文件名</strong> 都是大小写敏感的。</li>
+<li>关于相对路径和绝对路径的说明：</li>
 <li><strong>相对路径</strong> 在输入路径时，最前面不是 <code>/</code> 或者<code>**~**</code>，表示相对 <strong>当前目录</strong> 所在的目录位置</li>
 <li><strong>绝对路径</strong> 在输入路径时，最前面是 <code>/</code>或者<code>~</code>，表示从 <strong>根目录/家目录</strong> 开始的具体目录位置</li>
 </ul>
-<h3 id="5-创建和删除操作"><a class="header-anchor" href="#5-创建和删除操作">¶</a>5. 创建和删除操作</h3>
-<h4 id="5-1-touch"><a class="header-anchor" href="#5-1-touch">¶</a>5.1 <code>touch</code></h4>
-<p>创建文件或修改文件时间，如果文件不存在，可以创建一个空白文件，如果文件已经存在,可以修改文件的末次修改日期。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建一个为filename.txt的文件</span></span><br><span class="line">touch filename.txt</span><br></pre></td></tr></table></figure>
-<h4 id="5-2-mkdir"><a class="header-anchor" href="#5-2-mkdir">¶</a>5.2 <code>mkdir</code></h4>
-<p>创建一个新的目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在当前目录里创建一个名称为demo新的目录</span></span><br><span class="line">mkdir demo</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>常用选项：</p>
-<ul>
-<li><code>-p</code>：递归创建目录</li>
-</ul>
-<p><strong>新建目录的名称</strong> 不能与当前目录中 <strong>已有的目录或文件</strong> 同名</p>
 </blockquote>
-<h4 id="5-3-rm"><a class="header-anchor" href="#5-3-rm">¶</a>5.3 <code>rm</code></h4>
-<p>删除文件或目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#强制删除filename.txt文件</span></span><br><span class="line">rm -f filename.txt</span><br><span class="line"><span class="comment">#强制删除demo目录以及其内容</span></span><br><span class="line">rm -rf demo</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>常用选项：</p>
-<ul>
-<li><code>-f</code>：强制删除，忽略不存在的文件，无需提示</li>
-<li><code>r</code>：递归地删除目录下的内容，<strong>删除文件夹</strong> 时必须加此参数</li>
-</ul>
-<p>注意：使用 <code>rm</code> 命令要小心，因为文件删除后不能恢复</p>
-</blockquote>
-<h3 id="6-拷贝和移动文件"><a class="header-anchor" href="#6-拷贝和移动文件">¶</a>6. 拷贝和移动文件</h3>
-<h4 id="6-1-cp"><a class="header-anchor" href="#6-1-cp">¶</a>6.1 <code>cp</code></h4>
-<p><code>cp</code> 命令的功能是将给出的 <strong>文件</strong> 或 <strong>目录</strong> 复制到另一个 <strong>文件</strong> 或 <strong>目录</strong> 中，相当于 <strong>DOS</strong> 下的 <code>copy</code> 命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#复制文件或者目录,cp对应英文copy</span></span><br><span class="line">cp 源文件 目标文件</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>常用选项：</p>
-<ul>
-<li><code>-i</code>：覆盖文件前提示</li>
-<li><code>-r</code>：若给出的源文件是目录文件，则 cp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</li>
-</ul>
-</blockquote>
-<h4 id="6-2-mv"><a class="header-anchor" href="#6-2-mv">¶</a>6.2 <code>mv</code></h4>
-<p><code>mv</code> 命令可以用来 <strong>移动</strong> <strong>文件</strong> 或 <strong>目录</strong>，也可以给 <strong>文件或目录重命名</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#移动文件或者目录／文件或者目录重命名,mv对应英文move</span></span><br><span class="line">mv 源文件 目标文件</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>常用选项：</p>
-<ul>
-<li><code>-i</code>：覆盖文件前提示</li>
-</ul>
-</blockquote>
-<h3 id="7-查看文件内容"><a class="header-anchor" href="#7-查看文件内容">¶</a>7. 查看文件内容</h3>
-<h4 id="7-1-cat-查看文件的所有内容"><a class="header-anchor" href="#7-1-cat-查看文件的所有内容">¶</a>7.1 cat 查看文件的所有内容</h4>
+<h4 id="3-创建和删除操作-touch-mkdir-rm"><a class="header-anchor" href="#3-创建和删除操作-touch-mkdir-rm">¶</a>3）创建和删除操作（touch、mkdir、rm）</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建文件</span></span><br><span class="line">touch filename.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建目录</span></span><br><span class="line">mkdir <span class="built_in">test</span>-dir</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除文件或目录</span></span><br><span class="line"><span class="comment">#-f：强制删除，忽略不存在的文件，无需提示</span></span><br><span class="line"><span class="comment">#-r：递归地删除目录下的内容，删除文件夹时必须加此选项</span></span><br><span class="line">rm -f filename.txt	<span class="comment">#强制删除filename.txt文件</span></span><br><span class="line">rm -rf <span class="built_in">test</span>-dir	<span class="comment">#强制删除目录以及其内容</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-拷贝和移动文件-cp-mv"><a class="header-anchor" href="#4-拷贝和移动文件-cp-mv">¶</a>4）拷贝和移动文件（cp、mv）</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##复制文件或者目录</span></span><br><span class="line"><span class="comment">#-i：覆盖文件前提示</span></span><br><span class="line"><span class="comment">#-r：若给出的源文件是目录文件，则 cp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</span></span><br><span class="line">cp 源文件 目标文件</span><br><span class="line"></span><br><span class="line"><span class="comment">##移动文件或者目录 或 重命名</span></span><br><span class="line"><span class="comment"># mv命令（mv英文：move）可以用来移动文件或目录，也可以给文件或目录重命名</span></span><br><span class="line"><span class="comment">#-i：覆盖文件前提示</span></span><br><span class="line">mv 源文件 目标文件</span><br></pre></td></tr></table></figure>
+<h4 id="5-查看文件内容-cat-more-grep-tail"><a class="header-anchor" href="#5-查看文件内容-cat-more-grep-tail">¶</a>5）查看文件内容（cat、more 、grep、tail）</h4>
+<h5 id="1-cat-查看文件的所有内容"><a class="header-anchor" href="#1-cat-查看文件的所有内容">¶</a>（1）cat 查看文件的所有内容</h5>
 <p><code>cat</code> （concatenate）命令可以用来 <strong>查看文件内容</strong>、<strong>创建文件</strong>、<strong>文件合并</strong>、<strong>追加文件内容</strong> 等功能。</p>
 <p><code>cat</code> 会一次显示所有的内容，适合 <strong>查看内容较少</strong> 的文本文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看hello.txt文件的所有内容</span></span><br><span class="line">cat hello.txt</span><br></pre></td></tr></table></figure>
@@ -882,7 +826,7 @@
 </ul>
 <p>Linux 中还有一个 <code>nl</code> 的命令和 <code>cat -b</code> 的效果等价</p>
 </blockquote>
-<h4 id="7-2-more-分屏显示文件内容"><a class="header-anchor" href="#7-2-more-分屏显示文件内容">¶</a>7.2 more 分屏显示文件内容</h4>
+<h5 id="2-more-分屏显示文件内容"><a class="header-anchor" href="#2-more-分屏显示文件内容">¶</a>（2）more 分屏显示文件内容</h5>
 <p><code>more</code> 命令可以用于分屏显示文件内容，每次只显示一页内容</p>
 <p>适合于 <strong>查看内容较多</strong>的文本文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#分屏显示hello.txt文件内容</span></span><br><span class="line">more hello.txt</span><br></pre></td></tr></table></figure>
@@ -921,7 +865,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="7-3-grep-搜索文本文件内容"><a class="header-anchor" href="#7-3-grep-搜索文本文件内容">¶</a>7.3 grep 搜索文本文件内容</h4>
+<h5 id="3-grep-搜索文本文件内容"><a class="header-anchor" href="#3-grep-搜索文本文件内容">¶</a>（3）grep 搜索文本文件内容</h5>
 <p>Linux 系统中 <code>grep</code> 命令是一种强大的文本搜索工具。</p>
 <p><code>grep</code>允许对文本文件进行 <strong>模式</strong>查找，所谓模式查找，又被称为正则表达式。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#显示匹配包含qcmoke字符串的行及行号</span></span><br><span class="line">grep -n qcmoke hello.txt</span><br></pre></td></tr></table></figure>
@@ -938,7 +882,7 @@
 <li><code>ke$</code>：行尾，搜寻以 <strong>ke</strong> 结束的行</li>
 </ul>
 </blockquote>
-<h4 id="7-6-tail-取出文件后面几行"><a class="header-anchor" href="#7-6-tail-取出文件后面几行">¶</a>7.6 tail 取出文件后面几行</h4>
+<h5 id="4-tail-取出文件后面几行"><a class="header-anchor" href="#4-tail-取出文件后面几行">¶</a>（4）tail 取出文件后面几行</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取出文件后面10行</span></span><br><span class="line">tail hello.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认的情况中，显示最后的十行！若要显示最后的 20 行，就得要这样：</span></span><br><span class="line">tail -n 20  /etc/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#侦测文件尾部10行</span></span><br><span class="line">tail -n 10 -f  ~/logs/web2019-10-10.log</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>命令选项：</p>
@@ -947,11 +891,8 @@
 <li><code>-f</code>：侦测文件尾部，要等到按下[ctrl]-c才会结束tail的侦测即，如果文件尾部内容被更改，也会随着显示最新尾部内容，常用于查看日志。</li>
 </ul>
 </blockquote>
-<h3 id="8-查找文件-find"><a class="header-anchor" href="#8-查找文件-find">¶</a>8. 查找文件(find)</h3>
-<h4 id="8-1-find"><a class="header-anchor" href="#8-1-find">¶</a>8.1 find</h4>
-<ul>
-<li><code>find</code> 命令功能非常强大，通常用来在 <strong>特定的目录下</strong> <strong>搜索</strong> 符合条件的文件</li>
-</ul>
+<h4 id="6-查找文件-find"><a class="header-anchor" href="#6-查找文件-find">¶</a>6）查找文件（ find ）</h4>
+<p><code>find</code> 命令功能非常强大，通常用来在 <strong>特定的目录下</strong> <strong>搜索</strong> 符合条件的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#搜索主目录下，文件名包含hello的文件</span></span><br><span class="line">find ~ -name <span class="string">"hello*"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#搜索/etc目录下，所有以.conf为扩展名的文件</span></span><br><span class="line">find /etc -name <span class="string">"*.conf"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#搜索/home目录下，以数字1开头的文件</span></span><br><span class="line">find /home ~ -name <span class="string">"1*"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#-type f: 只查找普通文件；-not -name 排除文件名包含 “test” 字符串的文件</span></span><br><span class="line">find /path/to/dir -<span class="built_in">type</span> f -name <span class="string">"*.txt"</span> -not -name <span class="string">"*test*"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#使用 -not -path 参数排除不符合条件的目录</span></span><br><span class="line">find .  -name <span class="string">"node_modules"</span> -not -path <span class="string">"./test/*"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>说明：</p>
@@ -970,48 +911,43 @@
 <li>如果省略路径，表示在当前文件夹下查找</li>
 </ul>
 </blockquote>
-<h3 id="9-链接-ln"><a class="header-anchor" href="#9-链接-ln">¶</a>9. 链接(ln)</h3>
-<h4 id="9-1-软链接"><a class="header-anchor" href="#9-1-软链接">¶</a>9.1 软链接</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#建立文件的软链接，用通俗的方式讲类似于Windows下的快捷方式。</span></span><br><span class="line"><span class="comment">#删除软链接不会影响源文件，但源文件被删除了，那么软连接就不可用了</span></span><br><span class="line">ln -s 被链接的源文件 链接文件</span><br></pre></td></tr></table></figure>
-<p>软链接的特点：</p>
+<h4 id="7-链接-ln"><a class="header-anchor" href="#7-链接-ln">¶</a>7）链接（ ln ）</h4>
+<h5 id="简要概述"><a class="header-anchor" href="#简要概述">¶</a>简要概述</h5>
+<p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/001_%E6%96%87%E4%BB%B6%E8%BD%AF%E7%A1%AC%E9%93%BE%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="001_文件软硬链接示意图"></p>
+<h5 id="软链接"><a class="header-anchor" href="#软链接">¶</a>软链接</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建文件的软链接，用通俗的方式讲类似于Windows下的快捷方式。</span></span><br><span class="line"><span class="comment">#删除软链接不会影响源文件，但源文件被删除了，那么软连接就不可用了</span></span><br><span class="line">ln -s 被链接的源文件 链接文件</span><br></pre></td></tr></table></figure>
 <blockquote>
+<ul>
+<li>软链接的特点：</li>
+</ul>
 <p>（1）软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式</p>
 <p>（2）软链接可以 跨文件系统 ，硬链接不可以</p>
 <p>（3）软链接可以对一个不存在的文件名进行链接</p>
 <p>（4）软链接可以对目录进行链接</p>
-</blockquote>
-<p>注意：</p>
-<blockquote>
+<ul>
+<li>注意：</li>
+</ul>
 <p>（1）没有 <code>-s</code> 选项建立的是一个 硬链接文件（对于硬链接文件，两个文件占用相同大小的硬盘空间，工作中几乎不会建立文件的硬链接）</p>
 <p>（2）被链接的源文件要使用绝对路径，不能使用相对路径，这样可以方便移动链接文件后，仍然能够正常使用</p>
 </blockquote>
-<h4 id="9-2-硬链接简介"><a class="header-anchor" href="#9-2-硬链接简介">¶</a>9.2 硬链接简介</h4>
+<h5 id="硬链接"><a class="header-anchor" href="#硬链接">¶</a>硬链接</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除硬链接，不会影响源文件,同样的删除源文件也不会影响硬链接,只删除一个连接并不影响索引节点本身和其它的连接，只有当最后一个连接被删除后，文件的数据块及目录的连接才会被释放</span></span><br><span class="line">ln 被链接的源文件 链接文件</span><br></pre></td></tr></table></figure>
-<p>硬链接的特点：</p>
 <blockquote>
+<ul>
+<li>硬链接的特点：</li>
+</ul>
 <p>（1）硬链接，以文件副本的形式存在。但不占用实际空间。</p>
 <p>（2）不允许给目录创建硬链接</p>
 <p>（3）硬链接只有在同一个文件系统中才能创建</p>
-</blockquote>
-<h4 id="9-3-文件软硬链接的示意图"><a class="header-anchor" href="#9-3-文件软硬链接的示意图">¶</a>9.3 文件软硬链接的示意图</h4>
-<p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/001_%E6%96%87%E4%BB%B6%E8%BD%AF%E7%A1%AC%E9%93%BE%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="001_文件软硬链接示意图"></p>
-<p>提示：</p>
-<blockquote>
+<ul>
+<li>说明：</li>
+</ul>
 <p>在 Linux 中，<strong>文件名</strong> 和 <strong>文件的数据</strong> 是分开存储的</p>
 <p>在 Linux 中，只有文件的 <code>硬链接数 == 0</code> 才会被删除</p>
 <p>使用 <code>ls -l</code> 可以查看一个文件的硬链接的数量</p>
 <p>在日常工作中，几乎不会建立文件的硬链接，知道即可</p>
 </blockquote>
-<h3 id="10-打包压缩"><a class="header-anchor" href="#10-打包压缩">¶</a>10. 打包压缩</h3>
-<p><strong>打包压缩</strong> 是日常工作中备份文件的一种方式。</p>
-<p>在不同操作系统中，常用的打包压缩方式是不同的：</p>
-<blockquote>
-<p><code>Windows</code> 常用 <code>rar</code></p>
-<p><code>Mac</code> 常用 <code>zip</code></p>
-<p><code>Linux</code> 常用 <code>tar.gz</code></p>
-</blockquote>
-<h3 id="11-打包-和-解包"><a class="header-anchor" href="#11-打包-和-解包">¶</a>11. 打包 和 解包</h3>
-<h4 id="11-1-tar"><a class="header-anchor" href="#11-1-tar">¶</a>11.1 tar</h4>
+<h4 id="8-打包-和-解包-tar"><a class="header-anchor" href="#8-打包-和-解包-tar">¶</a>8）打包 和 解包（ tar ）</h4>
 <p><code>tar</code> 是 Linux 中最常用的 <strong>备份</strong>工具，此命令可以 <strong>把一系列文件</strong> 打包到 <strong>一个大文件中</strong>，也可以把一个 <strong>打包的大文件恢复成一系列文件</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包文件（不压缩）</span></span><br><span class="line">tar -cvf 打包文件.tar 被打包的文件／路径...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解包文件</span></span><br><span class="line">tar -xvf 打包文件.tar</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -1024,8 +960,8 @@
 </ul>
 <p>注意：<code>f</code> 选项必须放在最后，其他选项顺序可以随意</p>
 </blockquote>
-<h3 id="12-压缩-和-解压缩"><a class="header-anchor" href="#12-压缩-和-解压缩">¶</a>12 压缩 和 解压缩</h3>
-<h4 id="12-1-gzip"><a class="header-anchor" href="#12-1-gzip">¶</a>12.1 gzip</h4>
+<h4 id="9-压缩-和-解压缩"><a class="header-anchor" href="#9-压缩-和-解压缩">¶</a>9）压缩 和 解压缩</h4>
+<h5 id="gzip"><a class="header-anchor" href="#gzip">¶</a>gzip</h5>
 <p>gzip 是linux中常见的压缩/解压工具，最常见的使用对象是*.gz格式的文件。</p>
 <blockquote>
 <p><strong>OPTIONS</strong><br>
@@ -1056,10 +992,10 @@
 <p>示例6，压缩到标准输出中<br>
 可以连接两个文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/tmp<span class="comment"># cat file1.txt file2.txt | gzip &gt; foo.gz</span></span><br><span class="line">或者</span><br><span class="line">root@ubuntu:/tmp<span class="comment"># gzip -c file1.txt file2.txt &gt; foo.gz</span></span><br></pre></td></tr></table></figure>
-<h4 id="12-2-gunzip"><a class="header-anchor" href="#12-2-gunzip">¶</a>12.2  gunzip</h4>
+<h5 id="gunzip"><a class="header-anchor" href="#gunzip">¶</a>gunzip</h5>
 <p>解压gz格式文件（不保留压缩文件）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># ls</span></span><br><span class="line">test1.txt.gz  test2.txt.gz</span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># gunzip  test1.txt.gz  test2.txt.gz </span></span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># ls</span></span><br><span class="line">test1.txt  test2.txt</span><br></pre></td></tr></table></figure>
-<h4 id="12-3-tar-和-gzip"><a class="header-anchor" href="#12-3-tar-和-gzip">¶</a>12.3 tar 和 gzip</h4>
+<h5 id="tar-和-gzip"><a class="header-anchor" href="#tar-和-gzip">¶</a>tar 和 gzip</h5>
 <p>命令结合可以使用实现文件打包和压缩</p>
 <ul>
 <li><code>tar</code> 只负责打包文件，但不压缩</li>
@@ -1087,7 +1023,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="12-4-bzip2"><a class="header-anchor" href="#12-4-bzip2">¶</a>12.4 bzip2</h4>
+<h5 id="bzip2"><a class="header-anchor" href="#bzip2">¶</a>bzip2</h5>
 <ul>
 <li><code>tar</code> 与 <code>bzip2</code> 命令结合可以使用实现文件 <strong>打包和压缩</strong>（用法和 <code>gzip</code> 类似）
 <ul>
@@ -1099,7 +1035,7 @@
 <li>命令格式如下：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">tar -jcvf 打包文件.tar.bz2 被压缩的文件／路径...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压缩文件</span></span><br><span class="line">tar -jxvf 打包文件.tar.bz2</span><br></pre></td></tr></table></figure>
-<h4 id="12-5-zip-和-unzip"><a class="header-anchor" href="#12-5-zip-和-unzip">¶</a>12.5 zip 和 unzip</h4>
+<h5 id="zip-和-unzip"><a class="header-anchor" href="#zip-和-unzip">¶</a>zip 和 unzip</h5>
 <p><strong>zip压缩文件</strong></p>
 <p>案例：压缩 test1.txt test2.txt成test.zip压缩包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip  test.zip  test1.txt test2.txt</span><br></pre></td></tr></table></figure>
@@ -1117,32 +1053,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#默认解压到当前目录</span></span><br><span class="line">unzip   test.zip</span><br><span class="line"><span class="comment">#解压到指定目录</span></span><br><span class="line">unzip test.zip -d path</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="13-其他"><a class="header-anchor" href="#13-其他">¶</a>13. 其他</h3>
-<h4 id="13-1-echo-文字内容"><a class="header-anchor" href="#13-1-echo-文字内容">¶</a>13.1 <code>echo 文字内容</code></h4>
-<ul>
-<li><code>echo</code> 会在终端中显示参数指定的文字，通常会和 <strong>重定向</strong> 联合使用</li>
-</ul>
-<h4 id="13-2-重定向-和"><a class="header-anchor" href="#13-2-重定向-和">¶</a>13.2 重定向 <code>&gt;</code> 和 <code>&gt;&gt;</code></h4>
-<ul>
-<li>Linux 允许将命令执行结果 <strong>重定向</strong>到一个 <strong>文件</strong></li>
-<li>将本应显示在<strong>终端上的内容</strong> <strong>输出／追加</strong> 到<strong>指定文件中</strong></li>
-</ul>
-<p>其中</p>
+<h4 id="10-重定向-和"><a class="header-anchor" href="#10-重定向-和">¶</a>10）重定向（ <code>&gt;</code> 和 <code>&gt;&gt;</code> ）</h4>
+<p>Linux 允许将命令执行结果重定向到一个文件，将本应显示在终端上的内容输出或者追加到指定文件中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#覆盖输出内容到文件中</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello"</span> &gt; test.txt</span><br><span class="line"><span class="comment">#追加内容到文件中</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello"</span> &gt;&gt; test.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li><code>&gt;</code> 表示输出，会覆盖文件原有的内容</li>
 <li><code>&gt;&gt;</code> 表示追加，会将内容追加到已有文件的末尾</li>
 </ul>
-<h4 id="13-3-管道"><a class="header-anchor" href="#13-3-管道">¶</a>13.3 管道 <code>|</code></h4>
-<ul>
-<li>Linux 允许将 <strong>一个命令的输出</strong> 可以<strong>通过管道</strong> 做为 <strong>另一个命令的输入</strong></li>
-<li>可以理解现实生活中的管子，管子的一头塞东西进去，另一头取出来，这里 <code>|</code> 的左右分为两端，左端塞东西（写），右端取东西（读）</li>
-</ul>
-<p>常用的管道命令有：</p>
-<ul>
-<li><code>more</code>：分屏显示内容</li>
-<li><code>grep</code>：在命令执行结果的基础上查询指定的文本</li>
-</ul>
-<h2 id="六-文件权限管理"><a class="header-anchor" href="#六-文件权限管理">¶</a>六、文件权限管理</h2>
+</blockquote>
+<h4 id="11-管道"><a class="header-anchor" href="#11-管道">¶</a>11）管道（ <code>|</code>）</h4>
+<p>Linux 允许将 一个命令的输出可以通过管道做为另一个命令的输入。使用操作如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br><span class="line">more test.txt | grep hello</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可以理解现实生活中的管子，管子的一头塞东西进去，另一头取出来，这里 <code>|</code> 的左右分为两端，左端塞东西（写），右端取东西（读）</p>
+</blockquote>
+<h3 id="3-文件权限管理"><a class="header-anchor" href="#3-文件权限管理">¶</a>3. 文件权限管理</h3>
 <p>在 Linux 系统中，不同的用户对于不同的系统资源拥有不同的使用权限。在 Linux 中，可以指定每一个用户针对不同的文件或者目录的不同权限。文件(目录)的权限包括如下：</p>
 <table>
 <thead>
@@ -1178,7 +1104,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="1-文件的详细信息"><a class="header-anchor" href="#1-文件的详细信息">¶</a>1. 文件的详细信息</h3>
+<h4 id="1-文件的详细信息"><a class="header-anchor" href="#1-文件的详细信息">¶</a>1. 文件的详细信息</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看文件夹下文件的详细信息（目录也是一种文件）</span></span><br><span class="line">ls -l</span><br></pre></td></tr></table></figure>
 <p>打印结果从左到右依次是：</p>
 <ul>
@@ -1206,7 +1132,7 @@
 </ul>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1541851399509.png" alt="1541851340006"><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1541851340006.png" alt="1541851399509"></p>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1541783224649.png" alt="002_权限示意图"></p>
-<h3 id="2-修改文件权限"><a class="header-anchor" href="#2-修改文件权限">¶</a>2. 修改文件权限</h3>
+<h4 id="2-修改文件权限"><a class="header-anchor" href="#2-修改文件权限">¶</a>2. 修改文件权限</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改文件|目录的拥有者</span></span><br><span class="line">chown 用户名 文件名|目录名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归修改文件|目录的组</span></span><br><span class="line">chgrp -R 组名 文件名|目录名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归修改文件权限</span></span><br><span class="line">chmod -R 755 文件名|目录名</span><br></pre></td></tr></table></figure>
 <p><code>chmod</code> 在设置权限时，可以简单地使用三个数字分别对应 <strong>拥有者</strong> ／ <strong>组</strong> 和 <strong>其他</strong> 用户的权限</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接修改文件|目录的 读|写|执行 权限，但是不能精确到 拥有者|组|其他</span></span><br><span class="line">chmod +/-rwx 文件名|目录名</span><br></pre></td></tr></table></figure>
@@ -1217,42 +1143,47 @@
 <p><code>755</code> ===&gt; <code>u=rwx,g=rx,o=rx</code></p>
 <p><code>644</code> ===&gt; <code>u=rw,g=r,o=r</code></p>
 </blockquote>
-<h3 id="3-文件属性模式"><a class="header-anchor" href="#3-文件属性模式">¶</a>3. 文件属性模式</h3>
-<h4 id="3-1-lsattr"><a class="header-anchor" href="#3-1-lsattr">¶</a>3.1 lsattr</h4>
+<h4 id="3-文件属性模式"><a class="header-anchor" href="#3-文件属性模式">¶</a>3. 文件属性模式</h4>
+<h5 id="lsattr"><a class="header-anchor" href="#lsattr">¶</a>lsattr</h5>
 <p>lsattr 命令用于显示文件的属性，使用方式如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看file.sh 文件的属性</span></span><br><span class="line">lsattr file.sh</span><br><span class="line"><span class="comment"># 查看当前目录下所有文件以及文件夹的属性</span></span><br><span class="line">lsattr</span><br></pre></td></tr></table></figure>
 <p>详细说明请参考：</p>
 <p>📚<a href="https://www.runoob.com/linux/linux-comm-lsattr.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-comm-lsattr.html</a></p>
-<h4 id="3-2-chattr"><a class="header-anchor" href="#3-2-chattr">¶</a>3.2 chattr</h4>
+<h5 id="chattr"><a class="header-anchor" href="#chattr">¶</a>chattr</h5>
 <p>chattr 用于修改文件属性。</p>
-<p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chattr [-RV][-v&lt;版本编号&gt;][+&#x2F;-&#x2F;&#x3D;&lt;属性&gt;][文件或目录...]</span><br></pre></td></tr></table></figure>
-<p>选项</p>
 <blockquote>
-<p>-R 递归处理，将指定目录下的所有文件及子目录一并处理。</p>
-<p>-v&lt;版本编号&gt; 设置文件或目录版本。</p>
-<p>-V 显示指令执行过程。</p>
-<p>+&lt;属性&gt; 开启文件或目录的该项属性。</p>
-<p>-&lt;属性&gt; 关闭文件或目录的该项属性。</p>
-<p>=&lt;属性&gt; 指定文件或目录的该项属性。</p>
+<p>选项：</p>
+<ul>
+<li><code>-R</code> 递归处理，将指定目录下的所有文件及子目录一并处理。</li>
+<li><code>-v</code> &lt;版本编号&gt; 设置文件或目录版本。</li>
+<li><code>-V</code> 显示指令执行过程。</li>
+<li><code>+&lt;属性&gt;</code> 开启文件或目录的该项属性。</li>
+<li><code>-&lt;属性&gt;</code> 关闭文件或目录的该项属性。</li>
+<li><code>=&lt;属性&gt;</code> 指定文件或目录的该项属性。</li>
+</ul>
 </blockquote>
 <p>这项指令可改变存放在ext2文件系统上的文件或目录属性，这些属性共有以下几种模式：</p>
 <blockquote>
-<p>a：让文件或目录仅供附加用途。</p>
-<p>b：不更新文件或目录的最后存取时间。</p>
-<p>c：将文件或目录压缩后存放。</p>
-<p>d：将文件或目录排除在倾倒操作之外。</p>
-<p>i：不得任意更动文件或目录。</p>
-<p>s：保密性删除文件或目录。</p>
-<p>S：即时更新文件或目录。</p>
-<p>u：预防意外删除。</p>
+<ul>
+<li><code>a</code>：让文件或目录仅供附加用途。</li>
+<li><code>b</code>：不更新文件或目录的最后存取时间。</li>
+<li><code>c</code>：将文件或目录压缩后存放。</li>
+<li><code>d</code>：将文件或目录排除在倾倒操作之外。</li>
+<li><code>i</code>：不得任意更动文件或目录。</li>
+<li><code>s</code>：保密性删除文件或目录。</li>
+<li><code>S</code>：即时更新文件或目录。</li>
+<li><code>u</code>：预防意外删除。</li>
+</ul>
 </blockquote>
 <p>该命令请切换至 root 用户下使用。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为 file.sh 文件增加 i 标识</span></span><br><span class="line">chattr +i file.sh</span><br><span class="line"><span class="comment"># 为 file.sh 文件去除 i 标识</span></span><br><span class="line">chattr -i file.sh</span><br><span class="line"><span class="comment"># 为 file.sh 增加 i, a 两个标识</span></span><br><span class="line">chattr +ia file.sh</span><br><span class="line"><span class="comment"># 为 file.sh 文件移除 i, a 两个标识</span></span><br><span class="line">chattr -ia file.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>详细说明请参考：</p>
 <p>📚<a href="https://baike.baidu.com/item/chattr/9841067?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/chattr/9841067?fr=aladdin</a></p>
 <p>📚<a href="https://www.runoob.com/linux/linux-comm-chattr.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-comm-chattr.html</a></p>
-<h4 id="3-3-文件属性模式相关问题"><a class="header-anchor" href="#3-3-文件属性模式相关问题">¶</a>3.3 文件属性模式相关问题</h4>
+</blockquote>
+<h5 id="文件属性模式相关问题"><a class="header-anchor" href="#文件属性模式相关问题">¶</a>文件属性模式相关问题</h5>
 <p>Linux 文件/文件夹无法删除问题解决方案</p>
 <p>服务器黑客攻击后，如果他们对某些文件（例如病毒文件）的属性模式进行修改，导致我们无法轻易删除这些文件，同时采用 root 用户也可能无法使用rm命令删除，那么这就会带来巨大的隐患问题。</p>
 <p>案例：</p>
@@ -1266,7 +1197,7 @@
 <p>如果文件还未删除成功，则我们需要考虑文件所属的文件夹是否设置了 i 或 a 属性（这一点确实很难发现）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 退回上一级</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="comment"># 直接使用 lsattr 命令，这样可以列出当前文件夹下所有文件和文件夹的属性</span></span><br><span class="line"><span class="comment"># 不要使用 lsattr 文件夹 这样的语法，这样是列出该文件夹下的文件的属性</span></span><br><span class="line">lsattr</span><br></pre></td></tr></table></figure>
 <p>如果文件夹被设置则对文件夹的属性执行移除操作，然后再删除文件夹里面的文件</p>
-<h2 id="七-用户管理"><a class="header-anchor" href="#七-用户管理">¶</a>七、用户管理</h2>
+<h2 id="五-用户管理"><a class="header-anchor" href="#五-用户管理">¶</a>五、用户管理</h2>
 <h3 id="1-基本概念"><a class="header-anchor" href="#1-基本概念">¶</a>1. 基本概念</h3>
 <p>在 Linux 系统中，不论是本机或是远程登录系统，每个系统都必须拥有至少一个用户。用户是 Linux 系统工作中重要的一环，用户管理包括用户与组管理。为了方便用户管理，Linux有组的概念，组的意义在实际应用中，可以预先针对组设置好权限，然后将不同的用户添加到对应的组中，从而不用依次为每一个用户设置权限。</p>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/001_%E7%BB%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="001_组示意图"></p>
@@ -1275,13 +1206,13 @@
 <p><code>su</code> 是 <code>substitute user</code> 的缩写，表示 <strong>使用另一个用户的身份</strong></p>
 <p><code>sudo</code> 命令用来以其他身份来执行命令，预设的身份为 <code>root</code></p>
 <p>用户使用 <code>sudo</code> 时，必须先输入密码，之后有 <strong>5 分钟的有效期限</strong>，超过期限则必须重新输入密码</p>
-<h3 id="3-用户组管理"><a class="header-anchor" href="#3-用户组管理">¶</a>3. <strong>用户组管理</strong></h3>
+<h3 id="3-用户组维护"><a class="header-anchor" href="#3-用户组维护">¶</a>3. 用户组维护</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加组</span></span><br><span class="line">groupadd 组名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除组</span></span><br><span class="line">groupdel 组名</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看组信息</span></span><br><span class="line">cat /etc/group</span><br><span class="line"></span><br><span class="line"><span class="comment">#递归修改文件/目录的所属组</span></span><br><span class="line">chgrp -R 组名 文件/目录名</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>提示：用户组信息保存在 <code>/etc/group</code> 文件中。</p>
 <p>在实际应用中，可以预先针对组设置好权限，然后将不同的用户添加到对应的组中，从而不用依次为每一个用户设置权限。</p>
 </blockquote>
-<h3 id="4-用户管理"><a class="header-anchor" href="#4-用户管理">¶</a>4. <strong>用户管理</strong></h3>
+<h3 id="4-用户维护"><a class="header-anchor" href="#4-用户维护">¶</a>4. 用户维护</h3>
 <h4 id="4-1-创建用户"><a class="header-anchor" href="#4-1-创建用户">¶</a>4.1 创建用户</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加新用户 -m: 自动建立用户家目录   -g: 指定用户所在的组，不指定默认创建一个和同名的组</span></span><br><span class="line">useradd -m -g 组 新建用户名</span><br></pre></td></tr></table></figure>
 <p>注意添加用户命令在redhat类系统和debain类系统之间的区别。</p>
@@ -1372,24 +1303,30 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#选择登录终端并强制踢出，例如选择踢出使用终端pts/1登录的用户。</span></span><br><span class="line"><span class="comment">#方法一：</span></span><br><span class="line">pkill -<span class="built_in">kill</span> -t pts/1</span><br><span class="line"><span class="comment">#方法二：</span></span><br><span class="line">fuser -k /dev/pts/1</span><br></pre></td></tr></table></figure>
 <p>案例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先列举当前登录的系统用户</span></span><br><span class="line">[root@VM_0_6_centos ~]<span class="comment"># who</span></span><br><span class="line">root     pts/0        2020-02-28 10:50 (163.125.117.95)</span><br><span class="line">root     pts/1        2020-02-28 10:49 (163.125.117.95)</span><br><span class="line"><span class="comment">#选择登录终端并强制踢出,可以给他发送后再踢出</span></span><br><span class="line">[root@VM_0_6_centos ~]<span class="comment"># echo "你被管理员踢出了" &gt; /dev/pts/1 &amp;&amp; fuser -k /dev/pts/1</span></span><br><span class="line">/dev/pts/1:          23381</span><br></pre></td></tr></table></figure>
-<h2 id="八-软件包管理"><a class="header-anchor" href="#八-软件包管理">¶</a>八、软件包管理</h2>
-<h3 id="1-软件包管理简介"><a class="header-anchor" href="#1-软件包管理简介">¶</a>1 软件包管理简介</h3>
+<h2 id="六-软件管理"><a class="header-anchor" href="#六-软件管理">¶</a>六、软件管理</h2>
+<h3 id="1-软件管理简介"><a class="header-anchor" href="#1-软件管理简介">¶</a>1. 软件管理简介</h3>
 <h4 id="1-1-包全名与包名"><a class="header-anchor" href="#1-1-包全名与包名">¶</a>1.1 包全名与包名</h4>
 <blockquote>
-<p>◆包全名：操作的包是没有安装的软件包时，使用包全名。<br>
-◆包名：操作已经安装的软件包时使用的包名。linux安装后包名都存在/var/lib/rpm/中的数据库</p>
+<ul>
+<li>包全名：操作的包是没有安装的软件包时，使用包全名。</li>
+<li>包名：操作已经安装的软件包时使用的包名。linux安装后包名都存在/var/lib/rpm/中的数据库</li>
+</ul>
 </blockquote>
 <h4 id="1-2-linux包依赖性"><a class="header-anchor" href="#1-2-linux包依赖性">¶</a>1.2 Linux包依赖性</h4>
 <blockquote>
-<p>◆树形依赖：a&gt;b&gt;c<br>
-◆环形依赖：a&gt;b&gt;c&gt;a<br>
-◆模块依赖：模块依赖</p>
+<ul>
+<li>树形依赖：a&gt;b&gt;c</li>
+<li>环形依赖：a&gt;b&gt;c&gt;a</li>
+<li>模块依赖：模块依赖</li>
+</ul>
 </blockquote>
 <p>软件安装的过程：</p>
 <blockquote>
-<p>1.cp类库到系统目录中</p>
-<p>2.cp可执行程序和配置文件到系统目录中</p>
-<p>3.根据需要选择性配置和启动服务（程序）</p>
+<ul>
+<li>（1）cp类库到系统目录中</li>
+<li>（2）cp可执行程序和配置文件到系统目录中</li>
+<li>（3）根据需要选择性配置和启动服务（程序）</li>
+</ul>
 </blockquote>
 <p><em>对于windows系统还会多出一个步骤，那就是到把启动配置或者程序依赖的配置放到注册表中。</em></p>
 <h4 id="1-3-linux包命名原则"><a class="header-anchor" href="#1-3-linux包命名原则">¶</a>1.3 linux包命名原则</h4>
@@ -1443,7 +1380,7 @@ rpm rpm包扩展名</p>
 </tr>
 </tbody>
 </table>
-<h3 id="2-debain系列软件包管理"><a class="header-anchor" href="#2-debain系列软件包管理">¶</a>2 Debain系列软件包管理</h3>
+<h3 id="2-debain系列软件包管理"><a class="header-anchor" href="#2-debain系列软件包管理">¶</a>2. Debain系列软件包管理</h3>
 <h4 id="2-1-dpkg本地管理"><a class="header-anchor" href="#2-1-dpkg本地管理">¶</a>2.1 dpkg本地管理</h4>
 <h5 id="1-安装"><a class="header-anchor" href="#1-安装">¶</a>（1）安装</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i 软件包全名</span><br></pre></td></tr></table></figure>
@@ -1493,8 +1430,8 @@ rpm rpm包扩展名</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get remove 软件包名 <span class="comment">#卸载软件包（不含配置文件）</span></span><br><span class="line">apt-get remove --purge 软件包名 <span class="comment">#卸载软件包（含配置文件）</span></span><br></pre></td></tr></table></figure>
 <h5 id="6-查询"><a class="header-anchor" href="#6-查询">¶</a>（6）查询</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search 软件包关键字  <span class="comment">#从source里查询某个软件包</span></span><br><span class="line">apt-cache show 软件包名 <span class="comment">#显示软件包信息</span></span><br><span class="line">apt-cache policy 软件包名 <span class="comment">#显示软件包安装状态</span></span><br><span class="line">apt-get check <span class="comment">#检查当前apt的依赖情况</span></span><br><span class="line">apt-cache depends  软件包名 <span class="comment">#查看系统中软件的依赖（正向依赖）</span></span><br><span class="line">apt-cache rdepends  软件包名  <span class="comment">#查看系统中软件的依赖（反向依赖）</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-redhat系列软件管理"><a class="header-anchor" href="#3-redhat系列软件管理">¶</a>3 Redhat系列软件管理</h3>
-<h4 id="3-1-rpm本地管理"><a class="header-anchor" href="#3-1-rpm本地管理">¶</a>3.1 rpm本地管理</h4>
+<h3 id="3-redhat系列软件管理"><a class="header-anchor" href="#3-redhat系列软件管理">¶</a>3. Redhat系列软件管理</h3>
+<h4 id="1-rpm本地管理"><a class="header-anchor" href="#1-rpm本地管理">¶</a>1）rpm本地管理</h4>
 <h5 id="1-安装-v2"><a class="header-anchor" href="#1-安装-v2">¶</a>（1） 安装</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-i（install）安装; -v（verbose）显示详细信息; -h（hash）显示进度; -nodeps 不检测依赖性</span></span><br><span class="line">rpm  -ivh  包全名</span><br></pre></td></tr></table></figure>
 <h5 id="2-升级"><a class="header-anchor" href="#2-升级">¶</a>（2） 升级</h5>
@@ -1543,7 +1480,7 @@ rpm rpm包扩展名</p>
 </blockquote>
 <p>案例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost~]<span class="comment">#rpm-qf/bin/ls</span></span><br><span class="line"><span class="comment">#查询s命令属于哪个软件包</span></span><br><span class="line">[root@localhost~-]<span class="comment">#mv/bin/ls/tmp/</span></span><br><span class="line">并造成s命令误删除假象</span><br><span class="line">[root@localhost~]<span class="comment">#rpm2cpio/mnt/cdrom/Packages/coreutils-</span></span><br><span class="line">8.4-19.el6.i686.rpmIcpio-idv./bin/ls</span><br><span class="line"><span class="comment">#提取RPM包中s命令到当前目录的bin/ls下</span></span><br><span class="line">[root@localhost ~]<span class="comment">#cp/root/bin/ls/bin/</span></span><br><span class="line"><span class="comment">#把s命令复制/bin/目录，修复文件丢关</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-2-yum在线管理"><a class="header-anchor" href="#3-2-yum在线管理">¶</a>3.2 yum在线管理</h4>
+<h4 id="2-yum在线管理"><a class="header-anchor" href="#2-yum在线管理">¶</a>2）yum在线管理</h4>
 <p>yum也是用来管理rpm软件包的管理工具。它能够解决软件安装的依赖问题。如果存在依赖，yum会统一一并安装依赖。</p>
 <h5 id="1-yum软件源"><a class="header-anchor" href="#1-yum软件源">¶</a>（1）yum软件源</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/yum.repos.d/CentOS-Base.repo</span><br><span class="line"><span class="comment"># CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the </span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line">[base]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Base</span><br><span class="line">mirrorlist=http://mirrorlist.centos.org/?release=<span class="variable">$releasever</span>&amp;arch=<span class="variable">$basearch</span>&amp;repo=os&amp;infra=<span class="variable">$infra</span></span><br><span class="line"><span class="comment">#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/</span></span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates </span></span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Updates</span><br><span class="line">mirrorlist=http://mirrorlist.centos.org/?release=<span class="variable">$releasever</span>&amp;arch=<span class="variable">$basearch</span>&amp;repo=updates&amp;infra=<span class="variable">$infra</span></span><br><span class="line"><span class="comment">#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/</span></span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Extras</span><br><span class="line">mirrorlist=http://mirrorlist.centos.org/?release=<span class="variable">$releasever</span>&amp;arch=<span class="variable">$basearch</span>&amp;repo=extras&amp;infra=<span class="variable">$infra</span></span><br><span class="line"><span class="comment">#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/</span></span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Plus</span><br><span class="line">mirrorlist=http://mirrorlist.centos.org/?release=<span class="variable">$releasever</span>&amp;arch=<span class="variable">$basearch</span>&amp;repo=centosplus&amp;infra=<span class="variable">$infra</span></span><br><span class="line"><span class="comment">#baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>
@@ -1587,78 +1524,58 @@ gpgkey  数字证书的公钥文件保存位置。不用修改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum  groupinstall  软件组名</span><br><span class="line"><span class="comment">#如：yum  groupinstall "Development tools"</span></span><br></pre></td></tr></table></figure>
 <h5 id="8-卸载指定软件组"><a class="header-anchor" href="#8-卸载指定软件组">¶</a>（8） 卸载指定软件组</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum  groupremove  软件组名</span><br></pre></td></tr></table></figure>
-<h3 id="4-源码包安装卸载-待续"><a class="header-anchor" href="#4-源码包安装卸载-待续">¶</a>4 源码包安装卸载（待续···）</h3>
-<h3 id="5-设置环境变量及生效方法"><a class="header-anchor" href="#5-设置环境变量及生效方法">¶</a>5  设置环境变量及生效方法</h3>
-<p>方法一：</p>
-<p>在<code>/etc/profile</code>文件中添加变量**【对所有用户生效(永久的)】**</p>
-<p>用VI在文件<code>/etc/profile</code>文件中增加变量，该变量将会对Linux下所有用户有效，并且是“永久的”。</p>
-<p>要让刚才的修改马上生效，需要执行以下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在文件最后加入如下代码</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:newpath  </span><br><span class="line"><span class="comment">#如:</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/<span class="built_in">local</span>/java/jdk1.8.0_171</span><br><span class="line"><span class="built_in">export</span>  PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile   <span class="comment">#使配置文件生效</span></span><br></pre></td></tr></table></figure>
-<p>方法二：</p>
-<p>在用户目录下的.bash_profile文件中增加变量**【对单一用户生效(永久的)】**</p>
-<p>用VI在用户目录下的.bash_profile文件中增加变量，改变量仅会对当前用户有效，并且是“永久的”。</p>
-<p>要让刚才的修改马上生效，需要在用户目录下执行以下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在文件最后加入如下代码</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:newpath</span><br><span class="line"><span class="comment">#如:</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/<span class="built_in">local</span>/java/jdk1.8.0_171</span><br><span class="line"><span class="built_in">export</span>  PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile  <span class="comment">#使配置文件生效</span></span><br></pre></td></tr></table></figure>
-<p>方法三：</p>
-<p>直接运行export命令定义变量**【只对当前shell(BASH)有效(临时的)】**</p>
-<p>在shell的命令行下直接使用[export变量名=变量值]定义变量，该变量只在当前的shell(BASH)或其子shell(BASH)下是有效的，shell关闭了，变量也就失效了，再打开新shell时就没有这个变量，需要使用的话还需要重新定义。</p>
-<p>例如：<code>export PATH=/usr/local/webserver/php/bin:$PATH</code></p>
+<h3 id="4-源码包安装卸载-待续"><a class="header-anchor" href="#4-源码包安装卸载-待续">¶</a>4. 源码包安装卸载（待续···）</h3>
 <h2 id="九-进程管理"><a class="header-anchor" href="#九-进程管理">¶</a>九、进程管理</h2>
 <p>所谓 进程，通俗地说就是当前正在执行的一个程序。</p>
-<h3 id="1-查看当前进程的详细状况"><a class="header-anchor" href="#1-查看当前进程的详细状况">¶</a>1. 查看当前进程的详细状况</h3>
+<h3 id="1-列出当前进程信息"><a class="header-anchor" href="#1-列出当前进程信息">¶</a>1. 列出当前进程信息</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#process status</span></span><br><span class="line"><span class="comment">#-a或者-e:显示终端上的所有进程，包括其他用户的进程；-u:显示进程的详细状态；-x:显示没有控制终端的进程；-f:显示程序间的关系</span></span><br><span class="line">ps -aux</span><br><span class="line">ps -ef</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据进程号查看进程的文件路径、启动命令的完整路径等等信息（比如nginx）</span></span><br><span class="line">ps -ef | grep nginx</span><br><span class="line">ls -l /proc/10383</span><br><span class="line"><span class="comment">#有几个主要的文件我们可以关注下：</span></span><br><span class="line"><span class="comment">#cwd：文件所在目录</span></span><br><span class="line"><span class="comment">#exe：执行命令的完整路径</span></span><br><span class="line"><span class="comment">#environ：执行命令时的环境变量</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>提示：ps 默认只会显示当前用户通过终端启动的应用程序。</p>
 </blockquote>
-<h3 id="2-动态监控进程"><a class="header-anchor" href="#2-动态监控进程">¶</a>2. 动态监控进程</h3>
+<h3 id="2-动态列出当前进程信息-top"><a class="header-anchor" href="#2-动态列出当前进程信息-top">¶</a>2. 动态列出当前进程信息 top</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#top 与 ps 命令很相似。它们都用来显示正在执行的进程。Top 与 ps 最大的不同之处，在于top 在执行一段时间可以更新正在运行的的进程。</span></span><br><span class="line"><span class="comment">#要退出可以直接输入q</span></span><br><span class="line">top</span><br><span class="line"><span class="comment">#每隔10秒自动更新</span></span><br><span class="line">top -d 10</span><br></pre></td></tr></table></figure>
-<h3 id="3-终止指定代号的进程"><a class="header-anchor" href="#3-终止指定代号的进程">¶</a>3. 终止指定代号的进程</h3>
+<h3 id="3-终止进程-kill"><a class="header-anchor" href="#3-终止进程-kill">¶</a>3. 终止进程 kill</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-9表示强行终止</span></span><br><span class="line"><span class="built_in">kill</span> [-9] 进程代号</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃。</p>
 </blockquote>
-<h3 id="4-查看执行命令所在位置"><a class="header-anchor" href="#4-查看执行命令所在位置">¶</a>4. 查看执行命令所在位置</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> ls</span><br><span class="line">/bin/ls</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> useradd</span><br><span class="line">/usr/sbin/useradd</span><br></pre></td></tr></table></figure>
-<p>在 <code>Linux</code> 中，绝大多数可执行文件都是保存在 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code></p>
+<h3 id="4-查看命令路径-which"><a class="header-anchor" href="#4-查看命令路径-which">¶</a>4. 查看命令路径 which</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> 命令名称</span><br><span class="line"></span><br><span class="line"><span class="comment">#例如：</span></span><br><span class="line">$ <span class="built_in">which</span> useradd</span><br><span class="line">/usr/sbin/useradd</span><br></pre></td></tr></table></figure>
 <blockquote>
+<p>在 <code>Linux</code> 中，绝大多数可执行文件都是保存在 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code></p>
 <ul>
 <li><code>/bin</code>（<code>binary</code>）是二进制执行文件目录，主要用于具体应用</li>
 <li><code>/sbin</code>（<code>system binary</code>）是系统管理员专用的二进制代码存放目录，主要用于系统管理</li>
 <li><code>/usr/bin</code>（<code>user commands for applications</code>）后期安装的一些软件</li>
 <li><code>/usr/sbin</code>（<code>super user commands for applications</code>）超级用户的一些管理程序</li>
 </ul>
-</blockquote>
-<blockquote>
 <p>提示：<code>cd</code> 这个终端命令是内置在系统内核中的，没有独立的文件，因此用 <code>which</code> 无法找到 <code>cd</code> 命令的位置</p>
 </blockquote>
 <h3 id="5-查看进程树-pstree"><a class="header-anchor" href="#5-查看进程树-pstree">¶</a>5. 查看进程树 pstree</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装pstree安装包</span></span><br><span class="line">yum -y install psmisc</span><br><span class="line"></span><br><span class="line"><span class="comment">#-p :显示进程的PID -u :显示进程的所属用户</span></span><br><span class="line"><span class="comment">#树状的形式显示进程和pid</span></span><br><span class="line">pstree -p</span><br><span class="line"><span class="comment">#树状的形式进程和对应操作用户</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-iftop"><a class="header-anchor" href="#1-iftop">¶</a>1. iftop</h3>
+<h3 id="6-系统监控实用工具"><a class="header-anchor" href="#6-系统监控实用工具">¶</a>6. 系统监控实用工具</h3>
+<h4 id="iftop"><a class="header-anchor" href="#iftop">¶</a>iftop</h4>
 <p>iftop可测量通过每一个套接字连接传输的数据。iftop使用pcap库来捕获进出网络适配器的数据包，然后汇总数据包大小和数量，搞清楚总的带宽使用情况。</p>
 <p>虽然iftop报告每个连接所使用的带宽，但它无法报告参与某个套按字连接的进程名称/编号（ID）。不过由于基于pcap库，iftop能够过滤流量，并报告由过滤器指定的所选定主机连接的带宽使用情况。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ yum install iftop -y</span><br><span class="line"><span class="comment">#使用</span></span><br><span class="line">$ sudo iftop -n</span><br></pre></td></tr></table></figure>
 <p>n选项可以防止iftop将IP地址解析成主机名，解析本身就会带来额外的网络流量。</p>
-<h3 id="2-nload"><a class="header-anchor" href="#2-nload">¶</a>2. nload</h3>
+<h4 id="nload"><a class="header-anchor" href="#nload">¶</a>nload</h4>
 <p>nload是一个命令行工具，让用户可以分开来监控入站流量和出站流量。它还可以绘制图表以显示入站流量和出站流量，视图比例可以调整。用起来很简单，不支持许多选项。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ yum install nload</span><br><span class="line"><span class="comment">#使用</span></span><br><span class="line">$ nload</span><br></pre></td></tr></table></figure>
-<h3 id="3-htop"><a class="header-anchor" href="#3-htop">¶</a>3. htop</h3>
+<h4 id="htop"><a class="header-anchor" href="#htop">¶</a>htop</h4>
 <p>htop是top的扩展版本，有更丰富的概貌（例如全命令、可视化、图形用户界面gui和用户界面ui），有鼠标点击交互（译者注：看下面的截图，指的是最上面的列标题如CPU%、MEM%等可以通过鼠标点击切换以显示不同的功能），也有许多的指导教你如何做进程管理。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ yum install htop</span><br><span class="line"><span class="comment">#运行</span></span><br><span class="line">$ htop</span><br></pre></td></tr></table></figure>
-<h3 id="4-iotop"><a class="header-anchor" href="#4-iotop">¶</a>4. iotop</h3>
+<h4 id="iotop"><a class="header-anchor" href="#iotop">¶</a>iotop</h4>
 <p>iotop – 简单的类似top的I/O监控器。</p>
 <p>iotop是IO实时监控器。使用它们附属的详细输入输出（IO）使用方法可以展示出你系统中每个进程线程的信息。</p>
 <p>该命令可以与$ tcpdump（响应网络流量的命令）一起使用。如果你发现你的web服务器上有程序在运行，你可以，比如运行$ tcpdump port 80检查端口80（标准的http端口）的网络流量来观察细节。</p>
 <p>最有用的信息可能是DISK WRITE这一列，从该列你可以准确的看到每个IO使用了多少个进程，单位为K/s。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ yum install iotop</span><br><span class="line"><span class="comment">#运行 </span></span><br><span class="line">$ iotop</span><br></pre></td></tr></table></figure>
-<h3 id="5-glances"><a class="header-anchor" href="#5-glances">¶</a>5. glances</h3>
+<h4 id="glances"><a class="header-anchor" href="#glances">¶</a>glances</h4>
 <p>glances是一款由python开发的系统监控工具，可以实时查看CPU、内存、网络、IO、进程、磁盘空间使用率的使用情况，并且支持三种运行模式，个人感觉比top命令使用更便捷，有三种运行模式：Standalone、Client/Server、Web server。</p>
-<h4 id="安装"><a class="header-anchor" href="#安装">¶</a>安装</h4>
+<h5 id="安装"><a class="header-anchor" href="#安装">¶</a>安装</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#CentOS</span></span><br><span class="line">$ yum -y install glances</span><br><span class="line"><span class="comment">#Ubuntu</span></span><br><span class="line">$ apt-get install glances</span><br></pre></td></tr></table></figure>
-<h4 id="standalone模式"><a class="header-anchor" href="#standalone模式">¶</a>Standalone模式</h4>
+<h5 id="standalone模式"><a class="header-anchor" href="#standalone模式">¶</a>Standalone模式</h5>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1171094-20191022172458481-1927476558.png" alt="img"></p>
 <blockquote>
 <p>可以查看系统运行详细情况。</p>
@@ -1671,64 +1588,100 @@ gpgkey  数字证书的公钥文件保存位置。不用修改</p>
 <blockquote>
 <p>运行过程中，直接按回车键可以对进程进行过滤，查看指定进程。</p>
 </blockquote>
-<h4 id="client-server模式"><a class="header-anchor" href="#client-server模式">¶</a>Client/Server模式</h4>
+<h5 id="client-server模式"><a class="header-anchor" href="#client-server模式">¶</a>Client/Server模式</h5>
 <p>Server端：<code>glances -s -B 192.168.1.1</code><br>
 Client端：<code>glances -c 192.168.1.1</code></p>
 <blockquote>
 <p>无须去指定服务器上运行，通过Client/Server端模式快速查看。-B：指定绑定的IP地址，如果不指定Server端运行端口默认端口为：61209，如果使用默认端口则用-c指定客户端时不需要额外使用-P参数来指定Server端的端口号。需要注意的是防火墙设置，确认两台主机之间端口可通。</p>
 </blockquote>
-<h4 id="web-server模式"><a class="header-anchor" href="#web-server模式">¶</a>Web server模式</h4>
+<h5 id="web-server模式"><a class="header-anchor" href="#web-server模式">¶</a>Web server模式</h5>
 <p><code>glances -w</code><br>
 <img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1171094-20191022172602929-1304526389.png" alt="img"></p>
 <p><img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1171094-20191022172615979-906022360.png" alt="img"></p>
 <p>这个功能就很贴心了，我可以将集群中所有服务器上后台运行Web Server端，后续防火墙开放指定IP查看集群中服务器的运行状态，美滋滋。</p>
 <p>如果启动Web Server端时出现**“Bottle module not found. Glances cannot start in web server mode.”**报错，执行安装bottle即可解决。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install bottle</span><br></pre></td></tr></table></figure>
-<h4 id="配置文件"><a class="header-anchor" href="#配置文件">¶</a>配置文件</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install bottle</span><br></pre></td></tr></table></figure>
+<h5 id="配置文件"><a class="header-anchor" href="#配置文件">¶</a>配置文件</h5>
 <blockquote>
 <p>glances是支持设置配置文件的，但是不一定要有配置文件才能使用glances，Linux中配置文件可以新建位置到<code>/etc/glances/glances.conf</code>，窗口中的不同颜色是由阈值来设定的，我们可以在配置文件中修改各监控项的阈值来实现不同级别不同颜色的展示情况。</p>
 </blockquote>
-<h5 id="颜色级别定义"><a class="header-anchor" href="#颜色级别定义">¶</a>颜色级别定义</h5>
+<h6 id="颜色级别定义"><a class="header-anchor" href="#颜色级别定义">¶</a>颜色级别定义</h6>
 <ul>
 <li>绿色：正常(OK)</li>
 <li>蓝色：小心(CAREFUL)，需要注意</li>
 <li>紫色：警告（WARNING）</li>
 <li>红色：问题严重（CRITICAL）</li>
 </ul>
-<h5 id="配置文件示例"><a class="header-anchor" href="#配置文件示例">¶</a>配置文件示例</h5>
+<h6 id="配置文件示例"><a class="header-anchor" href="#配置文件示例">¶</a>配置文件示例</h6>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;glances&#x2F;glances.conf</span><br><span class="line">[quicklook]</span><br><span class="line">cpu_careful&#x3D;50</span><br><span class="line">cpu_warning&#x3D;70</span><br><span class="line">cpu_critical&#x3D;1</span><br><span class="line">mem_careful&#x3D;50</span><br><span class="line">mem_warning&#x3D;1</span><br><span class="line">mem_critical&#x3D;90</span><br><span class="line">swap_careful&#x3D;1</span><br><span class="line">swap_warning&#x3D;70</span><br><span class="line">swap_critical&#x3D;90</span><br></pre></td></tr></table></figure>
 <p>这里我们为了展示出颜色的差异，特别修改了几个为1的值，实际使用中修改到需要的值即可。<br>
 <img src="/linux/../images/loading-post.gif" data-original="to_learn_linux/1171094-20191022174050345-2010570099.png" alt="img"></p>
 <p>最终展示界面如上图所示。</p>
-<h2 id="十-服务管理"><a class="header-anchor" href="#十-服务管理">¶</a>十、服务管理</h2>
-<h3 id="服务相关概念"><a class="header-anchor" href="#服务相关概念">¶</a>服务相关概念</h3>
+<h2 id="十-系统管理"><a class="header-anchor" href="#十-系统管理">¶</a>十、系统管理</h2>
+<h3 id="1-关机和重启"><a class="header-anchor" href="#1-关机和重启">¶</a>1. 关机和重启</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shutdown命令可用于关闭或重启系统（-r表示重启，不指定则表示1分钟后自动关闭系统）</span></span><br><span class="line">shutdown [-r] [时间]</span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="comment">#不指定-r则表示1分钟后自动关闭系统</span></span><br><span class="line">shutdown</span><br><span class="line"><span class="comment"># 重新启动操作系统，其中 now 表示现在</span></span><br><span class="line">shutdown -r now</span><br><span class="line"><span class="comment"># 立刻关机，其中 now 表示现在</span></span><br><span class="line">shutdown now</span><br><span class="line"><span class="comment"># 系统在今天的 20:25 会关机</span></span><br><span class="line">shutdown 20:25</span><br><span class="line"><span class="comment"># 系统再过十分钟后自动关机</span></span><br><span class="line">shutdown +10</span><br><span class="line"><span class="comment"># 取消之前指定的关机计划</span></span><br><span class="line">shutdown -c</span><br><span class="line"></span><br><span class="line"><span class="comment"># reboot命令可用于重启系统</span></span><br><span class="line">reboot	<span class="comment">#等效于shutdown -r now</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-环境变量"><a class="header-anchor" href="#2-环境变量">¶</a>2. 环境变量</h3>
+<h4 id="简要概述-v2"><a class="header-anchor" href="#简要概述-v2">¶</a>简要概述</h4>
+<p>在 Linux 操作系统中设置环境变量，通常使用<code>export</code> 命令来实现。它可以将一个或多个变量从本地 shell （命令行解释器）的环境传递到子进程的环境中，以便让这些子进程也可以使用这些变量。在 Linux 中，每个进程都有一组环境变量。这些变量存储在进程空间中，并且可以在运行时由进程读取和修改。当您启动一个新的 shell 会话或者在当前 shell 会话中运行一个新的脚本时，该会话会继承父 shell 的环境变量。然而，如果您希望将变量传递给子进程，那么您需要将其标记为“导出”。</p>
+<blockquote>
+<p>💁‍♂ 变量和环境变量的区别：</p>
+<p>变量是 Shell 编程中最基本的元素之一。它们是用户定义的名称，用于保存一个或多个值或字符串，并在 Shell 脚本或命令中进行引用。变量的值可以是数字、字符串、文件名、路径名等。</p>
+<p>例如，在 Bash shell 中，您可以通过以下语法来定义变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">"Alice"</span></span><br></pre></td></tr></table></figure>
+<p>这将创建一个名为 <code>name</code> 的变量，并将其设置为 “Alice”。</p>
+<p>环境变量是 Shell 环境中的特殊类型的变量，它们具有全局范围并可以被所有子进程访问。环境变量通常用于存储 Shell 和其他程序所需的共享信息，例如路径、语言设置、用户信息等。</p>
+<p>例如，在 Bash shell 中，您可以使用以下语法来设置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/bin</span><br></pre></td></tr></table></figure>
+<p>这会将 <code>/usr/local/bin</code> 目录添加到系统的 PATH 环境变量中，以便 Shell 可以搜索该目录中的可执行文件。</p>
+<p>因此，变量和环境变量具有不同的作用和范围，并且通常用于不同的目的。</p>
+</blockquote>
+<p>在 Linux 中设置环境变量的方法有多种，下面将主要讲其中两种常见的方法。</p>
+<h4 id="临时设置环境变量"><a class="header-anchor" href="#临时设置环境变量">¶</a>临时设置环境变量</h4>
+<p>要在当前 shell 会话中设置一个临时环境变量，可以使用 <code>export</code> 命令。例如，要将 <code>MY_VAR</code> 的值设置为 <code>my_value</code>，可以执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MY_VAR=my_value</span><br></pre></td></tr></table></figure>
+<p>这将在当前 shell 会话中设置一个名为 <code>MY_VAR</code> 的环境变量，并将其值设置为 <code>my_value</code>。该变量只在当前会话中有效，关闭终端窗口或重启系统后就会自动清除。</p>
+<h4 id="永久设置环境变量"><a class="header-anchor" href="#永久设置环境变量">¶</a>永久设置环境变量</h4>
+<p>要在系统中永久设置一个环境变量，可以将其添加到 <code>~/.bashrc</code> 、 <code>~/.bash_profile</code>、<code>/etc/profile</code>  等脚本文件中，这样系统在某个特定情况下将会自动执行这些脚本以让脚本里设置的环境变量生效。</p>
+<p>下面以添加环境变量到<code>~/.bashrc</code>脚本文件为例讲解配置过程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在文件最后加入变量</span></span><br><span class="line">cat &gt;&gt; ~/.bashrc &lt;&lt; <span class="string">'EOF'</span></span><br><span class="line"><span class="built_in">export</span> MY_VAR=my_value</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment">#使配置文件修改生效</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="comment">#测试</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$MY_VAR</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>💁‍♂ <code>/etc/profile</code>  等脚本文件说明：</p>
+<ul>
+<li><code>~/.bashrc</code>：打开新的 Bash shell 会话时自动执行该脚本。该文件只适用于当前用户的 Bash shell，通常用于设置用户环境变量等配置。</li>
+<li><code>~/.bash_profile</code>：如果系统默认shell是bash，用户登录时将自动执行该脚本。该文件只适用于当前用户的 Bash shell，通常用于设置用户环境变量等配置。</li>
+<li><code>/etc/profile</code>：在系统引导时自动执行该脚本。该文件适用于所有用户和所有 Bash shell，通常用于设置全局环境变量等配置。</li>
+</ul>
+<p>💁‍♂ 注意：只要执行<code>bash</code>命令就会打开新的 Bash shell 会话。</p>
+<p>💁‍♂ 总结：开机启动系统，在系统引导时将自动执行<code>/etc/profile</code>脚本文件。等系统启动完成后用户就可以进行登录操作了，如果系统默认shell是bash，那么在用户登录时系统会自动执行<code>bash</code>命令来打开新的 Bash shell 会话，故而会自动执行<code>~/.bash_profile</code>和<code>~/.bashrc</code>脚本文件。但如果系统默认shell是sh、zsh等其他类型的shell，那么登录时将不会自动执行<code>~/.bash_profile</code>脚本，但当用户手动执行<code>bash</code>命令时是会自动执行<code>~/.bashrc</code>脚本文件的。</p>
+<p>💁‍♂ 建议：在 Linux 中，虽然<code>~/.bashrc</code> 、 <code>~/.bash_profile</code>、<code>/etc/profile</code>  等脚本文件都能配置环境变量，但通常使用的话建议将环境变量配置到 <code>~/.bashrc</code> 文件中。</p>
+</blockquote>
+<h3 id="3-服务管理"><a class="header-anchor" href="#3-服务管理">¶</a>3. 服务管理</h3>
+<h4 id="1-服务相关概念"><a class="header-anchor" href="#1-服务相关概念">¶</a>1. 服务相关概念</h4>
 <p>服务(service) 是一种开机自启动的后台运行程序，也称为守护进程（运行中的程序就叫进程）。通常会在系统启动时自动运行，并一直保持运行状态，以便用户和其他程序可以随时使用。常见的服务程序有 sshd、mysqld、httpd 等。</p>
 <blockquote>
 <p>💁‍♂ 程序的运行模式：</p>
 <p>计算机程序的运行模式是指程序在计算机系统中的运行方式和状态。根据程序的运行模式不同，可以分为以下几种：</p>
 <ol>
-<li>
-<p>前台模式</p>
-<p>前台模式（Foreground Mode）是指程序需要在用户界面上显示输出信息，等待用户输入或响应操作的模式。这些程序运行时会占用当前终端或图形界面的屏幕空间，并且随着用户的注销或关闭终端而结束。例如，文本编辑器、Web 浏览器、音乐播放器等都是前台模式下运行的程序。</p>
-</li>
-<li>
-<p>后台模式</p>
-<p>后台模式（Background Mode）是指程序不需要在用户界面上显示输出信息，它们会在系统后台默默地执行任务，不会占用当前终端或图形界面的屏幕空间，并且在用户注销或关闭终端时仍然可以继续运行。例如，服务程序、守护进程、定时任务等都是后台模式下运行的程序。</p>
-</li>
-<li>
-<p>守护进程模式</p>
-<p>守护进程模式（Daemon Mode），也称为服务模式（Service Mode），是一种特殊的后台模式，在系统启动时自动启动并一直保持运行状态，以提供某种特定的服务或功能。守护进程通常会监听某个网络端口或 Unix 套接字，等待客户端连接并处理请求。例如，Web 服务器、数据库服务器、邮件服务器等都是守护进程模式下运行的程序。</p>
-</li>
-<li>
-<p>嵌入式模式</p>
-<p>嵌入式模式（Embedded Mode）是指程序被嵌入到其他程序或系统中执行，以完成特定的任务或提供服务。嵌入式模式下运行的程序通常具有轻量化、高效性和实时性等特点，例如，操作系统内核、驱动程序、嵌入式应用程序等都是嵌入式模式下运行的程序。</p>
-</li>
+<li>前台模式</li>
 </ol>
+<p>前台模式（Foreground Mode）是指程序需要在用户界面上显示输出信息，等待用户输入或响应操作的模式。这些程序运行时会占用当前终端或图形界面的屏幕空间，并且随着用户的注销或关闭终端而结束。例如，文本编辑器、Web 浏览器、音乐播放器等都是前台模式下运行的程序。</p>
+<ol start="2">
+<li>后台模式</li>
+</ol>
+<p>后台模式（Background Mode）是指程序不需要在用户界面上显示输出信息，它们会在系统后台默默地执行任务，不会占用当前终端或图形界面的屏幕空间，并且在用户注销或关闭终端时仍然可以继续运行。例如，服务程序、守护进程、定时任务等都是后台模式下运行的程序。</p>
+<ol start="3">
+<li>守护进程模式</li>
+</ol>
+<p>守护进程模式（Daemon Mode），也称为服务模式（Service Mode），是一种特殊的后台模式，在系统启动时自动启动并一直保持运行状态，以提供某种特定的服务或功能。守护进程通常会监听某个网络端口或 Unix 套接字，等待客户端连接并处理请求。例如，Web 服务器、数据库服务器、邮件服务器等都是守护进程模式下运行的程序。</p>
+<ol start="4">
+<li>嵌入式模式</li>
+</ol>
+<p>嵌入式模式（Embedded Mode）是指程序被嵌入到其他程序或系统中执行，以完成特定的任务或提供服务。嵌入式模式下运行的程序通常具有轻量化、高效性和实时性等特点，例如，操作系统内核、驱动程序、嵌入式应用程序等都是嵌入式模式下运行的程序。</p>
 <p>总之，计算机程序的运行模式与程序本身的功能、特点和用途密切相关。不同的运行模式可以满足不同的需求和场景，理解这些运行模式对于程序设计、开发和管理都有重要作用。</p>
 <p>💁‍♂ 关于服务程序的补充说明：</p>
 <p>应用程序是否为服务程序，取决于其在系统中的运行模式是否是守护进程模式。也就是说只需设置为守护进程模式的应用程序才是服务程序。有些应用程序在安装时会自动设置为守护进程模式以实现开机程序自启动，并监听某些端口以供用户请求处理。例如通过包管理器默认安装方式安装sshd时（sshd属于openssh-server软件包的组件），会自动设置为守护进程模式以实现开机程序自启动，并监听默认的22端口以供用户通过ssh远程登录。</p>
 </blockquote>
-<h3 id="启动框架相关概念"><a class="header-anchor" href="#启动框架相关概念">¶</a>启动框架相关概念</h3>
+<h4 id="2-启动框架相关概念"><a class="header-anchor" href="#2-启动框架相关概念">¶</a>2. 启动框架相关概念</h4>
 <p>启动框架（Boot framework）是计算机操作系统启动时用于管理和控制服务、程序和进程的一组工具和机制。简单的说：启动框架就是一组服务管理工具。它能够帮助用户在系统启动过程中加载和启动必要的服务和程序，并确保这些服务和程序能够以正确的顺序和方式运行。启动框架包含有一些管理工具用于实现：查看服务运行状态、查看服务自启动状态、启动服务、关闭服务、开启服务自启动（即所谓的设置开机自启动）、关闭服务自启动 等功能。</p>
 <p>在 Linux 操作系统中，启动框架通常被称为引导框架（boot loader），其作用类似于 Windows 系统中的 BOOTMGR 或 NTLDR。启动框架通常会在操作系统内核初始化之后自动启动，并负责加载和管理其他服务和程序。它们还会根据预定义的运行级别或用户自定义的配置来控制有哪些服务、程序和进程需要在系统启动时自动运行。</p>
 <p>常见的启动框架包括：SysVinit、Upstart、Systemd 和 OpenRC 等。</p>
@@ -1741,10 +1694,10 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 </ol>
 <p>提示：在 CentOS7.0 后 很多应用程序不再使用 SysVinit 而是使用 Systemd 来管理服务。</p>
 </blockquote>
-<h3 id="sysvinit-服务管理"><a class="header-anchor" href="#sysvinit-服务管理">¶</a>SysVinit 服务管理</h3>
-<h4 id="简要概述"><a class="header-anchor" href="#简要概述">¶</a>简要概述</h4>
+<h4 id="3-sysvinit-服务管理"><a class="header-anchor" href="#3-sysvinit-服务管理">¶</a>3. SysVinit 服务管理</h4>
+<h5 id="简要概述-v3"><a class="header-anchor" href="#简要概述-v3">¶</a>简要概述</h5>
 <p>SysVinit 是一种较早的 Linux 启动框架，它使用 <code>/etc/init.d/</code> 目录下的脚本文件来控制系统服务的启动和停止。在 SysVinit 中，服务的运行状态与系统运行级别（runlevel）直接关联，用户可以使用 <code>service</code> 和 <code>chkconfig</code> 等命令来管理服务。</p>
-<h4 id="linux系统运行级别的概念"><a class="header-anchor" href="#linux系统运行级别的概念">¶</a>Linux系统运行级别的概念</h4>
+<h5 id="linux系统运行级别的概念"><a class="header-anchor" href="#linux系统运行级别的概念">¶</a>Linux系统运行级别的概念</h5>
 <p>在SysVinit中有Linux系统运行级别的概念，Linux系统运行级别指的是系统启动时所处的运行状态，它决定了哪些服务、进程和资源会被启动或关闭。在 Linux 中，通常使用 SysV 初始化系统来管理运行级别。SysV 初始化系统其提供了 7 个运行级别，如下：</p>
 <blockquote>
 <ul>
@@ -1759,7 +1712,7 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 </blockquote>
 <p>在 Linux 中，Linux 系统的默认运行级别通常是 3 或 5，具体取决于 Linux 发行版和系统配置。如果用户需要修改系统启动时默认的运行级别，可对 <code>/etc/inittab</code> 文件中的 <code>initdefault</code> 参数进行配置。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改系统启动时默认的运行级别。配置initdefault参数</span></span><br><span class="line">vi /etc/inittab</span><br><span class="line"><span class="comment">#查看当前系统的运行级别</span></span><br><span class="line">runlevel</span><br></pre></td></tr></table></figure>
-<h4 id="常用命令-service-和-chkconfig"><a class="header-anchor" href="#常用命令-service-和-chkconfig">¶</a>常用命令（service 和 chkconfig）</h4>
+<h5 id="常用命令-service-和-chkconfig"><a class="header-anchor" href="#常用命令-service-和-chkconfig">¶</a>常用命令（service 和 chkconfig）</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看SysVinit管理的服务</span></span><br><span class="line">ls -l /etc/init.d</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动服务</span></span><br><span class="line">service 服务名 start</span><br><span class="line"><span class="comment">#关闭服务</span></span><br><span class="line">service 服务名 stop</span><br><span class="line"><span class="comment">#重启服务</span></span><br><span class="line">service 服务名 restart</span><br><span class="line"><span class="comment">#重载服务配置</span></span><br><span class="line">service 服务名 reload</span><br><span class="line"><span class="comment">#查看服务运行状态</span></span><br><span class="line">service 服务名 status</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置服务的自启动状态（可通过--level指定某运行级别下服务的自启动状态，不指定--level选项则默认作用于所有运行级别）</span></span><br><span class="line">chkconfig --level &lt;level&gt; &lt;service_name&gt; &lt;on|off&gt;	<span class="comment">#如：chkconfig --level 3 httpd on</span></span><br><span class="line"><span class="comment">#开启服务自启动（即所谓的设置开机自启动）</span></span><br><span class="line">chkconfig 服务名 on</span><br><span class="line"><span class="comment">#关闭服务自启动</span></span><br><span class="line">chkconfig 服务名 off</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
@@ -1767,7 +1720,7 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 </ul>
 <p><code>service</code> 命令是一种用于管理系统服务的工具。它可以启动、停止、重启以及查询系统服务的状态，作用于 <code>/etc/init.d</code> 目录下的服务脚本。是一种用于管理系统服务的工具。它可以启动、停止、重启以及查询系统服务的状态，作用于 <code>/etc/init.d</code> 目录下的服务脚本。</p>
 <p>基本语法如下：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service &lt;service_name&gt; &lt;action&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;service &lt;service_name&gt; &lt;action&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>其中，<code>&lt;service_name&gt;</code> 表示要操作的服务名称，例如 <code>httpd</code>、<code>sshd</code> 等；<code>&lt;action&gt;</code> 表示要执行的操作，例如 <code>start</code>、<code>stop</code>、<code>restart</code>、<code>status</code> 等。</p>
 </blockquote>
@@ -1776,7 +1729,7 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 </ul>
 <p><code>chkconfig</code> 命令是 Linux 系统中用于管理 SysV 初始化脚本的命令之一。它可以让用户方便地设置某个服务在不同运行级别下的启动状态。</p>
 <p>基本语法如下：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --level &lt;level&gt; &lt;service_name&gt; &lt;on|off&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;chkconfig --level &lt;level&gt; &lt;service_name&gt; &lt;on|off&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>其中，<code>--level</code> 选项表示要设置的运行级别，例如 <code>3</code> 表示完全的多用户模式，不指定<code>--level</code>选项则默认作用于所有运行级别；<code>&lt;service_name&gt;</code> 表示要操作的服务名称；<code>&lt;on|off&gt;</code> 表示要执行的操作，即将服务设置为启动或停止状态。</p>
 </blockquote>
@@ -1787,7 +1740,7 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 <p>💁‍♂ 注意：</p>
 <p><code>restart</code>和<code>reload</code>的区别：<code>restart = stop + start</code>，而 <code>reload = 重新读取配置文件</code></p>
 </blockquote>
-<h4 id="自定义服务"><a class="header-anchor" href="#自定义服务">¶</a>自定义服务</h4>
+<h5 id="自定义服务"><a class="header-anchor" href="#自定义服务">¶</a>自定义服务</h5>
 <p>在 SysVinit 启动框架下自定义服务，可以按照以下步骤进行：</p>
 <ol>
 <li>
@@ -1809,10 +1762,10 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service my_custom_service start</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="systemd-服务管理"><a class="header-anchor" href="#systemd-服务管理">¶</a>Systemd 服务管理</h3>
-<h4 id="简要概述-v2"><a class="header-anchor" href="#简要概述-v2">¶</a>简要概述</h4>
+<h4 id="4-systemd-服务管理"><a class="header-anchor" href="#4-systemd-服务管理">¶</a>4. Systemd 服务管理</h4>
+<h5 id="简要概述-v4"><a class="header-anchor" href="#简要概述-v4">¶</a>简要概述</h5>
 <p>Systemd 是一种由 Lennart Poettering 开发的 Linux 启动框架，已经成为许多主流 Linux 发行版的默认启动框架。与 SysVinit 不同，Systemd 使用单一的 <code>.service</code> 文件来描述服务，并支持依赖关系、并行启动、延迟启动和日志记录等功能。用户可以使用 <code>systemctl</code> 命令来管理服务和控制系统状态。</p>
-<h4 id="常用命令-systemctl"><a class="header-anchor" href="#常用命令-systemctl">¶</a>常用命令（systemctl）</h4>
+<h5 id="常用命令-systemctl"><a class="header-anchor" href="#常用命令-systemctl">¶</a>常用命令（systemctl）</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看Systemd管理的服务（Systemd会从以下目录中加载Systemd单元文件，如果存在同名文件，Systemd将使用较高优先级路径里的单元文件配置）</span></span><br><span class="line">ls /etc/systemd/system	<span class="comment">#优先级最高（包含用户自定义的单元文）</span></span><br><span class="line">ls /run/systemd/system	<span class="comment">#比以上优先级低（包含运行时生成的单元文件）</span></span><br><span class="line">ls /lib/systemd/system	<span class="comment">#比以上优先级低（包含Linux系统自带的单元文件和第三方服务安装的单元文件）</span></span><br><span class="line">ls /usr/lib/systemd/system	<span class="comment">#比以上优先级低（默认和/lib/systemd/system文件内容一致）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动服务</span></span><br><span class="line">systemctl start 服务名</span><br><span class="line"><span class="comment">#关闭服务</span></span><br><span class="line">systemctl stop 服务名</span><br><span class="line"><span class="comment">#重启服务</span></span><br><span class="line">systemctl restart 服务名</span><br><span class="line"><span class="comment">#查看服务运行状态</span></span><br><span class="line">systemctl status 服务名</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看所有服务自启动状态</span></span><br><span class="line">systemctl list-unit-files	<span class="comment">#systemctl list-unit-files | grep 服务名</span></span><br><span class="line"><span class="comment">#开启服务自启动（即所谓的设置开机自启动）</span></span><br><span class="line">systemctl <span class="built_in">enable</span> 服务名</span><br><span class="line"><span class="comment">#关闭服务自启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> 服务名</span><br><span class="line"><span class="comment">#查询某个服务是否是自启动的</span></span><br><span class="line">systemctl is-enabled 服务名</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看服务日志</span></span><br><span class="line">journalctl -u 服务名</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>💁‍♂ 说明：</p>
@@ -1820,7 +1773,7 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 <p>💁‍♂ 关于<code>/lib/systemd/system</code> 目录和 <code>/usr/lib/systemd/system</code> 目录默认文件相同的说明：</p>
 <p>在 Linux 操作系统中，<code>/usr/lib</code> 目录和 <code>/lib</code> 目录都是用于存储共享库文件的目录。事实上，<code>/usr/lib</code> 目录中的大部分内容都可以在 <code>/lib</code> 目录中找到相应的文件。这是因为，早期版本的 Linux 发行版将所有的用户空间程序和库文件都安装在 <code>/usr</code> 目录中，而 <code>/lib</code> 目录只包含内核和驱动程序所需的库文件。随着 Linux 发行版的不断发展和演变，为了提高兼容性和可移植性，一些 Linux 发行版开始将某些库文件安装在 <code>/lib</code> 目录中，以避免某些应用程序无法正常工作。但是，出于向后兼容的考虑，又不能将所有的库文件都直接移到 <code>/lib</code> 目录下。这就导致了 <code>/usr/lib</code> 和 <code>/lib</code> 目录中的内容存在大量重复的情况。总之，在现代 Linux 系统中，<code>/usr/lib</code> 目录中的大部分内容都可以在 <code>/lib</code> 目录中找到相应的文件。这是由于历史原因和兼容性考虑所导致的，用户不需要过多关注这个问题，只需要根据需要使用相应的库文件即可。</p>
 </blockquote>
-<h4 id="自定义服务-v2"><a class="header-anchor" href="#自定义服务-v2">¶</a>自定义服务</h4>
+<h5 id="自定义服务-v2"><a class="header-anchor" href="#自定义服务-v2">¶</a>自定义服务</h5>
 <p>在 Systemd 中管理自定义服务的步骤如下：</p>
 <ol>
 <li>
@@ -1879,7 +1832,7 @@ Client端：<code>glances -c 192.168.1.1</code></p>
 </blockquote>
 <h3 id="3-设置主机名"><a class="header-anchor" href="#3-设置主机名">¶</a>3. 设置主机名</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看主机名</span></span><br><span class="line">hostname</span><br><span class="line"><span class="comment">#设置主机名</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"主机名称"</span> &gt; /etc/hostname</span><br><span class="line"><span class="comment">#如：echo "centos7-test" &gt; /etc/hostname</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-设置hosts映射"><a class="header-anchor" href="#4-设置hosts映射">¶</a>4、设置hosts映射</h3>
+<h3 id="4-设置hosts映射"><a class="header-anchor" href="#4-设置hosts映射">¶</a>4. 设置hosts映射</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#编辑/etc/hosts然后配置ip和对应域名即可</span></span><br><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
 <h3 id="5-配置ip"><a class="header-anchor" href="#5-配置ip">¶</a>5. 配置ip</h3>
 <p>以vmware centos7最小安装为例，假设已经设置自动配置网络ip的情况下，系统的ip是由物理主机动态分配ip的，有可能这个ip会发生变化。如果希望配置固定的ip的话可以通过下面的方式解决：</p>
@@ -2718,7 +2671,7 @@ x&lt;=10 小于等于<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-概念"><span class="nav-text">一、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-终端命令格式"><span class="nav-text">1. 终端命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查阅命令的帮助文档信息"><span class="nav-text">2. 查阅命令的帮助文档信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-help"><span class="nav-text">2.1 --help</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-man"><span class="nav-text">2.2 man</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-基础命令"><span class="nav-text">二、基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-关机和重启"><span class="nav-text">三、关机和重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-命令操作技巧"><span class="nav-text">四、命令操作技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-放大终端窗口的字体显示"><span class="nav-text">1. 放大终端窗口的字体显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-缩小终端窗口的字体显示"><span class="nav-text">2. 缩小终端窗口的字体显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-自动补全"><span class="nav-text">3. 自动补全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-终端历史命令切换"><span class="nav-text">4. 终端历史命令切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-退出执行中的命令"><span class="nav-text">5. 退出执行中的命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-文件管理"><span class="nav-text">五、文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文件和目录"><span class="nav-text">1. 文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-单用户操作系统和多用户操作系统"><span class="nav-text">1.1 单用户操作系统和多用户操作系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-windows-和-linux-文件系统区别"><span class="nav-text">2 Windows 和 Linux 文件系统区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-windows-下的文件系统"><span class="nav-text">2.1  Windows 下的文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-linux-下的文件系统"><span class="nav-text">2.2 Linux 下的文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-用户目录"><span class="nav-text">2.3 用户目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-linux-主要目录速查表"><span class="nav-text">2.4 Linux 主要目录速查表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-列出目录的内容"><span class="nav-text">3. 列出目录的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-ls"><span class="nav-text">3.1 ls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-tree"><span class="nav-text">3.2 tree</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-切换目录"><span class="nav-text">4. 切换目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-cd"><span class="nav-text">4.1 cd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-相对路径和绝对路径"><span class="nav-text">4.2 相对路径和绝对路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-创建和删除操作"><span class="nav-text">5. 创建和删除操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-touch"><span class="nav-text">5.1 touch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-mkdir"><span class="nav-text">5.2 mkdir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-rm"><span class="nav-text">5.3 rm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-拷贝和移动文件"><span class="nav-text">6. 拷贝和移动文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-cp"><span class="nav-text">6.1 cp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-mv"><span class="nav-text">6.2 mv</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-查看文件内容"><span class="nav-text">7. 查看文件内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-cat-查看文件的所有内容"><span class="nav-text">7.1 cat 查看文件的所有内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-more-分屏显示文件内容"><span class="nav-text">7.2 more 分屏显示文件内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-grep-搜索文本文件内容"><span class="nav-text">7.3 grep 搜索文本文件内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-6-tail-取出文件后面几行"><span class="nav-text">7.6 tail 取出文件后面几行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-查找文件-find"><span class="nav-text">8. 查找文件(find)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-find"><span class="nav-text">8.1 find</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-链接-ln"><span class="nav-text">9. 链接(ln)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-软链接"><span class="nav-text">9.1 软链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-硬链接简介"><span class="nav-text">9.2 硬链接简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-文件软硬链接的示意图"><span class="nav-text">9.3 文件软硬链接的示意图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-打包压缩"><span class="nav-text">10. 打包压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-打包-和-解包"><span class="nav-text">11. 打包 和 解包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-1-tar"><span class="nav-text">11.1 tar</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-压缩-和-解压缩"><span class="nav-text">12 压缩 和 解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-1-gzip"><span class="nav-text">12.1 gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-2-gunzip"><span class="nav-text">12.2  gunzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-3-tar-和-gzip"><span class="nav-text">12.3 tar 和 gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-4-bzip2"><span class="nav-text">12.4 bzip2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-5-zip-和-unzip"><span class="nav-text">12.5 zip 和 unzip</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-其他"><span class="nav-text">13. 其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#13-1-echo-文字内容"><span class="nav-text">13.1 echo 文字内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-2-重定向-和"><span class="nav-text">13.2 重定向 &gt; 和 &gt;&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-3-管道"><span class="nav-text">13.3 管道 |</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-文件权限管理"><span class="nav-text">六、文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文件的详细信息"><span class="nav-text">1. 文件的详细信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改文件权限"><span class="nav-text">2. 修改文件权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件属性模式"><span class="nav-text">3. 文件属性模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-lsattr"><span class="nav-text">3.1 lsattr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-chattr"><span class="nav-text">3.2 chattr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-文件属性模式相关问题"><span class="nav-text">3.3 文件属性模式相关问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-用户管理"><span class="nav-text">七、用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本概念"><span class="nav-text">1. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-超级用户"><span class="nav-text">2. 超级用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-用户组管理"><span class="nav-text">3. 用户组管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-用户管理"><span class="nav-text">4. 用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-创建用户"><span class="nav-text">4.1 创建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-设置密码"><span class="nav-text">4.2 设置密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-查看新增的用户信息"><span class="nav-text">4.3 查看新增的用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-删除用户"><span class="nav-text">4.4 删除用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-查看系统用户信息"><span class="nav-text">4.5 查看系统用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-6-修改用户组和登录的shell"><span class="nav-text">4.6 修改用户组和登录的Shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-7-普通用户添加sudo组权限"><span class="nav-text">4.7 普通用户添加sudo组权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-8-切换用户"><span class="nav-text">4.8 切换用户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-系统用户维护"><span class="nav-text">5. 系统用户维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-查看最近系统登录信息"><span class="nav-text">5.1 查看最近系统登录信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-列出当前和曾经登入系统的用户信息"><span class="nav-text">5.2 列出当前和曾经登入系统的用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-踢出登录用户"><span class="nav-text">5.3 踢出登录用户</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-软件包管理"><span class="nav-text">八、软件包管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-软件包管理简介"><span class="nav-text">1 软件包管理简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-包全名与包名"><span class="nav-text">1.1 包全名与包名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-linux包依赖性"><span class="nav-text">1.2 Linux包依赖性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-linux包命名原则"><span class="nav-text">1.3 linux包命名原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-linux软件包优先级"><span class="nav-text">1.4 linux软件包优先级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-debain系列软件包管理"><span class="nav-text">2 Debain系列软件包管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-dpkg本地管理"><span class="nav-text">2.1 dpkg本地管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-安装"><span class="nav-text">（1）安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-卸载"><span class="nav-text">（2）卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-查询"><span class="nav-text">（3）查询</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-apt在线管理"><span class="nav-text">2.2 APT在线管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-apt软件源"><span class="nav-text">（1） APT软件源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-安装"><span class="nav-text">（2） 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-获得源码包"><span class="nav-text">（3） 获得源码包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-更新"><span class="nav-text">（4） 更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-卸载"><span class="nav-text">（5） 卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-查询"><span class="nav-text">（6）查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-redhat系列软件管理"><span class="nav-text">3 Redhat系列软件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-rpm本地管理"><span class="nav-text">3.1 rpm本地管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-安装-v2"><span class="nav-text">（1） 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-升级"><span class="nav-text">（2） 升级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-卸载"><span class="nav-text">（3） 卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查询是否安装"><span class="nav-text">（4) 查询是否安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-查询软件包详细信息"><span class="nav-text">（5） 查询软件包详细信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-查询包中文件安装位置"><span class="nav-text">（6） 查询包中文件安装位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-查询系统文件属于哪个rpm包"><span class="nav-text">（7）查询系统文件属于哪个RPM包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-查询软件包的依赖性"><span class="nav-text">（8） 查询软件包的依赖性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-rpm包校验"><span class="nav-text">（9） RPM包校验</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-rpm包中文件提取"><span class="nav-text">（10）RPM包中文件提取</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-yum在线管理"><span class="nav-text">3.2 yum在线管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-yum软件源"><span class="nav-text">（1）yum软件源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查询"><span class="nav-text">（2）查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-安装"><span class="nav-text">（3）安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-更新-v2"><span class="nav-text">（4）更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-卸载-v2"><span class="nav-text">（5） 卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-列出所有可用的软件组"><span class="nav-text">（6）列出所有可用的软件组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-安装指定软件组"><span class="nav-text">（7）安装指定软件组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-卸载指定软件组"><span class="nav-text">（8） 卸载指定软件组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-源码包安装卸载-待续"><span class="nav-text">4 源码包安装卸载（待续···）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-设置环境变量及生效方法"><span class="nav-text">5  设置环境变量及生效方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-进程管理"><span class="nav-text">九、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看当前进程的详细状况"><span class="nav-text">1. 查看当前进程的详细状况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-动态监控进程"><span class="nav-text">2. 动态监控进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-终止指定代号的进程"><span class="nav-text">3. 终止指定代号的进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看执行命令所在位置"><span class="nav-text">4. 查看执行命令所在位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-查看进程树-pstree"><span class="nav-text">5. 查看进程树 pstree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-iftop"><span class="nav-text">1. iftop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-nload"><span class="nav-text">2. nload</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-htop"><span class="nav-text">3. htop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-iotop"><span class="nav-text">4. iotop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-glances"><span class="nav-text">5. glances</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#standalone模式"><span class="nav-text">Standalone模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#client-server模式"><span class="nav-text">Client&#x2F;Server模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web-server模式"><span class="nav-text">Web server模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#颜色级别定义"><span class="nav-text">颜色级别定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置文件示例"><span class="nav-text">配置文件示例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十-服务管理"><span class="nav-text">十、服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务相关概念"><span class="nav-text">服务相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动框架相关概念"><span class="nav-text">启动框架相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sysvinit-服务管理"><span class="nav-text">SysVinit 服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简要概述"><span class="nav-text">简要概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#linux系统运行级别的概念"><span class="nav-text">Linux系统运行级别的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令-service-和-chkconfig"><span class="nav-text">常用命令（service 和 chkconfig）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义服务"><span class="nav-text">自定义服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#systemd-服务管理"><span class="nav-text">Systemd 服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简要概述-v2"><span class="nav-text">简要概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令-systemctl"><span class="nav-text">常用命令（systemctl）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义服务-v2"><span class="nav-text">自定义服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一-网络管理"><span class="nav-text">十一、网络管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ifconfig"><span class="nav-text">1. ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ping"><span class="nav-text">2. ping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-设置主机名"><span class="nav-text">3. 设置主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置hosts映射"><span class="nav-text">4、设置hosts映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-配置ip"><span class="nav-text">5. 配置ip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-防火墙设置"><span class="nav-text">6. 防火墙设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#debain系列"><span class="nav-text">Debain系列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查看ufw服务状态"><span class="nav-text">(1)查看ufw服务状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查看ufw的状态"><span class="nav-text">(2)查看ufw的状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-开启-重启-关闭-ufw服务"><span class="nav-text">(3)开启、重启、关闭、ufw服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查看防火墙规则"><span class="nav-text">(4)查看防火墙规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-开放-阻止-删除规则"><span class="nav-text">(5)开放、阻止、删除规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat系列"><span class="nav-text">Redhat系列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查看firewall服务状态"><span class="nav-text">(1)查看firewall服务状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查看firewall的状态"><span class="nav-text">(2)查看firewall的状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-开启-重启-关闭-firewalld-service服务"><span class="nav-text">(3)开启、重启、关闭、firewalld.service服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查看防火墙规则-v2"><span class="nav-text">(4)查看防火墙规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-查询-开放-关闭端口"><span class="nav-text">(5)查询、开放、关闭端口</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-网络监控netstat"><span class="nav-text">7. 网络监控netstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-nc-网络工具"><span class="nav-text">8. nc 网络工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-traceroute路由追踪"><span class="nav-text">9. traceroute路由追踪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二-远程操作"><span class="nav-text">十二、远程操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-网络基础"><span class="nav-text">1. 网络基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-远程登录"><span class="nav-text">2. 远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-ssh服务端安装"><span class="nav-text">2.1 ssh服务端安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-ssh客户端使用"><span class="nav-text">2.2 ssh客户端使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-ssh免密码登录"><span class="nav-text">2.3 ssh免密码登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-配置ssh服务别名"><span class="nav-text">3.4 配置ssh服务别名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-远程文件传输"><span class="nav-text">3. 远程文件传输</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-scp"><span class="nav-text">3.1 scp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-filezilla"><span class="nav-text">3.2 FileZilla</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-xftp"><span class="nav-text">3.3 Xftp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-lrzsz"><span class="nav-text">3.4 lrzsz</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十三-磁盘管理"><span class="nav-text">十三、磁盘管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关基础命令"><span class="nav-text">相关基础命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准分区管理"><span class="nav-text">标准分区管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建分区"><span class="nav-text">1、创建分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-格式化分区"><span class="nav-text">2、格式化分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-挂载分区"><span class="nav-text">3、挂载分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-卸载及删除分区"><span class="nav-text">4、卸载及删除分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-text">参考：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lvm分区管理"><span class="nav-text">LVM分区管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-相关概念"><span class="nav-text">1. 相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查看"><span class="nav-text">2. 查看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建pv-vg-lv"><span class="nav-text">3. 创建pv、vg、lv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-格式化和挂载lv"><span class="nav-text">4. 格式化和挂载lv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-卸载lv"><span class="nav-text">5. 卸载lv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-删除lv-vg-pv"><span class="nav-text">6. 删除lv、vg、pv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-扩容"><span class="nav-text">7. 扩容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-缩容"><span class="nav-text">8. 缩容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考：-v2"><span class="nav-text">参考：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十四-时间管理"><span class="nav-text">十四、时间管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看时间"><span class="nav-text">1. 查看时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改时间"><span class="nav-text">2. 修改时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-设置时区"><span class="nav-text">3.设置时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-时间同步"><span class="nav-text">4. 时间同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-单机版"><span class="nav-text">4.1 单机版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-集群版"><span class="nav-text">4.2 集群版</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-1-ntp"><span class="nav-text">4.2.1 ntp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-2-chrony"><span class="nav-text">4.2.2 chrony</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十五-shell编程"><span class="nav-text">十五、shell编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-sed命令工具"><span class="nav-text">1. sed命令工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-格式"><span class="nav-text">1.1 格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-在第二行后追加一行内容"><span class="nav-text">1.2 在第二行后追加一行内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-在第二行前追加两行内容"><span class="nav-text">1.2 在第二行前追加两行内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-打印行"><span class="nav-text">1.3 打印行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-删除行"><span class="nav-text">1.4 删除行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-字符串替换"><span class="nav-text">1.5 字符串替换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-awk-命令工具"><span class="nav-text">2. awk  命令工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-格式"><span class="nav-text">2.1 格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-1-输出第一列和第二列"><span class="nav-text">2.1.1 输出第一列和第二列</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-begin"><span class="nav-text">2.2 BEGIN</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-测试begin"><span class="nav-text">2.2.1 测试BEGIN</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-fs内置对象"><span class="nav-text">2.3 FS内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-测试fs"><span class="nav-text">2.3.1 测试FS</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-end"><span class="nav-text">2.4 END</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1-测试end"><span class="nav-text">2.4.1 测试END</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十六-vi和vim"><span class="nav-text">十六、vi和vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十七-linux安装"><span class="nav-text">十七、Linux安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义磁盘分区"><span class="nav-text">自定义磁盘分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十八-常见问题解决"><span class="nav-text">十八、常见问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-linux更新被锁的解决方法"><span class="nav-text">1. linux更新被锁的解决方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-概念"><span class="nav-text">一、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-终端命令格式"><span class="nav-text">1. 终端命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查阅命令的帮助文档信息"><span class="nav-text">2. 查阅命令的帮助文档信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-help"><span class="nav-text">2.1 --help</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-man"><span class="nav-text">2.2 man</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-基础命令"><span class="nav-text">二、基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-命令操作技巧"><span class="nav-text">三、命令操作技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-放大终端窗口的字体显示"><span class="nav-text">1. 放大终端窗口的字体显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-缩小终端窗口的字体显示"><span class="nav-text">2. 缩小终端窗口的字体显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-自动补全"><span class="nav-text">3. 自动补全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-终端历史命令切换"><span class="nav-text">4. 终端历史命令切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-退出执行中的命令"><span class="nav-text">5. 退出执行中的命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-文件管理"><span class="nav-text">四、文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文件系统"><span class="nav-text">1. 文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#windows-文件系统"><span class="nav-text">Windows 文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#linux文件系统"><span class="nav-text">Linux文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#linux目录结构"><span class="nav-text">Linux目录结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux主要目录介绍"><span class="nav-text">Linux主要目录介绍</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-常用命令"><span class="nav-text">2. 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-列出目录文件-ls-tree"><span class="nav-text">1）列出目录文件（ls、tree）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-切换目录-cd"><span class="nav-text">2）切换目录（ cd ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建和删除操作-touch-mkdir-rm"><span class="nav-text">3）创建和删除操作（touch、mkdir、rm）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-拷贝和移动文件-cp-mv"><span class="nav-text">4）拷贝和移动文件（cp、mv）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-查看文件内容-cat-more-grep-tail"><span class="nav-text">5）查看文件内容（cat、more 、grep、tail）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-cat-查看文件的所有内容"><span class="nav-text">（1）cat 查看文件的所有内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-more-分屏显示文件内容"><span class="nav-text">（2）more 分屏显示文件内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-grep-搜索文本文件内容"><span class="nav-text">（3）grep 搜索文本文件内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-tail-取出文件后面几行"><span class="nav-text">（4）tail 取出文件后面几行</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-查找文件-find"><span class="nav-text">6）查找文件（ find ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-链接-ln"><span class="nav-text">7）链接（ ln ）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简要概述"><span class="nav-text">简要概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#软链接"><span class="nav-text">软链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#硬链接"><span class="nav-text">硬链接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-打包-和-解包-tar"><span class="nav-text">8）打包 和 解包（ tar ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-压缩-和-解压缩"><span class="nav-text">9）压缩 和 解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#gzip"><span class="nav-text">gzip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gunzip"><span class="nav-text">gunzip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tar-和-gzip"><span class="nav-text">tar 和 gzip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bzip2"><span class="nav-text">bzip2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#zip-和-unzip"><span class="nav-text">zip 和 unzip</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-重定向-和"><span class="nav-text">10）重定向（ &gt; 和 &gt;&gt; ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-管道"><span class="nav-text">11）管道（ |）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件权限管理"><span class="nav-text">3. 文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-文件的详细信息"><span class="nav-text">1. 文件的详细信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-修改文件权限"><span class="nav-text">2. 修改文件权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-文件属性模式"><span class="nav-text">3. 文件属性模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lsattr"><span class="nav-text">lsattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chattr"><span class="nav-text">chattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件属性模式相关问题"><span class="nav-text">文件属性模式相关问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-用户管理"><span class="nav-text">五、用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本概念"><span class="nav-text">1. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-超级用户"><span class="nav-text">2. 超级用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-用户组维护"><span class="nav-text">3. 用户组维护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-用户维护"><span class="nav-text">4. 用户维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-创建用户"><span class="nav-text">4.1 创建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-设置密码"><span class="nav-text">4.2 设置密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-查看新增的用户信息"><span class="nav-text">4.3 查看新增的用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-删除用户"><span class="nav-text">4.4 删除用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-查看系统用户信息"><span class="nav-text">4.5 查看系统用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-6-修改用户组和登录的shell"><span class="nav-text">4.6 修改用户组和登录的Shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-7-普通用户添加sudo组权限"><span class="nav-text">4.7 普通用户添加sudo组权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-8-切换用户"><span class="nav-text">4.8 切换用户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-系统用户维护"><span class="nav-text">5. 系统用户维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-查看最近系统登录信息"><span class="nav-text">5.1 查看最近系统登录信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-列出当前和曾经登入系统的用户信息"><span class="nav-text">5.2 列出当前和曾经登入系统的用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-踢出登录用户"><span class="nav-text">5.3 踢出登录用户</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-软件管理"><span class="nav-text">六、软件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-软件管理简介"><span class="nav-text">1. 软件管理简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-包全名与包名"><span class="nav-text">1.1 包全名与包名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-linux包依赖性"><span class="nav-text">1.2 Linux包依赖性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-linux包命名原则"><span class="nav-text">1.3 linux包命名原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-linux软件包优先级"><span class="nav-text">1.4 linux软件包优先级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-debain系列软件包管理"><span class="nav-text">2. Debain系列软件包管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-dpkg本地管理"><span class="nav-text">2.1 dpkg本地管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-安装"><span class="nav-text">（1）安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-卸载"><span class="nav-text">（2）卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-查询"><span class="nav-text">（3）查询</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-apt在线管理"><span class="nav-text">2.2 APT在线管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-apt软件源"><span class="nav-text">（1） APT软件源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-安装"><span class="nav-text">（2） 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-获得源码包"><span class="nav-text">（3） 获得源码包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-更新"><span class="nav-text">（4） 更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-卸载"><span class="nav-text">（5） 卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-查询"><span class="nav-text">（6）查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-redhat系列软件管理"><span class="nav-text">3. Redhat系列软件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-rpm本地管理"><span class="nav-text">1）rpm本地管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-安装-v2"><span class="nav-text">（1） 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-升级"><span class="nav-text">（2） 升级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-卸载"><span class="nav-text">（3） 卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查询是否安装"><span class="nav-text">（4) 查询是否安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-查询软件包详细信息"><span class="nav-text">（5） 查询软件包详细信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-查询包中文件安装位置"><span class="nav-text">（6） 查询包中文件安装位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-查询系统文件属于哪个rpm包"><span class="nav-text">（7）查询系统文件属于哪个RPM包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-查询软件包的依赖性"><span class="nav-text">（8） 查询软件包的依赖性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-rpm包校验"><span class="nav-text">（9） RPM包校验</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-rpm包中文件提取"><span class="nav-text">（10）RPM包中文件提取</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-yum在线管理"><span class="nav-text">2）yum在线管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-yum软件源"><span class="nav-text">（1）yum软件源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查询"><span class="nav-text">（2）查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-安装"><span class="nav-text">（3）安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-更新-v2"><span class="nav-text">（4）更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-卸载-v2"><span class="nav-text">（5） 卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-列出所有可用的软件组"><span class="nav-text">（6）列出所有可用的软件组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-安装指定软件组"><span class="nav-text">（7）安装指定软件组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-卸载指定软件组"><span class="nav-text">（8） 卸载指定软件组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-源码包安装卸载-待续"><span class="nav-text">4. 源码包安装卸载（待续···）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-进程管理"><span class="nav-text">九、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-列出当前进程信息"><span class="nav-text">1. 列出当前进程信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-动态列出当前进程信息-top"><span class="nav-text">2. 动态列出当前进程信息 top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-终止进程-kill"><span class="nav-text">3. 终止进程 kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看命令路径-which"><span class="nav-text">4. 查看命令路径 which</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-查看进程树-pstree"><span class="nav-text">5. 查看进程树 pstree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-系统监控实用工具"><span class="nav-text">6. 系统监控实用工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#iftop"><span class="nav-text">iftop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nload"><span class="nav-text">nload</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#htop"><span class="nav-text">htop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iotop"><span class="nav-text">iotop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#glances"><span class="nav-text">glances</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#standalone模式"><span class="nav-text">Standalone模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#client-server模式"><span class="nav-text">Client&#x2F;Server模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#web-server模式"><span class="nav-text">Web server模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#颜色级别定义"><span class="nav-text">颜色级别定义</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#配置文件示例"><span class="nav-text">配置文件示例</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十-系统管理"><span class="nav-text">十、系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-关机和重启"><span class="nav-text">1. 关机和重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-环境变量"><span class="nav-text">2. 环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简要概述-v2"><span class="nav-text">简要概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#临时设置环境变量"><span class="nav-text">临时设置环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#永久设置环境变量"><span class="nav-text">永久设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-服务管理"><span class="nav-text">3. 服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-服务相关概念"><span class="nav-text">1. 服务相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-启动框架相关概念"><span class="nav-text">2. 启动框架相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-sysvinit-服务管理"><span class="nav-text">3. SysVinit 服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简要概述-v3"><span class="nav-text">简要概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux系统运行级别的概念"><span class="nav-text">Linux系统运行级别的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用命令-service-和-chkconfig"><span class="nav-text">常用命令（service 和 chkconfig）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义服务"><span class="nav-text">自定义服务</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-systemd-服务管理"><span class="nav-text">4. Systemd 服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简要概述-v4"><span class="nav-text">简要概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用命令-systemctl"><span class="nav-text">常用命令（systemctl）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义服务-v2"><span class="nav-text">自定义服务</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一-网络管理"><span class="nav-text">十一、网络管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ifconfig"><span class="nav-text">1. ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ping"><span class="nav-text">2. ping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-设置主机名"><span class="nav-text">3. 设置主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置hosts映射"><span class="nav-text">4. 设置hosts映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-配置ip"><span class="nav-text">5. 配置ip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-防火墙设置"><span class="nav-text">6. 防火墙设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#debain系列"><span class="nav-text">Debain系列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查看ufw服务状态"><span class="nav-text">(1)查看ufw服务状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查看ufw的状态"><span class="nav-text">(2)查看ufw的状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-开启-重启-关闭-ufw服务"><span class="nav-text">(3)开启、重启、关闭、ufw服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查看防火墙规则"><span class="nav-text">(4)查看防火墙规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-开放-阻止-删除规则"><span class="nav-text">(5)开放、阻止、删除规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat系列"><span class="nav-text">Redhat系列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查看firewall服务状态"><span class="nav-text">(1)查看firewall服务状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查看firewall的状态"><span class="nav-text">(2)查看firewall的状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-开启-重启-关闭-firewalld-service服务"><span class="nav-text">(3)开启、重启、关闭、firewalld.service服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查看防火墙规则-v2"><span class="nav-text">(4)查看防火墙规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-查询-开放-关闭端口"><span class="nav-text">(5)查询、开放、关闭端口</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-网络监控netstat"><span class="nav-text">7. 网络监控netstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-nc-网络工具"><span class="nav-text">8. nc 网络工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-traceroute路由追踪"><span class="nav-text">9. traceroute路由追踪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二-远程操作"><span class="nav-text">十二、远程操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-网络基础"><span class="nav-text">1. 网络基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-远程登录"><span class="nav-text">2. 远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-ssh服务端安装"><span class="nav-text">2.1 ssh服务端安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-ssh客户端使用"><span class="nav-text">2.2 ssh客户端使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-ssh免密码登录"><span class="nav-text">2.3 ssh免密码登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-配置ssh服务别名"><span class="nav-text">3.4 配置ssh服务别名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-远程文件传输"><span class="nav-text">3. 远程文件传输</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-scp"><span class="nav-text">3.1 scp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-filezilla"><span class="nav-text">3.2 FileZilla</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-xftp"><span class="nav-text">3.3 Xftp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-lrzsz"><span class="nav-text">3.4 lrzsz</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十三-磁盘管理"><span class="nav-text">十三、磁盘管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关基础命令"><span class="nav-text">相关基础命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准分区管理"><span class="nav-text">标准分区管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建分区"><span class="nav-text">1、创建分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-格式化分区"><span class="nav-text">2、格式化分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-挂载分区"><span class="nav-text">3、挂载分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-卸载及删除分区"><span class="nav-text">4、卸载及删除分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-text">参考：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lvm分区管理"><span class="nav-text">LVM分区管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-相关概念"><span class="nav-text">1. 相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查看"><span class="nav-text">2. 查看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建pv-vg-lv"><span class="nav-text">3. 创建pv、vg、lv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-格式化和挂载lv"><span class="nav-text">4. 格式化和挂载lv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-卸载lv"><span class="nav-text">5. 卸载lv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-删除lv-vg-pv"><span class="nav-text">6. 删除lv、vg、pv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-扩容"><span class="nav-text">7. 扩容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-缩容"><span class="nav-text">8. 缩容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考：-v2"><span class="nav-text">参考：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十四-时间管理"><span class="nav-text">十四、时间管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看时间"><span class="nav-text">1. 查看时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改时间"><span class="nav-text">2. 修改时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-设置时区"><span class="nav-text">3.设置时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-时间同步"><span class="nav-text">4. 时间同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-单机版"><span class="nav-text">4.1 单机版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-集群版"><span class="nav-text">4.2 集群版</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-1-ntp"><span class="nav-text">4.2.1 ntp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-2-chrony"><span class="nav-text">4.2.2 chrony</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十五-shell编程"><span class="nav-text">十五、shell编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-sed命令工具"><span class="nav-text">1. sed命令工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-格式"><span class="nav-text">1.1 格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-在第二行后追加一行内容"><span class="nav-text">1.2 在第二行后追加一行内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-在第二行前追加两行内容"><span class="nav-text">1.2 在第二行前追加两行内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-打印行"><span class="nav-text">1.3 打印行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-删除行"><span class="nav-text">1.4 删除行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-字符串替换"><span class="nav-text">1.5 字符串替换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-awk-命令工具"><span class="nav-text">2. awk  命令工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-格式"><span class="nav-text">2.1 格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-1-输出第一列和第二列"><span class="nav-text">2.1.1 输出第一列和第二列</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-begin"><span class="nav-text">2.2 BEGIN</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-测试begin"><span class="nav-text">2.2.1 测试BEGIN</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-fs内置对象"><span class="nav-text">2.3 FS内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-测试fs"><span class="nav-text">2.3.1 测试FS</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-end"><span class="nav-text">2.4 END</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1-测试end"><span class="nav-text">2.4.1 测试END</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十六-vi和vim"><span class="nav-text">十六、vi和vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十七-linux安装"><span class="nav-text">十七、Linux安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义磁盘分区"><span class="nav-text">自定义磁盘分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十八-常见问题解决"><span class="nav-text">十八、常见问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-linux更新被锁的解决方法"><span class="nav-text">1. linux更新被锁的解决方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -3607,5 +3560,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>

@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     
-    <lastmod>2023-04-28T16:01:49.011Z</lastmod>
+    <lastmod>2023-04-29T18:21:53.264Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
     
-    <lastmod>2023-04-28T15:56:43.634Z</lastmod>
+    <lastmod>2023-04-28T16:01:49.011Z</lastmod>
     
   </url>
   
@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
+    <loc>https://www.qcmoke.site/devops/ubuntu_javaweb.html</loc>
     
     <lastmod>2023-03-18T22:50:36.408Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/ubuntu_javaweb.html</loc>
+    <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
     
     <lastmod>2023-03-18T22:50:36.408Z</lastmod>
     
@@ -401,14 +401,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
+    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
     
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/devops/denyhosts.html</loc>
+    <loc>https://www.qcmoke.site/devops/apache_ssl.html</loc>
     
     <lastmod>2023-03-18T22:50:36.388Z</lastmod>
     
@@ -485,14 +485,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/links-falls/index.html</loc>
+    <loc>https://www.qcmoke.site/links/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.163Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/links/index.html</loc>
+    <loc>https://www.qcmoke.site/links-falls/index.html</loc>
     
     <lastmod>2022-05-24T03:50:18.163Z</lastmod>
     
@@ -555,14 +555,14 @@
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
+    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
     
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
+    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
     
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
     
