@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.qcmoke.site/devops/nginx.html</loc>
-    <lastmod>2023-04-29T19:26:27.383Z</lastmod>
+    <lastmod>2023-04-29T19:41:05.286Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     <lastmod>2023-04-29T19:03:59.771Z</lastmod>
@@ -88,10 +88,10 @@
     <loc>https://www.qcmoke.site/linux/vm.html</loc>
     <lastmod>2023-03-18T22:50:36.429Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/deepin_experience.html</loc>
@@ -235,10 +235,10 @@
     <loc>https://www.qcmoke.site/front/distance.html</loc>
     <lastmod>2022-05-24T03:50:17.602Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/front/box_nest_center.html</loc>
+    <loc>https://www.qcmoke.site/front/clear_float.html</loc>
     <lastmod>2022-05-24T03:50:17.600Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/front/clear_float.html</loc>
+    <loc>https://www.qcmoke.site/front/box_nest_center.html</loc>
     <lastmod>2022-05-24T03:50:17.600Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/front/box_collapse.html</loc>
