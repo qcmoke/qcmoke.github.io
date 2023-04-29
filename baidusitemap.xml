@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/devops/nginx.html</loc>
+    <lastmod>2023-04-29T19:26:27.383Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
     <lastmod>2023-04-29T19:03:59.771Z</lastmod>
   </url>  <url>
@@ -21,9 +24,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/windows/win.html</loc>
     <lastmod>2023-04-16T08:09:23.647Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/devops/nginx.html</loc>
-    <lastmod>2023-04-13T21:44:09.843Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/nvm.html</loc>
     <lastmod>2023-04-10T16:04:15.263Z</lastmod>
@@ -217,10 +217,10 @@
     <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
     <lastmod>2022-05-24T03:50:17.675Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
+    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
+    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/front/learn_easyui.html</loc>
