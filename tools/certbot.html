@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶一、简要概述 certbot 是一个用于部署 Let’s Encrypt SSL 证书的免费、开源、自动化工具。它可以帮助网站管理员轻松地实现 HTTPS 和浏览器绿锁等功能，提高网站的安全性和可靠性。  Let’s Encrypt 是一个由非营利组织 Internet Security Research Group（ISRG）推出的一个免费、自动化、开放和安全的 SSL&#x2F;TLS 证书颁发机构。">
 <meta property="article:published_time" content="2022-04-29T05:18:03.000Z">
-<meta property="article:modified_time" content="2023-05-02T07:47:58.220Z">
+<meta property="article:modified_time" content="2023-05-02T07:52:37.840Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="ssl">
 <meta name="twitter:card" content="summary">
@@ -370,7 +370,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-05-02T15:47:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-05-02T15:52:37+08:00">
                 2023-05-02
               </time>
             
@@ -494,90 +494,34 @@
 <h3 id="2-certbot-常用的选项和参数"><a class="header-anchor" href="#2-certbot-常用的选项和参数">¶</a>2. certbot 常用的选项和参数</h3>
 <blockquote>
 <ul>
-<li>
-<p><code>--webroot</code>：使用 Web 根目录验证插件（默认模式）。在 <code>.well-known/acme-challenge/</code> 路径下创建一个临时文件，并通过 HTTP 获取该文件来验证域名所有权。</p>
-</li>
-<li>
-<p><code>--manual</code>：手动模式，该模式需要您手动执行一些步骤，例如在 DNS 记录中添加 TXT 记录以验证域名所有权。</p>
-</li>
-<li>
-<p><code>--nginx</code>：使用 Nginx Web 服务器插件。该模式允许 Certbot 自动配置 Nginx Web 服务器，以便验证域名所有权并部署证书。</p>
-</li>
-<li>
-<p><code>--apache</code>：使用 Apache Web 服务器插件。该模式允许 Certbot 自动配置 Apache Web 服务器，以便验证域名所有权并部署证书。</p>
-</li>
-<li>
-<p><code>--standalone</code>：使用独立 Web 服务器插件。该模式允许 Certbot 在自己的 Web 服务器（standalone）上运行，以验证域名所有权和颁发证书</p>
-</li>
-<li>
-<p><code>--server</code>： ACME 服务器地址。默认为 Let’s Encrypt 官方 ACME 服务器地址，即：<code>https://acme-v02.api.letsencrypt.org/directory</code>。</p>
-</li>
-<li>
-<p><code>--domains DOMAIN</code>（简写：<code>-d DOMAIN</code>）：要签发证书的域名。如：<code>-d example.com</code></p>
-</li>
-<li>
-<p><code>--staging</code>：签发测试环境证书。</p>
-</li>
-<li>
-<p><code>--cert-name CERTNAME</code>：为证书命名。</p>
-</li>
-<li>
-<p><code>--expand</code>：更新现有证书以包括新的子域名。</p>
-</li>
-<li>
-<p><code>--duplicate</code>：复制现有证书。</p>
-</li>
-<li>
-<p><code>--reinstall</code>：重新安装现有证书。</p>
-</li>
-<li>
-<p><code>--force-renewal</code>：在有效期内强制更新证书。</p>
-</li>
-<li>
-<p><code>--email EMAIL</code>（简写：<code>-m EMAIL</code>）：账号邮箱地址。可用于自动注册ACME账号，还可用于证书到期前 20 天、10 天和 1 天时接收到到期通知邮件。如：<code>--email user@example.com</code></p>
-</li>
-<li>
-<p><code>--agree-tos</code>：同意 Let’s Encrypt 的服务条款，并接受由 Let’s Encrypt 颁发的 SSL/TLS 证书。如果您不同意服务条款，则无法使用 Let’s Encrypt 颁发的证书。</p>
-</li>
-<li>
-<p><code>--preferred-challenges PREF_CHALLENGES</code>：首选的域名所有权验证类型。如：<code>--preferred-challenges dns-01</code></p>
-</li>
-<li>
-<p><code>http-01</code>：默认验证方法，将向公开在 HTTP 上运行的 Web 服务器发送请求，在 <code>.well-known/acme-challenge/</code> 路径下创建一个临时文件，并通过 HTTP 获取该文件来验证您拥有该域名。</p>
-</li>
-<li>
-<p><code>dns-01</code>：使用 DNS 记录验证域名所有权。此方法需要您手动更新相应的 DNS 记录。在 DNS 记录更新后，Let’s Encrypt 将使用 DNS 查找该记录以验证您拥有该域名。</p>
-</li>
-<li>
-<p><code>tls-sni-01</code>：已弃用，不再使用。原本是在 HTTPS 连接的 SNI 扩展中发送验证信息，但由于安全问题而被弃用。</p>
-</li>
-<li>
-<p><code>tls-alpn-01</code>：一种基于 TLS 的验证方法，它使用新的 ALPN 协议扩展来发送验证信息。与 <code>tls-sni-01</code> 不同，它不会公开任何信息，因此更加安全。</p>
-</li>
-<li>
-<p><code>--non-interactive</code>：禁用交互式模式。（默认<code>certonly</code> 命令是交互式的）</p>
-</li>
-<li>
-<p><code>--no-eff-email</code>：禁止发生统计信息邮件给EFF。（默认情况下，Certbot 在生成 SSL/TLS 证书时会向 EFF 发送电子邮件，以便收集有关证书使用情况的统计信息）</p>
-</li>
-<li>
-<p><code>--dry-run</code>：测试证书颁发流程，但不实际签发证书。</p>
-</li>
-<li>
-<p><code>-h</code>：获取帮助信息。</p>
-</li>
-<li>
-<p><code>--version</code>：查看 Certbot 版本号。</p>
-</li>
-<li>
-<p><code>--config-dir CONFIG_DIR</code>：指定配置文件目录。</p>
-</li>
-<li>
-<p><code>--work-dir WORK_DIR</code>：指定工作目录。</p>
-</li>
-<li>
-<p><code>--logs-dir LOGS_DIR</code>：指定日志目录。</p>
-</li>
+<li><code>--webroot</code>：使用 Web 根目录验证插件（默认模式）。在 <code>.well-known/acme-challenge/</code> 路径下创建一个临时文件，并通过 HTTP 获取该文件来验证域名所有权。</li>
+<li><code>--manual</code>：手动模式，该模式需要您手动执行一些步骤，例如在 DNS 记录中添加 TXT 记录以验证域名所有权。</li>
+<li><code>--nginx</code>：使用 Nginx Web 服务器插件。该模式允许 Certbot 自动配置 Nginx Web 服务器，以便验证域名所有权并部署证书。</li>
+<li><code>--apache</code>：使用 Apache Web 服务器插件。该模式允许 Certbot 自动配置 Apache Web 服务器，以便验证域名所有权并部署证书。</li>
+<li><code>--standalone</code>：使用独立 Web 服务器插件。该模式允许 Certbot 在自己的 Web 服务器（standalone）上运行，以验证域名所有权和颁发证书</li>
+<li><code>--server</code>： ACME 服务器地址。默认为 Let’s Encrypt 官方 ACME 服务器地址，即：<code>https://acme-v02.api.letsencrypt.org/directory</code>。</li>
+<li><code>--domains DOMAIN</code>（简写：<code>-d DOMAIN</code>）：要签发证书的域名。如：<code>-d example.com</code></li>
+<li><code>--staging</code>：签发测试环境证书。</li>
+<li><code>--cert-name CERTNAME</code>：为证书命名。</li>
+<li><code>--expand</code>：更新现有证书以包括新的子域名。</li>
+<li><code>--duplicate</code>：复制现有证书。</li>
+<li><code>--reinstall</code>：重新安装现有证书。</li>
+<li><code>--force-renewal</code>：在有效期内强制更新证书。</li>
+<li><code>--email EMAIL</code>（简写：<code>-m EMAIL</code>）：账号邮箱地址。可用于自动注册ACME账号，还可用于证书到期前 20 天、10 天和 1 天时接收到到期通知邮件。如：<code>--email user@example.com</code></li>
+<li><code>--agree-tos</code>：同意 Let’s Encrypt 的服务条款，并接受由 Let’s Encrypt 颁发的 SSL/TLS 证书。如果您不同意服务条款，则无法使用 Let’s Encrypt 颁发的证书。</li>
+<li><code>--preferred-challenges PREF_CHALLENGES</code>：首选的域名所有权验证类型。如：<code>--preferred-challenges dns-01</code></li>
+<li><code>http-01</code>：默认验证方法，将向公开在 HTTP 上运行的 Web 服务器发送请求，在 <code>.well-known/acme-challenge/</code> 路径下创建一个临时文件，并通过 HTTP 获取该文件来验证您拥有该域名。</li>
+<li><code>dns-01</code>：使用 DNS 记录验证域名所有权。此方法需要您手动更新相应的 DNS 记录。在 DNS 记录更新后，Let’s Encrypt 将使用 DNS 查找该记录以验证您拥有该域名。</li>
+<li><code>tls-sni-01</code>：已弃用，不再使用。原本是在 HTTPS 连接的 SNI 扩展中发送验证信息，但由于安全问题而被弃用。</li>
+<li><code>tls-alpn-01</code>：一种基于 TLS 的验证方法，它使用新的 ALPN 协议扩展来发送验证信息。与 <code>tls-sni-01</code> 不同，它不会公开任何信息，因此更加安全。</li>
+<li><code>--non-interactive</code>：禁用交互式模式。（默认<code>certonly</code> 命令是交互式的）</li>
+<li><code>--no-eff-email</code>：禁止发生统计信息邮件给EFF。（默认情况下，Certbot 在生成 SSL/TLS 证书时会向 EFF 发送电子邮件，以便收集有关证书使用情况的统计信息）</li>
+<li><code>--dry-run</code>：测试证书颁发流程，但不实际签发证书。</li>
+<li><code>-h</code>：获取帮助信息。</li>
+<li><code>--version</code>：查看 Certbot 版本号。</li>
+<li><code>--config-dir CONFIG_DIR</code>：指定配置文件目录。</li>
+<li><code>--work-dir WORK_DIR</code>：指定工作目录。</li>
+<li><code>--logs-dir LOGS_DIR</code>：指定日志目录。</li>
 </ul>
 <p>💁‍♂ 说明：如果不指定选项和参数，则一些必要的选项参数将会在交互式命令中要求指定。</p>
 </blockquote>
@@ -901,8 +845,8 @@ The error was: PluginError(‘An authentication script must be provided with --m
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/windows/winget.html" rel="next" title="Windows包管理工具winget">
-                Windows包管理工具winget <i class="fa fa-chevron-right"></i>
+              <a href="/windows/scoop.html" rel="next" title="Windows包管理工具scoop">
+                Windows包管理工具scoop <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -2022,5 +1966,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
