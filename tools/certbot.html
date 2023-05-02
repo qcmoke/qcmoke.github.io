@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="apache,certbot,Let's Encrypt,ssl,http,https," />
+  <meta name="keywords" content="ssl," />
 
 
 
@@ -86,24 +86,17 @@
 
 
 
-<meta name="description" content="¶0. 域名配置 解析域名(如luoyui.top)到服务器的ip地址上，比如我这里添加了两条解析记录。 1、解析记录为：记录类型为A ，主机记录为为@ ，记录值为144.34.145.10  。 2、解析记录为：记录类型为A ，主机记录为为www ，记录值为144.34.145.10  。 ¶1. 安装apache、openssl和mod_ssl 1$ yum install httpd op">
+<meta name="description" content="¶一、简要概述 certbot 是一个用于部署 Let’s Encrypt SSL 证书的免费、开源、自动化工具。它可以帮助网站管理员轻松地实现 HTTPS 和浏览器绿锁等功能，提高网站的安全性和可靠性。  Let’s Encrypt 是一个由非营利组织 Internet Security Research Group（ISRG）推出的一个免费、自动化、开放和安全的 SSL&#x2F;TLS 证书颁发机构。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="apache配置Let&#39;s Encrypt ssl证书(版本2)">
+<meta property="og:title" content="通过certbot工具生成ssl证书">
 <meta property="og:url" content="https://www.qcmoke.site/tools/certbot.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="¶0. 域名配置 解析域名(如luoyui.top)到服务器的ip地址上，比如我这里添加了两条解析记录。 1、解析记录为：记录类型为A ，主机记录为为@ ，记录值为144.34.145.10  。 2、解析记录为：记录类型为A ，主机记录为为www ，记录值为144.34.145.10  。 ¶1. 安装apache、openssl和mod_ssl 1$ yum install httpd op">
-<meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
-<meta property="article:published_time" content="2019-01-18T16:51:47.000Z">
-<meta property="article:modified_time" content="2023-03-18T22:50:36.432Z">
+<meta property="og:description" content="¶一、简要概述 certbot 是一个用于部署 Let’s Encrypt SSL 证书的免费、开源、自动化工具。它可以帮助网站管理员轻松地实现 HTTPS 和浏览器绿锁等功能，提高网站的安全性和可靠性。  Let’s Encrypt 是一个由非营利组织 Internet Security Research Group（ISRG）推出的一个免费、自动化、开放和安全的 SSL&#x2F;TLS 证书颁发机构。">
+<meta property="article:published_time" content="2022-04-29T05:18:03.000Z">
+<meta property="article:modified_time" content="2023-05-02T07:47:58.220Z">
 <meta property="article:author" content="Qcmoke">
-<meta property="article:tag" content="apache">
-<meta property="article:tag" content="certbot">
-<meta property="article:tag" content="Let&#39;s Encrypt">
 <meta property="article:tag" content="ssl">
-<meta property="article:tag" content="http">
-<meta property="article:tag" content="https">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.qcmoke.site/images/loading-post.gif">
 
 
 
@@ -141,7 +134,7 @@
 
 
 
-  <title>apache配置Let's Encrypt ssl证书(版本2) | Qcmoke's Blog</title>
+  <title>通过certbot工具生成ssl证书 | Qcmoke's Blog</title>
   
 
 
@@ -349,7 +342,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">apache配置Let's Encrypt ssl证书(版本2)</h2>
+          <h2 class="post-title" itemprop="name headline">通过certbot工具生成ssl证书</h2>
         
 
         <div class="post-meta">
@@ -361,8 +354,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-19T00:51:47+08:00">
-                2019-01-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-29T13:18:03+08:00">
+                2022-04-29
               </time>
             
 
@@ -377,8 +370,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T06:50:36+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-05-02T15:47:58+08:00">
+                2023-05-02
               </time>
             
           </span>
@@ -423,7 +416,7 @@
 
           
           
-             <span id="/tools/certbot.html" class="leancloud_visitors" data-flag-title="apache配置Let's Encrypt ssl证书(版本2)">
+             <span id="/tools/certbot.html" class="leancloud_visitors" data-flag-title="通过certbot工具生成ssl证书">
               <span class="post-meta-divider">|</span>
               <span class="lv-inline-block" style="display: inline-block;">
                 <span class="post-meta-item-icon">
@@ -450,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  964
+                  5.5k
                 </span>
               
 
@@ -466,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  22
                 </span>
               
             </div>
@@ -487,61 +480,328 @@
       
 
       
-        <a id="more"></a>
-<h2 id="0-域名配置"><a class="header-anchor" href="#0-域名配置">¶</a>0. 域名配置</h2>
-<p>解析域名(如luoyui.top)到服务器的ip地址上，比如我这里添加了两条解析记录。</p>
-<p>1、解析记录为：记录类型为<code>A</code> ，主机记录为为<code>@</code> ，记录值为<code>144.34.145.10</code>  。</p>
-<p>2、解析记录为：记录类型为<code>A</code> ，主机记录为为<code>www</code> ，记录值为<code>144.34.145.10</code>  。</p>
-<h2 id="1-安装apache-openssl和mod-ssl"><a class="header-anchor" href="#1-安装apache-openssl和mod-ssl">¶</a>1. 安装apache、openssl和mod_ssl</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install httpd openssl mod_ssl -y</span><br></pre></td></tr></table></figure>
-<h2 id="2-启动apache服务"><a class="header-anchor" href="#2-启动apache服务">¶</a>2. 启动apache服务</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start httpd   <span class="comment"># 启动服务</span></span><br><span class="line">$ systemctl <span class="built_in">enable</span> httpd  <span class="comment"># 设置开机启动</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-检查apache是否启动"><a class="header-anchor" href="#3-检查apache是否启动">¶</a>3. 检查apache是否启动</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start httpd  <span class="comment"># 看到Active: active (running),表示启动成功</span></span><br><span class="line">$ systemctl is-active httpd <span class="comment">#输出active表示启动成功</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-查看apache服务器网页-文档-根目录"><a class="header-anchor" href="#4-查看apache服务器网页-文档-根目录">¶</a>4. 查看apache服务器网页(文档)根目录</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -ri DocumentRoot  /etc/httpd</span><br></pre></td></tr></table></figure>
-<p>查看到如下没有打<code>#</code>的项就是网页(文档)根目录了，即<code>/var/www/html</code></p>
+        <h2 id="一-简要概述"><a class="header-anchor" href="#一-简要概述">¶</a>一、简要概述</h2>
+<p>certbot 是一个用于部署 Let’s Encrypt SSL 证书的免费、开源、自动化工具。它可以帮助网站管理员轻松地实现 HTTPS 和浏览器绿锁等功能，提高网站的安全性和可靠性。</p>
 <blockquote>
-<p>/etc/httpd/conf.d/ssl.conf:#DocumentRoot “/var/www/html”<br>
-/etc/httpd/conf/httpd.conf:# DocumentRoot: The directory out of which you will serve your<br>
-/etc/httpd/conf/httpd.conf:DocumentRoot “/var/www/html”<br>
-/etc/httpd/conf/httpd.conf:    # access content that does not live under the DocumentRoot.</p>
+<p>Let’s Encrypt 是一个由非营利组织 Internet Security Research Group（ISRG）推出的一个免费、自动化、开放和安全的 SSL/TLS 证书颁发机构。</p>
+<p>Let’s Encrypt SSL 证书使用了 SHA-256 签名算法，并支持最新版本的 TLS 协议，因此可以提供强大的加密和认证保护，保障网站和用户数据的安全。同时，Let’s Encrypt 证书的根证书已被所有主流浏览器信任，这意味着用户不需要手动添加任何信任条目或 CA 证书到浏览器中。</p>
 </blockquote>
-<h2 id="5-添加网站更目录"><a class="header-anchor" href="#5-添加网站更目录">¶</a>5. 添加网站更目录</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/www/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>在Web服务器网站根目录创建一个index.html 静态文件做测试</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> demo &gt; /var/www/<span class="built_in">test</span>/index.html</span><br></pre></td></tr></table></figure>
-<h2 id="6-生成证书"><a class="header-anchor" href="#6-生成证书">¶</a>6. 生成证书</h2>
-<p>新增证书，新增时certbot会根据你添加的域名生成对应的证书。不同的域名证书互相不会影响。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --webroot  -d luoyui.top -d www.luoyui.top -w /var/www/<span class="built_in">test</span> --register-unsafely-without-email</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@host ~]<span class="comment"># find /etc/letsencrypt/live/</span></span><br><span class="line">/etc/letsencrypt/live/</span><br><span class="line">/etc/letsencrypt/live/README</span><br><span class="line">/etc/letsencrypt/live/luoyui.top</span><br><span class="line">/etc/letsencrypt/live/luoyui.top/privkey.pem</span><br><span class="line">/etc/letsencrypt/live/luoyui.top/chain.pem</span><br><span class="line">/etc/letsencrypt/live/luoyui.top/README</span><br><span class="line">/etc/letsencrypt/live/luoyui.top/cert.pem</span><br><span class="line">/etc/letsencrypt/live/luoyui.top/fullchain.pem</span><br><span class="line">[root@host ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-<p>看到<code>luoyui.top</code>目录的以上文件即证明生成证书成功。但网站还不能使用https，因为还没有配置apache的虚拟主机目录，编辑文件<code>/etc/httpd/conf.d/vhost.conf</code>文件，没有这个文件则自己创建出来。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/httpd/conf.d/vhost.conf</span><br></pre></td></tr></table></figure>
-<p>添加以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/test"</span></span><br><span class="line">    ServerName luoyui.top</span><br><span class="line">    ServerAlias www.luoyui.top</span><br><span class="line">    &lt;Directory <span class="string">"/var/www/test"</span>&gt;</span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">RewriteEngine on</span><br><span class="line">RewriteCond %&#123;SERVER_NAME&#125; =luoyui.top [OR]</span><br><span class="line">RewriteCond %&#123;SERVER_NAME&#125; =www.luoyui.top</span><br><span class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;IfModule mod_ssl.c&gt;</span><br><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/test"</span></span><br><span class="line">    ServerName luoyui.top</span><br><span class="line">    ServerAlias www.luoyui.top</span><br><span class="line">    &lt;Directory <span class="string">"/var/www/test"</span>&gt;</span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">Include /etc/letsencrypt/options-ssl-apache.conf</span><br><span class="line">SSLCertificateFile /etc/letsencrypt/live/luoyui.top/cert.pem</span><br><span class="line">SSLCertificateKeyFile /etc/letsencrypt/live/luoyui.top/privkey.pem</span><br><span class="line">SSLCertificateChainFile /etc/letsencrypt/live/luoyui.top/chain.pem</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
-<p>如果你想要将<code>luoyui.top</code>跳转到<code>www.luoyui.top</code>,那么你只需要修改<code>&lt;VirtualHost&gt;</code>中相关变量的值为以下即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine on       <span class="comment"># url重定向开启</span></span><br><span class="line">RewriteCond %&#123;SERVER_PORT&#125; !^443$    <span class="comment"># 指定跳转至443端口</span></span><br><span class="line">RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/<span class="variable">$1</span> [L,R]    <span class="comment"># 跳转至https://www.域名.com的url</span></span><br></pre></td></tr></table></figure>
-<h2 id="7-重启apache服务器"><a class="header-anchor" href="#7-重启apache服务器">¶</a>7. 重启apache服务器</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd restart</span><br></pre></td></tr></table></figure>
-<h2 id="8-删除证书"><a class="header-anchor" href="#8-删除证书">¶</a>8.删除证书</h2>
-<p>如果你不想要开启https服务了，可以通过以下命令删除。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot delete</span><br></pre></td></tr></table></figure>
-<p><img src="/tools/../images/loading-post.gif" data-original="certbot/1547823797858.png" alt="1547823797858"></p>
-<p>选择对应域名证书的编号后，回车即可删除证书。然后编辑<code>/etc/httpd/conf.d/vhost.conf</code>文件，删除掉对应的虚拟主机配置即可。</p>
-<h2 id="9-letsencrypt-有什么限制"><a class="header-anchor" href="#9-letsencrypt-有什么限制">¶</a>9. <strong>letsencrypt 有什么限制</strong></h2>
-<p><strong>标准限制</strong></p>
-<p>同一个顶级域名下的二级域名，一周做多申请 20 个<br>
-一个域名一周最多申请 5 次<br>
-1 小时最多允许失败 5 次<br>
-请求频率需要小于 20 次/s<br>
-一个 ip 3 小时内最多创建 10 个账户<br>
-一个账户最多同时存在 300 个 pending 的审核</p>
-<p><strong>测试模式限制</strong></p>
-<p>在 certbot 命令后加上 –staging 参数，限制更松一些，但不是正式证书<br>
-同一个顶级域名下的二级域名，一周做多申请 30000 个<br>
-一个域名一周最多申请 30000 次<br>
-1 小时最多允许失败 60 次<br>
-一个 ip 3小时内最多创建 50 个账户。</p>
+<h2 id="二-安装-certbot"><a class="header-anchor" href="#二-安装-certbot">¶</a>二、安装 certbot</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#apt包管理器安装certbot</span></span><br><span class="line">apt-get install certbot</span><br><span class="line"></span><br><span class="line"><span class="comment">#yum包管理器安装certbot</span></span><br><span class="line">yum -y install epel-release</span><br><span class="line">yum -y install certbot</span><br></pre></td></tr></table></figure>
+<h2 id="三-申请签发-ssl-证书"><a class="header-anchor" href="#三-申请签发-ssl-证书">¶</a>三、申请签发 SSL 证书</h2>
+<h3 id="1-简要概述"><a class="header-anchor" href="#1-简要概述">¶</a>1. 简要概述</h3>
+<p>在 certbot 申请证书时，证书是由 Let’s Encrypt 官方 ACME 服务器生成的，而不是由本地服务器生成的。certbot 将向 Let’s Encrypt CA（证书颁发机构）发出签发请求，并将验证域名的控制权。一旦验证通过，Let’s Encrypt 将向 Certbot 返回 SSL 证书，以便在您的 Web 服务器上部署和使用。</p>
+<h3 id="2-certbot-常用的选项和参数"><a class="header-anchor" href="#2-certbot-常用的选项和参数">¶</a>2. certbot 常用的选项和参数</h3>
+<blockquote>
+<ul>
+<li>
+<p><code>--webroot</code>：使用 Web 根目录验证插件（默认模式）。在 <code>.well-known/acme-challenge/</code> 路径下创建一个临时文件，并通过 HTTP 获取该文件来验证域名所有权。</p>
+</li>
+<li>
+<p><code>--manual</code>：手动模式，该模式需要您手动执行一些步骤，例如在 DNS 记录中添加 TXT 记录以验证域名所有权。</p>
+</li>
+<li>
+<p><code>--nginx</code>：使用 Nginx Web 服务器插件。该模式允许 Certbot 自动配置 Nginx Web 服务器，以便验证域名所有权并部署证书。</p>
+</li>
+<li>
+<p><code>--apache</code>：使用 Apache Web 服务器插件。该模式允许 Certbot 自动配置 Apache Web 服务器，以便验证域名所有权并部署证书。</p>
+</li>
+<li>
+<p><code>--standalone</code>：使用独立 Web 服务器插件。该模式允许 Certbot 在自己的 Web 服务器（standalone）上运行，以验证域名所有权和颁发证书</p>
+</li>
+<li>
+<p><code>--server</code>： ACME 服务器地址。默认为 Let’s Encrypt 官方 ACME 服务器地址，即：<code>https://acme-v02.api.letsencrypt.org/directory</code>。</p>
+</li>
+<li>
+<p><code>--domains DOMAIN</code>（简写：<code>-d DOMAIN</code>）：要签发证书的域名。如：<code>-d example.com</code></p>
+</li>
+<li>
+<p><code>--staging</code>：签发测试环境证书。</p>
+</li>
+<li>
+<p><code>--cert-name CERTNAME</code>：为证书命名。</p>
+</li>
+<li>
+<p><code>--expand</code>：更新现有证书以包括新的子域名。</p>
+</li>
+<li>
+<p><code>--duplicate</code>：复制现有证书。</p>
+</li>
+<li>
+<p><code>--reinstall</code>：重新安装现有证书。</p>
+</li>
+<li>
+<p><code>--force-renewal</code>：在有效期内强制更新证书。</p>
+</li>
+<li>
+<p><code>--email EMAIL</code>（简写：<code>-m EMAIL</code>）：账号邮箱地址。可用于自动注册ACME账号，还可用于证书到期前 20 天、10 天和 1 天时接收到到期通知邮件。如：<code>--email user@example.com</code></p>
+</li>
+<li>
+<p><code>--agree-tos</code>：同意 Let’s Encrypt 的服务条款，并接受由 Let’s Encrypt 颁发的 SSL/TLS 证书。如果您不同意服务条款，则无法使用 Let’s Encrypt 颁发的证书。</p>
+</li>
+<li>
+<p><code>--preferred-challenges PREF_CHALLENGES</code>：首选的域名所有权验证类型。如：<code>--preferred-challenges dns-01</code></p>
+</li>
+<li>
+<p><code>http-01</code>：默认验证方法，将向公开在 HTTP 上运行的 Web 服务器发送请求，在 <code>.well-known/acme-challenge/</code> 路径下创建一个临时文件，并通过 HTTP 获取该文件来验证您拥有该域名。</p>
+</li>
+<li>
+<p><code>dns-01</code>：使用 DNS 记录验证域名所有权。此方法需要您手动更新相应的 DNS 记录。在 DNS 记录更新后，Let’s Encrypt 将使用 DNS 查找该记录以验证您拥有该域名。</p>
+</li>
+<li>
+<p><code>tls-sni-01</code>：已弃用，不再使用。原本是在 HTTPS 连接的 SNI 扩展中发送验证信息，但由于安全问题而被弃用。</p>
+</li>
+<li>
+<p><code>tls-alpn-01</code>：一种基于 TLS 的验证方法，它使用新的 ALPN 协议扩展来发送验证信息。与 <code>tls-sni-01</code> 不同，它不会公开任何信息，因此更加安全。</p>
+</li>
+<li>
+<p><code>--non-interactive</code>：禁用交互式模式。（默认<code>certonly</code> 命令是交互式的）</p>
+</li>
+<li>
+<p><code>--no-eff-email</code>：禁止发生统计信息邮件给EFF。（默认情况下，Certbot 在生成 SSL/TLS 证书时会向 EFF 发送电子邮件，以便收集有关证书使用情况的统计信息）</p>
+</li>
+<li>
+<p><code>--dry-run</code>：测试证书颁发流程，但不实际签发证书。</p>
+</li>
+<li>
+<p><code>-h</code>：获取帮助信息。</p>
+</li>
+<li>
+<p><code>--version</code>：查看 Certbot 版本号。</p>
+</li>
+<li>
+<p><code>--config-dir CONFIG_DIR</code>：指定配置文件目录。</p>
+</li>
+<li>
+<p><code>--work-dir WORK_DIR</code>：指定工作目录。</p>
+</li>
+<li>
+<p><code>--logs-dir LOGS_DIR</code>：指定日志目录。</p>
+</li>
+</ul>
+<p>💁‍♂ 说明：如果不指定选项和参数，则一些必要的选项参数将会在交互式命令中要求指定。</p>
+</blockquote>
+<h3 id="3-let-s-encrypt-证书申请请求限制"><a class="header-anchor" href="#3-let-s-encrypt-证书申请请求限制">¶</a>3. Let’s Encrypt 证书申请请求限制</h3>
+<ul>
+<li>
+<p>生产环境限制</p>
+<ul>
+<li>
+<p>每个域名/证书每周最多只能签发 5 次</p>
+</li>
+<li>
+<p>每个 IP 地址每小时最多能提交 300 个证书申请请求</p>
+</li>
+</ul>
+</li>
+<li>
+<p>测试环境限制（certbot 使用 <code>--staging</code> 选项时）</p>
+<ul>
+<li>测试环境下颁发的证书无法被浏览器或操作系统信任</li>
+<li>测试环境下每个域名/证书每周最多可签发 50 次</li>
+<li>测试环境下每个 IP 地址每小时最多能提交 300 个请求</li>
+<li>测试环境下没有通过 HSTS 预载的域名（生产环境支持通过 HSTS 预载的域名）</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-http-验证模式申请证书"><a class="header-anchor" href="#4-http-验证模式申请证书">¶</a>4. HTTP 验证模式申请证书</h3>
+<h4 id="1-单域名证书"><a class="header-anchor" href="#1-单域名证书">¶</a>1）单域名证书</h4>
+<blockquote>
+<p>准备工作：</p>
+<p>（1）需要有一个需要申请证书的域名。如：<code>test.qcmoke.site</code></p>
+<p>（2）需要有一台公网服务器，并且公网服务器里运行有HTTP服务（如：nginx，tomcat等）。设公网服务器 IP 为：<code>45.129.11.99</code></p>
+<p>（3）需要提前在 DNS 托管服务提供商的管理后台里把所有需要申请证书的域名都解析到公网服务器的IP上。如：<code>test.qcmoke.site</code> -&gt; <code>45.129.11.99</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#HTTP 验证模式申请签发单域名证书（模板）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">--webroot -w /opt/nginx/html \</span><br><span class="line">-m user@example.com \</span><br><span class="line">-d example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#示例：（可加 --staging 选项来申请签发测试环境的证书）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">--webroot -w /opt/nginx/html \</span><br><span class="line">-m qcmoke@gmail.com \</span><br><span class="line">-d test.qcmoke.site</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>💁‍♂ 说明：</p>
+<ul>
+<li>通过指定<code>--webroot</code>选项，certbot会在 HTTP 服务的 web 根目录下自动创建一个 <code>.well-known/acme-challenge/&lt;random_token&gt;</code> 临时文件用于域名拥有权验证。</li>
+<li>申请证书的过程中，Let’s Encrypt CA（ACME 服务器）会根据域名发起 HTTP 请求访问 HTTP 服务的 web 根目录下的<code>.well-known/acme-challenge/&lt;random_token&gt;</code> 临时文件以确定申请用户对域名的所有权（访问到该文件则说明用户对域名拥有所有权）。访问地址格式为：<code>http://example.com/.well-known/acme-challenge/&lt;random_token&gt;</code></li>
+<li>验证完成并生成证书后 certbot 会自动删除<code>.well-known</code>目录文件。</li>
+<li>除了通过指定<code>--webroot</code>选项使用 HTTP 验证模式外，还可以使用 <code>--preferred-challenges http-01</code> (或都使用，因为 http-01 是默认值)，但这种方式需要手动创建<code>.well-known/acme-challenge/&lt;random_token&gt;</code> 临时文件，并根据提示给文件写入内容，明显会比较麻烦，故不推荐。</li>
+</ul>
+</blockquote>
+<h4 id="2-多域名证书-推荐"><a class="header-anchor" href="#2-多域名证书-推荐">¶</a>2）多域名证书（推荐）</h4>
+<blockquote>
+<p>准备工作：</p>
+<p>（1）需要有多个需要申请证书的域名。如下：</p>
+<ul>
+<li><code>qcmoke.site</code></li>
+<li><code>www.qcmoke.site</code></li>
+</ul>
+<p>（2）需要有一台公网服务器，并且公网服务器里运行有HTTP服务（如：nginx，tomcat等）。设公网服务器 IP 为：<code>45.129.11.99</code></p>
+<p>（3）需要提前在 DNS 托管服务提供商的管理后台里把所有需要申请证书的域名都解析到公网服务器的IP上。如下：</p>
+<ul>
+<li><code>qcmoke.site</code> -&gt; <code>45.129.11.99</code></li>
+<li><code>www.qcmoke.site</code> -&gt; <code>45.129.11.99</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>多域名证书可以通过类似 <code>-d example.com -d www.example.com</code> 的指定方式申请签发。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#HTTP 验证模式申请签发多域名证书（模板）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">--webroot -w /opt/nginx/html \</span><br><span class="line">-m user@example.com \</span><br><span class="line">-d example.com \</span><br><span class="line">-d www.example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#示例：（可加 --staging 选项来申请签发测试环境的证书）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">--webroot -w /opt/nginx/html \</span><br><span class="line">-m qcmoke@gmail.com \</span><br><span class="line">-d qcmoke.site \</span><br><span class="line">-d www.qcmoke.site</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：多域名证书如果不指定名称，将会以第一个域名作为证书名称。申请证书的过程中，Let’s Encrypt CA（ACME 服务器）会根据每个域名依次发起 HTTP 请求访问 HTTP 服务的 web 根目录下的<code>.well-known/acme-challenge/&lt;random_token&gt;</code> 临时文件以确定申请用户对每个域名的所有权（访问到该文件则说明用户对域名拥有所有权）。访问地址格式为：<code>http://example.com/.well-known/acme-challenge/&lt;random_token&gt;</code></p>
+<p>注意：多域名证书是一个 SSL 证书，其包含了多个域名的信息。</p>
+</blockquote>
+<h4 id="3-通配符域名证书-不支持"><a class="header-anchor" href="#3-通配符域名证书-不支持">¶</a>3）通配符域名证书（不支持）</h4>
+<blockquote>
+<p>HTTP 验证模式不支持通配符域名证书申请（只有 DNS-01 验证模式支持）</p>
+<p>HTTP-01 验证模式不支持通配符域名证书申请，是因为该验证方式要求 ACME 客户端在 Web 服务器上放置一个特定的文件，并通过 HTTP 协议响应此文件来证明其对该域名的控制权。但是，在使用通配符域名证书时，该验证机制并不能实现对所有子域名的全面验证，因为不同的子域名可能由不同的 Web 服务器托管，或者使用不同的 Web 根目录等，这会导致部分子域名无法通过 HTTP-01 验证。因此，在 ACME v2 协议中，Let’s Encrypt 只允许使用 DNS-01 验证模式来获取通通配符域名证书。</p>
+</blockquote>
+<p>如下测试在HTTP 验证模式下申请通配符域名证书会失败。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ sudo certbot certonly \</span><br><span class="line">--staging \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">--webroot -w /opt/nginx/html \</span><br><span class="line">-m qcmoke@gmail.com \</span><br><span class="line">-d qcmoke.site \</span><br><span class="line">-d *.qcmoke.site</span><br><span class="line"></span><br><span class="line"><span class="comment">#如下是申请失败提示内容：</span></span><br><span class="line">Saving debug <span class="built_in">log</span> to /var/<span class="built_in">log</span>/letsencrypt/letsencrypt.log</span><br><span class="line">Plugins selected: Authenticator webroot, Installer None</span><br><span class="line">Starting new HTTPS connection (1): acme-staging-v02.api.letsencrypt.org</span><br><span class="line">Requesting a certificate <span class="keyword">for</span> qcmoke.site and *.qcmoke.site</span><br><span class="line">Performing the following challenges:</span><br><span class="line">Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA. You may need to use an authenticator plugin that can <span class="keyword">do</span> challenges over DNS.</span><br><span class="line">Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA. You may need to use an authenticator plugin that can <span class="keyword">do</span> challenges over DNS.</span><br></pre></td></tr></table></figure>
+<h3 id="5-dns-验证模式申请证书"><a class="header-anchor" href="#5-dns-验证模式申请证书">¶</a>5. DNS 验证模式申请证书</h3>
+<h4 id="1-单域名证书-v2"><a class="header-anchor" href="#1-单域名证书-v2">¶</a>1）单域名证书</h4>
+<blockquote>
+<p>准备工作：</p>
+<p>（1）需要有一台能访问互联网的主机（可为内网主机）。</p>
+<p>（2）需要有一个需要申请证书的域名。如：<code>test.qcmoke.site</code></p>
+<p>（3）需要在 DNS 托管服务提供商的管理后台里添加域名的 TXT 记录。如下：</p>
+<ul>
+<li><code>_acme-challenge.test.qcmoke.site</code> - &gt; <code>vrZwcxxxxxx5k42XUr025UWRNl4</code></li>
+</ul>
+<p>提示：TXT 记录值由下方执行<code>certbot</code>命令获得。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#DNS 验证模式申请签发单域名证书（模板）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--manual --preferred-challenges dns-01 \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">-m user@example.com \</span><br><span class="line">-d example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#示例：（可加 --staging 选项来申请签发测试环境的证书）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--manual --preferred-challenges dns-01 \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">-m qcmoke@gmail.com \</span><br><span class="line">-d test.qcmoke.site</span><br></pre></td></tr></table></figure>
+<h4 id="2-多域名证书"><a class="header-anchor" href="#2-多域名证书">¶</a>2）多域名证书</h4>
+<blockquote>
+<p>准备工作：</p>
+<p>（1）需要有一台能访问互联网的主机（可为内网主机）。</p>
+<p>（2）需要准备多个需要申请证书的域名。如下：</p>
+<ul>
+<li><code>qcmoke.site</code></li>
+<li><code>www.qcmoke.site</code></li>
+</ul>
+<p>（3）需要在 DNS 托管服务提供商的管理后台里为每个域名添加 TXT 记录。如下：</p>
+<ul>
+<li>
+<p><code>_acme-challenge.qcmoke.site</code> - &gt; <code>vrZwcxxxxxx5k42XUr025UWRNl4</code></p>
+</li>
+<li>
+<p><code>_acme-challenge.www.qcmoke.site</code> - &gt; <code>fr5wcxxxxxx7ko2PUr025UWRGo5</code></p>
+</li>
+</ul>
+<p>提示：TXT 记录值由下方执行<code>certbot</code>命令获得。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#DNS 验证模式申请签发多域名证书（模板）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--manual --preferred-challenges dns-01 \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">-m user@example.com \</span><br><span class="line">-d example.com \</span><br><span class="line">-d www.example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#示例：（可加 --staging 选项来申请签发测试环境的证书）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--manual --preferred-challenges dns-01 \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">-m qcmoke@gmail.com \</span><br><span class="line">-d qcmoke.site \</span><br><span class="line">-d www.qcmoke.site</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>多域名证书可以通过类似 <code>-d example.com -d www.example.com</code> 的指定方式申请签发。</li>
+<li>多域名证书申请过程中，需要给每个域名添加 TXT 记录，Let’s Encrypt CA（ACME 服务器）会依次校验每个域名的 TXT 记录以确定每个域名的所有权。</li>
+</ul>
+</blockquote>
+<h4 id="3-通配符域名证书"><a class="header-anchor" href="#3-通配符域名证书">¶</a>3）通配符域名证书</h4>
+<blockquote>
+<p>准备工作：</p>
+<p>（1）需要有一台能访问互联网的主机（可为内网主机）。</p>
+<p>（2）需要有一个需要申请证书的域名。如：<code>qcmoke.site</code></p>
+<p>（3）需要在 DNS 托管服务提供商的管理后台里添加域名的 TXT 记录。如下：</p>
+<ul>
+<li><code>_acme-challenge.qcmoke.site</code> - &gt; <code>vrZwcxxxxxx5k42XUr025UWRNl4</code></li>
+</ul>
+<p>提示：TXT 记录值由下方执行<code>certbot</code>命令获得。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#DNS 验证模式申请签发通配符证书（模板）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--manual --preferred-challenges dns-01 \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">-m user@example.com \</span><br><span class="line">-d example.com \</span><br><span class="line">-d *.example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#示例：（可加 --staging 选项来申请签发测试环境的证书）</span></span><br><span class="line">sudo certbot certonly \</span><br><span class="line">--manual --preferred-challenges dns-01 \</span><br><span class="line">--agree-tos --no-eff-email \</span><br><span class="line">-m qcmoke@gmail.com \</span><br><span class="line">-d qcmoke.site \</span><br><span class="line">-d *.qcmoke.site</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>DNS-01 验证模式是支持通配符域名证书申请的。</li>
+<li>通配符域名证书可以通过类似<code>-d *.example.com</code>的指定方式来申请签发。</li>
+<li>通配符域名证书申请过程中，对于通配符域名，只需要给除去通配符后剩下的域名添加一条 TXT 记录即可完成验证。这种验证方式不需要为通配符中的每个子域名添加记录，这也是 DNS-01 验证模式比 HTTP-01 更加灵活和安全的重要原因。</li>
+<li>通常做三级通配符域名证书时，为了支持其父级域名，申请证书时都会加上其父级域名（即二级域名），如：<code>-d example.com</code>。</li>
+<li><code>*.example.com</code>表示的通配符域名证书表示只支持三级域名证书（如：<code>www.example.com</code>、<code>blog.example.com</code>、<code>mail.example.com</code> 等），但这个通配符不支持其父级域名（如：<code>example.com</code>），也不支持四级域名（如：<code>dev.www.example.com</code>）</li>
+</ul>
+</blockquote>
+<h2 id="四-列出拥有的证书信息"><a class="header-anchor" href="#四-列出拥有的证书信息">¶</a>四、列出拥有的证书信息</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出拥有的证书及其有效期等信息</span></span><br><span class="line">certbot certificates</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看证书有效期</span></span><br><span class="line">openssl x509 -noout -dates -<span class="keyword">in</span> cert.pem</span><br></pre></td></tr></table></figure>
+<h2 id="五-配置使用证书"><a class="header-anchor" href="#五-配置使用证书">¶</a>五、配置使用证书</h2>
+<blockquote>
+<p>certbot申请签发的证书默认存储在 <code>/etc/letsencrypt/live/example.com</code> 和 <code>/etc/letsencrypt/archive/example.com</code> 目录下。</p>
+<ul>
+<li><code>/etc/letsencrypt/live/example.com</code> 目录：包含当前使用的 SSL/TLS 证书的符号链接，指向 <code>/etc/letsencrypt/archive</code> 目录中相应的证书文件。</li>
+<li><code>/etc/letsencrypt/archive/example.com</code> 目录：包含按域名和时间戳命名的 SSL/TLS 证书文件。</li>
+</ul>
+<p>使用 certbot 申请签发证书时，会得到以下几个文件：</p>
+<ul>
+<li>服务端证书 (<code>cert.pem</code>)：该文件主要包含有域名和公钥，由证书颁发机构（CA）签发，用于客户端验证服务器上域名的身份。</li>
+<li>中间证书 (<code>chain.pem</code>)：该文件包含 CA 的证书链，其中可能包含一个或多个中间证书和根证书。中间证书由 CA 签发，用于将 CA 根证书和服务端证书连接起来，以能够使客户端验证服务端证书的真实性。</li>
+<li>全链证书 (<code>fullchain.pem</code>)：也称证书链文件，该文件包含了服务端证书以及所有中间证书和根证书，包含了完整的 SSL 证书链。用于客户端验证服务端证书的真实性。</li>
+<li>私钥文件 (<code>privkey.pem</code>)：该文件包含私钥内容。用于解密请求的数据以及加密响应的数据。</li>
+</ul>
+<p>证书的定义：证书是一种用于验证身份和加密通信的电子文件。通常包含了身份信息、公钥、有效期限、颁发机构信息等内容。（注意：一般证书都是不包含私钥内容的）</p>
+</blockquote>
+<p>常见的 Web 服务器软件有 nginx、apache、tomcat等。在这些 Web 服务器软件中配置 SSL 证书的方式不经相同，但它们都是支持使用 Let’s Encrypt SSL 证书的。</p>
+<blockquote>
+<ul>
+<li>nginx 配置 SSL 证书可参考<a href="https://www.qcmoke.site/devops/nginx.html">《nginx学习笔记》</a></li>
+<li>apache配置 SSL 证书可参考<a href="https://www.qcmoke.site/devops/apache_ssl.html">《apache配置ssl证书》</a></li>
+</ul>
+</blockquote>
+<h2 id="六-吊销证书"><a class="header-anchor" href="#六-吊销证书">¶</a>六、吊销证书</h2>
+<p>吊销证书是一种在证书到期之前废止其有效性的方法。如果您认为您的 SSL/TLS 证书已经被盗用或不再需要使用，则应该立即将其吊销。通过吊销证书，您可以确保不会有人再使用该证书来进行恶意活动。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#吊销指定域名的证书</span></span><br><span class="line">sudo certbot revoke --cert-name example.com</span><br><span class="line"><span class="comment">#吊销指定文件路径的证书</span></span><br><span class="line">sudo certbot revoke --cert-path /etc/letsencrypt/live/example.com/cert.pem</span><br><span class="line"><span class="comment">#此命令将吊销存储在 /etc/letsencrypt/live/example.com/cert.pem 中的 SSL/TLS 证书</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#吊销所有的证书</span></span><br><span class="line">sudo certbot revoke --cert-path /etc/letsencrypt/archive/ -d example.com</span><br><span class="line"><span class="comment">#此命令将吊销 /etc/letsencrypt/archive/ 目录中与 example.com 域名相关的所有证书</span></span><br></pre></td></tr></table></figure>
+<h2 id="七-删除证书"><a class="header-anchor" href="#七-删除证书">¶</a>七、删除证书</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除指定域名的证书</span></span><br><span class="line">sudo certbot delete --cert-name example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除指定域名的证书（certbot delete操作同下）</span></span><br><span class="line">sudo rm -rf /etc/letsencrypt/live/example.com</span><br><span class="line">sudo rm -rf /etc/letsencrypt/archive/example.com</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>💁‍♂ 如果仅仅删除证书，但原本证书没有注销或过期，那么再次申请签发生成新的证书时，默认生成的新证书与旧证书的一些基本信息（如私钥、公钥和有效期等）会保持相同，仅到期日期和其他元数据（例如序列号、版本号和指纹）不同。</p>
+</blockquote>
+<h2 id="八-证书续期"><a class="header-anchor" href="#八-证书续期">¶</a>八、证书续期</h2>
+<h3 id="1-简要概述-v2"><a class="header-anchor" href="#1-简要概述-v2">¶</a>1. 简要概述</h3>
+<p>Let’s Encrypt 证书的有效期是90天，证书到期前 20 天、10 天和 1 天时将会接收到到期通知邮件，提醒用户进行证书续期操作。用户可以通过<code>certbot renew</code>命令来给即将过期的证书续期，续期会生成新的证书并自动替换掉原来的证书。</p>
+<blockquote>
+<p>💁‍♂ 说明：</p>
+<ul>
+<li>如果证书已经过期或者被吊销，则 certbot 将无法对其进行续期，对于这种情况只能重新申请签发新的证书。</li>
+<li>证书到期前 30 天内才可以续订，多于30天则不允许续订。</li>
+<li>通过<code>certbot renew</code>命令来续订，默认生成的新证书与旧证书的一些基本信息（如私钥、公钥和有效期等）会保持相同，仅到期日期和其他元数据（例如序列号、版本号和指纹）不同。</li>
+<li>如果希望通过旧的证书信息强制重新申请签发新的证书并替换则需要加选项 <code>--force-renewal</code>。</li>
+<li>如果续期的是测试环境的证书则需要加选项：<code>--break-my-certs</code></li>
+</ul>
+</blockquote>
+<h3 id="2-http-验证模式申请证书续期"><a class="header-anchor" href="#2-http-验证模式申请证书续期">¶</a>2. HTTP 验证模式申请证书续期</h3>
+<h4 id="1-手动续期"><a class="header-anchor" href="#1-手动续期">¶</a>（1）手动续期</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#证书续期</span></span><br><span class="line">sudo certbot renew</span><br><span class="line"><span class="comment">#查看更详细的日志信息，可以使用 -v（--verbose）选项，如下：</span></span><br><span class="line">sudo certbot renew -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>💁‍♂ 提示：不论是单域名证书、多域名证书以上操作都是支持的。当然在HTTP 验证模式下，通配符域证书申请和通配符域证书续期都是不支持的，</p>
+</blockquote>
+<h4 id="2-自动续期"><a class="header-anchor" href="#2-自动续期">¶</a>（2）自动续期</h4>
+<p>可以通过Linux的定时任务来完成自动续期的需求，操作如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置系统的定时任务</span></span><br><span class="line">sudo crontab -e</span><br><span class="line"><span class="comment">#在最后添加如下定时规则：</span></span><br><span class="line">0 3 1 * * certbot renew --renew-hook <span class="string">"sudo /opt/nginx/sbin/nginx -s reload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#列出系统的定时任务</span></span><br><span class="line">sudo crontab -l</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>定时任务规则中 <code>certbot renew</code> 的  <code>--renew-hook</code> 选项用于指定证书续期更新完成后自动触发执行某自定义脚本或命令，这里填写的是命令是重新加载 nginx 配置以使得新的 SSL 证书生效。</p>
+</blockquote>
+<h3 id="3-dns-验证模式申请证书续期"><a class="header-anchor" href="#3-dns-验证模式申请证书续期">¶</a>3. DNS 验证模式申请证书续期</h3>
+<h4 id="1-简要概述-v3"><a class="header-anchor" href="#1-简要概述-v3">¶</a>（1）简要概述</h4>
+<p>通过手动 DNS 验证模式申请签发证书的方式，每次 <code>certbot renew</code> 续期证书都需要通过指定 <code>--manual-auth-hook</code> 选项执行 shell 脚本来更新 DNS TXT 记录，否则无法成功续期。</p>
+<blockquote>
+<p>💁‍♂ <code>certbot renew</code>时不指定 <code>--manual-auth-hook</code> 选项进行证书续期时报错如下：</p>
+<p>Failed to renew certificate <a href="http://example.com" target="_blank" rel="noopener">example.com</a> with error: The manual plugin is not working; there may be problems with your existing configuration.<br>
+The error was: PluginError(‘An authentication script must be provided with --manual-auth-hook when using the manual plugin non-interactively.’,</p>
+<p>💁‍♂ 提示：不论是单域名证书、多域名证书、还是通配符证书，都是需要指定 <code>--manual-auth-hook</code> 选项。</p>
+</blockquote>
+<h4 id="2-安装并配置阿里云-cli-工具"><a class="header-anchor" href="#2-安装并配置阿里云-cli-工具">¶</a>（2）安装并配置阿里云 CLI 工具</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line"><span class="comment">#pip install aliyuncli</span></span><br><span class="line">wget https://aliyuncli.alicdn.com/aliyun-cli-linux-3.0.16-amd64.tgz</span><br><span class="line">tar xzvf aliyun-cli-linux-3.0.16-amd64.tgz</span><br><span class="line">sudo mv aliyun /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment">#配置（配置调用阿里云资源所需的凭证信息、地域、语言等）</span></span><br><span class="line">aliyun configure <span class="built_in">set</span> \</span><br><span class="line">  --profile akProfile \</span><br><span class="line">  --mode AK \</span><br><span class="line">  --region cn-hangzhou \</span><br><span class="line">  --access-key-id LTAxxxxxxxx9x7a \</span><br><span class="line">  --access-key-secret oNYXxxxxxxxxvFcz8F</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">#卸载</span></span><br><span class="line">  sudo rm -rf /usr/<span class="built_in">local</span>/bin/aliyun</span><br><span class="line">  sudo rm -rf ~/.aliyun</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://ram.console.aliyun.com/manage/ak" target="_blank" rel="noopener">阿里云 API 的密钥 AccessKey</a> 可在阿里云管理后台创建获取。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://help.aliyun.com/document_detail/121259.html?spm=a2c4g.121258.0.0.4b3824cbmCi5sc" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/121259.html?spm=a2c4g.121258.0.0.4b3824cbmCi5sc</a></li>
+<li><a href="https://github.com/aliyun/aliyun-cli/blob/master/README-CN.md" target="_blank" rel="noopener">https://github.com/aliyun/aliyun-cli/blob/master/README-CN.md</a></li>
+</ul>
+</blockquote>
+<h4 id="3-创建dns-txt-记录脚本文件"><a class="header-anchor" href="#3-创建dns-txt-记录脚本文件">¶</a>（3）创建dns txt 记录脚本文件</h4>
+<p>创建 <code>/opt/alidns/alidns.sh</code> 文件，内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取 Certbot 提供的域名和 token 参数</span></span><br><span class="line">DOMAIN=<span class="string">"<span class="variable">$CERTBOT_DOMAIN</span>"</span></span><br><span class="line">TOKEN=<span class="string">"<span class="variable">$CERTBOT_VALIDATION</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 Aliyun CLI 添加 TXT 记录到 DNS 中</span></span><br><span class="line">aliyuncli dns AddDomainRecord --RecordType TXT --RR <span class="string">"_acme-challenge.<span class="variable">$&#123;DOMAIN&#125;</span>"</span> --Value <span class="string">"<span class="variable">$&#123;TOKEN&#125;</span>"</span> --DomainName <span class="string">"<span class="variable">$&#123;DOMAIN&#125;</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-手动续期"><a class="header-anchor" href="#4-手动续期">¶</a>（4）手动续期</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /opt/alidns/alidns.sh</span><br><span class="line">sudo certbot renew \</span><br><span class="line">--preferred-challenges dns-01 \</span><br><span class="line">--manual-auth-hook <span class="string">"/opt/alidns/alidns.sh"</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-自动续期"><a class="header-anchor" href="#5-自动续期">¶</a>（5）自动续期</h4>
+<p>可以通过Linux的定时任务来完成自动续期的需求，操作如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置系统的定时任务</span></span><br><span class="line">sudo crontab -e</span><br><span class="line"><span class="comment">#在最后添加如下定时规则：</span></span><br><span class="line">0 3 1 * * certbot renew --preferred-challenges dns-01 --manual-auth-hook <span class="string">"/opt/alidns/alidns.sh"</span> --renew-hook <span class="string">"sudo /opt/nginx/sbin/nginx -s reload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#列出系统的定时任务</span></span><br><span class="line">sudo crontab -l</span><br></pre></td></tr></table></figure>
+<h2 id="九-常见问题"><a class="header-anchor" href="#九-常见问题">¶</a>九、常见问题</h2>
+<p>（1）出现错误<code>An unexpected error occurred: There were too many requests of a given type :: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/failed-validation-limit/</code></p>
+<p>因为操作失败太多次导致会被限制一段时间不允许再操作，为了解除限制可以删除/etc/letsencrypt/accounts的所有内容，然后就可继续申请了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /etc/letsencrypt/accounts/*</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -599,17 +859,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
-          
-            <a href="/tags/certbot/" rel="tag"><i class="fa fa-tag"></i> certbot</a>
-          
-            <a href="/tags/Let-s-Encrypt/" rel="tag"><i class="fa fa-tag"></i> Let's Encrypt</a>
-          
             <a href="/tags/ssl/" rel="tag"><i class="fa fa-tag"></i> ssl</a>
-          
-            <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
-          
-            <a href="/tags/https/" rel="tag"><i class="fa fa-tag"></i> https</a>
           
         </div>
       
@@ -641,8 +891,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/devops/vsftpd_ubuntu.html" rel="prev" title="ubuntu 安装vsftpd服务器">
-                <i class="fa fa-chevron-left"></i> ubuntu 安装vsftpd服务器
+              <a href="/tools/pyenv.html" rel="prev" title="python版本管理工具pyenv">
+                <i class="fa fa-chevron-left"></i> python版本管理工具pyenv
               </a>
             
           </div>
@@ -651,8 +901,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/devops/mail.html" rel="next" title="centos7搭建邮件服务器">
-                centos7搭建邮件服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/windows/winget.html" rel="next" title="Windows包管理工具winget">
+                Windows包管理工具winget <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -794,7 +1044,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-count">99</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -862,7 +1112,7 @@
                   </li>
                 
                   <li class="recent_posts_li">
-                    <a href="/windows/scoop.html" title="Windows包管理工具scoop" target="_blank">Windows包管理工具scoop</a>
+                    <a href="/tools/certbot.html" title="通过certbot工具生成ssl证书" target="_blank">通过certbot工具生成ssl证书</a>
                   </li>
                 
               </ul>
@@ -883,7 +1133,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-域名配置"><span class="nav-text">0. 域名配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装apache-openssl和mod-ssl"><span class="nav-text">1. 安装apache、openssl和mod_ssl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动apache服务"><span class="nav-text">2. 启动apache服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检查apache是否启动"><span class="nav-text">3. 检查apache是否启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-查看apache服务器网页-文档-根目录"><span class="nav-text">4. 查看apache服务器网页(文档)根目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加网站更目录"><span class="nav-text">5. 添加网站更目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-生成证书"><span class="nav-text">6. 生成证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-重启apache服务器"><span class="nav-text">7. 重启apache服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-删除证书"><span class="nav-text">8.删除证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-letsencrypt-有什么限制"><span class="nav-text">9. letsencrypt 有什么限制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-简要概述"><span class="nav-text">一、简要概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-安装-certbot"><span class="nav-text">二、安装 certbot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-申请签发-ssl-证书"><span class="nav-text">三、申请签发 SSL 证书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简要概述"><span class="nav-text">1. 简要概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-certbot-常用的选项和参数"><span class="nav-text">2. certbot 常用的选项和参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-let-s-encrypt-证书申请请求限制"><span class="nav-text">3. Let’s Encrypt 证书申请请求限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-http-验证模式申请证书"><span class="nav-text">4. HTTP 验证模式申请证书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-单域名证书"><span class="nav-text">1）单域名证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-多域名证书-推荐"><span class="nav-text">2）多域名证书（推荐）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-通配符域名证书-不支持"><span class="nav-text">3）通配符域名证书（不支持）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-dns-验证模式申请证书"><span class="nav-text">5. DNS 验证模式申请证书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-单域名证书-v2"><span class="nav-text">1）单域名证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-多域名证书"><span class="nav-text">2）多域名证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-通配符域名证书"><span class="nav-text">3）通配符域名证书</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-列出拥有的证书信息"><span class="nav-text">四、列出拥有的证书信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-配置使用证书"><span class="nav-text">五、配置使用证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-吊销证书"><span class="nav-text">六、吊销证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-删除证书"><span class="nav-text">七、删除证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-证书续期"><span class="nav-text">八、证书续期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简要概述-v2"><span class="nav-text">1. 简要概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-http-验证模式申请证书续期"><span class="nav-text">2. HTTP 验证模式申请证书续期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-手动续期"><span class="nav-text">（1）手动续期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自动续期"><span class="nav-text">（2）自动续期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-dns-验证模式申请证书续期"><span class="nav-text">3. DNS 验证模式申请证书续期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-简要概述-v3"><span class="nav-text">（1）简要概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装并配置阿里云-cli-工具"><span class="nav-text">（2）安装并配置阿里云 CLI 工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建dns-txt-记录脚本文件"><span class="nav-text">（3）创建dns txt 记录脚本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-手动续期"><span class="nav-text">（4）手动续期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-自动续期"><span class="nav-text">（5）自动续期</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-常见问题"><span class="nav-text">九、常见问题</span></a></li></ol></div>
             
 
           </div>
