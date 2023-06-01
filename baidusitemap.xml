@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/blog/hexo_backup.html</loc>
+    <lastmod>2023-06-01T16:57:48.519Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/devops/docker.html</loc>
     <lastmod>2023-06-01T11:02:16.941Z</lastmod>
   </url>  <url>
@@ -103,10 +106,10 @@
     <loc>https://www.qcmoke.site/linux/vm.html</loc>
     <lastmod>2023-03-18T22:50:36.429Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/linux/ubuntu_advantage.html</loc>
+    <loc>https://www.qcmoke.site/linux/ubuntu_wps.html</loc>
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/linux/deepin_experience.html</loc>
@@ -192,9 +195,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/blog/typecho_http_https.html</loc>
     <lastmod>2023-03-18T22:50:36.385Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/blog/hexo_backup.html</loc>
-    <lastmod>2023-03-18T22:50:36.382Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/blog/gitbook.html</loc>
     <lastmod>2023-03-18T22:50:36.379Z</lastmod>
