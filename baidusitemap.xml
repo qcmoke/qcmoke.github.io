@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.site/devops/docker.html</loc>
+    <lastmod>2023-06-01T11:02:16.941Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
+    <lastmod>2023-05-31T20:15:05.062Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/svn.html</loc>
+    <lastmod>2023-05-30T16:13:08.759Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/git.html</loc>
+    <lastmod>2023-05-30T16:10:54.883Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/windows/winget.html</loc>
+    <lastmod>2023-05-20T12:31:57.107Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.site/tools/certbot.html</loc>
-    <lastmod>2023-05-13T16:19:35.110Z</lastmod>
+    <lastmod>2023-05-19T11:02:28.109Z</lastmod>
+  </url>  <url>
+    <loc>https://www.qcmoke.site/tools/proxy.html</loc>
+    <lastmod>2023-05-17T13:17:03.056Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/nginx.html</loc>
     <lastmod>2023-05-13T16:07:19.669Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/linux/to_learn_linux.html</loc>
-    <lastmod>2023-05-13T10:57:55.948Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/devops/docker.html</loc>
-    <lastmod>2023-05-03T05:57:46.944Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/blog/gitpage.html</loc>
     <lastmod>2023-05-02T07:50:16.748Z</lastmod>
@@ -24,9 +36,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.site/tools/jetbrains.html</loc>
     <lastmod>2023-04-30T11:45:48.783Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/tools/to_learn_git.html</loc>
-    <lastmod>2023-04-28T16:01:49.011Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/devops/nfs.html</loc>
     <lastmod>2023-04-26T00:28:15.753Z</lastmod>
@@ -46,14 +55,8 @@
     <loc>https://www.qcmoke.site/tools/nvm.html</loc>
     <lastmod>2023-04-10T16:04:15.263Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/tools/proxy.html</loc>
-    <lastmod>2023-04-10T15:47:42.722Z</lastmod>
-  </url>  <url>
     <loc>https://www.qcmoke.site/tools/pyenv.html</loc>
     <lastmod>2023-04-08T20:42:17.888Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.site/windows/winget.html</loc>
-    <lastmod>2023-04-08T00:34:14.383Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/windows/scoop.html</loc>
     <lastmod>2023-04-08T00:33:12.029Z</lastmod>
@@ -145,9 +148,6 @@
     <loc>https://www.qcmoke.site/devops/vsftpd_ubuntu.html</loc>
     <lastmod>2023-03-18T22:50:36.408Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/devops/svn.html</loc>
-    <lastmod>2023-03-18T22:50:36.407Z</lastmod>
-  </url>  <url>
     <loc>https://www.qcmoke.site/devops/redis.html</loc>
     <lastmod>2023-03-18T22:50:36.406Z</lastmod>
   </url>  <url>
@@ -217,10 +217,10 @@
     <loc>https://www.qcmoke.site/javaee/frameworks.html</loc>
     <lastmod>2022-05-24T03:50:17.675Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
+    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.site/front/text_centered_vertically.html</loc>
+    <loc>https://www.qcmoke.site/front/text_align_and_margin_0_auto.html</loc>
     <lastmod>2022-05-24T03:50:17.618Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.site/front/learn_easyui.html</loc>
