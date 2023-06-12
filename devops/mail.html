@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="article:published_time" content="2019-01-17T16:51:47.000Z">
-<meta property="article:modified_time" content="2023-03-18T22:50:36.397Z">
+<meta property="article:modified_time" content="2023-06-07T19:34:32.168Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="mail">
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T06:50:36+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-08T03:34:32+08:00">
+                2023-06-08
               </time>
             
           </span>
@@ -492,8 +492,8 @@
 <p>本文会搭建收、发两个服务器，并用邮件客户端（Foxmail）做测试。</p>
 <h3 id="2-协议"><a class="header-anchor" href="#2-协议">¶</a>2. 协议</h3>
 <p>协议就是定义规则，这里是邮件协议，定义邮件收发的规则，了解规则有助于理解软件的配置文件。</p>
-<p>邮件发送协议 SMTP（Simple Mail Transfer Protocol），打开端口 25。</p>
-<p>邮件收取协议 POP，打开端口 110；还有个常用邮件收取协议 IMOP，打开端口 143。</p>
+<p>邮件发送协议 SMTP（Simple Mail Transfer Protocol），默认端口为25。</p>
+<p>邮件收取协议 POP，默认端口为110；还有个常用邮件收取协议 IMOP，默认端口为143。</p>
 <h3 id="3-服务软件"><a class="header-anchor" href="#3-服务软件">¶</a>3. 服务软件</h3>
 <h4 id="postfix"><a class="header-anchor" href="#postfix">¶</a>Postfix</h4>
 <p>Postfix 是实现 SMTP 协议的软件，也叫做邮件发送服务器。</p>
@@ -501,7 +501,7 @@
 <h4 id="dovecot"><a class="header-anchor" href="#dovecot">¶</a>Dovecot</h4>
 <p>Dovecot 实现了 POP 和 IMOP 协议，也叫做邮件收取服务器。如果只搭建了 Postfix 而没有它，不好意思，你是收不到邮件的。</p>
 <h4 id="sasl"><a class="header-anchor" href="#sasl">¶</a>Sasl</h4>
-<p>Sasl登陆验证服务，在下面的介绍可以看到 Postfix 作为邮件发送服务器，不能无限制的转发任意邮件，应当只转发它信任的发件人发送的邮件，这一点体现在 Postfix 的配置文件要配置它认为安全的主机（mynetworks 参数）。但这样会显得很麻烦，Sasl 通过其它方式也可以帮助 Postfix 完成信任邮件的认证。</p>
+<p>Sas l登陆验证服务，在下面的介绍可以看到 Postfix 作为邮件发送服务器，不能无限制的转发任意邮件，应当只转发它信任的发件人发送的邮件，这一点体现在 Postfix 的配置文件要配置它认为安全的主机（mynetworks 参数）。但这样会显得很麻烦，Sasl 通过其它方式也可以帮助 Postfix 完成信任邮件的认证。</p>
 <h2 id="二-搭建及测试"><a class="header-anchor" href="#二-搭建及测试">¶</a>二、搭建及测试</h2>
 <h3 id="1-设置域名"><a class="header-anchor" href="#1-设置域名">¶</a>1. 设置域名</h3>
 <p>域名或自建DNS照下面方式设置即可</p>
@@ -536,11 +536,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@mail ~]<span class="comment"># vim /etc/postfix/main.cf</span></span><br><span class="line"><span class="comment">#修改以下配置，注意下面的变量不要重复，如果发现与原来的变量重名，那就将原来的变量给注释掉</span></span><br><span class="line"><span class="comment">#邮件服务器的主机名</span></span><br><span class="line">myhostname = mail.qcmoke.top</span><br><span class="line"><span class="comment">#邮件域</span></span><br><span class="line">mydomain = qcmoke.top</span><br><span class="line"><span class="comment">#往外发邮件的邮件域</span></span><br><span class="line">myorigin = <span class="variable">$mydomain</span></span><br><span class="line"><span class="comment">#监听的网卡 </span></span><br><span class="line">inet_interfaces = all</span><br><span class="line">inet_protocols = all</span><br><span class="line"><span class="comment">#服务的对象</span></span><br><span class="line">mydestination = <span class="variable">$myhostname</span>, <span class="variable">$mydomain</span></span><br><span class="line"><span class="comment">#邮件存放的目录</span></span><br><span class="line">home_mailbox = Maildir/</span><br><span class="line"> </span><br><span class="line"><span class="comment">#新添加以下配置</span></span><br><span class="line"><span class="comment">#--------自定义（下面可以复制粘贴到文件最后面，用于设置服务器验为主，第一行设置发送附件大小）</span></span><br><span class="line"><span class="comment">#message_size_limit = 100000</span></span><br><span class="line">smtpd_sasl_auth_enable = yes</span><br><span class="line">smtpd_sasl_security_options = noanonymous</span><br><span class="line">mynetworks = 127.0.0.0/8</span><br><span class="line">smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination</span><br></pre></td></tr></table></figure>
 <p><strong>配置补充说明</strong></p>
 <ul>
-<li><code>smtpd_sasl_auth_enable = yes</code> //开启认证</li>
-<li><code>smtpd_sasl_security_options = noanonymous</code> //不允许匿名发信</li>
-<li><code>mynetworks = 127.0.0.0/8</code>//允许的网段，如果增加本机所在网段就会出现允许不验证也能向外域发信</li>
-<li><code>smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination</code></li>
-<li>允许本地域以及认证成功的发信，拒绝认证失败的发信</li>
+<li><code>smtpd_sasl_auth_enable = yes</code> 表示开启认证</li>
+<li><code>smtpd_sasl_security_options = noanonymous</code> 表示不允许匿名发信</li>
+<li><code>mynetworks = 127.0.0.0/8</code> 表示//允许的网段，如果增加本机所在网段就会出现允许不验证也能向外域发信</li>
+<li><code>smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination</code>表示允许本地域以及认证成功的发信，拒绝认证失败的发信</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@mail ~]<span class="comment"># postfix check   #修改保存后检查配置文件是否有错</span></span><br><span class="line">[root@mail ~]<span class="comment"># systemctl start postfix  #开启postfix服务</span></span><br><span class="line">[root@mail ~]<span class="comment"># systemctl enable postfix  #设置postfix服务开机启动</span></span><br></pre></td></tr></table></figure>
 <p>修改<code>dovecot</code>主配置文件，启动服务</p>
@@ -1812,5 +1811,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>
