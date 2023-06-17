@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="http,https,frp,内网穿透,反向代理," />
+  <meta name="keywords" content="frp,http,https,内网穿透,反向代理," />
 
 
 
@@ -94,11 +94,11 @@
 <meta property="og:description" content="¶一、frp的作用 frp的作用就是实现内网穿透，内网穿透就是允许内网的主机能够被外网的其他主机访问，内网穿透是反向代理技术中的一个中间环节技术。对于反向代理的更多理解可见另外一文《关于代理技术的理解》。   利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。说罢，也就是给外网提供内网主机的http 或 https 服务。   此外，还能利用处于内网或防火墙后的机器，">
 <meta property="og:image" content="https://www.qcmoke.site/images/loading-post.gif">
 <meta property="article:published_time" content="2018-11-06T16:51:47.000Z">
-<meta property="article:modified_time" content="2023-06-17T05:03:57.040Z">
+<meta property="article:modified_time" content="2023-06-17T08:04:40.068Z">
 <meta property="article:author" content="Qcmoke">
+<meta property="article:tag" content="frp">
 <meta property="article:tag" content="http">
 <meta property="article:tag" content="https">
-<meta property="article:tag" content="frp">
 <meta property="article:tag" content="内网穿透">
 <meta property="article:tag" content="反向代理">
 <meta name="twitter:card" content="summary">
@@ -376,7 +376,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-06-17T13:03:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-17T16:04:40+08:00">
                 2023-06-17
               </time>
             
@@ -540,7 +540,7 @@
 </blockquote>
 <p>不同操作系统操作大同小异。下面以<code>linux</code>为例，假设已经下载并解析好。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ./frpc.ini <span class="comment">#编辑frpc.ini配置文件</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="comment">#公网服务器ip（必选）</span></span><br><span class="line">server_addr = 144.34.145.10</span><br><span class="line"><span class="comment">#与服务端bind_port一致（必选）</span></span><br><span class="line">server_port = 7000</span><br><span class="line"><span class="comment">#启用TLS加密传输功能（可选，从v0.25.0版本开始frpc和frps之间支持通过TLS协议加密传输）</span></span><br><span class="line">tls_enable = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##认证配置（可选，客户端和服务端配置需要一致，客户端请求到服务端时需要认证通过才能连接）</span></span><br><span class="line"><span class="comment">#认证方式, token</span></span><br><span class="line">authentication_method = token</span><br><span class="line"><span class="comment">#认证方式, 开启连接时校验</span></span><br><span class="line">authenticate_new_work_conns = <span class="literal">true</span></span><br><span class="line"><span class="comment">#token,可自定义</span></span><br><span class="line">token = test12345678</span><br><span class="line"></span><br><span class="line"><span class="comment">##frp客户端端控制台（可选，可用于动态修改客户端配置，访问地址：http://127.0.0.1:7400）</span></span><br><span class="line">admin_addr = 127.0.0.1</span><br><span class="line">admin_port = 7400</span><br><span class="line">admin_user = admin</span><br><span class="line">admin_pwd = admin</span><br><span class="line"></span><br><span class="line"><span class="comment">##自定义端口映射（可选）</span></span><br><span class="line"><span class="comment">#服务名称（[ ]里的名称可自定义），公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line"><span class="comment">#访问协议</span></span><br><span class="line"><span class="built_in">type</span> = http</span><br><span class="line"><span class="comment">#内网服务器ip,同一内网下的任何主机都可以            </span></span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line"><span class="comment">#内网web服务的端口号</span></span><br><span class="line">local_port = 80</span><br><span class="line"><span class="comment">#type为http时可自定义域名（访问公网服务器域名,需要解析域名到server_addr）</span></span><br><span class="line">custom_domains = qcmoke.top</span><br><span class="line"></span><br><span class="line"><span class="comment">#公网通过ssh访问内网主机</span></span><br><span class="line">[ssh]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line"><span class="comment">#内网服务器ip（同一内网下的任何主机都可以）</span></span><br><span class="line"><span class="comment">#local_ip = 127.0.0.1</span></span><br><span class="line">local_ip = 192.168.222.131</span><br><span class="line"><span class="comment">#内网端口</span></span><br><span class="line">local_port = 22</span><br><span class="line"><span class="comment">#外网端口（公网服务器开放的处理ssh转发的端口，要确保服务器防火墙对应端口开放）</span></span><br><span class="line">remote_port = 7001</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="comment">#公网服务器ip（必选）</span></span><br><span class="line">server_addr = 144.34.145.10</span><br><span class="line"><span class="comment">#与服务端bind_port一致（必选）</span></span><br><span class="line">server_port = 7000</span><br><span class="line"><span class="comment">#启用TLS加密传输功能（可选，从v0.25.0版本开始frpc和frps之间支持通过TLS协议加密传输）</span></span><br><span class="line">tls_enable = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##认证配置（可选，客户端和服务端配置需要一致，客户端请求到服务端时需要认证通过才能连接）</span></span><br><span class="line"><span class="comment">#认证方式, token</span></span><br><span class="line">authentication_method = token</span><br><span class="line"><span class="comment">#认证方式, 开启连接时校验</span></span><br><span class="line">authenticate_new_work_conns = <span class="literal">true</span></span><br><span class="line"><span class="comment">#token,可自定义</span></span><br><span class="line">token = test12345678</span><br><span class="line"></span><br><span class="line"><span class="comment">##frp客户端端控制台（可选，可用于动态修改客户端配置，访问地址：http://127.0.0.1:7400）</span></span><br><span class="line">admin_addr = 127.0.0.1</span><br><span class="line">admin_port = 7400</span><br><span class="line">admin_user = admin</span><br><span class="line">admin_pwd = admin</span><br><span class="line"></span><br><span class="line"><span class="comment">##自定义端口映射（可选）</span></span><br><span class="line"><span class="comment">#服务名称（[ ]里的名称可自定义），公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line"><span class="comment">#访问协议</span></span><br><span class="line"><span class="built_in">type</span> = http</span><br><span class="line"><span class="comment">#内网服务器ip,同一内网下的任何主机都可以            </span></span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line"><span class="comment">#内网web服务的端口号</span></span><br><span class="line">local_port = 80</span><br><span class="line"><span class="comment">#type为http时可自定义域名（访问公网服务器域名,需要解析域名到server_addr）</span></span><br><span class="line">custom_domains = example.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#公网通过ssh访问内网主机</span></span><br><span class="line">[ssh]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line"><span class="comment">#内网服务器ip（同一内网下的任何主机都可以）</span></span><br><span class="line"><span class="comment">#local_ip = 127.0.0.1</span></span><br><span class="line">local_ip = 192.168.222.131</span><br><span class="line"><span class="comment">#内网端口</span></span><br><span class="line">local_port = 22</span><br><span class="line"><span class="comment">#外网端口（公网服务器开放的处理ssh转发的端口，要确保服务器防火墙对应端口开放）</span></span><br><span class="line">remote_port = 7001</span><br></pre></td></tr></table></figure>
 <p>通过以下命令给服务器开放7001端口</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=7001/tcp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <p>所绑定的公网服务器域名，一级、二级域名都可以，绑定多个域名时用英文“,”分开</p>
@@ -562,11 +562,11 @@
 <ul>
 <li>
 <p>http:</p>
-<p>浏览器打开访问<code>http://域名:8080/资源路径</code>，如：<code>http://qcmoke.top:8080/myproject/index.html</code></p>
+<p>浏览器打开访问<code>http://域名:8080/资源路径</code>，如：<code>http://qcmoke.site:8080/myproject/index.html</code></p>
 </li>
 <li>
 <p>ssh:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote   <span class="comment">#ssh远程连接服务器</span></span><br><span class="line"><span class="comment">#如：</span></span><br><span class="line">ssh -p 7001 root@144.34.145.10</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">ssh -p 7001 root@qcmoke.top</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote   <span class="comment">#ssh远程连接服务器</span></span><br><span class="line"><span class="comment">#如：</span></span><br><span class="line">ssh -p 7001 root@144.34.145.10</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">ssh -p 7001 root@qcmoke.site</span><br></pre></td></tr></table></figure>
 <p><img src="/tools/../images/loading-post.gif" data-original="frp/1546544526817.png" alt="1546544526817"></p>
 </li>
 </ul>
@@ -635,11 +635,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/frp/" rel="tag"><i class="fa fa-tag"></i> frp</a>
+          
             <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
           
             <a href="/tags/https/" rel="tag"><i class="fa fa-tag"></i> https</a>
-          
-            <a href="/tags/frp/" rel="tag"><i class="fa fa-tag"></i> frp</a>
           
             <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" rel="tag"><i class="fa fa-tag"></i> 内网穿透</a>
           
