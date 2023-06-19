@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="Kafka 是一个分布式的基于发布&#x2F;订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。 概念：  1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。 2）Producer ：消息生产者，就是向broker发送topic的客户端； 3）Consumer ：消息消费者，向br">
+<meta name="description" content="Kafka 是一个分布式的基于发布&#x2F;订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。 概念：   1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。 2）Producer ：消息生产者，就是向broker发送topic的客户端； 3）Consumer ：消息消费者，向b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7安装kafka">
 <meta property="og:url" content="https://www.qcmoke.cn/devops/mq.html">
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
-<meta property="og:description" content="Kafka 是一个分布式的基于发布&#x2F;订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。 概念：  1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。 2）Producer ：消息生产者，就是向broker发送topic的客户端； 3）Consumer ：消息消费者，向br">
+<meta property="og:description" content="Kafka 是一个分布式的基于发布&#x2F;订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。 概念：   1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。 2）Producer ：消息生产者，就是向broker发送topic的客户端； 3）Consumer ：消息消费者，向b">
 <meta property="og:image" content="https://www.qcmoke.cn/images/loading-post.gif">
 <meta property="article:published_time" content="2019-01-17T16:51:47.000Z">
-<meta property="article:modified_time" content="2023-03-18T22:50:36.399Z">
+<meta property="article:modified_time" content="2023-06-19T16:07:28.140Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="kafka">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T06:50:36+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-20T00:07:28+08:00">
+                2023-06-20
               </time>
             
           </span>
@@ -488,15 +488,17 @@
 <p>Kafka 是一个分布式的基于发布/订阅模式的消息队列，其订阅者的消费类型为主动拉取的模式。</p>
 <p>概念：</p>
 <blockquote>
-<p>1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。<br>
-2）Producer ：消息生产者，就是向broker发送topic的客户端；<br>
-3）Consumer ：消息消费者，向broker的topic中拉取数据的客户端；<br>
-4）Consumer Group （CG）：消费者组，由多个 consumer 组成。组内的消费者共同消费某个主题里的所有分区数据（注意是共同消费而非独立消费），组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内的其中一个消费者消费（但该分区可以被其他组的消费者消费）；消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。<br>
-5）Topic ：可以理解为一个队列，生产者和消费者面向的都是一个 topic；<br>
-6）Partition：为了实现扩展性，一个非常大的 topic 可以分布到多个 broker（即服务器）上，一个 topic 可以分为多个 partition，每个 partition 是一个有序的队列；<br>
-7）Replica：副本，为保证集群中的某个节点发生故障时，该节点上的 partition 数据不丢失，且 kafka 仍然能够继续工作，kafka 提供了副本机制，一个 topic 的每个分区都有若干个副本，一个 leader 和若干个 follower。<br>
-8）leader：每个分区多个副本的“主”，生产者发送数据的对象，以及消费者消费数据的对象都是 leader。<br>
-9）follower：每个分区多个副本中的“从”，实时从 leader 中同步数据，保持和 leader 数据的同步。leader 发生故障时，某个 follower 会成为新的 follower。</p>
+<ul>
+<li>1）Broker ：即一个正在运行中的kafka服务进程。一个集群由多个 broker 组成。由于broker是无状态的，所以需要通过zookeeper来维护集群状态。</li>
+<li>2）Producer ：消息生产者，就是向broker发送topic的客户端；</li>
+<li>3）Consumer ：消息消费者，向broker的topic中拉取数据的客户端；</li>
+<li>4）Consumer Group （CG）：消费者组，由多个 consumer 组成。组内的消费者共同消费某个主题里的所有分区数据（注意是共同消费而非独立消费），组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内的其中一个消费者消费（但该分区可以被其他组的消费者消费）；消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。</li>
+<li>5）Topic ：可以理解为一个队列，生产者和消费者面向的都是一个 topic；</li>
+<li>6）Partition：为了实现扩展性，一个非常大的 topic 可以分布到多个 broker（即服务器）上，一个 topic 可以分为多个 partition，每个 partition 是一个有序的队列；</li>
+<li>7）Replica：副本，为保证集群中的某个节点发生故障时，该节点上的 partition 数据不丢失，且 kafka 仍然能够继续工作，kafka 提供了副本机制，一个 topic 的每个分区都有若干个副本，一个 leader 和若干个 follower。</li>
+<li>8）leader：每个分区多个副本的“主”，生产者发送数据的对象，以及消费者消费数据的对象都是 leader。</li>
+<li>9）follower：每个分区多个副本中的“从”，实时从 leader 中同步数据，保持和 leader 数据的同步。leader 发生故障时，某个 follower 会成为新的 follower。</li>
+</ul>
 </blockquote>
 <h2 id="一-安装"><a class="header-anchor" href="#一-安装">¶</a>一、安装</h2>
 <p>前提条件：安装kafka之前需要有java环境。</p>
@@ -597,8 +599,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/devops/mail.html" rel="prev" title="centos7搭建邮件服务器">
-                <i class="fa fa-chevron-left"></i> centos7搭建邮件服务器
+              <a href="/devops/apache_ssl.html" rel="prev" title="apache配置ssl证书">
+                <i class="fa fa-chevron-left"></i> apache配置ssl证书
               </a>
             
           </div>
@@ -607,8 +609,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/devops/denyhosts.html" rel="next" title="使用denyhosts防止ssh暴力破解">
-                使用denyhosts防止ssh暴力破解 <i class="fa fa-chevron-right"></i>
+              <a href="/devops/mail.html" rel="next" title="centos7搭建邮件服务器">
+                centos7搭建邮件服务器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1728,5 +1730,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
