@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="Git Pages 是结合 git 服务操作的 web 网页托管平台。通过 git 提交再结合 git hook 脚本就能很好的将提交的文件上传到web服务虚拟目录里。但是 Github、Netlify、Coding 等已经提供了免费 git pages 服务，为什么还要自己在 vps 上折腾搭建 git pages 呢？因为这些服务商提供的 git pages 是有限制的，比如空间容量相对较小">
 <meta property="article:published_time" content="2019-07-11T23:08:00.000Z">
-<meta property="article:modified_time" content="2023-06-19T09:31:57.608Z">
+<meta property="article:modified_time" content="2023-06-19T09:52:29.314Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="nginx">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T17:31:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T17:52:29+08:00">
                 2023-06-19
               </time>
             
@@ -519,7 +519,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
 <h3 id="4-测试"><a class="header-anchor" href="#4-测试">¶</a>4. 测试</h3>
 <p>客户机</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@example.com:/opt/blog/git/blog.git</span><br><span class="line"><span class="built_in">cd</span> blog/</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;h1&gt;Qcmoke Bolg&lt;/h1&gt;"</span> &gt;&gt; index.html</span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">"init my blog"</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@example.com:/opt/blog/git/blog.git</span><br><span class="line"><span class="built_in">cd</span> blog/</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;h1&gt;My Bolg&lt;/h1&gt;"</span> &gt;&gt; index.html</span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">"init my blog"</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 <p>之后浏览器访问<code>http://example.com</code>就能访问到push到服务器的<code>index.html</code>页面了。</p>
 <blockquote>
 <p>📚 参考</p>
@@ -1748,5 +1748,5 @@ darkmode.click(function () {
   
 
   
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 </html>
