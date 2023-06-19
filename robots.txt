@@ -7,6 +7,3 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-
-Sitemap: https://www.qcmoke.site/sitemap.xml
-Sitemap: https://www.qcmoke.site/baidusitemap.xml

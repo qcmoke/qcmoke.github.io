@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶一、简要概述 certbot 是一个用于部署 Let’s Encrypt SSL 证书的免费、开源、自动化工具。它可以帮助网站管理员轻松地实现 HTTPS 和浏览器绿锁等功能，提高网站的安全性和可靠性。  Let’s Encrypt 是一个由非营利组织 Internet Security Research Group（ISRG）推出的一个免费、自动化、开放和安全的 SSL&#x2F;TLS 证书颁发机构。">
 <meta property="article:published_time" content="2022-04-29T05:18:03.000Z">
-<meta property="article:modified_time" content="2023-06-17T02:57:57.555Z">
+<meta property="article:modified_time" content="2023-06-19T07:51:11.349Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="ssl">
 <meta name="twitter:card" content="summary">
@@ -370,8 +370,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-06-17T10:57:57+08:00">
-                2023-06-17
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T15:51:11+08:00">
+                2023-06-19
               </time>
             
           </span>
@@ -767,8 +767,8 @@
 <p>常见的 Web 服务器软件有 nginx、apache、tomcat等。在这些 Web 服务器软件中配置 SSL 证书的方式不经相同，但它们都是支持使用 Let’s Encrypt SSL 证书的。</p>
 <blockquote>
 <ul>
-<li>nginx 配置 SSL 证书可参考<a href="https://www.qcmoke.site/devops/nginx.html">《nginx学习笔记》</a></li>
-<li>apache配置 SSL 证书可参考<a href="https://www.qcmoke.site/devops/apache_ssl.html">《apache配置ssl证书》</a></li>
+<li>nginx 配置 SSL 证书可参考<a href="../devops/nginx.html" name="../devops/nginx.md" id="hexo-md-link">《nginx学习笔记》</a></li>
+<li>apache配置 SSL 证书可参考<a href="../devops/apache_ssl.html" name="../devops/apache_ssl.md" id="hexo-md-link">《apache配置ssl证书》</a></li>
 </ul>
 </blockquote>
 <h1 id="六-吊销证书"><a class="header-anchor" href="#六-吊销证书">¶</a>六、吊销证书</h1>
@@ -892,7 +892,6 @@
 <h4 id="3-使用-hook-脚本自动续期"><a class="header-anchor" href="#3-使用-hook-脚本自动续期">¶</a>（3）使用 hook 脚本自动续期</h4>
 <p>可以配置 Linux 的定时任务来完成自动续期的需求，操作如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置系统的定时任务</span></span><br><span class="line">sudo crontab -e</span><br><span class="line"><span class="comment">#在最后添加如下定时规则（在每个月的第一天凌晨3点0分0秒时执行定时任务）</span></span><br><span class="line">0 3 1 * * certbot renew --manual --preferred-challenges dns-01 --manual-auth-hook <span class="string">"/opt/certboot-dns-update/au.sh python aly add"</span> --manual-cleanup-hook <span class="string">"/opt/certboot-dns-update/au.sh python aly clean"</span> --deploy-hook <span class="string">"/opt/nginx/sbin/nginx -s reload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#列出系统的定时任务</span></span><br><span class="line">sudo crontab -l</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div>
@@ -1492,7 +1491,7 @@ darkmode.click(function () {
           appId: '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
           appKey: 'd2FLy9fmXOTiM8TrokuIuDWx',
           placeholder: '留下你的小爪印吧~',
-          serverURLs: 'https://leancloud.qcmoke.site',
+          serverURLs: 'https://leancloud.qcmoke.cn',
     });
     </script>
 
@@ -1907,7 +1906,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.cn' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',
@@ -2112,5 +2111,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>

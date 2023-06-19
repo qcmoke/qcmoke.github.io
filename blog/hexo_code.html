@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="如果你是一名程序猴子🐒并且善于在hexo上写博客的话，我相信你肯定不少接触markdown代码块语法，但普通的markdown代码块语法提供的功能是有限的，如果你想在代码块标题栏或者内部加入一点新鲜的点缀，比如在标题栏上显示文件名、文件路径、下载地址等等；在代码内部根据行首的+或者-进行diff高亮，那么你是否无从下手？哈哈😄 …废话不多说！下面就为您提供方案。 正常markdown代码块的写">
 <meta property="article:published_time" content="2020-03-07T14:36:31.000Z">
-<meta property="article:modified_time" content="2022-05-24T03:50:17.462Z">
+<meta property="article:modified_time" content="2023-06-19T09:33:59.051Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="markdown">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-24T11:50:17+08:00">
-                2022-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T17:33:59+08:00">
+                2023-06-19
               </time>
             
           </span>
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  685
+                  682
                 </span>
               
 
@@ -514,32 +514,32 @@ link text：链接名称，指定 url 后有效，将会显示在右上角</p>
 <h3 id="进阶二-langugae-title-url-text"><a class="header-anchor" href="#进阶二-langugae-title-url-text">¶</a>进阶二、langugae + title + url + text</h3>
 <p>案例：</p>
 <div style="background-color: #1b1b1b;color: #bbb; margin: 20px 0; padding: 10px;border-radius: 5px; font-family: consolas;">
-  &#x60;&#x60;&#x60;java&nbsp;&nbsp;Demo类&nbsp;https://www.qcmoke.site/&nbsp;我的主页<br>
+  &#x60;&#x60;&#x60;java&nbsp;&nbsp;Demo类&nbsp;https://example.com/&nbsp;我的主页<br>
  	public class Demo{}
   <br>&#x60;&#x60;&#x60;
 </div>
 效果如下：		
-  <figure class="highlight java"><figcaption><span>Demo类</span><a href="https://www.qcmoke.site/">我的主页</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight java"><figcaption><span>Demo类</span><a href="https://example.com/" target="_blank" rel="noopener">我的主页</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="进阶三-langugae-url-text"><a class="header-anchor" href="#进阶三-langugae-url-text">¶</a>进阶三、langugae + url + text</h3>
 <p>如果不想填写 title，可以在 language 和 url 之间添加至少三个空格。</p>
 <p>案例：</p>
 <div style="background-color: #1b1b1b;color: #bbb; margin: 20px 0; padding: 10px;border-radius: 5px; font-family: consolas;">
-  &#x60;&#x60;&#x60;java&nbsp;&nbsp;&nbsp;https://www.qcmoke.site/<br>
+  &#x60;&#x60;&#x60;java&nbsp;&nbsp;&nbsp;https://example.com/<br>
  	public class Demo{}
   <br>&#x60;&#x60;&#x60;
 </div>
 <p>效果如下：</p>
-  <figure class="highlight java"><figcaption><span> </span><a href="https://www.qcmoke.site/">我的主页</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight java"><figcaption><span> </span><a href="https://example.com/" target="_blank" rel="noopener">我的主页</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="进阶四-langugae-url"><a class="header-anchor" href="#进阶四-langugae-url">¶</a>进阶四、langugae + url</h3>
 <p>案例：</p>
 <div style="background-color: #1b1b1b;color: #bbb; margin: 20px 0; padding: 10px;border-radius: 5px; font-family: consolas;">
-  &#x60;&#x60;&#x60;java&nbsp;&nbsp;&nbsp;https://www.qcmoke.site/<br>
+  &#x60;&#x60;&#x60;java&nbsp;&nbsp;&nbsp;https://example.com/<br>
  	public class Demo{}
   <br>&#x60;&#x60;&#x60;
 </div>
 <p>没有text的话，默认显示的名称是link</p>
 <p>效果如下：</p>
-  <figure class="highlight java"><figcaption><span> </span><a href="https://www.qcmoke.site/">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight java"><figcaption><span> </span><a href="https://example.com/" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="进阶五-diff高亮"><a class="header-anchor" href="#进阶五-diff高亮">¶</a>进阶五、diff高亮</h3>
 <p>只需在 [language] 这写 <code>diff</code>，然后在相应代码前面加上 <code>-</code> 和 <code>+</code> 就行了。</p>
 <p>案例：</p>
@@ -1159,7 +1159,7 @@ darkmode.click(function () {
           appId: '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
           appKey: 'd2FLy9fmXOTiM8TrokuIuDWx',
           placeholder: '留下你的小爪印吧~',
-          serverURLs: 'https://leancloud.qcmoke.site',
+          serverURLs: 'https://leancloud.qcmoke.cn',
     });
     </script>
 
@@ -1574,7 +1574,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.cn' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',
@@ -1779,5 +1779,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>

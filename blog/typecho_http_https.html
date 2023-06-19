@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="apache,ssl,http,https," />
+  <meta name="keywords" content="ssl,http,https,apache," />
 
 
 
@@ -93,12 +93,12 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="实现https首先需要购买ssl证书，比如通过阿里云购买了dv ssl证书。下载ssl文件解压后会得到214965547810841.key、214965547810841.pem、chain.pem、public.pem 共4个文件。 文件说明：  证书文件214965547810841.pem，包含两段内容，请不要删除任何一段内容。 如果是证书系统创建的CSR，还包含：证书私钥文件21496">
 <meta property="article:published_time" content="2018-09-02T09:30:00.000Z">
-<meta property="article:modified_time" content="2023-03-18T22:50:36.385Z">
+<meta property="article:modified_time" content="2023-06-19T09:47:39.984Z">
 <meta property="article:author" content="Qcmoke">
-<meta property="article:tag" content="apache">
 <meta property="article:tag" content="ssl">
 <meta property="article:tag" content="http">
 <meta property="article:tag" content="https">
+<meta property="article:tag" content="apache">
 <meta name="twitter:card" content="summary">
 
 
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-19T06:50:36+08:00">
-                2023-03-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T17:47:39+08:00">
+                2023-06-19
               </time>
             
           </span>
@@ -501,7 +501,7 @@
 <p>完成以上安装后，会自动生成 <code>/etc/httpd/conf.d/ssl.conf</code>(也可能是<code>/etc/httpd/conf/extra/httpd-ssl.conf</code>，这与操作系统及安装方式有关，此种情况请参考<a href="https://www.aliyun.com/jiaocheng/164678.html" target="_blank" rel="noopener">阿里云的说明文档</a>)， 在配置文件中查找以下配置语句，配置<code>public.pem</code>、<code>214965547810841.key</code>、<code>chain.pem</code>的路径。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 SSL 协议支持协议，去掉不安全的协议</span></span><br><span class="line">SSLProtocol all -SSLv2 -SSLv3</span><br><span class="line"><span class="comment"># 修改加密套件如下</span></span><br><span class="line">SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!EXP:+MEDIUM</span><br><span class="line">SSLHonorCipherOrder on</span><br><span class="line"><span class="comment"># 证书公钥配置</span></span><br><span class="line">SSLCertificateFile /etc/httpd/cert/public.pem</span><br><span class="line"><span class="comment"># 证书私钥配置</span></span><br><span class="line">SSLCertificateKeyFile /etc/httpd/cert/214965547810841.key</span><br><span class="line"><span class="comment"># 证书链配置，如果该属性开头有 '#'字符，请删除掉</span></span><br><span class="line">SSLCertificateChainFile /etc/httpd/cert/chain.pem</span><br></pre></td></tr></table></figure>
 <p>除此之外还要添加433端口的虚拟目录，找到<code>ssl.conf</code>里的 <code>&lt;VirtualHost _default_:443&gt;</code>,然后另起一行，添加如下代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DocumentRoot <span class="string">"/var/www/html/typecho/"</span>  </span><br><span class="line">ServerName luoyui.top:443</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DocumentRoot <span class="string">"/var/www/html/typecho/"</span>  </span><br><span class="line">ServerName example.com:443</span><br></pre></td></tr></table></figure>
 <h2 id="三-重启-apache"><a class="header-anchor" href="#三-重启-apache">¶</a>三、重启 Apache</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service httpd restart</span></span><br></pre></td></tr></table></figure>
 <h2 id="四-安全组设置"><a class="header-anchor" href="#四-安全组设置">¶</a>四、安全组设置</h2>
@@ -520,21 +520,20 @@
 <p>2、你原本的typecho数据库只存了http类型的域名地址，你需要将http类型的域名地址修改为https类型的域名地址。</p>
 <p>解决：</p>
 <p>很简单，打开终端工具登录服务器的mysql。然后输入如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use typecho; </span><br><span class="line">mysql&gt; UPDATE `typecho_options` SET `value` = 'https://luoyui.top' WHERE `typecho_options`.`name` = 'siteUrl' AND `typecho_options`.`user` =0;</span><br><span class="line">mysql&gt; UPDATE `typecho_contents` SET text = REPLACE(text, 'http://blog.luoyui.top', 'https://luoyui.top') WHERE INSTR(text,'http://blog.luoyui.top') &gt; 0;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注解：</span><br><span class="line">typecho            #数据库名，名字可能不一样</span><br><span class="line">https:&#x2F;&#x2F;luoyui.top #更换前使用的http类型的域名地址</span><br><span class="line">https:&#x2F;&#x2F;luoyui.top #更换后使用的https类型的域名地址，当然你也可以更具情况改为https:&#x2F;&#x2F;www.luoyui.top</span><br><span class="line">typecho_options    #表名，有的人表头不一样需要修改 比如：abc_options</span><br><span class="line">typecho_contents   #表名，有的人表头不一样需要修改 比如：abc_contents</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use typecho; </span><br><span class="line">mysql&gt; UPDATE `typecho_options` SET `value` = 'https://example.com' WHERE `typecho_options`.`name` = 'siteUrl' AND `typecho_options`.`user` =0;</span><br><span class="line">mysql&gt; UPDATE `typecho_contents` SET text = REPLACE(text, 'http://blog.example.com', 'https://example.com') WHERE INSTR(text,'http://blog.example.com') &gt; 0;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注解：</span><br><span class="line">typecho            #数据库名，名字可能不一样</span><br><span class="line">https:&#x2F;&#x2F;example.com #更换前使用的http类型的域名地址</span><br><span class="line">https:&#x2F;&#x2F;example.com #更换后使用的https类型的域名地址，当然你也可以更具情况改为https:&#x2F;&#x2F;www.example.com</span><br><span class="line">typecho_options    #表名，有的人表头不一样需要修改 比如：abc_options</span><br><span class="line">typecho_contents   #表名，有的人表头不一样需要修改 比如：abc_contents</span><br></pre></td></tr></table></figure>
 <p>然后再刷新https链接的博客就出现图片了，当然还要登录博客管理员到后台对一些个人偏好的地址路径做相应更改。</p>
 <h2 id="六-强制转http为https-如果你需要"><a class="header-anchor" href="#六-强制转http为https-如果你需要">¶</a>六、强制转http为https（如果你需要）</h2>
 <p>其实就是强制转80端口为433端口，即让80端口重定向到443端口。</p>
 <p>在这里我们通过修改虚拟目录来实现。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/httpd/conf.d/vhost.conf</span></span><br></pre></td></tr></table></figure>
-<p>这里的vhost.conf配置文件你可能没有，如何配置可参考<a href="https://www.qcmoke.site/devops/apache_much_ip.html">《centos7 apache2.4.6配置单ip多域名》</a>。在vhost.conf配置文件的相应位置添加以下三行代码来实现该功能。</p>
+<p>这里的vhost.conf配置文件你可能没有，如何配置可参考<a href="../devops/apache_much_ip.html" name="../devops/apache_much_ip.md" id="hexo-md-link">《centos7 apache2.4.6配置单ip多域名》</a>。在vhost.conf配置文件的相应位置添加以下三行代码来实现该功能。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine on       <span class="comment"># url重定向开启</span></span><br><span class="line">RewriteCond %&#123;SERVER_PORT&#125; !^443$    <span class="comment"># 指定跳转至443端口</span></span><br><span class="line">RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/<span class="variable">$1</span> [L,R]    <span class="comment"># 跳转至https://www.域名.com的url</span></span><br></pre></td></tr></table></figure>
 <p>以下我的的配置可供参考：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">        DocumentRoot "/var/www/html/typecho"</span><br><span class="line">        ServerName luoyui.top</span><br><span class="line">        ServerAlias www.luoyui.top</span><br><span class="line">        RewriteEngine on</span><br><span class="line">        RewriteCond %&#123;SERVER_PORT&#125; !^443$</span><br><span class="line">        RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/$1 [L,R]</span><br><span class="line">        <span class="tag">&lt;<span class="name">Directory</span> "/<span class="attr">var</span>/<span class="attr">www</span>/<span class="attr">html</span>/<span class="attr">typecho</span>"&gt;</span></span><br><span class="line">                 Options FollowSymLinks</span><br><span class="line">                 AllowOverride All</span><br><span class="line">                 Require all granted</span><br><span class="line">        <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">        DocumentRoot "/var/www/html/typecho"</span><br><span class="line">        ServerName example.com</span><br><span class="line">        ServerAlias www.example.com</span><br><span class="line">        RewriteEngine on</span><br><span class="line">        RewriteCond %&#123;SERVER_PORT&#125; !^443$</span><br><span class="line">        RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/$1 [L,R]</span><br><span class="line">        <span class="tag">&lt;<span class="name">Directory</span> "/<span class="attr">var</span>/<span class="attr">www</span>/<span class="attr">html</span>/<span class="attr">typecho</span>"&gt;</span></span><br><span class="line">                 Options FollowSymLinks</span><br><span class="line">                 AllowOverride All</span><br><span class="line">                 Require all granted</span><br><span class="line">        <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>配置好后按<code>:wq</code>保存并退出。</p>
 <p>重启apache服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service httpd restart</span></span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div>
@@ -591,13 +590,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
-          
             <a href="/tags/ssl/" rel="tag"><i class="fa fa-tag"></i> ssl</a>
           
             <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
           
             <a href="/tags/https/" rel="tag"><i class="fa fa-tag"></i> https</a>
+          
+            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
           
         </div>
       
@@ -1140,7 +1139,7 @@ darkmode.click(function () {
           appId: '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
           appKey: 'd2FLy9fmXOTiM8TrokuIuDWx',
           placeholder: '留下你的小爪印吧~',
-          serverURLs: 'https://leancloud.qcmoke.site',
+          serverURLs: 'https://leancloud.qcmoke.cn',
     });
     </script>
 
@@ -1555,7 +1554,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.cn' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',
@@ -1760,5 +1759,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>

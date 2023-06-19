@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="apache,ssl," />
+  <meta name="keywords" content="ssl,apache," />
 
 
 
@@ -93,10 +93,10 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="¶1. 安装apache、openssl和mod_ssl 1$ yum install httpd openssl mod_ssl -y ¶2. 启动apache服务 12$ systemctl start httpd   # 启动服务$ systemctl enable httpd  # 设置开机启动 ¶3. 检查apache是否启动 12$ systemctl start httpd  #">
 <meta property="article:published_time" content="2019-01-18T16:51:47.000Z">
-<meta property="article:modified_time" content="2023-05-02T07:46:54.965Z">
+<meta property="article:modified_time" content="2023-06-19T09:47:56.305Z">
 <meta property="article:author" content="Qcmoke">
-<meta property="article:tag" content="apache">
 <meta property="article:tag" content="ssl">
+<meta property="article:tag" content="apache">
 <meta name="twitter:card" content="summary">
 
 
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-05-02T15:46:54+08:00">
-                2023-05-02
+              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T17:47:56+08:00">
+                2023-06-19
               </time>
             
           </span>
@@ -498,23 +498,22 @@
 <code>/etc/httpd/conf/httpd.conf: # access content that does not live under the DocumentRoot.</code></p>
 </blockquote>
 <h2 id="5-域名解析设置"><a class="header-anchor" href="#5-域名解析设置">¶</a>5. 域名解析设置</h2>
-<p>解析域名(如：luoyui.top)到服务器的ip地址上，比如我这里添加了两条解析记录。</p>
+<p>解析域名(如：<a href="http://example.com" target="_blank" rel="noopener">example.com</a>)到服务器的ip地址上，比如我这里添加了两条解析记录。</p>
 <blockquote>
 <p>1、解析记录为：记录类型为<code>A</code> ，主机记录为为<code>@</code> ，记录值为<code>144.34.145.10</code></p>
 <p>2、解析记录为：记录类型为<code>A</code> ，主机记录为为<code>www</code> ，记录值为<code>144.34.145.10</code></p>
 </blockquote>
 <h2 id="6-配置-ssl-证书以使用-https"><a class="header-anchor" href="#6-配置-ssl-证书以使用-https">¶</a>6. 配置 SSL 证书以使用 https</h2>
-<p>一般地，获取 SSL 证书有两种方式：自签名和购买 CA 颁发的 SSL 证书。自签名的证书可能会被浏览器拦截并提示不受信任，因此建议采用比较可靠的商业颁发机构购买（如 Comodo、Symantec 等）或者免费的 Let’s Encrypt 签发的证书。可以使用 certbot 工具来申请得到免费 Let’ s Encrypt SSL 证书。具体操作可参考<a href="https://www.qcmoke.site/tools/certbot.html">《通过certbot工具生成ssl证书》</a>。假设这里已经申请得到了 Let’ s Encrypt SSL 证书，下文将介绍如何在 apache 中配置 SSL 证书以使用 https 。</p>
+<p>一般地，获取 SSL 证书有两种方式：自签名和购买 CA 颁发的 SSL 证书。自签名的证书可能会被浏览器拦截并提示不受信任，因此建议采用比较可靠的商业颁发机构购买（如 Comodo、Symantec 等）或者免费的 Let’s Encrypt 签发的证书。可以使用 certbot 工具来申请得到免费 Let’ s Encrypt SSL 证书。具体操作可参考<a href="../tools/certbot.html" name="../tools/certbot.md" id="hexo-md-link">《通过certbot工具生成ssl证书》</a>。假设这里已经申请得到了 Let’ s Encrypt SSL 证书，下文将介绍如何在 apache 中配置 SSL 证书以使用 https 。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建一个目录来表示网站的根目录</span></span><br><span class="line">mkdir -p /var/www/<span class="built_in">test</span></span><br><span class="line"><span class="comment">#创建一个html静态文件以待测试</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;h1&gt;Hi, Nginx !&lt;/h1&gt;"</span> &gt;&gt; /var/www/<span class="built_in">test</span>/index.html</span><br><span class="line"><span class="comment">#编辑 apache web虚拟主机配置文件</span></span><br><span class="line">vi /etc/httpd/conf.d/vhost.conf</span><br></pre></td></tr></table></figure>
 <p>添加以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/test"</span></span><br><span class="line">    ServerName luoyui.top</span><br><span class="line">    ServerAlias www.luoyui.top</span><br><span class="line">    &lt;Directory <span class="string">"/var/www/test"</span>&gt;</span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">RewriteEngine on</span><br><span class="line">RewriteCond %&#123;SERVER_NAME&#125; =luoyui.top [OR]</span><br><span class="line">RewriteCond %&#123;SERVER_NAME&#125; =www.luoyui.top</span><br><span class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;IfModule mod_ssl.c&gt;</span><br><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/test"</span></span><br><span class="line">    ServerName luoyui.top</span><br><span class="line">    ServerAlias www.luoyui.top</span><br><span class="line">    &lt;Directory <span class="string">"/var/www/test"</span>&gt;</span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">Include /etc/letsencrypt/options-ssl-apache.conf</span><br><span class="line">SSLCertificateFile /etc/letsencrypt/live/luoyui.top/cert.pem</span><br><span class="line">SSLCertificateKeyFile /etc/letsencrypt/live/luoyui.top/privkey.pem</span><br><span class="line">SSLCertificateChainFile /etc/letsencrypt/live/luoyui.top/chain.pem</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/test"</span></span><br><span class="line">    ServerName example.com</span><br><span class="line">    ServerAlias www.example.com</span><br><span class="line">    &lt;Directory <span class="string">"/var/www/test"</span>&gt;</span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">RewriteEngine on</span><br><span class="line">RewriteCond %&#123;SERVER_NAME&#125; =example.com [OR]</span><br><span class="line">RewriteCond %&#123;SERVER_NAME&#125; =www.example.com</span><br><span class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;IfModule mod_ssl.c&gt;</span><br><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/test"</span></span><br><span class="line">    ServerName example.com</span><br><span class="line">    ServerAlias www.example.com</span><br><span class="line">    &lt;Directory <span class="string">"/var/www/test"</span>&gt;</span><br><span class="line">         Options FollowSymLinks</span><br><span class="line">         AllowOverride All</span><br><span class="line">         Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">Include /etc/letsencrypt/options-ssl-apache.conf</span><br><span class="line">SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem</span><br><span class="line">SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem</span><br><span class="line">SSLCertificateChainFile /etc/letsencrypt/live/example.com/chain.pem</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>如果想要访问 <code>luoyui.top</code> 域名地址时自动重定向到 <code>www.luoyui.top</code> 域名地址，只需要修改<code>&lt;VirtualHost&gt;</code>中相关变量的即可，修改如下：</p>
+<p>如果想要访问 <code>example.com</code> 域名地址时自动重定向到 <code>www.example.com</code> 域名地址，只需要修改<code>&lt;VirtualHost&gt;</code>中相关变量的即可，修改如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;RewriteEngine on       <span class="comment"># url重定向开启</span></span><br><span class="line">&gt;RewriteCond %&#123;SERVER_PORT&#125; !^443$    <span class="comment"># 指定跳转至443端口</span></span><br><span class="line">&gt;RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/<span class="variable">$1</span> [L,R]    <span class="comment"># 跳转至https://www.域名.com的url</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="7-重启apache服务器"><a class="header-anchor" href="#7-重启apache服务器">¶</a>7. 重启apache服务器</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd restart</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div>
@@ -571,9 +570,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
-          
             <a href="/tags/ssl/" rel="tag"><i class="fa fa-tag"></i> ssl</a>
+          
+            <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
           
         </div>
       
@@ -615,8 +614,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/devops/mail.html" rel="next" title="centos7搭建邮件服务器">
-                centos7搭建邮件服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/devops/mq.html" rel="next" title="centos7安装kafka">
+                centos7安装kafka <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1116,7 +1115,7 @@ darkmode.click(function () {
           appId: '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
           appKey: 'd2FLy9fmXOTiM8TrokuIuDWx',
           placeholder: '留下你的小爪印吧~',
-          serverURLs: 'https://leancloud.qcmoke.site',
+          serverURLs: 'https://leancloud.qcmoke.cn',
     });
     </script>
 
@@ -1531,7 +1530,7 @@ darkmode.click(function () {
             return $.ajax({
               method: method,
               //url: 'https://' + api_server + '/1.1' + url,
-              url: ('https://leancloud.qcmoke.site' || api_server) + '/1.1' + url,
+              url: ('https://leancloud.qcmoke.cn' || api_server) + '/1.1' + url,
               headers: {
                 'X-LC-Id': '6LNbUERxbG0OAnWfmJSbmXiW-MdYXbMMI',
                 'X-LC-Key': 'd2FLy9fmXOTiM8TrokuIuDWx',
@@ -1736,5 +1735,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>
