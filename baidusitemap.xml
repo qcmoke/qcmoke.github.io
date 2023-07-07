@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.cn/tools/proxy.html</loc>
+    <lastmod>2023-07-07T17:42:11.859Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.cn/linux/to_learn_linux.html</loc>
-    <lastmod>2023-07-01T19:07:28.575Z</lastmod>
+    <lastmod>2023-07-04T23:38:06.295Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/devops/docker.html</loc>
     <lastmod>2023-06-30T05:51:24.438Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/devops/nginx.html</loc>
     <lastmod>2023-06-30T02:02:03.442Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.cn/tools/proxy.html</loc>
-    <lastmod>2023-06-27T06:59:18.159Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/tools/frp.html</loc>
     <lastmod>2023-06-24T16:07:07.245Z</lastmod>
