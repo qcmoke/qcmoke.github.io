@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.qcmoke.cn/tools/proxy.html</loc>
+    <lastmod>2023-07-22T17:17:05.388Z</lastmod>
+  </url>  <url>
     <loc>https://www.qcmoke.cn/tools/certbot.html</loc>
     <lastmod>2023-07-21T05:56:12.172Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/linux/to_learn_linux.html</loc>
     <lastmod>2023-07-21T05:51:46.501Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.cn/tools/proxy.html</loc>
-    <lastmod>2023-07-21T05:11:12.705Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/devops/docker.html</loc>
     <lastmod>2023-06-30T05:51:24.438Z</lastmod>
@@ -151,10 +151,10 @@
     <loc>https://www.qcmoke.cn/linux/vm.html</loc>
     <lastmod>2023-03-18T22:50:36.429Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.cn/linux/ubuntu_advantage.html</loc>
+    <loc>https://www.qcmoke.cn/linux/ubuntu_wps.html</loc>
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
   </url>  <url>
-    <loc>https://www.qcmoke.cn/linux/ubuntu_wps.html</loc>
+    <loc>https://www.qcmoke.cn/linux/ubuntu_advantage.html</loc>
     <lastmod>2023-03-18T22:50:36.428Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/linux/deepin_experience.html</loc>
