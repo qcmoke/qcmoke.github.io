@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Qcmoke&#39;s Blog">
 <meta property="og:description" content="实现https首先需要购买ssl证书，比如通过阿里云购买了dv ssl证书。下载ssl文件解压后会得到214965547810841.key、214965547810841.pem、chain.pem、public.pem 共4个文件。 文件说明：  证书文件214965547810841.pem，包含两段内容，请不要删除任何一段内容。 如果是证书系统创建的CSR，还包含：证书私钥文件21496">
 <meta property="article:published_time" content="2018-09-02T09:30:00.000Z">
-<meta property="article:modified_time" content="2023-06-19T09:47:39.984Z">
+<meta property="article:modified_time" content="2023-09-06T16:32:51.974Z">
 <meta property="article:author" content="Qcmoke">
 <meta property="article:tag" content="ssl">
 <meta property="article:tag" content="http">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-06-19T17:47:39+08:00">
-                2023-06-19
+              <time title="更新于" itemprop="dateModified" datetime="2023-09-07T00:32:51+08:00">
+                2023-09-07
               </time>
             
           </span>
@@ -493,17 +493,17 @@
 <h2 id="一-预前配置设置"><a class="header-anchor" href="#一-预前配置设置">¶</a>一、预前配置设置</h2>
 <h3 id="1-创建-etc-httpd-cert目录"><a class="header-anchor" href="#1-创建-etc-httpd-cert目录">¶</a>1.创建/etc/httpd/cert目录</h3>
 <p><code>cert</code>目录的目的是用来存放以上4个文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd /etc/httpd/</span></span><br><span class="line"><span class="comment"># mkdir cert</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/httpd/</span><br><span class="line">mkdir cert</span><br></pre></td></tr></table></figure>
 <h3 id="2-通过xftp等工具将以上4个文件存送到cert目录"><a class="header-anchor" href="#2-通过xftp等工具将以上4个文件存送到cert目录">¶</a>2.通过xftp等工具将以上4个文件存送到cert目录。</h3>
 <h3 id="3-安装openssl和mod-ssl"><a class="header-anchor" href="#3-安装openssl和mod-ssl">¶</a>3.安装openssl和mod_ssl</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install openssl mod_ssl</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install openssl mod_ssl</span><br></pre></td></tr></table></figure>
 <h2 id="二-配置证书"><a class="header-anchor" href="#二-配置证书">¶</a>二、配置证书</h2>
 <p>完成以上安装后，会自动生成 <code>/etc/httpd/conf.d/ssl.conf</code>(也可能是<code>/etc/httpd/conf/extra/httpd-ssl.conf</code>，这与操作系统及安装方式有关，此种情况请参考<a href="https://www.aliyun.com/jiaocheng/164678.html" target="_blank" rel="noopener">阿里云的说明文档</a>)， 在配置文件中查找以下配置语句，配置<code>public.pem</code>、<code>214965547810841.key</code>、<code>chain.pem</code>的路径。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 SSL 协议支持协议，去掉不安全的协议</span></span><br><span class="line">SSLProtocol all -SSLv2 -SSLv3</span><br><span class="line"><span class="comment"># 修改加密套件如下</span></span><br><span class="line">SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!EXP:+MEDIUM</span><br><span class="line">SSLHonorCipherOrder on</span><br><span class="line"><span class="comment"># 证书公钥配置</span></span><br><span class="line">SSLCertificateFile /etc/httpd/cert/public.pem</span><br><span class="line"><span class="comment"># 证书私钥配置</span></span><br><span class="line">SSLCertificateKeyFile /etc/httpd/cert/214965547810841.key</span><br><span class="line"><span class="comment"># 证书链配置，如果该属性开头有 '#'字符，请删除掉</span></span><br><span class="line">SSLCertificateChainFile /etc/httpd/cert/chain.pem</span><br></pre></td></tr></table></figure>
 <p>除此之外还要添加433端口的虚拟目录，找到<code>ssl.conf</code>里的 <code>&lt;VirtualHost _default_:443&gt;</code>,然后另起一行，添加如下代码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DocumentRoot <span class="string">"/var/www/html/typecho/"</span>  </span><br><span class="line">ServerName example.com:443</span><br></pre></td></tr></table></figure>
 <h2 id="三-重启-apache"><a class="header-anchor" href="#三-重启-apache">¶</a>三、重启 Apache</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service httpd restart</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd restart</span><br></pre></td></tr></table></figure>
 <h2 id="四-安全组设置"><a class="header-anchor" href="#四-安全组设置">¶</a>四、安全组设置</h2>
 <p>需要登录阿里云，安全组添加并开放433端口。</p>
 <h2 id="五-typecho网站修复和配置"><a class="header-anchor" href="#五-typecho网站修复和配置">¶</a>五、typecho网站修复和配置</h2>
@@ -511,7 +511,7 @@
 <p>1、typecho没有开启https；</p>
 <p>解决：</p>
 <p>进入typecho博客web根目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd /var/www/html/typecho/   #路径根据自己情况而定</span></span><br><span class="line"><span class="comment">#vim config.inc.php</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/html/typecho/   <span class="comment">#路径根据自己情况而定</span></span><br><span class="line">vim config.inc.php</span><br></pre></td></tr></table></figure>
 <p>找到以下代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/** 定义根目录 */</span><br><span class="line">define(<span class="string">'__TYPECHO_ROOT_DIR__'</span>, dirname(__FILE__));</span><br></pre></td></tr></table></figure>
 <p>在以上代码的上面另起2行，然后输入以下代码：</p>
@@ -526,14 +526,14 @@
 <h2 id="六-强制转http为https-如果你需要"><a class="header-anchor" href="#六-强制转http为https-如果你需要">¶</a>六、强制转http为https（如果你需要）</h2>
 <p>其实就是强制转80端口为433端口，即让80端口重定向到443端口。</p>
 <p>在这里我们通过修改虚拟目录来实现。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/httpd/conf.d/vhost.conf</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/httpd/conf.d/vhost.conf</span><br></pre></td></tr></table></figure>
 <p>这里的vhost.conf配置文件你可能没有，如何配置可参考<a href="../devops/apache_much_ip.html" name="../devops/apache_much_ip.md" id="hexo-md-link">《centos7 apache2.4.6配置单ip多域名》</a>。在vhost.conf配置文件的相应位置添加以下三行代码来实现该功能。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine on       <span class="comment"># url重定向开启</span></span><br><span class="line">RewriteCond %&#123;SERVER_PORT&#125; !^443$    <span class="comment"># 指定跳转至443端口</span></span><br><span class="line">RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/<span class="variable">$1</span> [L,R]    <span class="comment"># 跳转至https://www.域名.com的url</span></span><br></pre></td></tr></table></figure>
 <p>以下我的的配置可供参考：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">        DocumentRoot "/var/www/html/typecho"</span><br><span class="line">        ServerName example.com</span><br><span class="line">        ServerAlias www.example.com</span><br><span class="line">        RewriteEngine on</span><br><span class="line">        RewriteCond %&#123;SERVER_PORT&#125; !^443$</span><br><span class="line">        RewriteRule ^/?(.*)$ https://www.%&#123;SERVER_NAME&#125;/$1 [L,R]</span><br><span class="line">        <span class="tag">&lt;<span class="name">Directory</span> "/<span class="attr">var</span>/<span class="attr">www</span>/<span class="attr">html</span>/<span class="attr">typecho</span>"&gt;</span></span><br><span class="line">                 Options FollowSymLinks</span><br><span class="line">                 AllowOverride All</span><br><span class="line">                 Require all granted</span><br><span class="line">        <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>配置好后按<code>:wq</code>保存并退出。</p>
 <p>重启apache服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service httpd restart</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd restart</span><br></pre></td></tr></table></figure>
       
     </div>
     <div>
@@ -759,7 +759,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -781,7 +781,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1744,5 +1744,5 @@ darkmode.click(function () {
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":80,"height":130},"mobile":{"show":false},"log":false});</script></body>
 </html>
