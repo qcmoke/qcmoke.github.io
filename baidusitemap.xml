@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.qcmoke.cn/tools/pyenv.html</loc>
-    <lastmod>2023-12-18T15:59:51.254Z</lastmod>
+    <lastmod>2023-12-26T17:21:45.719Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/tools/acme.sh.html</loc>
     <lastmod>2023-12-07T16:17:52.357Z</lastmod>
@@ -141,9 +141,6 @@
   </url>  <url>
     <loc>https://www.qcmoke.cn/linux/linux_proxy.html</loc>
     <lastmod>2023-04-06T10:54:26.785Z</lastmod>
-  </url>  <url>
-    <loc>https://www.qcmoke.cn/tools/youtube_dl.html</loc>
-    <lastmod>2023-03-18T22:50:36.451Z</lastmod>
   </url>  <url>
     <loc>https://www.qcmoke.cn/tools/win_git.html</loc>
     <lastmod>2023-03-18T22:50:36.450Z</lastmod>
