@@ -1,0 +1,3 @@
+需要在/_config.yml中添加如下配置，表示不进行渲染的目录或者文件
+skip_render:
+  - static/**
